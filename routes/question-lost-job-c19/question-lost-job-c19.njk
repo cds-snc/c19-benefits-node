@@ -3,6 +3,7 @@
 {% block content %}
 
     <div>
+        {{ headerLinkQuestion() }}
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
