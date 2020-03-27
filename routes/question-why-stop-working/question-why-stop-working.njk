@@ -8,13 +8,13 @@
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
             {{ radioButtons('why_stop_working', { 
-                '1':'You’ve been laid off due to COVID-19.',
-                '2':'Your employer has closed.',
-                '3':'You’re self-employed and had to close.',
-                '4': 'You’re on unpaid leave from your work.',
-                '5': 'You quit or were let go due to unsafe working conditions.',
-                '6': 'None of the above'
-                }, data.why_stop_working, 'form.why_stop_working', errors, {hint: 'form.why_stop_working.desc'}, { required: true }) }}
+                '1':'why_stop_working.1',
+                '2':'why_stop_working.2',
+                '3':'why_stop_working.3',
+                '4': 'why_stop_working.4',
+                '5': 'why_stop_working.5',
+                '6': 'why_stop_working.6'
+                }, data.why_stop_working, 'form.why_stop_working', errors, {hint: 'form.why_stop_working.desc'}) }}
             
             {{ formButtons() }}
         </form>

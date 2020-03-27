@@ -1,13 +1,14 @@
 /* istanbul ignore file */
 
 const Schema = {
-  firstname: {
-    isLength: {
-      errorMessage: 'errors.firstname.length',
-      options: { min: 3, max: 200 },
+  applied_to_EI : {
+    isIn: {
+      errorMessage: 'errors.multipleChoiceGeneric',
+      options: [['applied_to_EI.1', 'applied_to_EI.2', 'applied_to_EI.3']],
     },
   },
 }
+
 
 module.exports = {
   Schema,

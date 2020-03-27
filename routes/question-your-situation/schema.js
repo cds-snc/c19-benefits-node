@@ -1,10 +1,10 @@
 /* istanbul ignore file */
 
 const Schema = {
-  firstname: {
-    isLength: {
-      errorMessage: 'errors.firstname.length',
-      options: { min: 3, max: 200 },
+  your_situation : {
+    isIn: {
+      errorMessage: 'errors.multipleChoiceGeneric',
+      options: [['your_situation.1', 'your_situation.2', 'your_situation.3', 'your_situation.4', 'your_situation.5', 'your_situation.6', 'your_situation.7']],
     },
   },
 }
