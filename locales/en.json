@@ -58,5 +58,8 @@
   "question.eligible_for_ei": "Are you eligible for EI?",
   "question.leave_voluntarily": "Did you leave your job voluntarily?",
   "leave_voluntarily.yes": "Yes",
-  "leave_voluntarily.no": "No"
+  "leave_voluntarily.no": "No",
+  "question.sick_or_quarantine": "Are you sick or in quarantine?",
+  "sick_or_quarantine.yes": "Yes",
+  "sick_or_quarantine.no": "No"
 }
