@@ -73,5 +73,6 @@
   "You’re already receiving EI benefits.": "You’re already receiving EI benefits.",
   "You’ve applied for EI benefits, but haven’t heard back.": "You’ve applied for EI benefits, but haven’t heard back.",
   "No.": "No.",
-  "errors.firstname.length": "errors.firstname.length"
+  "errors.firstname.length": "errors.firstname.length",
+  "You quit or were let go due to unsafe working conditions.": "You quit or were let go due to unsafe working conditions."
 }
