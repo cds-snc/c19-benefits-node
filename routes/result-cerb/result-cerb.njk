@@ -1,0 +1,20 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+    <h1>{{ __('result-cerb.title') }}</h1>
+
+    <p>{{ __('result-cerb.intro') }}</p>
+
+    <div class="bg-blue-100 p-8">{{ __('result-cerb.benefit') }}</div>
+
+    <p>{{ __('result-cerb.available') }}</p>
+
+    <p>{{ __('result-cerb.apply') }}</p>
+
+    <form method="post">
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            {{ formButtons() }}
+        </form>
+
+{% endblock %}
