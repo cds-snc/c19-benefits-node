@@ -56,7 +56,7 @@
   "eligible_for_ei.yes": "Yes, you’re eligible",
   "eligible_for_ei.no": "No, you’re not eligible for EI.",
   "question.eligible_for_ei": "Are you eligible for EI?",
-  "question-leave-voluntarily.title": "question-leave-voluntarily.title",
-  "question-leave-voluntarily.intro": "question-leave-voluntarily.intro",
-  "form.firstname.desc": "form.firstname.desc"
+  "question.leave_voluntarily": "Did you leave your job voluntarily?",
+  "leave_voluntarily.yes": "Yes",
+  "leave_voluntarily.no": "No"
 }

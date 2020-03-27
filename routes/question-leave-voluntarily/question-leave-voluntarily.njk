@@ -1,0 +1,13 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+    <div>
+        <form method="post">
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            {{ radioButtons('leave_voluntarily', { '1':'leave_voluntarily.yes','2':'leave_voluntarily.no'}, data.leave_voluntarily, 'question.leave_voluntarily', errors, { required: true }) }}
+            {{ formButtons() }}
+        </form>
+    </div>
+
+{% endblock %}
