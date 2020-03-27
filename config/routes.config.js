@@ -3,6 +3,11 @@ const routes = [
   { name: 'start', path: { en: '/start', fr: '/debut' } },
   { name: 'personal', path: { en: '/personal', fr: '/personnel' } },
   { name: 'confirmation', path: '/confirmation' },
+  { name: 'question-eligible-for-ei', path: { en: '/question-eligible-for-ei', fr: '/fr/question-eligible-for-ei' } },
+  { name: 'question-sick-or-quarantine', path: { en: '/question-sick-or-quarantine', fr: '/fr/question-sick-or-quarantine' } },
+  { name: 'question-leave-voluntarily', path: { en: '/question-leave-voluntarily', fr: '/fr/question-leave-voluntarily' } },
+  { name: 'result-cerb', path: { en: '/result-cerb', fr: '/fr/result-cerb' } },
+  { name: 'result-ei-regular', path: { en: '/result-ei-regular', fr: '/fr/result-ei-regular' } },
 ]
 
 const locales = ['en', 'fr']
