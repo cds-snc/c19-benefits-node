@@ -5,8 +5,6 @@ const routes = [
   { name: 'question-why-stop-working', path: { en: '/why-stop-working',  fr: '/why-stop-working'}},
   { name: 'question-your-situation', path: { en: '/your-situation',  fr: '/your-situation'}},
   { name: 'question-applied-to-EI', path: { en: '/applied-to-EI',  fr: '/applied-to-EI'}},
-  { name: 'personal', path: { en: '/personal', fr: '/personnel' } },
-  { name: 'confirmation', path: '/confirmation' },
   { name: 'question-eligible-for-ei', path: { en: '/question-eligible-for-ei', fr: '/fr/question-eligible-for-ei' } },
   { name: 'question-sick-or-quarantine', path: { en: '/question-sick-or-quarantine', fr: '/fr/question-sick-or-quarantine' } },
   { name: 'question-leave-voluntarily', path: { en: '/question-leave-voluntarily', fr: '/fr/question-leave-voluntarily' } },
