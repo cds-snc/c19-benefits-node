@@ -5,7 +5,7 @@
     <div>
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            {{ radioButtons('eligible_for_ei', { '1':'eligible_for_ei.yes','2':'eligible_for_ei.no'}, data.eligible_for_ei, 'question.eligible_for_ei', errors, {hint: 'question.eligible_for_ei.desc'}, { required: true }) }}
+            {{ radioButtons('eligible_for_ei', { '1':'eligible_for_ei.yes','2':'eligible_for_ei.no'}, data.eligible_for_ei, 'question.eligible_for_ei', errors, {hint: 'question.eligible_for_ei.desc'}) }}
             {{ formButtons() }}
         </form>
     </div>
