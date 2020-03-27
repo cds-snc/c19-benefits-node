@@ -4,6 +4,7 @@ const routes = [
   { name: 'personal', path: { en: '/personal', fr: '/personnel' } },
   { name: 'confirmation', path: '/confirmation' },
   { name: 'result-ei-sickness', path: { en: '/result-ei-sickness', fr: '/result-ei-sickness'}},
+  { name: 'result-ccb-and-gst', path: { en: '/result-ccb-and-gst', fr: '/result-ccb-and-gst'}},
   
 ]
 
