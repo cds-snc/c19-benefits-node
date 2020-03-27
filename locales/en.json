@@ -92,5 +92,8 @@
   "result-waiting-to-hear-back-from-ei.p1": "If you’re waiting for a decision on your Employment Insurance (EI) application, do not reapply. If your EI application is denied, you can apply for the new Canadian Economic Response Benefit, once the application becomes available.",
   "result-left-job-voluntarily.title": "May be eligible for Employment Insurance",
   "result-left-job-voluntarily.p1": "If you left your job due to unsafe working conditions, you may be eligible for Employment Insurance (EI).",
-  "result-left-job-voluntarily.p2": "To apply, go to <a href='https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/apply.html'>https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/apply.html</a>"
+  "result-left-job-voluntarily.p2": "To apply, go to <a href='https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/apply.html'>https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/apply.html</a>",
+  "header_money_for_covid": "Money for COVID-19",
+  "email_results": "Email results",
+  "feedback": "Feedback"
 }
