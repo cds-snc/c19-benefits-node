@@ -1,10 +1,10 @@
 /* istanbul ignore file */
 
 const Schema = {
-  firstname: {
-    isLength: {
-      errorMessage: 'errors.firstname.length',
-      options: { min: 3, max: 200 },
+  why_stop_working : {
+    isIn: {
+      errorMessage: 'errors.multipleChoiceGeneric',
+      options: [['why_stop_working.1', 'why_stop_working.2', 'why_stop_working.3', 'why_stop_working.4', 'why_stop_working.5', 'why_stop_working.6']],
     },
   },
 }

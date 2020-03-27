@@ -4,7 +4,7 @@ const Schema = {
   applied_to_EI : {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
-      options: [['You’re already receiving EI benefits.', 'You’ve applied for EI benefits, but haven’t heard back.', 'No.']],
+      options: [['applied_to_EI.1', 'applied_to_EI.2', 'applied_to_EI.3']],
     },
   },
 }
