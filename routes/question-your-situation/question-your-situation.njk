@@ -8,13 +8,13 @@
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
             {{ radioButtons('your_situation', { 
-                '1':'You were on parental leave recently, but you cannot return to work.',
-                '2':'You were supposed to start a new job, but couldn’t due to COVID-19.',
-                '3':'You’re working fewer hours than you were before COVID-19.',
-                '4':'You’re working from home.',
-                '5':'You’re on paid leave from work.',
-                '6':'You have not done any paid work in the last 12 months.',
-                '7':'You’re retired.'
+                '1':'your_situation.1',
+                '2':'your_situation.2',
+                '3':'your_situation.3',
+                '4':'your_situation.4',
+                '5':'your_situation.5',
+                '6':'your_situation.6',
+                '7':'your_situation.7'
                 }, data.your_situation, 'form.your_situation', errors, {hint: 'form.your_situation.desc'}, { required: true }) }}
 
             {{ formButtons() }}
