@@ -51,5 +51,9 @@
   "caught this error": "caught this error",
   "Cannot read property 'match' of undefined": "Cannot read property 'match' of undefined",
   "Government of Canada": "Government of Canada",
-  "required": "required"
+  "required": "required",
+  "result-ei-sickness.title": "Based on what you’ve told us, you should apply for Employment Insurance (EI) Sickness Benefits. ",
+  "result-ei-sickness.p1": "To apply, go to <a href='https://www.canada.ca/en/services/benefits/ei/ei-sickness/apply.html'>https://www.canada.ca/en/services/benefits/ei/ei-sickness/apply.html</a>",
+  "result-ei-sickness.p2": "  Due to the COVID-19 crisis, we’ve waived the one-week waiting period so you can get paid faster. We also waived and the requirement for medical certification to make it easier to apply.",
+  "result-ei-sickness.p3": "Estimate of EI Sickness payments<br/>  If your application is approved, you will receive 55% of your gross income up to a maximum of $573 per week before taxes. The payments are sent out every two weeks. The number of weeks you get paid depends on how many “insurable hours” you worked in the last 52 weeks."
 }
