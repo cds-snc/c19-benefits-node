@@ -1,6 +1,5 @@
 form {
   margin-top: $space-xl;
-  max-width: 300px;
   width: 100%;
 
   .d--ib {
@@ -12,7 +11,6 @@ form {
   }
 
   @include sm {
-    max-width: 450px;
 
     .d--ib {
       display: inline-block;
@@ -35,7 +33,6 @@ form {
   }
 
   @include md {
-    max-width: 800px;
   }
 }
 
@@ -43,7 +40,6 @@ form.form--lg {
 
   @include sm {
     width: 110%;
-    max-width: 800px;
   }
 
   fieldset legend,
