@@ -61,5 +61,10 @@
   "leave_voluntarily.no": "No",
   "question.sick_or_quarantine": "Are you sick or in quarantine?",
   "sick_or_quarantine.yes": "Yes",
-  "sick_or_quarantine.no": "No"
+  "sick_or_quarantine.no": "No",
+  "result-cerb.title": "Apply for the Canadian Economic Response Benefit  ",
+  "result-cerb.intro": "Based on what you’ve told us, the Canadian Economic Response Benefit should be able to help you. ",
+  "result-cerb.benefit": "$1,800 per month for up to 4 months",
+  "result-cerb.available": "The benefit is available from March 15 to October 3, 2020. You’ll receive payments every 4 weeks for up to 4 months with no income.",
+  "result-cerb.apply": "You’ll be able to apply after April 6, 2020. You’ll get a payment within 10 days of applying."
 }
