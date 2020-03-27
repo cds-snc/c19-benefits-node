@@ -51,5 +51,21 @@
   "caught this error": "caught this error",
   "Cannot read property 'match' of undefined": "Cannot read property 'match' of undefined",
   "Government of Canada": "Government of Canada",
-  "required": "required"
+  "required": "required",
+  "result-ei-sickness.title": "Based on what you’ve told us, you should apply for Employment Insurance (EI) Sickness Benefits. ",
+  "result-ei-sickness.p1": "To apply, go to <a href='https://www.canada.ca/en/services/benefits/ei/ei-sickness/apply.html'>https://www.canada.ca/en/services/benefits/ei/ei-sickness/apply.html</a>",
+  "result-ei-sickness.p2": "  Due to the COVID-19 crisis, we’ve waived the one-week waiting period so you can get paid faster. We also waived and the requirement for medical certification to make it easier to apply.",
+  "result-ei-sickness.p3": "Estimate of EI Sickness payments<br/>  If your application is approved, you will receive 55% of your gross income up to a maximum of $573 per week before taxes. The payments are sent out every two weeks. The number of weeks you get paid depends on how many “insurable hours” you worked in the last 52 weeks.",
+  "result-ccb-and-gst.title": "Possible one-time payments ",
+  "result-ccb-and-gst.p1": "The Government of Canada is also issuing two one-time payments in May to help people cope with COVID-19. ",
+  "result-ccb-and-gst.p2": "<strong>Canada Child Benefit</strong><br/>If you care for a child under 18, you will receive a one-time payment of $300 per child in May through the Canada Child Benefit. ",
+  "result-ccb-and-gst.p3": "<strong>GST credit</strong><br/>If you receive the GST credit, you will also receive a one-time payment in May:<br/> $400 for single people<br/> $600 for couples.",
+  "result-ccb-and-gst.p4": "Check your bank account to find out if you’ve been receiving either the Canada Child Benefit or the GST credit. Dates of payments are available. File your 2019 taxes sooner than later if you can to ensure you continue to receive them.",
+  "result-keep-receiving-ei.title": "Keep receiving EI",
+  "result-keep-receiving-ei.p1": "Do not stop your Employment Insurance (EI) benefits. You can apply for the new Canadian Economic Response Benefit if your EI runs out before October 3, 2020, and you’re still unemployed. ",
+  "result-waiting-to-hear-back-from-ei.title": "Wait for EI decision",
+  "result-waiting-to-hear-back-from-ei.p1": "If you’re waiting for a decision on your Employment Insurance (EI) application, do not reapply. If your EI application is denied, you can apply for the new Canadian Economic Response Benefit, once the application becomes available.",
+  "result-left-job-voluntarily.title": "May be eligible for Employment Insurance",
+  "result-left-job-voluntarily.p1": "If you left your job due to unsafe working conditions, you may be eligible for Employment Insurance (EI).",
+  "result-left-job-voluntarily.p2": "To apply, go to <a href='https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/apply.html'>https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/apply.html</a>"
 }

@@ -1,0 +1,23 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+    <h1>{{ __('result-ccb-and-gst.title') }}</h1>
+
+    <div class="mt-12">
+        <p class="my-12">
+            {{ __('result-ccb-and-gst.p1')  }}
+        </p>
+        <p class="my-12">
+            {{ __('result-ccb-and-gst.p2') | safe }}
+        </p>
+        <p class="my-12">
+            {{ __('result-ccb-and-gst.p3')  | safe }}
+        </p>
+        <p class="my-12">
+            {{ __('result-ccb-and-gst.p4')  }}
+        </p>
+    </div>
+
+
+{% endblock %}
