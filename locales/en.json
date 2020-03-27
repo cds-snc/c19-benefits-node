@@ -51,5 +51,12 @@
   "caught this error": "caught this error",
   "Cannot read property 'match' of undefined": "Cannot read property 'match' of undefined",
   "Government of Canada": "Government of Canada",
-  "required": "required"
+  "required": "required",
+  "question.eligible_for_ei.desc": "<p>You are eligible for EI Regular or Sickness Benefits if you:</p><ul><li>Paid into EI</li><li>If you work for an employer, check for your T4 or pay stubs for EI deductions</li><li>If you’re self-employed, you would have arranged with Canadian Revenue Agency to contribute to EI, usually for EI sickness or parental leave</li><li>Worked the minimum number of “insurable hours” in the last 52 weeks.</li></ul>",
+  "eligible_for_ei.yes": "Yes, you’re eligible",
+  "eligible_for_ei.no": "No, you’re not eligible for EI.",
+  "question.eligible_for_ei": "Are you eligible for EI?",
+  "question-leave-voluntarily.title": "question-leave-voluntarily.title",
+  "question-leave-voluntarily.intro": "question-leave-voluntarily.intro",
+  "form.firstname.desc": "form.firstname.desc"
 }
