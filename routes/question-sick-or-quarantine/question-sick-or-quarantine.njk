@@ -3,7 +3,7 @@
 {% block content %}
 
     <div>
-        {{ headerLinkQuestion() }}
+        {% include "../../views/_includes/header-link-question.njk" %}
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             {{ radioButtons('sick_or_quarantine', { '1':'sick_or_quarantine.yes','2':'sick_or_quarantine.no'}, data.sick_or_quarantine, 'question.sick_or_quarantine', errors) }}

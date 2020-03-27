@@ -3,7 +3,7 @@
 {% block content %}
 
     <div>
-        {{ headerLinkQuestion() }}
+        {% include "../../views/_includes/header-link-question.njk" %}
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
