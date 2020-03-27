@@ -62,5 +62,10 @@
   "result-ccb-and-gst.p3": "<strong>GST credit</strong><br/>If you receive the GST credit, you will also receive a one-time payment in May:<br/> $400 for single people<br/> $600 for couples.",
   "result-ccb-and-gst.p4": "Check your bank account to find out if you’ve been receiving either the Canada Child Benefit or the GST credit. Dates of payments are available. File your 2019 taxes sooner than later if you can to ensure you continue to receive them.",
   "result-keep-receiving-ei.title": "Keep receiving EI",
-  "result-keep-receiving-ei.p1": "Do not stop your Employment Insurance (EI) benefits. You can apply for the new Canadian Economic Response Benefit if your EI runs out before October 3, 2020, and you’re still unemployed. "
+  "result-keep-receiving-ei.p1": "Do not stop your Employment Insurance (EI) benefits. You can apply for the new Canadian Economic Response Benefit if your EI runs out before October 3, 2020, and you’re still unemployed. ",
+  "result-waiting-to-hear-back-from-ei.title": "Wait for EI decision",
+  "result-waiting-to-hear-back-from-ei.p1": "If you’re waiting for a decision on your Employment Insurance (EI) application, do not reapply. If your EI application is denied, you can apply for the new Canadian Economic Response Benefit, once the application becomes available.",
+  "result-left-job-voluntarily.title": "May be eligible for Employment Insurance",
+  "result-left-job-voluntarily.p1": "If you left your job due to unsafe working conditions, you may be eligible for Employment Insurance (EI).",
+  "result-left-job-voluntarily.p2": "To apply, go to <a href='https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/apply.html'>https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/apply.html</a>"
 }
