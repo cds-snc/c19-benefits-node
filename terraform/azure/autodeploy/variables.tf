@@ -13,3 +13,4 @@ variable "location" {
 variable "webhook_uri" {
   description = "(Required) Specify the Webhook URI"
 }
+
