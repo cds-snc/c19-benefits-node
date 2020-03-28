@@ -1,0 +1,152 @@
+{
+  "passages": [
+    {
+      "text": "Did you stop working due to COVID-19?\n\n[[Yes->question-why-stop-working]]\n[[No->question-your-situation]]",
+      "links": [
+        {
+          "name": "Yes",
+          "link": "question-why-stop-working",
+          "pid": "2"
+        },
+        {
+          "name": "No",
+          "link": "question-your-situation",
+          "pid": "3"
+        }
+      ],
+      "name": "question-lost-job-c19",
+      "pid": "1",
+      "position": {
+        "x": "309",
+        "y": "166"
+      }
+    },
+    {
+      "text": "Why did you stop working?\n[[You’ve been laid off due to COVID-19.->question-applied-to-EI]]\n[[Your employer has closed.->question-applied-to-EI]]\n[[You’re self-employed and had to close.->question-applied-to-EI]]\n[[You’re on unpaid leave from your work.->question-applied-to-EI]]\n[[You quit or were let go due to unsafe working conditions related to COVID-19.->result-ei-regular]]\n[[None of the above.->question-your-situation]]",
+      "links": [
+        {
+          "name": "You’ve been laid off due to COVID-19.",
+          "link": "question-applied-to-EI",
+          "pid": "4"
+        },
+        {
+          "name": "Your employer has closed.",
+          "link": "question-applied-to-EI",
+          "pid": "4"
+        },
+        {
+          "name": "You’re self-employed and had to close.",
+          "link": "question-applied-to-EI",
+          "pid": "4"
+        },
+        {
+          "name": "You’re on unpaid leave from your work.",
+          "link": "question-applied-to-EI",
+          "pid": "4"
+        },
+        {
+          "name": "You quit or were let go due to unsafe working conditions related to COVID-19.",
+          "link": "result-ei-regular",
+          "pid": "5"
+        },
+        {
+          "name": "None of the above.",
+          "link": "question-your-situation",
+          "pid": "3"
+        }
+      ],
+      "name": "question-why-stop-working",
+      "pid": "2",
+      "position": {
+        "x": "737",
+        "y": "259"
+      }
+    },
+    {
+      "text": "Your situation\n\n[[You were on parental leave recently, but you cannot return to work.->result-cerb]]\n[[question-applied-to-EI<-You were supposed to start a new job, but couldn’t due to COVID-19.]]\n[[You’re working fewer hours than you were before COVID-19.->result-ccb-and-gst]]\n[[You’re working from home.->result-ccb-and-gst]]\n[[You’re on paid leave from work.->result-ccb-and-gst]]\n[[You have not done any paid work in the last 12 months.->result-ccb-and-gst]]\n[[You’re retired.->result-ccb-and-gst]]\n",
+      "links": [
+        {
+          "name": "You were on parental leave recently, but you cannot return to work.",
+          "link": "result-cerb",
+          "pid": "6"
+        },
+        {
+          "name": "question-applied-to-EI<-You were supposed to start a new job, but couldn’t due to COVID-19.",
+          "link": "question-applied-to-EI<-You were supposed to start a new job, but couldn’t due to COVID-19."
+        },
+        {
+          "name": "You’re working fewer hours than you were before COVID-19.",
+          "link": "result-ccb-and-gst",
+          "pid": "7"
+        },
+        {
+          "name": "You’re working from home.",
+          "link": "result-ccb-and-gst",
+          "pid": "7"
+        },
+        {
+          "name": "You’re on paid leave from work.",
+          "link": "result-ccb-and-gst",
+          "pid": "7"
+        },
+        {
+          "name": "You have not done any paid work in the last 12 months.",
+          "link": "result-ccb-and-gst",
+          "pid": "7"
+        },
+        {
+          "name": "You’re retired.",
+          "link": "result-ccb-and-gst",
+          "pid": "7"
+        }
+      ],
+      "name": "question-your-situation",
+      "pid": "3",
+      "position": {
+        "x": "137",
+        "y": "356"
+      }
+    },
+    {
+      "text": "Double-click this passage to edit it.",
+      "name": "question-applied-to-EI",
+      "pid": "4",
+      "position": {
+        "x": "737",
+        "y": "393"
+      }
+    },
+    {
+      "text": "Double-click this passage to edit it.",
+      "name": "result-ei-regular",
+      "pid": "5",
+      "position": {
+        "x": "988",
+        "y": "231"
+      }
+    },
+    {
+      "text": "Double-click this passage to edit it.",
+      "name": "result-cerb",
+      "pid": "6",
+      "position": {
+        "x": "161",
+        "y": "560"
+      }
+    },
+    {
+      "text": "Double-click this passage to edit it.",
+      "name": "result-ccb-and-gst",
+      "pid": "7",
+      "position": {
+        "x": "286",
+        "y": "564"
+      }
+    }
+  ],
+  "name": "C19 Test Flow",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "74E4972C-41A0-4AA3-8F8E-88F2141CF5F2"
+}
