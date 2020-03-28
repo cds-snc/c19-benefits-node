@@ -8,5 +8,5 @@ module.exports = (app, route) => {
     .get((req, res) => {
       res.render(name, routeUtils.getViewData(req, {}))
     })
-    .post(route.applySchema(Schema), route.doRedirect())
+    .post(route.applySchema(Schema), routeUtils.twineRedirect())
 }
