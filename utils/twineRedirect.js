@@ -2,7 +2,7 @@ const { passages } = require('./../routing.json')
 const { routes: ourRoutes } = require('./../config/routes.config')
 const enText = require('./../locales/en.json')
 
-export const twineRedirect = () => {
+const twineRedirect = () => {
   return (req, res, next) => {
     const currentRoute = ourRoutes.find(route => route.path[req.locale] === req.path)
 
@@ -20,4 +20,8 @@ export const twineRedirect = () => {
     // Redirect
     res.redirect(nextRoute.path[req.locale])
   }
+}
+
+module.exports = {
+  twineRedirect,
 }

@@ -23,10 +23,12 @@ const { getRouteByName } = require('./route.helpers')
 const { addViewPath } = require('./view.helpers')
 const { getViewData } = require('./data.helpers')
 const { getDefaultMiddleware } = require('./route.helpers')
+const { twineRedirect } = require('./twineRedirect')
 
 module.exports.routeUtils = {
   getRouteByName,
   addViewPath,
   getViewData,
   getDefaultMiddleware,
+  twineRedirect,
 }
