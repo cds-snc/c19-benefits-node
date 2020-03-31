@@ -15,7 +15,11 @@
                 data.eligible_for_ei,
                 __('question.eligible_for_ei'),
                 errors,
-                {hint: __('question.eligible_for_ei.desc'), safeHint: true}
+                {
+                    hint: __('question.eligible_for_ei.desc'),
+                    safeHint: true,
+                    required: true
+                }
             )}}
             {{ formButtons() }}
         </form>
