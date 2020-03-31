@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
-const { CleanWebpackPlugin } = require("clean-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const WebpackNotifierPlugin = require('webpack-notifier')
 
 module.exports = {
@@ -14,11 +14,14 @@ module.exports = {
     path: path.resolve(__dirname, 'public/dist'),
   },
   stats: 'errors-only',
+  performance: {
+    maxAssetSize: 100000, // set max asset size to 100 kb
+  },
   plugins: [
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "css/styles.css",
+      filename: 'css/styles.css',
     }),
     new WebpackNotifierPlugin({
       title: 'Node Starter Build',
@@ -30,17 +33,17 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.(js|jsx)$/,
-        include: [path.resolve(__dirname, "src")],
-        loader: "babel-loader",
+        include: [path.resolve(__dirname, 'src')],
+        loader: 'babel-loader',
         options: {
-          plugins: ["syntax-dynamic-import"],
+          plugins: ['syntax-dynamic-import'],
           presets: [
             [
-              "@babel/preset-env",
+              '@babel/preset-env',
               {
                 modules: false,
               },
@@ -50,7 +53,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
@@ -62,7 +65,7 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
         },
       },
-      chunks: "async",
+      chunks: 'async',
       minChunks: 1,
       minSize: 30000,
       name: true,
