@@ -1,12 +1,13 @@
 header {
-  padding: 0 0 0 0;
+  padding: $space-md 0 0 0;
 
   button {
     padding: 0;
   }
 
   @include sm {
-    padding-bottom: $space-lg;
+    padding-top: $space-xl;
+    padding-bottom: $space-xxl;
     text-align: right;
   }
 
