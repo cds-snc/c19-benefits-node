@@ -6,14 +6,21 @@
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
-            {{ radioButtons('why_stop_working', { 
-                '1':'You’ve been laid off due to COVID-19.',
-                '2':'Your employer has closed.',
-                '3':'You’re self-employed and had to close.',
-                '4': 'You’re on unpaid leave from your work.',
-                '5': 'You quit or were let go due to unsafe working conditions.',
-                '6': 'None of the above'
-                }, data.why_stop_working, 'form.why_stop_working', errors, {hint: 'form.why_stop_working.desc'}, { required: true }) }}
+            {{ radioButtons('why_stop_working', 
+                [ 
+                    {value: '1', text : __('You’ve been laid off due to COVID-19.')},
+                    {value: '2', text : __('Your employer has closed.')},
+                    {value: '3', text : __('You’re self-employed and had to close.')},
+                    {value: '4', text : __('You’re on unpaid leave from your work.')},
+                    {value: '5', text : __('You quit or were let go due to unsafe working conditions.')},
+                    {value: '6', text : __('None of the above')}
+                ], 
+                data.why_stop_working,
+                __('form.why_stop_working'),
+                errors,
+                { hint: __('form.why_stop_working.desc')}, 
+                { required: true }) 
+            }}
             
             {{ formButtons() }}
         </form>

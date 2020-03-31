@@ -5,11 +5,17 @@
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
-            {{ radioButtons('applied_to_EI', { 
-                '1':'You’re already receiving EI benefits.',
-                '2':'You’ve applied for EI benefits, but haven’t heard back.',
-                '3':'No.'
-                }, data.applied_to_EI, 'form.applied_to_EI', errors, { required: true }) }}
+            {{ radioButtons('applied_to_EI', 
+            [ 
+                { value: '1', text:__('You’re already receiving EI benefits.')},
+                { value: '2', text:__('You’ve applied for EI benefits, but haven’t heard back.')},
+                { value: '3', text:__('No.')}
+            ], 
+            data.applied_to_EI, 
+            __('form.applied_to_EI'), 
+            errors, 
+            { required: true }) 
+        }}
 
             {{ formButtons() }}
         </form>

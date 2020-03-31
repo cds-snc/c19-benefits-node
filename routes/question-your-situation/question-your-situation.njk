@@ -6,15 +6,22 @@
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
-            {{ radioButtons('your_situation', { 
-                '1':'You were on parental leave recently, but you cannot return to work.',
-                '2':'You were supposed to start a new job, but couldn’t due to COVID-19.',
-                '3':'You’re working fewer hours than you were before COVID-19.',
-                '4':'You’re working from home.',
-                '5':'You’re on paid leave from work.',
-                '6':'You have not done any paid work in the last 12 months.',
-                '7':'You’re retired.'
-                }, data.your_situation, 'form.your_situation', errors, {hint: 'form.your_situation.desc'}, { required: true }) }}
+            {{ radioButtons('your_situation', 
+                [ 
+                    { value: '1', text:__('You were on parental leave recently, but you cannot return to work.')},
+                    { value: '2', text:__('You were supposed to start a new job, but couldn’t due to COVID-19.')},
+                    { value: '3', text:__('You’re working fewer hours than you were before COVID-19.')},
+                    { value: '4', text:__('You’re working from home.')},
+                    { value: '5', text:__('You’re on paid leave from work.')},
+                    { value: '6', text:__('You have not done any paid work in the last 12 months.')},
+                    { value: '7', text:__('You’re retired.')}
+                ],
+                data.your_situation,
+                __('form.your_situation'),
+                errors,
+                {hint: __('form.your_situation.desc')},
+                { required: true }) 
+            }}
 
             {{ formButtons() }}
         </form>

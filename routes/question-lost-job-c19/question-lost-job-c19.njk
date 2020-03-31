@@ -6,7 +6,16 @@
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
-            {{ radioButtons('lost_job_c19', { '1':'Yes','2':'No'}, data.lost_job_c19, 'form.lost_job_c19', errors, { required: true }) }}
+            {{ radioButtons('lost_job_c19', 
+                [ 
+                    { value: '1', text: __('Yes') },
+                    { value: '2', text: __('No') }
+                ], 
+                data.lost_job_c19, 
+                __('form.lost_job_c19'), 
+                errors, 
+                { required: true }) 
+            }}
             {{ formButtons() }}
         </form>
     </div>
