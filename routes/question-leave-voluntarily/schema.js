@@ -4,7 +4,7 @@ const Schema = {
   leave_voluntarily : {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
-      options: [['leave_voluntarily.yes', 'leave_voluntarily.no']],
+      options: [['1', '2']],
     },
   },
 }
