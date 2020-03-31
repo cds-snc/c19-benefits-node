@@ -6,11 +6,17 @@
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
-            {{ radioButtons('applied_to_EI', { 
-                '1':'applied_to_EI.1',
-                '2':'applied_to_EI.2',
-                '3':'applied_to_EI.3'
-                }, data.applied_to_EI, 'form.applied_to_EI', errors) }}
+            {{ radioButtons('applied_to_EI', 
+            [ 
+                { value: '1', text:__('applied_to_EI.1')},
+                { value: '2', text:__('applied_to_EI.2')},
+                { value: '3', text:__('applied_to_EI.3')}
+            ], 
+            data.applied_to_EI, 
+            __('form.applied_to_EI'), 
+            errors, 
+            { required: true }) 
+        }}
 
             {{ formButtons() }}
         </form>

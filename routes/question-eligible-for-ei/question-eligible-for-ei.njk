@@ -6,7 +6,21 @@
         {% include "../../views/_includes/header-link-question.njk" %}
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            {{ radioButtons('eligible_for_ei', { '1':'eligible_for_ei.yes','2':'eligible_for_ei.no'}, data.eligible_for_ei, 'question.eligible_for_ei', errors, {hint: 'question.eligible_for_ei.desc'}) }}
+            {{ radioButtons(
+                'eligible_for_ei',
+                [ 
+                    { value: '1', text: __('eligible_for_ei.yes')},
+                    { value: '2', text: __('eligible_for_ei.no')}
+                ],
+                data.eligible_for_ei,
+                __('question.eligible_for_ei'),
+                errors,
+                {
+                    hint: __('question.eligible_for_ei.desc'),
+                    safeHint: true,
+                    required: true
+                }
+            )}}
             {{ formButtons() }}
         </form>
     </div>

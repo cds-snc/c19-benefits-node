@@ -7,15 +7,22 @@
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
-            {{ radioButtons('your_situation', { 
-                '1':'your_situation.1',
-                '2':'your_situation.2',
-                '3':'your_situation.3',
-                '4':'your_situation.4',
-                '5':'your_situation.5',
-                '6':'your_situation.6',
-                '7':'your_situation.7'
-                }, data.your_situation, 'form.your_situation', errors, {hint: 'form.your_situation.desc'}) }}
+            {{ radioButtons('your_situation', 
+                [ 
+                    { value: '1', text:__('your_situation.1')},
+                    { value: '2', text:__('your_situation.2')},
+                    { value: '3', text:__('your_situation.3')},
+                    { value: '4', text:__('your_situation.4')},
+                    { value: '5', text:__('your_situation.5')},
+                    { value: '6', text:__('your_situation.6')},
+                    { value: '7', text:__('your_situation.7')}
+                ],
+                data.your_situation,
+                __('form.your_situation'),
+                errors,
+                {hint: __('form.your_situation.desc')},
+                { required: true }) 
+            }}
 
             {{ formButtons() }}
         </form>
