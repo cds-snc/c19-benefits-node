@@ -3,18 +3,19 @@
 {% block content %}
 
     <div>
+        {% include "../../views/_includes/header-link-question.njk" %}
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
             {{ radioButtons('your_situation', 
                 [ 
-                    { value: '1', text:__('You were on parental leave recently, but you cannot return to work.')},
-                    { value: '2', text:__('You were supposed to start a new job, but couldn’t due to COVID-19.')},
-                    { value: '3', text:__('You’re working fewer hours than you were before COVID-19.')},
-                    { value: '4', text:__('You’re working from home.')},
-                    { value: '5', text:__('You’re on paid leave from work.')},
-                    { value: '6', text:__('You have not done any paid work in the last 12 months.')},
-                    { value: '7', text:__('You’re retired.')}
+                    { value: '1', text:__('your_situation.1')},
+                    { value: '2', text:__('your_situation.2')},
+                    { value: '3', text:__('your_situation.3')},
+                    { value: '4', text:__('your_situation.4')},
+                    { value: '5', text:__('your_situation.5')},
+                    { value: '6', text:__('your_situation.6')},
+                    { value: '7', text:__('your_situation.7')}
                 ],
                 data.your_situation,
                 __('form.your_situation'),

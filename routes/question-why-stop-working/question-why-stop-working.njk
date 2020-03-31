@@ -3,17 +3,18 @@
 {% block content %}
 
     <div>
+        {% include "../../views/_includes/header-link-question.njk" %}
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
             {{ radioButtons('why_stop_working', 
                 [ 
-                    {value: '1', text : __('You’ve been laid off due to COVID-19.')},
-                    {value: '2', text : __('Your employer has closed.')},
-                    {value: '3', text : __('You’re self-employed and had to close.')},
-                    {value: '4', text : __('You’re on unpaid leave from your work.')},
-                    {value: '5', text : __('You quit or were let go due to unsafe working conditions.')},
-                    {value: '6', text : __('None of the above')}
+                    {value: '1', text : __('why_stop_working.1')},
+                    {value: '2', text : __('why_stop_working.2')},
+                    {value: '3', text : __('why_stop_working.3')},
+                    {value: '4', text : __('why_stop_working.4')},
+                    {value: '5', text : __('why_stop_working.5')},
+                    {value: '6', text : __('why_stop_working.6')}
                 ], 
                 data.why_stop_working,
                 __('form.why_stop_working'),

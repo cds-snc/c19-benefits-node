@@ -13,6 +13,8 @@ test('Returns 404', async () => {
 })
 
 test('Returns 500', async () => {
+  // overwrite console.error for this test for cleaner command line output
+  console.error = () => {}
   const response = await request(app).get('/test-500')
   expect(response.statusCode).toBe(500)
 })

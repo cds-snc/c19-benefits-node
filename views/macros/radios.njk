@@ -34,7 +34,7 @@
                                 checked="checked"
                             {% endif %}
                             {% if errors and errors[id] %}
-                                aria-describedby="{{ id + '-error' }}"
+                                aria-describedby="{{ key + '-error' }}"
                                 aria-invalid="true"
                             {% endif %}
                             {% if attributes.disabled %}
