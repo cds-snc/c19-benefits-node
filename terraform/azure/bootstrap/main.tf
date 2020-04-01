@@ -7,7 +7,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "resource_group" {
-  name     = "${var.name}-remote-state-RG"
+  name     = "${local.nameprefix}-remote-state-RG"
   location = var.location
 }
 
