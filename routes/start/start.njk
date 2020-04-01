@@ -4,9 +4,13 @@
 {% block content %}
     <h1>{{ __('start.title') }}</h1>
 
-    <div><p>{{ __('start.intro') | safe }}</p></div>
-
     <h2 class="text-2xl mb-5">{{ __('start.subtitle') }}</h2>
+
+    <div>
+    <p>{{ __('start.intro.1') }}</p>
+    <p>{{ __('start.intro.2') | safe }}</p>
+    </div>
+
     <div class="start-button">
         <a class="font-semibold button-link py-6 px-5 border shadow" href="{{ routePath(route.next) }}" role="button" draggable="false">
             {{ __('start.submit') }}
