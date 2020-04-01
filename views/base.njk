@@ -13,8 +13,9 @@
         <!-- Required meta tags-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="[ALPHA] Node Starter App">
+        <meta name="description" content="[{{ __('app.phase') }}] {{ __('app.title') }}">
         <meta name="csrf-token" content="{{ csrfToken }}">
+        {% if GITHUB_SHA %}<meta name="keywords" content="{{ GITHUB_SHA }}">{% endif %}
         <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" sizes="32x32">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
         <link href="https://fonts.googleapis.com/css?family=Lato:700|Noto+Sans:400,700&amp;display=fallback" rel="stylesheet">

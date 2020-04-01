@@ -6,6 +6,8 @@ const express = require('express')
 const cookieParser = require('cookie-parser')
 const compression = require('compression')
 const helmet = require('helmet')
+const morgan = require('morgan')
+const morganConfig = require('./config/morgan.config')
 const path = require('path')
 const cookieSession = require('cookie-session')
 const cookieSessionConfig = require('./config/cookieSession.config')
@@ -49,6 +51,9 @@ app.use(cookieSession(cookieSessionConfig))
 
 // public assets go here (css, js, etc)
 app.use(express.static(path.join(__dirname, 'public')))
+
+// add a request logger
+process.env.NODE_ENV !== 'test' && app.use(morgan(morganConfig))
 
 // dnsPrefetchControl controls browser DNS prefetching
 // frameguard to prevent clickjacking
