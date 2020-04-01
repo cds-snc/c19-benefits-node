@@ -1,5 +1,5 @@
 form {
-  margin-top: $space-xl;
+  margin-top: $space-md;
   max-width: 300px;
   width: 100%;
 
@@ -18,7 +18,6 @@ form {
       display: inline-block;
       margin-bottom: 0;
     }
-
 
     .w-3-4 {
       width: 75%;
@@ -70,7 +69,7 @@ form {
     margin-bottom: $space-xl;
   }
 
-  div *:last-child {
+  div *:last-child:not(h1) {
     margin-bottom: 0;
   }
 
@@ -224,6 +223,10 @@ form {
 
     * {
       margin: 0;
+    }
+
+    h1 {
+      margin-bottom: $space-xs;
     }
   }
 

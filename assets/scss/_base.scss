@@ -51,12 +51,8 @@ ul {
   }
 }
 
-a {
+a, a:visited {
   color: $color-blue-dark;
-
-  &:visited {
-    color: $color-purple;
-  }
 }
 
 h1,
@@ -86,7 +82,7 @@ main {
   padding-bottom: calc(#{$height-footer} + #{$space-xxl});
 
   h1 {
-    border-bottom: 1px solid $color-red;
+    margin: $space-md 0;
   }
 
   > div {
@@ -140,4 +136,8 @@ li:not(:last-of-type) {
   border: 1px solid #721c24;
   font-size:0.8em;
   padding:10px;
+}
+
+.service-name {
+  color: $color-grey-medium;
 }

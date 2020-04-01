@@ -6,7 +6,7 @@ header {
   }
 
   @include sm {
-    padding-bottom: $space-lg;
+    margin-bottom: calc(#{$space-xl} + #{$space-xl});
     text-align: right;
   }
 
