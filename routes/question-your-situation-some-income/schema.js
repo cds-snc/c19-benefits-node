@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 
 const Schema = {
-  lost_job: {
+  some_income: {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
       options: [['1', '2', '3']],
