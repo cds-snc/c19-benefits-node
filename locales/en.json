@@ -41,5 +41,9 @@
   "student_debt.1": "Yes",
   "student_debt.2": "No",
   "form.student_debt": "Do you have student debt?",
-  "Next": "Next"
+  "Next": "Next",
+  "rrif.1": "Yes",
+  "rrif.2": "No",
+  "form.rrif": "Do you have a Registered Retirement Income Fund (RRIF)?",
+  "Error:": "Error:"
 }
