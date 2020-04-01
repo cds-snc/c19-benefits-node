@@ -2,13 +2,14 @@
 
 {% block content %}
 
-    <h1>{{ __('results.title') }}</h1>
+    <h1>You have {{ benefits.length }} benefits available for you</h1>
 
     <p>Elligible for: {{ benefits }}</p>
 
     <div>
         {% for benefit in benefits %}
             {% include "benefits/" + benefit + ".njk" %}
+            <hr class="my-4">
         {% endfor %}
     </div>
 
