@@ -8,8 +8,8 @@
   padding: 9px 12px;
   border-radius: 0;
   color: $color-white;
-  background-color: $color-blue-light;
-  border: 2px solid transparent;
+  background-color: $color-green;
+  border: 1px solid $color-green-dark;
   box-shadow: 0 2px 0 black;
   text-align: center;
   vertical-align: top;
@@ -34,7 +34,7 @@
 
   &:hover,
   &:focus {
-    background-color: $color-blue-dark;
+    background-color: darken($color-green, 10);
   }
 
   &:active {
@@ -53,6 +53,22 @@ form button {
   width: 100%;
 }
 
+.next-button {
+  width: 100%;
+  max-width: 250px;
+}
+
+.start-button {
+  width: 100%;
+  max-width: 433px;
+  margin-left: auto;
+  margin-right: auto;
+
+  a.button-link {
+    width: 100%;
+  }
+}
+
 a.button-link {
   @extend %button-styles;
 
@@ -62,7 +78,7 @@ a.button-link {
   }
 
   &.transparent {
-    color: $color-blue-dark;
+    color: $color-green-dark;
     background-color: transparent;
     border-color: transparent;
     text-decoration: underline;
