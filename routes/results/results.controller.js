@@ -6,9 +6,15 @@ module.exports = (app, route) => {
 
   route.draw(app)
     .get((req, res) => {
-      // do something to calculate which benefits to display
-      const benefits = ['ccb_payment', 'ei_sickness'];
-      
+      /**
+       * Do something to calculate what benefits user
+       * is eligible for, then pass array into view.
+       *
+       * Possible benefits:
+       * ccb_payment, cerb, ei_regular, ei_sickness, gst_credit, mortgage_deferral
+       */
+      const benefits = ['ccb_payment', 'ei_sickness', 'gst_credit'];
+
       res.render(name, routeUtils.getViewData(req, {
         benefits: benefits,
       }))
