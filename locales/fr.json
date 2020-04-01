@@ -25,5 +25,9 @@
   "required": "required",
   "start.subtitle": "Find out what financial help is available for you by answering a few questions",
   "feedback": "Feedback",
-  "start_over": "Start over"
+  "start_over": "Start over",
+  "rrif.1": "rrif.1",
+  "rrif.2": "rrif.2",
+  "form.rrif": "form.rrif",
+  "Next": "Next"
 }
