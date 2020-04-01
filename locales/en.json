@@ -31,7 +31,7 @@
   "lost_job.2": "Some of your income",
   "lost_job.3": "No, your income is the same",
   "form.lost_job": "Have you lost income due to COVID-19?",
-  "form.your_situation.no_income": "Your situation (no income)",
+  "form.your_situation.no_income": "Choose the description that best fits your situation",
   "your_situation.no_income.1": "You lost your job or your employer closed",
   "your_situation.no_income.2": "You’re self-employed and had to close",
   "your_situation.no_income.3": "You’re on unpaid leave to care for a child or sick person",
@@ -41,10 +41,10 @@
   "your_situation.some_income.1": "Your hours have been reduced due to COVID-19",
   "your_situation.some_income.2": "You’re retired",
   "your_situation.some_income.3": "You’ve lost one of your jobs but you still have a side gig",
-  "form.your_situation.some_income": "Your situation (some income)",
+  "form.your_situation.some_income": "Choose the description that best fits your situation",
   "Error:": "Error:",
   "your_situation.unchanged_income.1": "You’re working from home",
   "your_situation.unchanged_income.2": "You’re on paid leave",
   "your_situation.unchanged_income.3": "You’re retired",
-  "form.your_situation.unchanged_income": "Your situation (unchanged income)"
+  "form.your_situation.unchanged_income": "Choose the description that best fits your situation"
 }
