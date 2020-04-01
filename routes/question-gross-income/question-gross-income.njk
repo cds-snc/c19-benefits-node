@@ -6,18 +6,18 @@
 
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            
+
             {{ radioButtons(
-                'gross_income', 
-                [ 
+                'gross_income',
+                [
                     { value: '1', text:__('gross_income.1')},
                     { value: '2', text:__('gross_income.2')},
                     { value: '3', text:__('gross_income.3')}
-                ], 
-                data.ccb, 
-                __('form.gross_income'), 
-                errors, 
-                { 
+                ],
+                data.gross_income,
+                __('form.gross_income'),
+                errors,
+                {
                     required: true,
                     safeQuestion: true
                 }
