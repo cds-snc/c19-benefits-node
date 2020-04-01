@@ -1,0 +1,27 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+    <div>
+
+        <form method="post">
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            
+            {{ radioButtons(
+                'days_stopped_working', 
+                [ 
+                    { value: '1', text:__('days_stopped_working.1')},
+                    { value: '2', text:__('days_stopped_working.2')}
+                ], 
+                data.days_stopped_working, 
+                __('form.days_stopped_working'), 
+                errors, 
+                { 
+                    required: true
+                }
+            )}}
+            {{ formButtons() }}
+        </form>
+    </div>
+
+{% endblock %}
