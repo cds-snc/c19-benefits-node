@@ -1,6 +1,7 @@
 // 1) add your route(s) here ⬇️
 const routes = [
   { name: 'start', path: { en: '/start', fr: '/debut' } },
+  { name: 'results', path: { en: '/results', fr: '/resultats' } },
 ]
 
 const locales = ['en', 'fr']

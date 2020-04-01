@@ -1,0 +1,12 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+    <h1>{{ __('results.title') }}</h1>
+
+    <div>
+        {% include "benefits/cerb.njk" %}
+        {% include "benefits/ei_regular.njk" %}
+    </div>
+
+{% endblock %}
