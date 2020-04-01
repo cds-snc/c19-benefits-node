@@ -6,7 +6,12 @@ module.exports = (app, route) => {
 
   route.draw(app)
     .get((req, res) => {
-      res.render(name, routeUtils.getViewData(req, {}))
+      // do something to calculate which benefits to display
+      const benefits = ['ccb_payment', 'ei_sickness'];
+      
+      res.render(name, routeUtils.getViewData(req, {
+        benefits: benefits,
+      }))
     })
     .post(route.applySchema(Schema), route.doRedirect())
 }

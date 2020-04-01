@@ -4,9 +4,12 @@
 
     <h1>{{ __('results.title') }}</h1>
 
+    <p>Elligible for: {{ benefits }}</p>
+
     <div>
-        {% include "benefits/cerb.njk" %}
-        {% include "benefits/ei_regular.njk" %}
+        {% for benefit in benefits %}
+            {% include "benefits/" + benefit + ".njk" %}
+        {% endfor %}
     </div>
 
 {% endblock %}
