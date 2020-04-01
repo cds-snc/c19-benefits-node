@@ -11,7 +11,8 @@ module.exports = (app, route) => {
        * is eligible for, then pass array into view.
        *
        * Possible benefits:
-       * ccb_payment, cerb, ei_regular, ei_sickness, gst_credit, mortgage_deferral
+       * ccb_payment, cerb, ei_regular, ei_sickness, gst_credit, 
+       * mortgage_deferral, rent_help, rrif, student_loan
        */
       const benefits = ['ccb_payment', 'ei_sickness', 'gst_credit'];
 
