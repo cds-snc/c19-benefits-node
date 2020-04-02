@@ -2,20 +2,21 @@
 
 {% block content %}
 
+    {% include "../../views/_includes/header-link-question.njk" %}
     <div>
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            
-            {{ radioButtons('lost_job', 
-                [ 
+
+            {{ radioButtons('lost_job',
+                [
                     { value: '1', text:__('lost_job.1')},
                     { value: '2', text:__('lost_job.2')},
                     { value: '3', text:__('lost_job.3')}
-                ], 
-                data.lost_job, 
-                __('form.lost_job'), 
-                errors, 
-                { required: true }) 
+                ],
+                data.lost_job,
+                __('form.lost_job'),
+                errors,
+                { required: true })
             }}
             {{ formButtons() }}
         </form>
