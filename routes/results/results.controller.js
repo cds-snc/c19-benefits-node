@@ -17,6 +17,7 @@ module.exports = (app, route) => {
     .post(route.applySchema(Schema), route.doRedirect())
 }
 
+/* istanbul ignore next */
 const getBenefits = (data) => {
   var results = [];
 
