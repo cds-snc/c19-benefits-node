@@ -2,17 +2,21 @@
 
 {% block content %}
 
-    <h1>{{ __('question-lost-job.title') }}</h1>
-
     <div>
-        <p>
-            {{ __('question-lost-job.intro') }}
-        </p>
-
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
-            {{ textInput('form.firstname', 'form.firstname.desc') }}
+            {{ radioButtons('lost_job', 
+                [ 
+                    { value: '1', text:__('lost_job.1')},
+                    { value: '2', text:__('lost_job.2')},
+                    { value: '3', text:__('lost_job.3')}
+                ], 
+                data.lost_job, 
+                __('form.lost_job'), 
+                errors, 
+                { required: true }) 
+            }}
             {{ formButtons() }}
         </form>
     </div>

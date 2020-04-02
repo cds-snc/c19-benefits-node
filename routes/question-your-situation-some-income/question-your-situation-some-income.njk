@@ -1,0 +1,24 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+    <div>
+        <form method="post">
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            
+            {{ radioButtons('some_income', 
+                [ 
+                    { value: '1', text:__('your_situation.some_income.1')},
+                    { value: '2', text:__('your_situation.some_income.2')},
+                    { value: '3', text:__('your_situation.some_income.3')}
+                ], 
+                data.your_situation.some_income, 
+                __('form.your_situation.some_income'), 
+                errors, 
+                { required: true }) 
+            }}
+            {{ formButtons() }}
+        </form>
+    </div>
+
+{% endblock %}
