@@ -35,7 +35,7 @@ const getBenefits = (data) => {
     }
 
     if (data.no_income ==='6') {
-      // ?
+      results.push('ei_regular_cerb')
     }
   }
 
@@ -48,11 +48,11 @@ const getBenefits = (data) => {
     }
 
     if (data.some_income === '2') {
-      // retired = rrif (below)
+      // retired/rrif
     }
 
     if (data.some_income === '3') {
-      // ???
+      // gross_income/days
     }
   }
 
