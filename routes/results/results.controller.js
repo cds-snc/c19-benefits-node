@@ -70,16 +70,16 @@ const getBenefits = (data) => {
     results.push('rent_help');
   }
 
-  if (data.ccb === '1') {
-    results.push('ccb_payment')
+  if (data.student_debt === '1') {
+    results.push('student_loan')
   }
 
   if (data.gst === '1') {
     results.push('gst_credit')
   }
 
-  if (data.student_debt === '1') {
-    results.push('student_loan')
+  if (data.ccb === '1') {
+    results.push('ccb_payment')
   }
 
   if (data.rrif === '1') {
