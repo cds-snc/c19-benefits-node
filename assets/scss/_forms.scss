@@ -1,6 +1,5 @@
 form {
   margin-top: $space-md;
-  max-width: 300px;
   width: 100%;
 
   .d--ib {
@@ -12,7 +11,7 @@ form {
   }
 
   @include sm {
-    max-width: 450px;
+    max-width: 500px;
 
     .d--ib {
       display: inline-block;
