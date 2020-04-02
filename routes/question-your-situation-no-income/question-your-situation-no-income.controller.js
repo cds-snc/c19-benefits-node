@@ -8,11 +8,15 @@ module.exports = (app, route) => {
     .get((req, res) => {
       res.render(name, routeUtils.getViewData(req, {}))
     })
-    .post(route.applySchema(Schema), (req, res) => {
-      if (['1','4','6'].includes(req.body.no_income)) {
-        return res.redirect(res.locals.routePath('question-gross-income'))
-      }
+    .post(route.applySchema(Schema), postNoIncome)
+}
 
-      return res.redirect(res.locals.routePath('question-mortgage-payments'))
-    })
+const postNoIncome = (req, res) => {
+
+  if (['1','4','6'].includes(req.body.no_income)) {
+    return res.redirect(res.locals.routePath('question-gross-income'))
+  }
+
+  return res.redirect(res.locals.routePath('question-mortgage-payments'))
+  
 }
