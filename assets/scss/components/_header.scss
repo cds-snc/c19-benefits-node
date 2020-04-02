@@ -11,18 +11,15 @@ header {
   }
 
   .fip-container {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     display: flex;
-
-    @include sm {
-      justify-content: space-between;
-      flex-direction: row;
-    }
   }
 
   .language-link {
     text-align: left;
     margin-bottom: $space-sm;
+    font-size: .85em;
 
     h2 {
       @include visuallyHidden();
@@ -48,8 +45,13 @@ header {
       }
     }
 
+    @include xs {
+      font-size: .9em;
+    }
+
     @include sm {
       margin-bottom: 0;
+      font-size: 1em;
     }
   }
 
@@ -58,6 +60,7 @@ header {
     max-height: 40px;
     width: 272px;
     margin-bottom: $space-sm;
+    margin-right: $space-sm;
 
     @include sm {
       width: 360px;
