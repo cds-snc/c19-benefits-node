@@ -88,12 +88,14 @@ main {
   > div {
     margin-bottom: $space-lg;
 
-    @include md {
-      width: 90%;
-    }
+    &:not(.w-full) {
+      @include md {
+        width: 90%;
+      }
 
-    @include xl {
-      width: 80%;
+      @include xl {
+        width: 80%;
+      }
     }
   }
 }
@@ -144,8 +146,4 @@ li:not(:last-of-type) {
   border: 1px solid #721c24;
   font-size:0.8em;
   padding:10px;
-}
-
-.service-name {
-  color: $color-grey-medium;
 }

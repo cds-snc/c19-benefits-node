@@ -2,22 +2,21 @@
 
 {% block content %}
 
-
+    {% include "../../views/_includes/header-link-question.njk" %}
     <div>
-
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            
-            {{ radioButtons('mortgage_payments', 
-                [ 
+
+            {{ radioButtons('mortgage_payments',
+                [
                     { value: '1', text:__('mortgage_payments.1')},
                     { value: '2', text:__('mortgage_payments.2')},
                     { value: '3', text:__('mortgage_payments.3')}
-                ], 
-                data.mortgage_payments, 
-                __('form.mortgage_payments'), 
-                errors, 
-                { required: true }) 
+                ],
+                data.mortgage_payments,
+                __('form.mortgage_payments'),
+                errors,
+                { required: true })
             }}
             {{ formButtons() }}
         </form>
