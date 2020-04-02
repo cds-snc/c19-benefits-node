@@ -13,7 +13,7 @@ module.exports = (app, route) => {
 
 const postSomeIncome = (req, res) => {
 
-  if (req.body.lost_job === '3') {
+  if (req.body.some_income === '3') {
     return res.redirect(res.locals.routePath('question-gross-income'))
   }
 

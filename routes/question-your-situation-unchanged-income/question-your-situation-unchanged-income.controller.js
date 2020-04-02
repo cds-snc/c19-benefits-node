@@ -12,15 +12,10 @@ module.exports = (app, route) => {
 }
 
 const postUnchangedIncome = (req, res) => {
-
-  if (['1','2'].includes(req.body.no_income)) {
+  if (['1','2'].includes(req.body.unchanged_income)) {
     return res.redirect(res.locals.routePath('question-ccb'))
   }
 
-  if (req.body.lost_job === '3') {
-    return res.redirect(res.locals.routePath('question-rrif'))
-  }
-
-  return res.redirect(res.locals.routePath('question-mortgage-payments'))
+  return res.redirect(res.locals.routePath('question-rrif'))
   
 }

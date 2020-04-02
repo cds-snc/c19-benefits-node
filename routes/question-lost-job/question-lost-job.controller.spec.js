@@ -7,7 +7,7 @@ test('Can send get request lost-job route ', async () => {
   expect(response.statusCode).toBe(200)
 })
 
-test('Can send post request personal route ', async () => {
+test('Can send post request lost-job route ', async () => {
   const route = app.routes.get('question-lost-job')
   const response = await request(app).post(route.path.en)
   expect(response.statusCode).toBe(302)
