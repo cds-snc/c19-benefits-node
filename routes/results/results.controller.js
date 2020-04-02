@@ -73,11 +73,11 @@ const getBenefits = (data) => {
     results.push('student_loan')
   }
 
-  if (data.gst === '1') {
+  if (['1', '3'].includes(data.gst)) {
     results.push('gst_credit')
   }
 
-  if (data.ccb === '1') {
+  if (['1', '3'].includes(data.ccb)) {
     results.push('ccb_payment')
   }
 
