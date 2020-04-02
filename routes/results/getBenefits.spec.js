@@ -2,9 +2,9 @@ const { getBenefits } = require('./getBenefits');
 
 describe('Test the getBenefits calculator', () => {
   test('It checks ei simple path', () => {
-    var expected = ['ei_regular_cerb', 'mortgage_deferral', 'gst_credit', 'ccb_payment', 'student_loan'];
+    const expected = ['ei_regular_cerb', 'mortgage_deferral', 'gst_credit', 'ccb_payment', 'student_loan'];
    
-    var result = getBenefits({
+    const result = getBenefits({
         'lost_job': '1',
         'no_income': '1',
         'mortgage_payments': '1',
@@ -17,9 +17,9 @@ describe('Test the getBenefits calculator', () => {
   })
 
   test('It checks ei simple path wihtout student loan', () => {
-    var expected = ['ei_regular_cerb', 'mortgage_deferral', 'gst_credit', 'ccb_payment'];
+    const expected = ['ei_regular_cerb', 'mortgage_deferral', 'gst_credit', 'ccb_payment'];
    
-    var result = getBenefits({
+    const result = getBenefits({
         'lost_job': '1',
         'no_income': '1',
         'mortgage_payments': '1',
