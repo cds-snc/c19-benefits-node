@@ -7,7 +7,6 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       const data = getSessionData(req)
-      console.log(data);
       const benefits = getBenefits(data);
 
       res.render(name, routeUtils.getViewData(req, {
