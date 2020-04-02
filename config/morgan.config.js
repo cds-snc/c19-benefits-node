@@ -22,7 +22,6 @@ module.exports = (function morganConfig() {
 
 function jsonFormatDev(tokens, req, res) {
   return JSON.stringify({
-    id: tokens['id'](req, res),
     method: tokens['method'](req, res),
     url: tokens['url'](req, res),
     status: tokens['status'](req, res),
