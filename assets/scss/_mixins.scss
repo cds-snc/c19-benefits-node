@@ -27,15 +27,15 @@
     }
 */
 
-/* ≥ 336px */
+/* ≥ 332px */
 @mixin xs {
-  @media screen and (min-width: 21em) {
+  @media screen and (min-width: 23em) {
     @content;
   }
 }
-/* ≥ 568px */
+/* ≥ 526px */
 @mixin sm {
-  @media screen and (min-width: 35.5em) {
+  @media screen and (min-width: 36.5em) {
     @content;
   }
 }
