@@ -35,7 +35,7 @@ const getBenefits = (data) => {
     }
 
     if (data.no_income ==='6') {
-      results.push('ei_regular_cerb')
+      results.push('cerb')
     }
   }
 
