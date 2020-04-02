@@ -8,5 +8,11 @@ module.exports = (app, route) => {
     .get((req, res) => {
       res.render(name, routeUtils.getViewData(req, {}))
     })
-    .post(route.applySchema(Schema), route.doRedirect())
+    .post(route.applySchema(Schema), (req, res) => {
+      if (req.body.gross_income === '3') {
+        return res.redirect(res.locals.routePath('question-days-stopped-working'))
+      }
+
+      return res.redirect(res.locals.routePath('question-mortgage-payments'))
+    })
 }
