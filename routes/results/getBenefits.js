@@ -12,11 +12,7 @@ const getBenefits = (data) => {
       results.push('ei_sickness_cerb')
     }
 
-    if (['2', '3', '5'].includes(data.no_income)) {
-      results.push('cerb')
-    }
-
-    if (data.no_income ==='6') {
+    if (['2', '3', '5', '6'].includes(data.no_income)) {
       results.push('cerb')
     }
   }
