@@ -20,11 +20,11 @@ describe('Test redirects for unchanged-income ', () => {
   const redirects = [
     {
       dest: 'question-ccb',
-      values: ['1','2']
+      values: ['1','2'],
     },
     {
       dest: 'question-rrif',
-      values: ['3']
+      values: ['3'],
     },
   ]
 
