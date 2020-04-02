@@ -16,6 +16,8 @@ const postUnchangedIncome = (req, res) => {
     return res.redirect(res.locals.routePath('question-ccb'))
   }
 
-  return res.redirect(res.locals.routePath('question-rrif'))
+  if(req.body.unchanged_income === '3') {
+    return res.redirect(res.locals.routePath('question-rrif'))
+  }
   
 }
