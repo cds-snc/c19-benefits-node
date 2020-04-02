@@ -2,7 +2,12 @@
     width: 100%;
     position: relative;
     padding: $space-md;
-    padding-left: $space-xxl;
+    padding-top: $space-sm;
+    padding-left: calc(#{$space-xl} + #{$space-xs});
+
+    @include md {
+        padding-left: $space-xxl;
+    }
 
     p {
         &:nth-child(2) {
@@ -22,12 +27,17 @@
         text-align: center;
         font-size: 16px;
         font-weight: 700;
+        font-family: monospace;
         color: $color-white;
         line-height: 1;
         padding-top: 4px;
         position: absolute;
         top: 20px;
-        left: 20px;
+        left: 13px;
+
+        @include md {
+            left: 20px;
+        }
     }
 
     &--blue, &--check {
@@ -47,6 +57,4 @@
             background-position: center;
         }
     }
-
-
 }
