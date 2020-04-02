@@ -3,11 +3,13 @@
 {% block content %}
 
     <h1>You have {{ benefits.length }} benefits available for you</h1>
+    
     <div>
         {% for benefit in benefits %}
             {% include "benefits/" + benefit + ".njk" %}
-            <hr class="my-4">
         {% endfor %}
     </div>
+
+    <p class="bg-red-200 p-4">(debug): {{ benefits }}</p>
 
 {% endblock %}
