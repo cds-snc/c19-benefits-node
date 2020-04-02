@@ -8,7 +8,7 @@ const routes = [
   { name: 'question-ccb', path: { en: '/CCB', fr: '/ARC' } },
   { name: 'question-student-debt', path: { en: '/student-debt', fr: '/dette-des-etudiants' } },
   { name: 'question-rrif', path: { en: '/RRIF', fr: '/FERR' } },
-
+  { name: 'results', path: { en: '/results', fr: '/resultats' } },
 ]
 
 const locales = ['en', 'fr']
