@@ -87,6 +87,14 @@ main {
 
   > div {
     margin-bottom: $space-lg;
+
+    @include md {
+      width: 90%;
+    }
+
+    @include xl {
+      width: 80%;
+    }
   }
 }
 
