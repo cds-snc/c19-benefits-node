@@ -1,2 +1,12 @@
-<h2>Apply for Employment Insurance (EI) Regular Benefits</h2>
-<p>Based on what you’ve told us, Employment Insurance (EI) Regular Benefits may be able to help you. Even if you left your job voluntarily for your health needs during COVID-19, you may still be eligible for EI.</p>
+{{ benefitResult( 
+    __("ei_regular.header"),
+    __("ei_regular.preamble"),
+    {
+        text: __("ei_regular.linktext"),
+        link: "#"
+    },
+    [
+        __("ei_regular.box1")
+    ]
+)}}
+

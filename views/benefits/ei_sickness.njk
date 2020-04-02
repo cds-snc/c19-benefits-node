@@ -1,2 +1,11 @@
-<h2>Apply for Employment Insurance (EI) Sickness Benefits</h2>
-<p>Based on what you’ve told us, Employment Insurance (EI) Sickness Benefits may be able to help you.</p>
+{{ benefitResult( 
+    __("ei_sickness.header"),
+    __("ei_sickness.preamble"),
+    {
+        text: __("ei_sickness.linktext"),
+        link: "#"
+    },
+    [
+        __("ei_sickness.box1")
+    ]
+)}}

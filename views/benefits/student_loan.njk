@@ -1,2 +1,12 @@
-<h2>No student loan payments for six months</h2>
-<p></p>
+{{ benefitResult( 
+    __("student_loan.header"),
+    __("student_loan.preamble"),
+    {
+        text: __("student_loan.linktext"),
+        link: "#"
+    },
+    [
+        __("student_loan.box1"),
+        __("student_loan.box2")
+    ]
+)}}
