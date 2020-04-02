@@ -41,7 +41,6 @@ if (process.env.NODE_ENV !== 'test') {
     }),
   )
 
-
   // append csrfToken to all responses
   app.use(function(req, res, next) {
     res.locals.csrfToken = req.csrfToken()
@@ -82,8 +81,8 @@ app.set('views', [path.join(__dirname, './views')])
 app.use(function(req, res, next) {
   // set a unique user id per session
   if (!req.session.id) req.session.id = uuidv4()
-  // add user id to req.locals so that the logger has access to it
-  req.locals = { id: req.session.id }
+  // add user session req.locals so that the logger has access to it
+  req.locals = { session: req.session }
 
   next()
 })
