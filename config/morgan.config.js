@@ -5,7 +5,11 @@ morgan.token('version', function getSha() {
 })
 
 morgan.token('err', function getErr(req, res) {
-  return res.locals.err
+  return req.locals.err
+})
+
+morgan.token('id', function getId(req, res) {
+  return req.locals.id
 })
 
 module.exports = (function morganConfig() {
@@ -27,6 +31,7 @@ function jsonFormatDev(tokens, req, res) {
 
 function jsonFormatProduction(tokens, req, res) {
   return JSON.stringify({
+    id: tokens['id'](req, res),
     method: tokens['method'](req, res),
     url: tokens['url'](req, res),
     status: tokens['status'](req, res),

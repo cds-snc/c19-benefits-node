@@ -15,6 +15,7 @@ const { hasData } = require('./utils')
 const { addNunjucksFilters } = require('./filters')
 const csp = require('./config/csp.config')
 const csrf = require('csurf')
+const uuidv4 = require('uuid').v4
 
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
@@ -77,6 +78,15 @@ app.locals.hasData = hasData
 // set default views path
 app.locals.basedir = path.join(__dirname, './views')
 app.set('views', [path.join(__dirname, './views')])
+
+app.use(function(req, res, next) {
+  // set a unique user id per session
+  if (!req.session.id) req.session.id = uuidv4()
+  // add user id to req.locals so that the logger has access to it
+  req.locals = { id: req.session.id }
+
+  next()
+})
 
 app.routes = configRoutes(app, routes, locales)
 
