@@ -14,7 +14,7 @@ module.exports = (app, route) => {
        * ccb_payment, cerb, ei_regular, ei_sickness, gst_credit, 
        * mortgage_deferral, rent_help, rrif, student_loan
        */
-      const benefits = ['ccb_payment', 'ei_sickness', 'gst_credit'];
+      const benefits = ['cerb', 'ei_sickness', 'gst_credit'];
 
       res.render(name, routeUtils.getViewData(req, {
         benefits: benefits,

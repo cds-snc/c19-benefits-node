@@ -74,5 +74,11 @@
   "form.gross_income": "How much gross income did you earn in the last 12 months?",
   "days_stopped_working.1": "Fewer than 14 days in a row with no work",
   "days_stopped_working.2": "More than 14 days in a row with no work",
-  "form.days_stopped_working": "How many days in a row did you go without work?"
+  "form.days_stopped_working": "How many days in a row did you go without work?",
+  "cerb.header": "Apply for the Canada Emergency Response Benefit",
+  "cerb.preamble": "<p>The benefit can help if you:</p><ul class='list-inside list-disc'><li>Stopped working for at least 14 consecutive days because of COVID-19.</li> <li>Earned at least $5,000 in the last 12 months.</li></ul><p>Good to know:</p><ul class='list-inside list-disc'><li>Available from March 15 to October 3, 2020.</li><li>You’ll need to pay income tax on these payments in the future. </li><li> The best day of the week for you to apply depends on your birth month.</li> </ul>",
+  "cerb.linktext": "Learn more about the Canada Emergency Response Benefit",
+  "cerb.box1": "$500 per week, paid every 4 weeks",
+  "cerb.box2": "Up to 4 months",
+  "cerb.box3": "Within 10 days of applying"
 }

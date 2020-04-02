@@ -1,0 +1,15 @@
+{% macro benefitResult( header, preamble, button, boxes) %}
+<div class="m-5 p-5 shadow-lg">
+    <h2 class="text-xl font-bold mb-5">{{ header }}</h2>
+
+    {% for box in boxes %}
+        <div class="bg-blue-200 p-5 m-1 text-blue-900 text-center text-lg">
+            <p><strong>{{ box }}</strong></p>
+        </div>
+    {% endfor %}
+    <div class="pb-5 pt-1"> 
+        {{ preamble | safe}}
+    </div>
+    <a href="{{ button.link }}" class="full-width font-semibold button-link py-6 px-5 border shadow"> {{ button.text }}</a>
+</div>
+{% endmacro %}
