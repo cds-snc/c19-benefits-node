@@ -2,21 +2,22 @@
 
 {% block content %}
 
+    {% include "../../views/_includes/header-link-question.njk" %}
     <div>
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            
+
             {{ radioButtons(
-                'ccb', 
-                [ 
+                'ccb',
+                [
                     { value: '1', text:__('ccb.1')},
                     { value: '2', text:__('ccb.2')}
-                ], 
-                data.ccb, 
-                __('form.ccb'), 
-                errors, 
-                { 
-                    required: true, 
+                ],
+                data.ccb,
+                __('form.ccb'),
+                errors,
+                {
+                    required: true,
                     hint: __('ccb.hint'),
                     safeHint: true
                 }

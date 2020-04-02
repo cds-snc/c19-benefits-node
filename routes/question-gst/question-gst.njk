@@ -2,20 +2,20 @@
 
 {% block content %}
 
-
+    {% include "../../views/_includes/header-link-question.njk" %}
     <div>
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            
-            {{ radioButtons('gst', 
-                [ 
+
+            {{ radioButtons('gst',
+                [
                     { value: '1', text:__('gst.1')},
                     { value: '2', text:__('gst.2')}
-                ], 
-                data.gst, 
-                __('form.gst'), 
-                errors, 
-                { 
+                ],
+                data.gst,
+                __('form.gst'),
+                errors,
+                {
                     required: true,
                     hint : __('gst.hint'),
                     safeHint: true
