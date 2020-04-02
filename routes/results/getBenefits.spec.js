@@ -16,7 +16,7 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toEqual(expect.arrayContaining(expected))
   })
 
-  test('It checks ei simple path', () => {
+  test('It checks ei simple path wihtout student loan', () => {
     var expected = ['ei_regular_cerb', 'mortgage_deferral', 'gst_credit', 'ccb_payment'];
    
     var result = getBenefits({
