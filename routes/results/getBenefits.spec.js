@@ -82,4 +82,14 @@ describe('Test the getBenefits calculator', () => {
       expect(result).toEqual(expect.arrayContaining(expected))
     });
   })
+
+  test('It checks the rrif addon', () => {
+    const expected = ['rrif'];
+
+    const result = getBenefits({
+        'rrif': 'yes',
+    });
+
+    expect(result).toEqual(expect.arrayContaining(expected))
+  })
 })

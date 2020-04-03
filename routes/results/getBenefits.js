@@ -68,7 +68,7 @@ const getBenefits = (data) => {
     results.push('ccb_payment')
   }
 
-  if (data.rrif === '1') {
+  if (data.rrif === 'yes') {
     results.push('rrif')
   }
 
