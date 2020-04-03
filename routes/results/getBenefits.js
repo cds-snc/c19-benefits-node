@@ -64,7 +64,7 @@ const getBenefits = (data) => {
     results.push('gst_credit')
   }
 
-  if (['1', '3'].includes(data.ccb)) {
+  if (['yes', 'unsure'].includes(data.ccb)) {
     results.push('ccb_payment')
   }
 

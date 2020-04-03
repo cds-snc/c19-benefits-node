@@ -56,4 +56,17 @@ describe('Test the getBenefits calculator', () => {
 
     expect(result).toEqual(expect.arrayContaining(expected))
   })
+
+  test('It checks the ccb addon', () => {
+    const expected = ['ccb_payment'];
+    const options = ['yes', 'unsure']
+
+    options.forEach(ccb => {
+      const result = getBenefits({
+          'ccb': ccb,
+      });
+
+      expect(result).toEqual(expect.arrayContaining(expected))
+    });
+  })
 })
