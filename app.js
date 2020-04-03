@@ -36,7 +36,10 @@ if (process.env.NODE_ENV !== 'test') {
   // CSRF setup
   app.use(
     csrf({
-      cookie: true,
+      cookie: {
+        sameSite: true,
+        secure: true,
+      },
       signed: true,
     }),
   )
