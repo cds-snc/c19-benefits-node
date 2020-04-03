@@ -22,9 +22,9 @@ const getBenefits = (data) => {
 
     if (data.some_income === '1') {
       if (['2', '3'].includes(data.gross_income)) {
-        if (data.days_stopped_working === '2'){
+        if (data.days_stopped_working === '>14days'){
           results.push('cerb')
-        }else {
+        } else {
           results.push('ei_workshare')
         }
       }
@@ -34,7 +34,7 @@ const getBenefits = (data) => {
       // retired/rrif
     }
     if (data.some_income === '3') {
-      if (data.gross_income === '3' && data.days_stopped_working === '2'){
+      if (data.gross_income === '3' && data.days_stopped_working === '>14days'){
         results.push('cerb');
       }
       if (data.gross_income === '2') {
