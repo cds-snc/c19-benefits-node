@@ -1,80 +1,133 @@
 /* istanbul ignore next */
-const getBenefits = (data) => {
-  var results = [];
+function match(input, pattern, result) {
+  const keys = Object.keys(pattern)
 
-  // 2a
-  if (data.lost_job === 'lost-all-income') {
-    if (data.no_income === 'lost-job-employer-closed') {
-      results.push('ei_regular_cerb')
+  const value = keys.reduce((prev, curr) => {
+    if (typeof pattern[curr] === typeof []) {
+      // If it's an array we only care if one matches.
+      // algorithm is start with false, match current item against input and OR it against the previous item
+      return pattern[curr].reduce((p, c) => p || c === input[curr], false)
     }
 
-    if (data.no_income === 'sick-or-quarantined') {
-      results.push('ei_sickness_cerb')
+    if (pattern[curr] === input[curr]) {
+      return prev && true
     }
 
-    if (['self-employed-closed', 'unpaid-leave-to-care', 'parental-recently-cant-return', 'ei-recently-claim-ended'].includes(data.no_income)) {
-      results.push('cerb')
-    }
+    return false
+  }, true)
+
+  if (value === true) {
+    return result
   }
 
-  // 2b
-  if (data.lost_job === 'lost-some-income') {
+  return undefined
+}
 
-    if (data.some_income === 'hours-reduced') {
-      if (['3k-5k', '5k+'].includes(data.gross_income)) {
-        if (data.days_stopped_working === '>14days'){
-          results.push('cerb')
-        } else {
-          results.push('ei_workshare')
-        }
-      }
-    }
+const getBenefits = data => {
+  var results = []
 
-    if (data.some_income === 'retired') {
-      // retired/rrif
-    }
-    if (data.some_income === 'employed-lost-a-job') {
-      if (data.gross_income === '5k+' && data.days_stopped_working === '>14days'){
-        results.push('cerb');
-      }
-      if (data.gross_income === '3k-5k') {
-        results.push('ei_regular')
-      }
-    }
-  }
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: 'lost-job-employer-closed',
+      },
+      'ei_regular_cerb',
+    ),
+  )
 
-  // 2c
-  if (data.lost_job === 'lost-no-income') {
-    // just the regular flow?
-  }
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: 'sick-or-quarantined',
+      },
+      'ei_sickness_cerb',
+    ),
+  )
 
-  if (data.mortgage_payments === 'yes-mortgage') {
-    results.push('mortgage_deferral')
-  }
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: [
+          'self-employed-closed',
+          'unpaid-leave-to-care',
+          'parental-recently-cant-return',
+          'ei-recently-claim-ended',
+        ],
+      },
+      'cerb',
+    ),
+  )
 
-  if (data.mortgage_payments === 'yes-rent') {
-    results.push('rent_help');
-  }
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'employed-lost-a-job',
+        gross_income: '5k+',
+        days_stopped_working: '>14days',
+      },
+      'cerb',
+    ),
+  )
 
-  if (data.student_debt === 'yes') {
-    results.push('student_loan')
-  }
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'hours-reduced',
+        gross_income: ['3k-5k', '5k+'],
+        days_stopped_working: '>14days',
+      },
+      'cerb',
+    ),
+  )
 
-  if (['yes', 'unsure'].includes(data.gst)) {
-    results.push('gst_credit')
-  }
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'hours-reduced',
+        gross_income: ['3k-5k', '5k+'],
+        days_stopped_working: '<14days',
+      },
+      'ei_workshare',
+    ),
+  )
 
-  if (['yes', 'unsure'].includes(data.ccb)) {
-    results.push('ccb_payment')
-  }
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'employed-lost-a-job',
+        gross_income: '3k-5k',
+      },
+      'ei_regular',
+    ),
+  )
+  results.push(
+    match(data, { mortgage_payments: 'yes-mortgage' }, 'mortgage_deferral'),
+  )
+  results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))
+  results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
+  results.push(match(data, { gst: 'unsure' }, 'gst_credit'))
+  results.push(match(data, { gst: 'yes' }, 'gst_credit'))
+  results.push(match(data, { ccb: 'unsure' }, 'ccb_payment'))
+  results.push(match(data, { ccb: 'yes' }, 'ccb_payment'))
+  results.push(match(data, { rrif: 'yes' }, 'rrif'))
 
-  if (data.rrif === 'yes') {
-    results.push('rrif')
-  }
-
-  return results;
+  return results.filter(v => v !== undefined)
 }
 
 module.exports = {
-    getBenefits,
+  getBenefits,
 }
