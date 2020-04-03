@@ -126,7 +126,7 @@
   "ei_sickness_and_cerb.linktext": "To apply, go to Service Canada’s website.",
   "ei_sickness_and_cerb.box1": "$500 per week, paid every 4 weeks",
   "ei_regular_cerb.header": "Apply for Employment Insurance (EI) Regular Benefits",
-  "ei_regular_and_cerb.preamble": "<p>Based on what you’ve told us, Employment Insurance (EI) Regular Benefits may be able to help you. Even if you left your job voluntarily for your health needs during COVID-19, you may still be eligible for EI.</p><p>The Canada Emergency Response Benefit (CERB) may also help you.</p><p>If you’re eligible for both EI and CERB, you will receive CERB for the first 4 months. Then you’ll automatically start receiving EI Regular Benefits after, if you’re still not working.</p>",
+  "ei_regular_and_cerb.preamble": "<p>Good to know:</p><ul class='list-disc list-inside'><li>Even if you left your job voluntarily for your health needs during COVID-19, you may still be eligible for EI.</li></ul><p>If you’re eligible for both Employment Insurance (EI) and Canada Emergency Response Benefit (CERB), you will receive CERB for the first 4 months. Then you’ll automatically start receiving EI Regular Benefits after, if you’re still not working.</p>",
   "ei_regular_and_cerb.linktext": "To apply, go to Service Canada’s website.",
   "ei_regular_and_cerb.box1": "$500 per week, paid every 4 weeks",
   "results.header_text": "Based on what you’ve told us, the following help is available:"
