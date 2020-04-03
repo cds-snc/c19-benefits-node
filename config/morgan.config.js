@@ -9,7 +9,12 @@ morgan.token('err', function getErr(req, res) {
 })
 
 morgan.token('id', function getId(req, res) {
-  return req.locals.id
+  return req.locals.session.id
+})
+
+morgan.token('data', function getData(req, res) {
+  // add formdata to request logs on every request
+  return req.locals.session.formdata
 })
 
 module.exports = (function morganConfig() {
@@ -42,5 +47,6 @@ function jsonFormatProduction(tokens, req, res) {
     'user-agent': tokens['user-agent'](req, res),
     err: tokens['err'](req, res),
     version: tokens['version'](),
+    data: tokens['data'](req, res),
   })
 }
