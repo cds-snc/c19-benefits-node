@@ -69,4 +69,17 @@ describe('Test the getBenefits calculator', () => {
       expect(result).toEqual(expect.arrayContaining(expected))
     });
   })
+
+  test('It checks the gst addon', () => {
+    const expected = ['gst_credit'];
+    const options = ['yes', 'unsure']
+
+    options.forEach(gst => {
+      const result = getBenefits({
+          'gst': gst,
+      });
+
+      expect(result).toEqual(expect.arrayContaining(expected))
+    });
+  })
 })

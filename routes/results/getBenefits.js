@@ -60,7 +60,7 @@ const getBenefits = (data) => {
     results.push('student_loan')
   }
 
-  if (['1', '3'].includes(data.gst)) {
+  if (['yes', 'unsure'].includes(data.gst)) {
     results.push('gst_credit')
   }
 
