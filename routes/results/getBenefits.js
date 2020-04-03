@@ -4,15 +4,15 @@ const getBenefits = (data) => {
 
   // 2a
   if (data.lost_job === 'lost-all-income') {
-    if (data.no_income === '1') {
+    if (data.no_income === 'lost-job-employer-closed') {
       results.push('ei_regular_cerb')
     }
 
-    if (data.no_income === '4') {
+    if (data.no_income === 'sick-or-quarantined') {
       results.push('ei_sickness_cerb')
     }
 
-    if (['2', '3', '5', '6'].includes(data.no_income)) {
+    if (['self-employed-closed', 'unpaid-leave-to-care', 'parental-recently-cant-return', 'ei-recently-claim-ended'].includes(data.no_income)) {
       results.push('cerb')
     }
   }

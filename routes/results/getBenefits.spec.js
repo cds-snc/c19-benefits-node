@@ -6,7 +6,7 @@ describe('Test the getBenefits calculator', () => {
    
     const result = getBenefits({
         'lost_job': 'lost-all-income',
-        'no_income': '1',
+        'no_income': 'lost-job-employer-closed',
     });
 
     expect(result).toEqual(expect.arrayContaining(expected))
@@ -17,7 +17,7 @@ describe('Test the getBenefits calculator', () => {
    
     const result = getBenefits({
         'lost_job': 'lost-all-income',
-        'no_income': '4',
+        'no_income': 'sick-or-quarantined',
     });
 
     expect(result).toEqual(expect.arrayContaining(expected))
@@ -25,7 +25,7 @@ describe('Test the getBenefits calculator', () => {
 
   test('It checks cerb-only path', () => {
     const expected = ['cerb'];
-    const options = ['2', '3', '5', '6'];
+    const options = ['self-employed-closed', 'unpaid-leave-to-care', 'parental-recently-cant-return', 'ei-recently-claim-ended'];
 
     options.forEach(income => {
       const result = getBenefits({

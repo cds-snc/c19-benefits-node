@@ -20,7 +20,7 @@ describe('Test redirects for no-income ', () => {
   const redirects = [
     {
       dest: 'question-mortgage-payments',
-      values: ['1', '2', '3', '4', '5', '6'],
+      values: ['lost-job-employer-closed', 'self-employed-closed', 'unpaid-leave-to-care', 'sick-or-quarantined', 'parental-recently-cant-return', 'ei-recently-claim-ended'],
     },
   ]
 
