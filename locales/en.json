@@ -73,7 +73,7 @@
   "gross_income.1": "Under $3000",
   "gross_income.2": "$3,000 — $5,000",
   "gross_income.3": "Over $5,000",
-  "form.gross_income": "How much gross income did you earn in the last 12 months?",
+  "form.gross_income": "How much income (before taxes) did you earn in the last 12 months?",
   "days_stopped_working.1": "Fewer than 14 days in a row with no work",
   "days_stopped_working.2": "More than 14 days in a row with no work",
   "form.days_stopped_working": "How many days in a row did you go without work?",
