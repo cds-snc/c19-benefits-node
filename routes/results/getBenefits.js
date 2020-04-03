@@ -56,7 +56,7 @@ const getBenefits = (data) => {
     results.push('rent_help');
   }
 
-  if (data.student_debt === '1') {
+  if (data.student_debt === 'yes') {
     results.push('student_loan')
   }
 

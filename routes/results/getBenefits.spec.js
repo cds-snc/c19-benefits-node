@@ -92,4 +92,14 @@ describe('Test the getBenefits calculator', () => {
 
     expect(result).toEqual(expect.arrayContaining(expected))
   })
+
+  test('It checks the student debt addon', () => {
+    const expected = ['student_loan'];
+
+    const result = getBenefits({
+        'student_debt': 'yes',
+    });
+
+    expect(result).toEqual(expect.arrayContaining(expected))
+  })
 })
