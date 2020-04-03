@@ -1,6 +1,6 @@
-{% macro benefitResult( header, preamble, button, boxes) %}
+{% macro benefitResult(id, header, preamble, button, boxes) %}
 <div class="m-5 p-5 shadow-lg">
-    <h2 class="text-xl font-bold mb-5">{{ header }}</h2>
+    <h2 class="text-xl font-bold mb-5" id="{{ id }}">{{ header }}</h2>
 
     {% for box in boxes %}
         <div class="bg-blue-200 p-5 m-1 text-blue-900 text-center text-lg">

@@ -2,8 +2,17 @@
 
 {% block content %}
 
-    <h1>You have {{ benefits.length }} benefits available for you</h1>
-    
+    <h1>{{ __("results.title") }}</h1>
+    {% if benefits.length > 0 %}
+    <p>
+        {{ __("results.header_text") }}
+    </p>
+    <ul class="list-disc list-inside">
+        {% for benefit in benefits %}
+            <li><a href="#{{benefit}}"> {{ __(benefit + ".header")}}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <div>
         {% for benefit in benefits %}
             {% include "benefits/" + benefit + ".njk" %}
