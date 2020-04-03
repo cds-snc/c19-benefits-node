@@ -20,7 +20,7 @@ const getBenefits = (data) => {
   // 2b
   if (data.lost_job === 'lost-some-income') {
 
-    if (data.some_income === '1') {
+    if (data.some_income === 'hours-reduced') {
       if (['3k-5k', '5k+'].includes(data.gross_income)) {
         if (data.days_stopped_working === '>14days'){
           results.push('cerb')
@@ -30,10 +30,10 @@ const getBenefits = (data) => {
       }
     }
 
-    if (data.some_income === '2') {
+    if (data.some_income === 'retired') {
       // retired/rrif
     }
-    if (data.some_income === '3') {
+    if (data.some_income === 'employed-lost-a-job') {
       if (data.gross_income === '5k+' && data.days_stopped_working === '>14days'){
         results.push('cerb');
       }
