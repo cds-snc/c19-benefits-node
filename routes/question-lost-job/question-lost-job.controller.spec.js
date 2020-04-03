@@ -18,7 +18,7 @@ test('Redirects to no-income route ', async () => {
   const dest = app.routes.get('question-your-situation-no-income')
 
   await request(app).post(route.path.en).send({
-      lost_job: '1',
+      lost_job: 'lost-all-income',
   })
   .expect(302)
   .then(response => {
@@ -26,12 +26,12 @@ test('Redirects to no-income route ', async () => {
   })
 })
 
-test('Redirects to no-income route ', async () => {
+test('Redirects to some-income route ', async () => {
   const route = app.routes.get('question-lost-job')
   const dest = app.routes.get('question-your-situation-some-income')
 
   await request(app).post(route.path.en).send({
-      lost_job: '2',
+      lost_job: 'lost-some-income',
   })
   .expect(302)
   .then(response => {
@@ -44,7 +44,7 @@ test('Redirects to unchanged-income route ', async () => {
   const dest = app.routes.get('question-your-situation-unchanged-income')
 
   await request(app).post(route.path.en).send({
-      lost_job: '3',
+      lost_job: 'lost-no-income',
   })
   .expect(302)
   .then(response => {

@@ -3,7 +3,7 @@ const getBenefits = (data) => {
   var results = [];
 
   // 2a
-  if (data.lost_job === '1') {
+  if (data.lost_job === 'lost-all-income') {
     if (data.no_income === '1') {
       results.push('ei_regular_cerb')
     }
@@ -18,7 +18,7 @@ const getBenefits = (data) => {
   }
 
   // 2b
-  if (data.lost_job === '2') {
+  if (data.lost_job === 'lost-some-income') {
 
     if (data.some_income === '1') {
       if (['3k-5k', '5k+'].includes(data.gross_income)) {
@@ -44,7 +44,7 @@ const getBenefits = (data) => {
   }
 
   // 2c
-  if (data.lost_job === '3') {
+  if (data.lost_job === 'lost-no-income') {
     // just the regular flow?
   }
 

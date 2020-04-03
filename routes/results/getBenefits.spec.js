@@ -5,7 +5,7 @@ describe('Test the getBenefits calculator', () => {
     const expected = ['ei_regular_cerb'];
    
     const result = getBenefits({
-        'lost_job': '1',
+        'lost_job': 'lost-all-income',
         'no_income': '1',
     });
 
@@ -16,7 +16,7 @@ describe('Test the getBenefits calculator', () => {
     const expected = ['ei_sickness_cerb'];
    
     const result = getBenefits({
-        'lost_job': '1',
+        'lost_job': 'lost-all-income',
         'no_income': '4',
     });
 
@@ -29,7 +29,7 @@ describe('Test the getBenefits calculator', () => {
 
     options.forEach(income => {
       const result = getBenefits({
-        'lost_job': '1',
+        'lost_job': 'lost-all-income',
         'no_income': income,
       }); 
 
