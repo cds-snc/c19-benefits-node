@@ -48,11 +48,11 @@ const getBenefits = (data) => {
     // just the regular flow?
   }
 
-  if (data.mortgage_payments === '1') {
+  if (data.mortgage_payments === 'yes-mortgage') {
     results.push('mortgage_deferral')
   }
 
-  if (data.mortgage_payments === '2') {
+  if (data.mortgage_payments === 'yes-rent') {
     results.push('rent_help');
   }
 

@@ -41,7 +41,7 @@ describe('Test the getBenefits calculator', () => {
     const expected = ['mortgage_deferral'];
 
     const result = getBenefits({
-        'mortgage_payments': '1',
+        'mortgage_payments': 'yes-mortgage',
     });
 
     expect(result).toEqual(expect.arrayContaining(expected))
@@ -51,7 +51,7 @@ describe('Test the getBenefits calculator', () => {
     const expected = ['rent_help'];
 
     const result = getBenefits({
-        'mortgage_payments': '2',
+        'mortgage_payments': 'yes-rent',
     });
 
     expect(result).toEqual(expect.arrayContaining(expected))
