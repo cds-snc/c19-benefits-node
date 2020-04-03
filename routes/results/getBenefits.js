@@ -30,7 +30,9 @@ const getBenefits = (data) => {
     }
 
     if (data.some_income === '3') {
-      // gross_income/days
+      if (data.gross_income === '2') {
+        results.push('ei_regular')
+      }
     }
   }
 
