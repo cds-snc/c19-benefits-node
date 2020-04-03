@@ -42,6 +42,14 @@ ul {
   }
 }
 
+p + ul {
+  margin-top: -$space-xs;
+
+  @include xs {
+    margin-top: -$space-sm;
+  }
+}
+
 ol,
 ul {
   padding-left: $space-md;

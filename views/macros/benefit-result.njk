@@ -1,13 +1,12 @@
 {% macro benefitResult(id, header, preamble, button, boxes) %}
-<div class="m-5 p-5 shadow-lg">
-    <h2 class="text-xl font-bold mb-5" id="{{ id }}">{{ header }}</h2>
-
+<div class="m-5 p-5 shadow-result">
+    <h2 class="text-2xl font-bold mb-6" id="{{ id }}">{{ header }}</h2>
     {% for box in boxes %}
-        <div class="bg-blue-200 p-5 m-1 text-blue-900 text-center text-lg">
-            <p><strong>{{ box }}</strong></p>
+        <div class="bg-blue-200 p-5 m-1 text-blue-900 text-center">
+            <p class="m-0"><strong>{{ box }}</strong></p>
         </div>
     {% endfor %}
-    <div class="pb-5 pt-1"> 
+    <div class="pb-5 mt-6">
         {{ preamble | safe}}
     </div>
     <a href="{{ button.link }}" class="full-width font-semibold button-link py-6 px-5 border shadow"> {{ button.text }}</a>
