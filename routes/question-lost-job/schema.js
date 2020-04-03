@@ -4,7 +4,7 @@ const Schema = {
   lost_job: {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
-      options: [['1', '2', '3']],
+      options: [['lost-all-income', 'lost-some-income', 'lost-no-income']],
     },
   },
 }

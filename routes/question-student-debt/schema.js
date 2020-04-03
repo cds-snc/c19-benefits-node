@@ -4,7 +4,7 @@ const Schema = {
   student_debt: {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
-      options: [['1', '2']],
+      options: [['yes', 'no']],
     },
   }, 
 }

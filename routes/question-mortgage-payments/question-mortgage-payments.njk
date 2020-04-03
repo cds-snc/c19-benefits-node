@@ -9,9 +9,9 @@
 
             {{ radioButtons('mortgage_payments',
                 [
-                    { value: '1', text:__('mortgage_payments.1')},
-                    { value: '2', text:__('mortgage_payments.2')},
-                    { value: '3', text:__('mortgage_payments.3')}
+                    { value: 'yes-mortgage', text:__('mortgage_payments.1')},
+                    { value: 'yes-rent', text:__('mortgage_payments.2')},
+                    { value: 'no', text:__('mortgage_payments.3')}
                 ],
                 data.mortgage_payments,
                 __('form.mortgage_payments'),

@@ -4,7 +4,7 @@ const Schema = {
   "days_stopped_working": {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
-      options: [['1', '2']],
+      options: [['<14days', '>14days']],
     },
   }, 
 }

@@ -20,11 +20,11 @@ describe('Test redirects for unchanged-income ', () => {
   const redirects = [
     {
       dest: 'question-mortgage-payments',
-      values: ['1','2'],
+      values: ['wfh','paid-leave'],
     },
     {
       dest: 'question-rrif',
-      values: ['3'],
+      values: ['retired'],
     },
   ]
 

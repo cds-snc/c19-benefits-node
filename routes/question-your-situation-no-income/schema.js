@@ -4,7 +4,7 @@ const Schema = {
   no_income: {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
-      options: [['1', '2', '3', '4', '5', '6']],
+      options: [['lost-job-employer-closed', 'self-employed-closed', 'unpaid-leave-to-care', 'sick-or-quarantined', 'parental-recently-cant-return', 'ei-recently-claim-ended']],
     },
   },
 }

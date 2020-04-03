@@ -4,7 +4,7 @@ const Schema = {
   mortgage_payments: {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
-      options: [['1', '2', '3']],
+      options: [['yes-mortgage', 'yes-rent', 'no']],
     },
   }, 
 }

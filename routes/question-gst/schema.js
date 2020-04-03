@@ -4,7 +4,7 @@ const Schema = {
   gst: {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
-      options: [['1', '2', '3']],
+      options: [['yes', 'no', 'unsure']],
     },
   }, 
 }

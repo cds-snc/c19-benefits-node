@@ -9,9 +9,9 @@
 
             {{ radioButtons('lost_job',
                 [
-                    { value: '1', text:__('lost_job.1')},
-                    { value: '2', text:__('lost_job.2')},
-                    { value: '3', text:__('lost_job.3')}
+                    { value: 'lost-all-income', text:__('lost_job.1')},
+                    { value: 'lost-some-income', text:__('lost_job.2')},
+                    { value: 'lost-no-income', text:__('lost_job.3')}
                 ],
                 data.lost_job,
                 __('form.lost_job'),

@@ -4,7 +4,7 @@ const Schema = {
   unchanged_income: {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
-      options: [['1', '2', '3']],
+      options: [['wfh', 'paid-leave', 'retired']],
     },
   },
 }

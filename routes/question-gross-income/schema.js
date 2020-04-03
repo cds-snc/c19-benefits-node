@@ -4,7 +4,7 @@ const Schema = {
   gross_income: {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
-      options: [['1', '2', '3']],
+      options: [['under3k', '3k-5k', '5k+']],
     },
   }, 
 }

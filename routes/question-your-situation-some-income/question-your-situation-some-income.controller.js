@@ -13,11 +13,11 @@ module.exports = (app, route) => {
 
 const postSomeIncome = (req, res) => {
 
-  if (['1', '3'].includes(req.body.some_income)) {
+  if (['hours-reduced', 'employed-lost-a-job'].includes(req.body.some_income)) {
     return res.redirect(res.locals.routePath('question-gross-income'))
   }
 
-  if (req.body.some_income === '2') {
+  if (req.body.some_income === 'retired') {
     return res.redirect(res.locals.routePath('question-rrif'))
   }
   
