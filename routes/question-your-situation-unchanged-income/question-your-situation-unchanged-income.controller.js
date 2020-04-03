@@ -13,7 +13,7 @@ module.exports = (app, route) => {
 
 const postUnchangedIncome = (req, res) => {
   if (['1','2'].includes(req.body.unchanged_income)) {
-    return res.redirect(res.locals.routePath('question-ccb'))
+    return res.redirect(res.locals.routePath('question-mortgage-payments'))
   }
 
   if(req.body.unchanged_income === '3') {
