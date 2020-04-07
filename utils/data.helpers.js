@@ -15,6 +15,15 @@ const getViewData = (req, optionalParams = {}) => {
   return { ...params, ...optionalParams }
 }
 
+const getLastPage = (req) => {
+  const lastPage = req.get('Referrer').includes(req.get('host')) ? req.get('Referrer') : null
+
+  return {
+    lastPage: lastPage
+  }
+}
+
 module.exports = {
   getViewData,
+  getLastPage,
 }
