@@ -23,7 +23,10 @@
         <title>{{ __('app.title') }}</title>
     </head>
     <body>
-        <a class="skip-link" href="#content">{{ __('Skip to main content') }}</a>
+        <nav>
+            <div id="skip-link-container"><a href="#content" id="skip-link">{{ __('Skip to main content') }}</a></div>
+        </nav>
+
         <div class="outer-container">
             <header>
                 {% include "_includes/phaseBanner.njk" %}
