@@ -19,7 +19,7 @@ const getLastPage = (req) => {
   const lastPage = req.get('Referrer').includes(req.get('host')) ? req.get('Referrer') : null
 
   return {
-    lastPage: lastPage
+    lastPage: lastPage,
   }
 }
 
