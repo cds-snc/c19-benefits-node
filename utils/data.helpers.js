@@ -16,7 +16,9 @@ const getViewData = (req, optionalParams = {}) => {
 }
 
 const getLastPage = (req) => {
-  const lastPage = req.get('Referrer').includes(req.get('host')) ? req.get('Referrer') : null
+  const referrer = req.get('Referrer')
+  const host = req.get('host')
+  const lastPage = (referrer && referrer.includes(host)) ? referrer : null
 
   return {
     lastPage: lastPage,
