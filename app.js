@@ -82,7 +82,7 @@ app.locals.hasData = hasData
 app.locals.basedir = path.join(__dirname, './views')
 app.set('views', [path.join(__dirname, './views')])
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   // set a unique user id per session
   if (!req.session.id) req.session.id = uuidv4()
   // add user session req.locals so that the logger has access to it
