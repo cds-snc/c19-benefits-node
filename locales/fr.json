@@ -31,15 +31,5 @@
   "rrif.1": "rrif.1",
   "rrif.2": "rrif.2",
   "form.rrif": "form.rrif",
-  "Next": "Next",
-  "button.back": "button.back",
-  "mortgage_payments.1": "mortgage_payments.1",
-  "mortgage_payments.2": "mortgage_payments.2",
-  "mortgage_payments.3": "mortgage_payments.3",
-  "form.mortgage_payments": "form.mortgage_payments",
-  "ccb.1": "ccb.1",
-  "ccb.2": "ccb.2",
-  "ccb.3": "ccb.3",
-  "form.ccb": "form.ccb",
-  "ccb.hint": "ccb.hint"
+  "Next": "Next"
 }
