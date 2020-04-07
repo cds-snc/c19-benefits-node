@@ -18,24 +18,27 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-const { A11yReporter } = require ('@cdssnc/a11y-tracker-client');
+const { A11yReporter } = require('@cdssnc/a11y-tracker-client')
 
 // default to not reporting
 A11yReporter.configure({
   trackerURI: undefined,
   revision: '<local>',
   project: 'c19-benefits-node',
-});
+})
 
 // if we're in CI and on the master branch, do the actual reporting
-if (process.env.NODE_ENV === 'testing' &&
-    process.env.GITHUB_REF === 'refs/heads/master') {
+if (
+  process.env.NODE_ENV === 'testing' &&
+  process.env.GITHUB_REF === 'refs/heads/master'
+) {
   A11yReporter.configure({
-    trackerURI: process.env.A11Y_TRACKER_URI || 'https://a11y-tracker.herokuapp.com/',
-    revision: process.env.GITHUB_GIT_HASH,
+    trackerURI:
+      process.env.A11Y_TRACKER_URI || 'https://a11y-tracker.herokuapp.com/',
+    revision: process.env.GITHUB_SHA,
     key: process.env.A11Y_TRACKER_KEY,
     project: 'c19-benefits-node',
-  });
+  })
 }
 
-A11yReporter.setupCypress();
+A11yReporter.setupCypress()
