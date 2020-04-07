@@ -187,13 +187,10 @@ form {
         display: flex;
         justify-content: center;
 
-        img, span {
-          margin-right: auto;
-        }
-
-        span {
+        img {
           //width of the icon to truly center the text
           margin-left: -22px;
+          margin-top: 1px;
         }
       }
     }
@@ -207,7 +204,7 @@ form {
       .buttons--right {
         margin-left: $space-xs;
         margin-top: 0;
-        .button-link img, 
+        .button-link img,
         .button-link span {
           margin-right: 0;
         }
