@@ -1,5 +1,6 @@
 // import environment variables.
 require('dotenv').config()
+require('dotenv').config({ path: './.env.public' })
 
 // import node modules.
 const express = require('express')
@@ -45,7 +46,7 @@ if (process.env.NODE_ENV !== 'test') {
   )
 
   // append csrfToken to all responses
-  app.use(function(req, res, next) {
+  app.use(function (req, res, next) {
     res.locals.csrfToken = req.csrfToken()
     next()
   })
