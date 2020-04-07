@@ -6,7 +6,7 @@ module.exports = (app, route) => {
 
   route.draw(app)
     .get((req, res) => {
-      res.render(name, routeUtils.getViewData(req, { lastPage: req.get('Referrer') }))
+      res.render(name, routeUtils.getViewData(req, { ...routeUtils.getLastPage(req) }))
     })
     .post(route.applySchema(Schema), (req, res) => {
       if (req.body.gross_income === '5k+') {
