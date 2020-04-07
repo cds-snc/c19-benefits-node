@@ -1,19 +1,28 @@
-/* istanbul ignore next */
+/* 
+This method checks to see if an input object matches a pattern 
+This pattern can have scalar values, or arrays as the item being matched
+If it's a scalar we need an exact match, if it's an array we only care if the value 
+matches one of the items in the output.
+*/
 function match(input, pattern, result) {
   const keys = Object.keys(pattern)
 
-  const value = keys.reduce((prev, curr) => {
-    if (typeof pattern[curr] === typeof []) {
-      // If it's an array we only care if one matches.
-      // algorithm is start with false, match current item against input and OR it against the previous item
-      return pattern[curr].reduce((p, c) => p || c === input[curr], false)
+  const value = keys.reduce((previousIterationResult, key) => {
+    const patternValueToMatch = pattern[key]
+    const actualValue = input[key]
+
+    // If the value is an array we only care if we match one item
+    if (typeof patternValueToMatch === typeof []) {
+      /* algorithm is as follows: 
+        Logical OR the result of the current match against the previous
+        Since all we care is if the value we are matching is equal to 
+        one item in the patternValueToMatch array we are iterating through
+      */
+      return patternValueToMatch.reduce((p, c) => p || c === actualValue, false)
     }
 
-    if (pattern[curr] === input[curr]) {
-      return prev && true
-    }
-
-    return false
+    const matchResult = patternValueToMatch === actualValue
+    return previousIterationResult && matchResult
   }, true)
 
   if (value === true) {
