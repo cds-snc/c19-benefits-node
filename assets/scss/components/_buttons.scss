@@ -101,4 +101,15 @@ a.back-button {
     margin-left: $space-xs;
     text-decoration: inherit;
   }
+
+  // because the text gets smaller, we want to move the image up to keep it centred
+  img {
+    margin-top: -2px;
+  }
+
+  @include sm {
+    img {
+      margin-top: 0;
+    }
+  }
 }
