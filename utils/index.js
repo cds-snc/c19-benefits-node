@@ -22,11 +22,13 @@ module.exports = {
 const { getRouteByName } = require('./route.helpers')
 const { addViewPath } = require('./view.helpers')
 const { getViewData } = require('./data.helpers')
+const { getLastPage } = require('./data.helpers')
 const { getDefaultMiddleware } = require('./route.helpers')
 
 module.exports.routeUtils = {
   getRouteByName,
   addViewPath,
   getViewData,
+  getLastPage,
   getDefaultMiddleware,
 }
