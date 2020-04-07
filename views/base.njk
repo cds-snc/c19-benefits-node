@@ -31,6 +31,9 @@
                 {% include "_includes/fip.njk" %}
             </header>
             <main id="content">
+                {% if lastPage %}
+                    {% include "_includes/back-link.njk" %}
+                {% endif %}
                 {% if errors %}
                     {% include "_includes/errorList.njk" %}
                 {% endif %}

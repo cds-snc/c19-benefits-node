@@ -83,3 +83,19 @@ a.button-link {
     box-shadow: none;
   }
 }
+
+a.back-button {
+  display: block;
+  margin-bottom: $space-md;
+  //this so that if the button doesn't display, doesn't effect the necessary margin for the header
+  margin-top: -$space-lg;
+
+  img, span {
+    display: inline-block;
+  }
+
+  span {
+    margin-left: $space-xs;
+    text-decoration: inherit;
+  }
+}
