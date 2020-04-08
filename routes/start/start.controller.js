@@ -20,6 +20,6 @@ module.exports = (app, route) => {
 
   route.draw(app).get(async (req, res) => {
     req.session = null
-    res.render(name, routeUtils.getViewData(req))
+    res.render(name, routeUtils.getViewData(req, { hideBackButton: true }))
   })
 }
