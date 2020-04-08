@@ -92,7 +92,7 @@
   "mortgage_payments.2": "Yes, you’re worried about your rent",
   "mortgage_payments.3": "No, you’re not worried at this time",
   "phase.desc": "This site will change as we test ideas.",
-  "rent_help.header": "You cannot be evicted for not paying rent",
+  "rent_help.header": "In most provinces, you cannot be evicted for not paying rent",
   "rent_help.linktext": "Check with your provincial government for more details",
   "rent_help.preamble": "<ul class='list-disc list-outside'><li>Provincial governments are in charge of rental housing rules. </li><li> At the moment, you cannot be evicted for not paying rent. </li></ul>",
   "required": "(required)",
