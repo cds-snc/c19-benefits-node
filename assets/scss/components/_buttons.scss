@@ -88,7 +88,7 @@ a.button-link {
   }
 }
 
-a.back-button {
+button.back-button {
   margin-bottom: $space-md;
   //this so that if the button doesn't display, it doesn't affect the necessary margin for the header
   margin-top: -$space-lg;
@@ -99,7 +99,7 @@ a.back-button {
 
   span {
     margin-left: $space-xs;
-    text-decoration: inherit;
+    text-decoration: underline;
   }
 
   // because the text gets smaller, we want to move the image up to keep it centred

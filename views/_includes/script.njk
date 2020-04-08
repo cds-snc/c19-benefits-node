@@ -9,6 +9,13 @@
             }
         })
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.history.go(-1);
+        }, true)
+    }, false);
+
 </script>
 <script>
     if (typeof Promise !== "function" && document.querySelector('details') !== null) 

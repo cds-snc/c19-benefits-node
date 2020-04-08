@@ -1,5 +1,11 @@
-<div>
-  <a href="{{ lastPage }}" aria-label="{{__('button.back')}}" class="back-button">
+<noscript>
+  {# we could put this in the header, but it has more context here #}
+  <style type="text/css">
+    .back-button-container {display:none;}
+  </style>
+</noscript>
+<div class="back-button-container">
+  <button aria-label="{{__('button.back')}}" id="backButton" class="back-button">
     <img src="/img/arrow-circle-left.svg" aria-hidden="true" /><span>{{__('button.back')}}</span>
-  </a>
+  </button>
 </div>

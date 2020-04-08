@@ -33,7 +33,7 @@
                 {% include "_includes/fip.njk" %}
             </header>
             <main id="content">
-                {% if lastPage %}
+                {% if not hideBackButton %}
                     {% include "_includes/back-link.njk" %}
                 {% endif %}
                 {% if errors %}

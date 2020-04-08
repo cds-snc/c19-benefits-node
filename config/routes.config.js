@@ -11,7 +11,6 @@ const routes = [
   // everyone ends up here (not sure of order?)
   { name: 'question-mortgage-payments', path: { en: '/mortgage-payments', fr: '/paiement-hypothecaire' } },
   { name: 'question-ccb', path: { en: '/CCB', fr: '/ARC' } },
-  { name: 'question-gst', path: { en: '/GST', fr: '/TPS' } },
   { name: 'question-student-debt', path: { en: '/student-debt', fr: '/dette-des-etudiants' } },
 
   { name: 'results', path: { en: '/results', fr: '/resultats' } },
@@ -21,7 +20,6 @@ const routes = [
 
   // 3a/b lost income fork
   { name: 'question-gross-income', path: { en: '/gross-income', fr: '/revenu-brut' } },
-  { name: 'question-days-stopped-working', path: { en: '/days-stopped-working', fr: '/jours-ont-cesse-de-fonctionner' } },
 ]
 
 const locales = ['en', 'fr']

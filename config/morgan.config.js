@@ -1,5 +1,13 @@
 var morgan = require('morgan')
 
+morgan.token('host', function getHost(req, res) {
+  if (!req || !req.headers || !req.headers.host) {
+    return undefined
+  }
+
+  return req.headers.host
+})
+
 morgan.token('version', function getSha() {
   return process.env.GITHUB_SHA
 })
@@ -40,6 +48,7 @@ function jsonFormatProduction(tokens, req, res) {
     method: tokens['method'](req, res),
     url: tokens['url'](req, res),
     status: tokens['status'](req, res),
+    host: tokens['host'](req, res),
     'response-time': tokens['response-time'](req, res) + 'ms',
     timestamp: tokens['date'](req, res, 'iso'),
     'content-length': tokens['res'](req, res, 'content-length'),
