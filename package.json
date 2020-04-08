@@ -19,7 +19,8 @@
     "test:watch": "node node_modules/jest/bin/jest.js --watch",
     "aws": "cd cdk && cdk synth && node deploy",
     "aws-bootstrap": "node cdk/bootstrap.js",
-    "aws-destroy": "node cdk/destroy.js"
+    "aws-destroy": "node cdk/destroy.js",
+    "comb": "jsoncomb --normalise \"./locales/*.json\""
   },
   "husky": {
     "hooks": {
@@ -76,6 +77,7 @@
     "fse": "^4.0.1",
     "husky": "^4.2.3",
     "jest": "^25.2.7",
+    "json-comb": "^0.2.43",
     "nodemon": "^2.0.2",
     "prettier": "^2.0.4",
     "rimraf": "^3.0.2",

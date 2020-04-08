@@ -13,25 +13,12 @@ test('Can send post request gross-income route ', async () => {
   expect(response.statusCode).toBe(302)
 })
 
-test('Redirects to days-stopped-working route ', async () => {
-  const route = app.routes.get('question-gross-income')
-  const dest = app.routes.get('question-days-stopped-working')
-
-  await request(app).post(route.path.en).send({
-      gross_income: '5k+',
-  })
-  .expect(302)
-  .then(response => {
-    expect(response.headers.location).toBe(dest.path.en)
-  })
-})
-
-test('Redirects to days-stopped-working route ', async () => {
+test('Redirects to mortgage-payments route ', async () => {
   const route = app.routes.get('question-gross-income')
   const dest = app.routes.get('question-mortgage-payments')
 
   await request(app).post(route.path.en).send({
-      gross_income: '3k-5k',
+      gross_income: '5k+',
   })
   .expect(302)
   .then(response => {

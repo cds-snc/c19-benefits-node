@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    {% include "../../views/_includes/header-link-question.njk" %}
+    
     <div>
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
@@ -10,9 +10,8 @@
             {{ radioButtons(
                 'gross_income',
                 [
-                    { value: 'under3k', text:__('gross_income.1')},
-                    { value: '3k-5k', text:__('gross_income.2')},
-                    { value: '5k+', text:__('gross_income.3')}
+                    { value: 'under4999', text:__('gross_income.1')},
+                    { value: '5k+', text:__('gross_income.2')}
                 ],
                 data.gross_income,
                 __('form.gross_income'),

@@ -53,11 +53,6 @@ form button {
   width: 100%;
 }
 
-.next-button {
-  width: 100%;
-  max-width: 250px;
-}
-
 .start-button {
   width: 100%;
   max-width: 433px;
@@ -70,13 +65,22 @@ form button {
 a.button-link {
   @extend %button-styles;
 
+  img, span {
+    display: inline-block;
+  }
+
+  span {
+    margin-left: $space-xs;
+    text-decoration: inherit;
+  }
+
   &.full-width {
     display: inline-block;
     width: 100%;
   }
 
   &.transparent {
-    color: $color-green-dark;
+    color: $color-blue-dark;
     background-color: transparent;
     border-color: transparent;
     text-decoration: underline;
@@ -96,5 +100,16 @@ button.back-button {
   span {
     margin-left: $space-xs;
     text-decoration: underline;
+  }
+
+  // because the text gets smaller, we want to move the image up to keep it centred
+  img {
+    margin-top: -2px;
+  }
+
+  @include sm {
+    img {
+      margin-top: 0;
+    }
   }
 }

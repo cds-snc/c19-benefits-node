@@ -9,10 +9,6 @@ module.exports = (app, route) => {
       res.render(name, routeUtils.getViewData(req, {}))
     })
     .post(route.applySchema(Schema), (req, res) => {
-      if (req.body.gross_income === '5k+') {
-        return res.redirect(res.locals.routePath('question-days-stopped-working'))
-      }
-
       return res.redirect(res.locals.routePath('question-mortgage-payments'))
     })
 }

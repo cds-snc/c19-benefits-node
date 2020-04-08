@@ -180,6 +180,21 @@ form {
       flex: 1;
     }
 
+    .buttons--right {
+      margin-top: $space-sm;
+
+      .button-link {
+        display: flex;
+        justify-content: center;
+
+        img {
+          //width of the icon to truly center the text
+          margin-left: -22px;
+          margin-top: 1px;
+        }
+      }
+    }
+
     @include sm {
       flex-direction: row;
 
@@ -188,6 +203,15 @@ form {
       }
       .buttons--right {
         margin-left: $space-xs;
+        margin-top: 0;
+        .button-link img,
+        .button-link span {
+          margin-right: 0;
+        }
+
+        .button-link span {
+          margin-left: $space-sm;
+        }
       }
     }
   }
