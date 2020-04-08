@@ -3,7 +3,7 @@
     <h2 class="text-2xl font-bold mb-6" id="{{ id }}">{{ header }}</h2>
     {% for box in boxes %}
         <div class="bg-blue-200 p-5 m-1 text-blue-900 text-center">
-            <p class="m-0"><strong>{{ box }}</strong></p>
+            <p class="m-0"><strong>{{ box | safe }}</strong></p>
         </div>
     {% endfor %}
     <div class="pb-5 mt-6">
