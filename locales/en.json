@@ -63,7 +63,7 @@
   "form.days_stopped_working": "How many days in a row did you go without work?",
   "form.gross_income": "How much total income before taxes did you earn from paid work in the last 12 months?",
   "form.gst": "Do you receive the GST credit?",
-  "form.lost_job": "Have you lost income due to COVID‑19?",
+  "form.lost_job": "Choose the description that best fits your situation",
   "form.mortgage_payments": "Are you worried about making mortgage or rent payments?",
   "form.rrif": "Do you have a Registered Retirement Income Fund (RRIF)?",
   "form.student_debt": "Do you have student debt?",
@@ -81,9 +81,9 @@
   "gst_credit.header": "More money through the GST credit",
   "gst_credit.linktext": "Learn more about GST credit",
   "gst_credit.preamble": "<p>Good to know:</p><ul class='list-disc list-outside'><li>Check your bank account to find out if you’ve been receiving the GST credit.</li><li> Dates of payments are available online.</li></ul>",
-  "lost_job.1": "Yes, all your income",
-  "lost_job.2": "Some of your income",
-  "lost_job.3": "No, your income is the same",
+  "lost_job.1": "All your income has stopped.",
+  "lost_job.2": "Some of your income has stopped.",
+  "lost_job.3": "Your income is not affected by COVID-19.",
   "mortgage_deferral.box1": "Skip mortgage payments until you’re able to pay again",
   "mortgage_deferral.header": "Contact your bank to delay mortgage payments",
   "mortgage_deferral.linktext": "Learn more about help with your mortgage",
@@ -133,5 +133,6 @@
   "start.lastupdated": "Last updated April 7, 2020",
   "start.intro.3": "This tool only suggests federal programs at this time. New benefits are still being created, and we are working to include them as soon as possible. You may want to check back again.",
   "start.details.summary": "Are you a Canadian stuck abroad?",
-  "start.details.p.1": "If you’re a Canadian abroad and need help to pay for your trip home, you can get an emergency loan."
+  "start.details.p.1": "If you’re a Canadian abroad and need help to pay for your trip home, you can get an emergency loan.",
+  "lost_job.title": "Lost income due to COVID-19"
 }
