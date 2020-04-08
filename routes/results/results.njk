@@ -1,9 +1,13 @@
 {% extends "base.njk" %}
+{% from 'banner.njk' import banner as banner %}
 
 {% block content %}
 
-    
     <h1>{{ __("results.title") }}</h1>
+    <div>
+        {{ banner('red', '<p>' + __('results.banner') + '</p>') }}
+    </div>
+
     {% if benefits.length > 0 %}
     <p>
         {{ __("results.header_text") }}
