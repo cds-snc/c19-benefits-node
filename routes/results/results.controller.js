@@ -9,7 +9,7 @@ module.exports = (app, route) => {
     .get((req, res) => {
       // const data = getSessionData(req)
       // const benefits = getBenefits(data);
-      const benefits = ['student_loan', 'rrif', 'mortgage_deferral', 'gst_credit', 'ccb_payment']
+      const benefits = ['student_loan', 'rent_help', 'rrif', 'mortgage_deferral', 'gst_credit', 'ccb_payment']
 
       res.render(name, routeUtils.getViewData(req, {
         benefits: benefits,
