@@ -4,7 +4,6 @@ const { getFlashMessage } = require('./flash.message.helpers')
 const getViewData = (req, optionalParams = {}) => {
   const params = {
     data: { ...getSessionData(req) },
-    path: req.path,
   }
 
   const errors = getFlashMessage(req)
