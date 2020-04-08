@@ -15,7 +15,7 @@ const cookieSessionConfig = {
   name: sessionName,
   secret: sessionName,
   cookie: {
-    domain: 'alpha.canada.ca',
+    domain: '.alpha.canada.ca',
     httpOnly: true,
     maxAge: oneHour,
     sameSite: true,
