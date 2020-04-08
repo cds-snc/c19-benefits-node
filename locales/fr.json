@@ -92,7 +92,10 @@
   "rent_help.preamble": "<ul class='list-disc list-outside'><li>Les gouvernements provinciaux sont responsables de la réglementation des logements locatifs.</li><li> À l’heure actuelle, on ne peut pas vous expulser si vous n’avez pas payé votre loyer</li></ul>",
   "required": "required",
   "results.header_text": false,
-  "results.title": false,
+  "results_title": {
+    "one": "%s programme d’aide pour vous",
+    "other": "%s programmes d’aide pour vous"
+  },
   "rrif.1": "rrif.1",
   "rrif.2": "rrif.2",
   "rrif.header": "Diminution du montant de retrait obligatoire de votre fond enregistré de revenu de retraite",
