@@ -65,6 +65,7 @@
     "@aws-cdk/aws-ecs": "1.32.0",
     "@aws-cdk/aws-ecs-patterns": "1.32.0",
     "@aws-cdk/core": "1.32.0",
+    "@cdssnc/a11y-tracker-client": "^1.1.2",
     "acorn": "^7.1.1",
     "cheerio": "^1.0.0-rc.3",
     "cypress": "^4.3.0",
