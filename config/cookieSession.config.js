@@ -11,7 +11,7 @@ const sessionName = `ctb-${
   process.env.COOKIE_SECRET || Math.floor(new Date().getTime() / oneHour)
 }`
 
-const cookieSessionConfig = {
+let cookieSessionConfig = {
   name: sessionName,
   secret: sessionName,
   cookie: {
@@ -20,6 +20,16 @@ const cookieSessionConfig = {
     maxAge: oneHour,
     sameSite: true,
   },
+}
+
+if (process.env.NODE_ENV === 'production') {
+  cookieSessionConfig = {
+    ...cookieSessionConfig,
+    domain: '.herokuapp.com',
+    httpOnly: true,
+    maxAge: oneHour,
+    sameSite: true,
+  }
 }
 
 module.exports = cookieSessionConfig

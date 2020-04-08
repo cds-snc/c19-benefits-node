@@ -35,15 +35,13 @@ app.use(require('./config/i18n.config').init)
 
 if (process.env.NODE_ENV !== 'test') {
   // CSRF setup
-  app.use(
-    csrf({
-      cookie: {
-        sameSite: true,
-        secure: true,
-      },
-      signed: true,
-    }),
-  )
+  const csrfConfig = { cookie: true, signed: true }
+  if (process.env.NODE_ENV === 'production') {
+    csrfConfig.sameSite = true
+    csrfConfig.secure = true
+  }
+
+  app.use(csrf(csrfConfig))
 
   // append csrfToken to all responses
   app.use(function (req, res, next) {
