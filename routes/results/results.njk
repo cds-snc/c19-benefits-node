@@ -25,6 +25,15 @@
         {% endfor %}
     </div>
 
-    <p class="bg-red-200 p-4 hidden">(debug): {{ benefits }}</p>
+    <h2 class="text-3xl">{{ __('results.other_potential_help') }}</h2>
+
+    <p>{{ __('results.other_potential_help.preamble') }}</p>
+
+    <ul class="list-disc list-inside mt-4">
+        <li><a href="#gst_credit"> {{ __("gst_credit.header")}}</a></li>
+    </ul>
+    <div class="mt-10">
+        {% include "benefits/gst_credit.njk" %}
+    </div>
 
 {% endblock %}
