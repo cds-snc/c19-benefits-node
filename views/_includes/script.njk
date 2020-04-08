@@ -9,9 +9,16 @@
             }
         })
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('backButton') && document.getElementById('backButton').addEventListener('click', function() {
+            window.history.go(-1);
+        }, true)
+    }, false);
+
 </script>
 <script>
-    if (typeof Promise !== "function" && document.querySelector('details') !== null) 
+    if (typeof Promise !== "function" && document.querySelector('details') !== null)
         document.write('<script src="/js/details-element-polyfill.js"><\/script>');
 </script>
 
