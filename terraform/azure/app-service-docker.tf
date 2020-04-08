@@ -24,6 +24,10 @@ resource "azurerm_app_service" "app_service" {
     always_on        = true
   }
 
+  app_settings {
+    APPINSIGHTS_INSTRUMENTATIONKEY = azurerm_application_insights.test.instrumentation_key
+  }
+
   logs {
     http_logs {
       file_system {
