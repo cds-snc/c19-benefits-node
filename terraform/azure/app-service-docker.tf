@@ -28,16 +28,9 @@ resource "azurerm_app_service" "app_service" {
     http_logs {
       file_system {
         retention_in_days = 7
-        retention_in_mb   = 35
+        retention_in_mb   = 100
       }
     }
-  }
-
-  app_settings = {
-    "DOCKER_ENABLE_CI"                = "true"
-    "DOCKER_REGISTRY_SERVER_URL"      = "https://${azurerm_container_registry.container_registry.login_server}"
-    "DOCKER_REGISTRY_SERVER_USERNAME" = azurerm_container_registry.container_registry.admin_username
-    "DOCKER_REGISTRY_SERVER_PASSWORD" = azurerm_container_registry.container_registry.admin_password
   }
 }
 
