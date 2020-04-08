@@ -116,17 +116,6 @@ describe('Test the getBenefits calculator', () => {
     })
   })
 
-  test('It checks the gst addon', () => {
-    const options = ['yes', 'unsure']
-
-    options.forEach(gst => {
-      const result = getBenefits({
-        gst: gst,
-      })
-
-      expect(result).toContain('gst_credit')
-    })
-  })
 
   test('It checks the rrif addon', () => {
     const expected = ['rrif']
