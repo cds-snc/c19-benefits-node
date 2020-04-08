@@ -1,5 +1,6 @@
 // import environment variables.
 require('dotenv').config()
+require('dotenv').config({ path: './.env.public' })
 
 // import node modules.
 const express = require('express')
@@ -45,7 +46,7 @@ if (process.env.NODE_ENV !== 'test') {
   )
 
   // append csrfToken to all responses
-  app.use(function(req, res, next) {
+  app.use(function (req, res, next) {
     res.locals.csrfToken = req.csrfToken()
     next()
   })
@@ -81,7 +82,7 @@ app.locals.hasData = hasData
 app.locals.basedir = path.join(__dirname, './views')
 app.set('views', [path.join(__dirname, './views')])
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   // set a unique user id per session
   if (!req.session.id) req.session.id = uuidv4()
   // add user session req.locals so that the logger has access to it

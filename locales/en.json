@@ -1,5 +1,4 @@
-{
-  "404": "404",
+{z
   "500": "500",
   "Cancel": "Cancel",
   "Error:": "Error:",
@@ -61,7 +60,7 @@
   "footer.link2.desc": "Terms and conditions",
   "form.ccb": "Do you receive the Canada Child Benefit?",
   "form.days_stopped_working": "How many days in a row did you go without work?",
-  "form.gross_income": "How much income (before taxes) did you earn in the last 12 months?",
+  "form.gross_income": "How much total income before taxes did you earn from paid work in the last 12 months?",
   "form.gst": "Do you receive the GST credit?",
   "form.lost_job": "Have you lost income due to COVID‑19?",
   "form.mortgage_payments": "Are you worried about making mortgage or rent payments?",
@@ -70,9 +69,8 @@
   "form.your_situation.no_income": "Choose the description that best fits your situation",
   "form.your_situation.some_income": "Choose the description that best fits your situation",
   "form.your_situation.unchanged_income": "Choose the description that best fits your situation",
-  "gross_income.1": "Under $3000",
-  "gross_income.2": "$3,000 — $5,000",
-  "gross_income.3": "Over $5,000",
+  "gross_income.1": "Under $4,999.",
+  "gross_income.2": "$5,000 or more.",
   "gst.1": "Yes",
   "gst.2": "No",
   "gst.3": "You're not sure",
