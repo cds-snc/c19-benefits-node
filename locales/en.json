@@ -94,7 +94,10 @@
   "required": "(required)",
   "results.banner": "You missed a couple questions at the beginning. <a href='/clear'>Start over</a> to get your full results.",
   "results.header_text": "Based on what you’ve told us, the following help is available:",
-  "results.title": "%s ways to get help",
+  "results_title": {
+    "one": "%s way to get help",
+    "other": "%s ways to get help"
+  },
   "rrif.1": "Yes",
   "rrif.2": "No",
   "rrif.header": "Lower mandatory withdrawals for your Registered Retirement Income Fund (RRIF)",

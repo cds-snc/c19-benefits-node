@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <h1>{{ __("results.title", benefits.length) }}</h1>
+    <h1>{{ __n("results_title", benefits.length) }}</h1>
 
     {% if not data.lost_job %}
         <div>{{ banner('red', '<p>' + __('results.banner') + '</p>') }}</div>
