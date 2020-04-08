@@ -99,18 +99,6 @@ const getBenefits = data => {
     ),
   )
 
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-some-income',
-        some_income: 'hours-reduced',
-        gross_income: ['3k-5k', '5k+'],
-        days_stopped_working: '<14days',
-      },
-      'ei_workshare',
-    ),
-  )
 
   results.push(
     match(
@@ -128,11 +116,11 @@ const getBenefits = data => {
   )
   results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))
   results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
-  results.push(match(data, { gst: 'unsure' }, 'gst_credit'))
-  results.push(match(data, { gst: 'yes' }, 'gst_credit'))
+  results.push('gst_credit')
   results.push(match(data, { ccb: 'unsure' }, 'ccb_payment'))
   results.push(match(data, { ccb: 'yes' }, 'ccb_payment'))
-  results.push(match(data, { rrif: 'yes' }, 'rrif'))
+  results.push(match(data, { lost_job: 'lost-some-income', some_income: 'retired', rrif: 'yes' }, 'rrif'))
+  results.push(match(data, { lost_job: 'unchanged-income', unchanged_income: 'retired', rrif: 'yes' }, 'rrif'))
 
   return results.filter(v => v !== undefined)
 }
