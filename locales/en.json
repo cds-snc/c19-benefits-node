@@ -131,5 +131,9 @@
   "your_situation.some_income.3": "You’ve lost one of your jobs but you still have a side gig",
   "your_situation.unchanged_income.1": "You’re working from home",
   "your_situation.unchanged_income.2": "You’re on paid leave",
-  "your_situation.unchanged_income.3": "You’re retired"
+  "your_situation.unchanged_income.3": "You’re retired",
+  "start.lastupdated": "Last updated April 7, 2020",
+  "start.intro.3": "This tool only suggests federal programs at this time. New benefits are still being created, and we are working to include them as soon as possible. You may want to check back again.",
+  "start.details.summary": "Are you a Canadian stuck abroad?",
+  "start.details.p.1": "If you’re a Canadian abroad and need help to pay for your trip home, you can get an emergency loan."
 }
