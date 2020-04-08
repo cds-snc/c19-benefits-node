@@ -31,5 +31,10 @@
   "rrif.1": "rrif.1",
   "rrif.2": "rrif.2",
   "form.rrif": "form.rrif",
-  "Next": "Next"
+  "Next": "Next",
+  "button.back": "button.back",
+  "lost_job.1": "lost_job.1",
+  "lost_job.2": "lost_job.2",
+  "lost_job.3": "lost_job.3",
+  "form.lost_job": "form.lost_job"
 }
