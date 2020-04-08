@@ -17,7 +17,6 @@
   "button.back": false,
   "ccb.1": false,
   "ccb.2": false,
-  "ccb.3": false,
   "ccb.hint": false,
   "ccb_payment.box1": false,
   "ccb_payment.box2": false,
@@ -131,5 +130,8 @@
   "your_situation.some_income.3": false,
   "your_situation.unchanged_income.1": false,
   "your_situation.unchanged_income.2": false,
-  "your_situation.unchanged_income.3": false
+  "your_situation.unchanged_income.3": false,
+  "mortgage_payments.title": "mortgage_payments.title",
+  "ccb.title": "ccb.title",
+  "student_debt.title": "student_debt.title"
 }
