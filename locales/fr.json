@@ -104,12 +104,10 @@
   "rrif.linktext": false,
   "rrif.preamble": false,
   "start.intro.1": "Answer some questions to find out about financial help.",
-  "start.intro.2": "This tool does not collect or track your information. See our Privacy policy and Terms and conditions for more information. It only suggests federal programs at this time.",
-  "start.intro.banner.1": "If you’re a Canadian abroad and need help to pay for your trip home, you can get an emergency loan from the government.",
-  "start.intro.banner.2": "Details are available online.",
+  "start.intro.2": "Vos réponses n’influenceront pas votre admissibilité. Consultez notre <a href='https://numerique.canada.ca/transparence/confidentialite/'>Politique de confidentialité</a> et <a href='https://numerique.canada.ca/transparence/avis/'>l’Avis</a> pour en savoir plus.",
   "start.submit": "Start now",
-  "start.subtitle": "Find out what financial help is available",
-  "start.title": "Money for COVID‑19",
+  "start.subtitle": "Trouvez quelle aide financière vous est offerte",
+  "start.title": "Argent pour la COVID-19",
   "start_over": "Start over",
   "student_debt.1": false,
   "student_debt.2": false,
@@ -130,5 +128,9 @@
   "your_situation.some_income.3": false,
   "your_situation.unchanged_income.1": false,
   "your_situation.unchanged_income.2": false,
-  "your_situation.unchanged_income.3": false
+  "your_situation.unchanged_income.3": false,
+  "start.lastupdated": "Dernière mise à jour le 7 avril 2020",
+  "start.intro.3": "Ce service ne fait que suggérer des programmes fédéraux pour l’instant. De nouvelles prestations sont constamment créées et nous travaillons à les inclure aussitôt que possible. Revenez consulter cet outil afin de voir quelles nouvelles prestations s’appliquent à vous.",
+  "start.details.summary": "Êtes vous un Canadien actuellement à l’étranger?",
+  "start.details.p.1": "Si vous êtes un Canadien actuellement à l’étranger et que vous avez besoin d’aide financière pour revenir au Canada, vous pouvez demander un prêt d’urgence."
 }
