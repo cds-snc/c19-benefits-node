@@ -89,9 +89,13 @@ a.button-link {
 }
 
 .back-button-container {
-  margin-bottom: $space-md;
+  margin-bottom: $space-lg;
   //this so that if the button doesn't display, it doesn't affect the necessary margin for the header
   margin-top: -$space-lg;
+
+  @include sm {
+    margin-bottom: $space-xl;
+  }
 }
 
 button.back-button {
