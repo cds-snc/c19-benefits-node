@@ -108,8 +108,6 @@
   "start.subtitle": "Trouvez quelle aide financière vous est offerte",
   "start.title": "Argent pour la COVID-19",
   "start_over": "Recommencer",
-  "student_debt.1": false,
-  "student_debt.2": false,
   "student_loan.box1": "Les paiements sont automatiquement supsendus",
   "student_loan.box2": "Du 30 mars 2020 jusqu’au 30 septembre 2020",
   "student_loan.header": "Arrêt des paiements de votre dette d’étude pendant 6 mois",
@@ -135,5 +133,7 @@
   "start.intro.3": "Ce service ne fait que suggérer des programmes fédéraux pour l’instant. De nouvelles prestations sont constamment créées et nous travaillons à les inclure aussitôt que possible. Revenez consulter cet outil afin de voir quelles nouvelles prestations s’appliquent à vous.",
   "start.details.summary": "Êtes vous un Canadien actuellement à l’étranger?",
   "start.details.p.1": "Si vous êtes un Canadien actuellement à l’étranger et que vous avez besoin d’aide financière pour revenir au Canada, vous pouvez demander <a href='https://voyage.gc.ca/assistance/info-d-urgence/assistance-financiere/covid-19-aide-financiere' target='_blank'>un prêt d’urgence</a>.",
-  "lost_job.title": "Perte de revenu en lien avec la COVID-19"
+  "lost_job.title": "Perte de revenu en lien avec la COVID-19",
+  "results.other_potential_help": "Aide supplémentaire disponible",
+  "results.other_potential_help.preamble": "L’aide suivante est également disponible :"
 }
