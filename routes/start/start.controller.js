@@ -9,7 +9,7 @@ module.exports = (app, route) => {
 
     // if on the French domain, redirect to the /fr start page
     if (domain.includes(process.env.DOMAIN_FR)) {
-      res.redirect(`${domain}${route.path.fr}`)
+      return res.redirect(`${domain}${route.path.fr}`)
     }
 
     res.redirect(route.path[req.locale])
