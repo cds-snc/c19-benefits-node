@@ -131,5 +131,6 @@
   "your_situation.some_income.3": "You’ve lost one of your jobs but you still have a side gig",
   "your_situation.unchanged_income.1": "You’re working from home",
   "your_situation.unchanged_income.2": "You’re on paid leave",
-  "your_situation.unchanged_income.3": "You’re retired"
+  "your_situation.unchanged_income.3": "You’re retired",
+  "mortgage_payments.title": "Your housing"
 }
