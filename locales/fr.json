@@ -104,7 +104,7 @@
   "rrif.linktext": false,
   "rrif.preamble": false,
   "start.intro.1": "Answer some questions to find out about financial help.",
-  "start.intro.2": "Vos réponses n’influenceront pas votre admissibilité. Consultez notre <a href='https://numerique.canada.ca/transparence/confidentialite/'>Politique de confidentialité</a> et <a href='https://numerique.canada.ca/transparence/avis/'>l’Avis</a> pour en savoir plus.",
+  "start.intro.2": "Vos réponses n’influenceront pas votre admissibilité. Consultez notre <a href='https://numerique.canada.ca/transparence/confidentialite/' target='_blank'>Politique de confidentialité</a> et <a href='https://numerique.canada.ca/transparence/avis/' target='_blank'>l’Avis</a> pour en savoir plus.",
   "start.submit": "Commencer",
   "start.subtitle": "Trouvez quelle aide financière vous est offerte",
   "start.title": "Argent pour la COVID-19",
@@ -132,6 +132,6 @@
   "start.lastupdated": "Dernière mise à jour le 7 avril 2020",
   "start.intro.3": "Ce service ne fait que suggérer des programmes fédéraux pour l’instant. De nouvelles prestations sont constamment créées et nous travaillons à les inclure aussitôt que possible. Revenez consulter cet outil afin de voir quelles nouvelles prestations s’appliquent à vous.",
   "start.details.summary": "Êtes vous un Canadien actuellement à l’étranger?",
-  "start.details.p.1": "Si vous êtes un Canadien actuellement à l’étranger et que vous avez besoin d’aide financière pour revenir au Canada, vous pouvez demander <a href='https://voyage.gc.ca/assistance/info-d-urgence/assistance-financiere/covid-19-aide-financiere'>un prêt d’urgence.</a>",
+  "start.details.p.1": "Si vous êtes un Canadien actuellement à l’étranger et que vous avez besoin d’aide financière pour revenir au Canada, vous pouvez demander <a href='https://voyage.gc.ca/assistance/info-d-urgence/assistance-financiere/covid-19-aide-financiere' target='_blank'>un prêt d’urgence.</a>",
   "lost_job.title": "Perte de revenu en lien avec la COVID-19"
 }
