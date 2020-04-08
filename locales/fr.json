@@ -72,7 +72,7 @@
   "gst.3": false,
   "gst.hint": false,
   "gst_credit.box1": "Versement automatique au mois d’avril si vous recevez déjà le crédit pour la TPS/TVH",
-  "gst_credit.box2": "400 $ pour les célibataires, 600 $ pour les couples",
+  "gst_credit.box2": "400 $ pour les célibataires<br> 600 $ pour les couples",
   "gst_credit.header": "Argent supplémentaire grâce au crédit pour la TPS/TVH",
   "gst_credit.linktext": "En savoir plus à propos du crédit pour la TPS/TVH",
   "gst_credit.preamble": "<p>Bon à savoir :</p><ul class='list-disc list-outside'><li>Vérifiez votre compte bancaire pour savoir si vous recevez déjà le crédit pour la TPS/TVH.</li><li><a href=\"\">Les dates de versement</a> sont indiquées en ligne.</li></ul>",

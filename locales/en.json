@@ -72,7 +72,7 @@
   "gst.3": "You're not sure",
   "gst.hint": "Check your bank account to find out if you’ve been receiving the GST credit. <a href='#'>Dates of payments are available</a>. ",
   "gst_credit.box1": "Automatic payment in April if you already receive the GST credit",
-  "gst_credit.box2": "$400 for single people, $600 for couples",
+  "gst_credit.box2": "$400 for single people<br> $600 for couples",
   "gst_credit.header": "More money through the GST credit",
   "gst_credit.linktext": "Learn more about the GST credit",
   "gst_credit.preamble": "<p>Good to know:</p><ul class='list-disc list-outside'><li>Check your bank account to find out if you’ve been receiving the GST credit.</li><li><a href=\"\">Dates of payments are available</a> online.</li></ul>",
