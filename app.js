@@ -1,3 +1,10 @@
+// add app insights instrumentation
+if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) { 
+  const appInsights = require("applicationinsights");
+  appInsights.setup();
+  appInsights.start();
+}
+
 // import environment variables.
 require('dotenv').config()
 require('dotenv').config({ path: './.env.public' })
