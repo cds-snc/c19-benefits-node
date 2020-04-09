@@ -40,6 +40,7 @@
   "ei_regular.linktext": "Demander les prestations regulières de l’assurance-emploi",
   "ei_regular.preamble": "<p>L’assurance-emploi peut vous aider si</p><ul class='list-disc list-outside'><li>vous avez contribué à l’assurance-emploi, normalement par votre employeur. Consultez votre paye pour déterminer si vous avez contribué à l’assurance emploi.</li><li>vous avez travaillé le nombre minimum “d’heure assurables”.</li></ul><p>Bon à savoir :</p><ul><li>Vous pourriez être admissible à l’assurance-emploi même si vous avez quitté votre emploi volontairement pour des raisons de santé liées à la COVID—19.</li><li>Le nombre de semaines admissible dépend du nombre “d’heures assurables” travaillées lors des 52 semaines précédentes.</li></ul>",
   "ei_regular_and_cerb.box1": "500 $ par semaine<span class='hide--mobile'>, </span><br class='hide--desktop' />versement aux 4 semaines",
+  "ei_regular_and_cerb.box2": "À recevoir au plus tard 10 jours après la demande",
   "ei_regular_and_cerb.link": "https://www.canada.ca/fr/services/prestations/ae/pcusc-application.html",
   "ei_regular_and_cerb.linktext": "Demander les prestations regulières de l’assurance-emploi et la PCU",
   "ei_regular_and_cerb.preamble": "<p>La PCU peut vous aider si:</p><ul><li>vous avez arrêté de travailler pendant au moins 14 jours consécutifs en raison de la COVID—19.</li><li>vous avez gagné un revenu d’au moins 5000 $ en 2019 ou dans les 12 derniers mois.</li></ul><p>Bon à savoir :</p><ul class='list-disc list-outside'><li>Vous pourriez être admissible à l’assurance-emploi même si vous avez quitté votre emploi volontairement pour des raisons de santé liées à la COVID—19.</li><li>Vous devrez présenter une nouvelle demande à chaque période de 4 semaines</li></ul><p>Si vous êtes admissible à l’assurance-emploi ainsi qu’à la Prestation canadienne d’urgence (PCU), vous recevrez la PCU pendant les 4 premiers mois. Vous recevrez ensuite les prestations régulières d’assurance-emploi si vous êtes toujours sans emploi.</p>",
@@ -91,10 +92,10 @@
   "mortgage_payments.2": "Oui, vous êtes inquiet au sujet de votre loyer.",
   "mortgage_payments.3": "Non, vous n’êtes pas inquiet en ce moment.",
   "phase.desc": "Ce site évoluera au fur et à mesure que nous testons des idées.",
-  "rent_help.header": "Dans la majorité des provinces, vous ne pouvez pas être expulsé pour ne pas avoir payé votre loyer",
+  "rent_help.header": "Dans la majorité des provinces et territoires, vous ne pouvez pas être expulsé pour ne pas avoir payé votre loyer",
   "rent_help.link": "https://www.cmhc-schl.gc.ca/fr/rental-housing/covid-19-eviction-bans-and-suspensions-to-support-renters",
   "rent_help.linktext": "Vérifier auprès de mon gouvernement provincial pour en savoir plus",
-  "rent_help.preamble": "<ul class='list-disc list-outside'><li>Les gouvernements provinciaux sont responsables de la réglementation des logements locatifs.</li><li> À l’heure actuelle, on ne peut pas vous expulser si vous n’avez pas payé votre loyer</li></ul>",
+  "rent_help.preamble": "<ul class='list-disc list-outside'><li>Les gouvernements provinciaux sont responsables de la réglementation des logements locatifs.</li><li> Dans la majorité des provinces et territoires, vous ne pouvez pas être expulsé pour ne pas avoir payé votre loyer</li></ul>",
   "required": "(obligatoire)",
   "results.header_text": false,
   "results_title": {
@@ -154,5 +155,7 @@
   "results.other_potential_help.preamble": "L’aide suivante est également disponible :",
   "some_income.title": "Votre situation",
   "no_income.title": "Votre situation",
-  "unchanged_income.title": "Votre situation"
+  "unchanged_income.title": "Votre situation",
+  "gross_income.title": "Votre revenu",
+  "results.banner": "results.banner"
 }

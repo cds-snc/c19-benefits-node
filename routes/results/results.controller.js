@@ -11,7 +11,7 @@ module.exports = (app, route) => {
       const benefits = getBenefits(data);
 
       res.render(name, routeUtils.getViewData(req, {
-        benefits: benefits,
+        benefits: ['ei_regular_cerb', 'rent_help', 'ccb_payment'],
         no_results: benefits.length === 0,
         no_cerb: getNoCerb(data),
       }))
