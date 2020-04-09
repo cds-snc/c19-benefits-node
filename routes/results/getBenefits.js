@@ -51,29 +51,7 @@ const getBenefits = data => {
       data,
       {
         lost_job: 'lost-all-income',
-        no_income: 'unsafe-work-conditions',
-      },
-      'ei_regular',
-    ),
-  )
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-all-income',
         no_income: 'sick-or-quarantined',
-      },
-      'ei_sickness_cerb',
-    ),
-  )
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-some-income',
-        no_income: 'quarantined',
       },
       'ei_sickness_cerb',
     ),
