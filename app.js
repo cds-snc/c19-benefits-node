@@ -37,11 +37,10 @@ if (process.env.NODE_ENV !== 'test') {
   // CSRF setup
   app.use(
     csrf({
-      cookie: {
-        sameSite: true,
-        secure: true,
-      },
+      cookie: true,
       signed: true,
+      sameSite: true,
+      secure: true,
     }),
   )
 
@@ -52,8 +51,7 @@ if (process.env.NODE_ENV !== 'test') {
   })
 }
 
-// in production: use redis for sessions
-// but this works for now
+// cookie sessions are character limited, but this works for now
 app.use(cookieSession(cookieSessionConfig))
 
 // public assets go here (css, js, etc)
