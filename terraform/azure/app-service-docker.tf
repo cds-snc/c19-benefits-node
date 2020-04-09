@@ -7,7 +7,7 @@ resource "azurerm_app_service_plan" "app_service_plan" {
 
   sku {
     tier = "Standard"
-    size = "S1"
+    size = "P1V2"
   }
 }
 
@@ -66,7 +66,7 @@ resource "azurerm_app_service_slot" "staging" {
   }
 
   app_settings = {
-    "APPINSIGHTS_INSTRUMENTATIONKEY"  = azurerm_application_insights.covid-benefit.instrumentation_key
+    "APPINSIGHTS_INSTRUMENTATIONKEY"  = azurerm_application_insights.staging.instrumentation_key
     "APP_SERVICE"                     = "true"
     "DOCKER_ENABLE_CI"                = "true"
     "DOCKER_REGISTRY_SERVER_URL"      = "https://${azurerm_container_registry.container_registry.login_server}"
