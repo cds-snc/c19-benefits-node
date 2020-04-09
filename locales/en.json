@@ -98,6 +98,8 @@
     "one": "%s way to get help",
     "other": "%s ways to get help"
   },
+  "results_title_no_cerb": "Check back again in a week or two",
+  "results.no_cerb.preamble": "At this time, people who have lost some income but not all their income are not covered by the Canada Emergency Response Benefit (CERB). New measures are still being announced, and we’re working to update this tool as quickly as possible. Check back in a week or two.",
   "rrif.1": "Yes",
   "rrif.2": "No",
   "rrif.header": "Lower mandatory withdrawals for your Registered Retirement Income Fund (RRIF)",
