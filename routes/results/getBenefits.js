@@ -77,27 +77,22 @@ const getBenefits = data => {
 
 
   results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-some-income',
-        some_income: ['employed-lost-a-job', 'hours-reduced'],
-      },
-      'no-cerb',
-    ),
-  )
-  results.push(
     match(data, { mortgage_payments: 'yes-mortgage' }, 'mortgage_deferral'),
   )
   results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))
   results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
   results.push(match(data, { ccb: [ 'yes','unsure' ] }, 'ccb_payment'))
   results.push(match(data, {  rrif: 'yes' }, 'rrif'))
-  results.push(match(data, {  rrif: 'yes' }, 'rrif'))
 
   return results.filter(v => v !== undefined)
 }
 
+const getNoCerb =  data => { 
+
+  return match(data, { lost_job: "lost_some_income", some_income: ["hours-reduced", "employed-lost-a-job"] }, true) || false;
+}
+
 module.exports = {
   getBenefits,
+  getNoCerb,
 }
