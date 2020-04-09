@@ -37,11 +37,19 @@ describe('Test the getBenefits calculator', () => {
     })
   })
 
+  test('Quarantine Lost some ', () => {
+    const result = getBenefits({
+      lost_job: 'lost-some-income',
+      some_income: 'quarantine',
+    })
+
+    expect(result).toContain('ei_sickness_cerb')
+  })
+
   test('It checks cerb-only path 2', () => {
     const result = getBenefits({
       lost_job: 'lost-some-income',
       some_income: 'employed-lost-a-job',
-      gross_income: '5k+',
     })
 
     expect(result).toContain('cerb')

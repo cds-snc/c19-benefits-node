@@ -73,7 +73,7 @@ const getBenefits = (data) => {
       data,
       {
         lost_job: 'lost-some-income',
-        no_income: 'quarantined',
+        some_income: 'quarantine',
       },
       'ei_sickness_cerb',
     ),
