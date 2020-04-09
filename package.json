@@ -16,7 +16,10 @@
     "lint": "node node_modules/eslint/bin/eslint.js config utils routes bin/www app.js",
     "prettier": "prettier --write '**/*.{ts,js,css,html}'",
     "test": "node node_modules/jest/bin/jest.js --coverage",
+    "test:server": "cross-env nodemon --exec npm run test:server:start",
+    "test:server:start": "webpack --config webpack.dev.js && cross-env NODE_ENV=test node ./bin/www",
     "test:watch": "node node_modules/jest/bin/jest.js --watch",
+    "cypress:run:test": "NODE_ENV=testing cypress run",
     "aws": "cd cdk && cdk synth && node deploy",
     "aws-bootstrap": "node cdk/bootstrap.js",
     "aws-destroy": "node cdk/destroy.js",
@@ -64,8 +67,11 @@
     "@aws-cdk/aws-ecs": "1.32.0",
     "@aws-cdk/aws-ecs-patterns": "1.32.0",
     "@aws-cdk/core": "1.32.0",
+    "@cdssnc/a11y-tracker-client": "^1.1.2",
     "acorn": "^7.1.1",
     "cheerio": "^1.0.0-rc.3",
+    "cypress": "^4.3.0",
+    "cypress-axe": "^0.8.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-config-standard": "^14.1.1",
@@ -89,7 +95,8 @@
   "nodemonConfig": {
     "ext": "js,json,njk,scss",
     "ignore": [
-      "public/dist/**/*.*"
+      "public/dist/**/*.*",
+      "cypress/**/*.*"
     ]
   }
 }

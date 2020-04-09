@@ -29,6 +29,17 @@ jobs:
       run: npm run lint
       env:
         CI: true
+
+    - name: Run Cypress end-to-end
+      uses: cypress-io/github-action@v1
+      env:
+        NODE_ENV: test
+        A11Y_TRACKER_KEY: ${{ secrets.A11Y_TRACKER_KEY }}
+        CI: true
+      with:
+        install: false
+        start: npm run test:server:start
+
   deploy:
     name: Build container and deploy
     env:
