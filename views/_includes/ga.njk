@@ -1,0 +1,24 @@
+
+{% if $env.NODE_ENV === 'production' %}
+  {% if getLocale() === 'en' %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102484926-19"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-102484926-19');
+    </script>
+  {% endif %}
+
+  {% if getLocale() === 'en' %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102484926-20"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-102484926-20');
+    </script>
+  {% endif %}
+{% endif %}
