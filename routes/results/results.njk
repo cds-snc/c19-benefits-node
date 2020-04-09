@@ -3,7 +3,15 @@
 
 {% block content %}
 
-    <h1>{{ __n("results_title", benefits.length) }}</h1>
+    {% if no_cerb %}
+        <h1>{{ __("results_title_no_cerb") }}</h1>
+        <p>{{ __("results.no_cerb.preamble") }}</p>
+    {% elif no_results %}
+        <h1>{{ __("results_title_no_results") }}</h1>
+        <p>{{ __("results.no_results.preamble") }}</p>
+    {% else %}
+        <h1>{{ __n("results_title", benefits.length) }}</h1>
+    {% endif %}
 
     {% if not data.lost_job %}
         <div>{{ banner('red', '<p>' + __('results.banner') + '</p>') }}</div>
