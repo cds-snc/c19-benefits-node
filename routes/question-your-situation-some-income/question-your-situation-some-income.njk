@@ -4,7 +4,7 @@
 
     <h1>{{__('some_income.title')}}</h1>
     <div>
-        <form method="post">
+        {% call form() %}
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
 
             {{ radioButtons('some_income',
@@ -23,7 +23,7 @@
                 { required: true })
             }}
             {{ formButtons() }}
-        </form>
+        {% endcall %}
     </div>
 
 {% endblock %}
