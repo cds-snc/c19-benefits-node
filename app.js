@@ -19,7 +19,7 @@ const morganConfig = require('./config/morgan.config')
 const path = require('path')
 const cookieSession = require('cookie-session')
 const cookieSessionConfig = require('./config/cookieSession.config')
-const { hasData } = require('./utils')
+const { hasData, getDomain } = require('./utils')
 const { addNunjucksFilters } = require('./filters')
 const csp = require('./config/csp.config')
 const csrf = require('csurf')
@@ -44,11 +44,10 @@ if (process.env.NODE_ENV !== 'test') {
   // CSRF setup
   app.use(
     csrf({
-      cookie: {
-        sameSite: true,
-        secure: true,
-      },
+      cookie: true,
       signed: true,
+      sameSite: true,
+      secure: true,
     }),
   )
 
@@ -59,8 +58,7 @@ if (process.env.NODE_ENV !== 'test') {
   })
 }
 
-// in production: use redis for sessions
-// but this works for now
+// cookie sessions are character limited, but this works for now
 app.use(cookieSession(cookieSessionConfig))
 
 // public assets go here (css, js, etc)
@@ -89,11 +87,31 @@ app.locals.hasData = hasData
 app.locals.basedir = path.join(__dirname, './views')
 app.set('views', [path.join(__dirname, './views')])
 
+// middleware to set a unique user id per session
 app.use(function (req, res, next) {
   // set a unique user id per session
   if (!req.session.id) req.session.id = uuidv4()
   // add user session req.locals so that the logger has access to it
   req.locals = { session: req.session }
+
+  next()
+})
+
+// middleware to redirect french paths to the french domain and english paths to the english domain
+/* istanbul ignore next */
+app.use(function (req, res, next) {
+  // if not running on production azure, skip this
+  if (!process.env.APP_SERVICE) return next()
+
+  const domain = getDomain(req)
+
+  // if `/fr/` appears in the path for the english domain, redirect to DOMAIN_FR
+  if (req.path.startsWith('/fr/') && domain.includes(process.env.DOMAIN_EN))
+    return res.redirect(`https://${process.env.DOMAIN_FR}${req.path}`)
+
+  // if `/en/` appears in the path for the french domain, redirect to DOMAIN_EN
+  if (req.path.startsWith('/en/') && domain.includes(process.env.DOMAIN_FR))
+    return res.redirect(`https://${process.env.DOMAIN_EN}${req.path}`)
 
   next()
 })
