@@ -107,8 +107,8 @@
     "one": "%s way to get help",
     "other": "%s ways to get help"
   },
-  "rrif.1": "Yes",
-  "rrif.2": "No",
+  "rrif.1": "Yes.",
+  "rrif.2": "No.",
   "rrif.header": "Lower mandatory withdrawals for your Registered Retirement Income Fund (RRIF)",
   "rrif.link": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/registered-retirement-income-fund-rrif.html",
   "rrif.linktext": "Contact your bank for more details",
