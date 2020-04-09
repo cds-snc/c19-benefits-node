@@ -2,9 +2,8 @@
 
 {% block content %}
 
-    
+    <h1>{{__('some_income.title')}}</h1>
     <div>
-        <h1>{{__('some_income.title')}}</h1>
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
 
@@ -18,7 +17,7 @@
 
                     { value: 'quarantine', text:__('your_situation.some_income.4')}
                 ],
-                data.your_situation.some_income,
+                data.some_income,
                 __('form.your_situation.some_income'),
                 errors,
                 { required: true })

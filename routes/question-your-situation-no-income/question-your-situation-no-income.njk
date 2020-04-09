@@ -2,9 +2,8 @@
 
 {% block content %}
 
-    
+    <h1>{{__('no_income.title')}}</h1>
     <div>
-        <h1>{{__('no_income.title')}}</h1>
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             {{ radioButtons('no_income',
@@ -13,10 +12,10 @@
                     { value: 'lost-job-employer-closed', text:__('your_situation.no_income.1')},
                     { value: 'self-employed-closed', text:__('your_situation.no_income.2')},
                     { value: 'unpaid-leave-to-care', text:__('your_situation.no_income.3')},
+                    { value: 'sick-or-quarantine', text:__('your_situation.no_income.7')},
                     { value: 'parental-recently-cant-return', text:__('your_situation.no_income.4')},
                     { value: 'ei-recently-claim-ended', text:__('your_situation.no_income.5')},
-                    { value: 'unsafe-work-conditions', text:__('your_situation.no_income.6')},
-                    { value: 'sick-or-quarantine', text:__('your_situation.no_income.7')}
+                    { value: 'unsafe-work-conditions', text:__('your_situation.no_income.6')}
                 ],
                 data.no_income,
                 __('form.your_situation.no_income'),

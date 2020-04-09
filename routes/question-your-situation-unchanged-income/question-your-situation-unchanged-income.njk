@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    
+    <h1>{{__('unchanged_income.title')}}</h1>
     <div>
         <form method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
@@ -13,7 +13,7 @@
                     { value: 'paid-leave', text:__('your_situation.unchanged_income.2')},
                     { value: 'retired', text:__('your_situation.unchanged_income.3')}
                 ],
-                data.your_situation.unchanged_income,
+                data.unchanged_income,
                 __('form.your_situation.unchanged_income'),
                 errors,
                 { required: true })
