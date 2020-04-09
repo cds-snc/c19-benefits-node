@@ -46,15 +46,6 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('ei_sickness_cerb')
   })
 
-  test('It checks cerb-only path 2', () => {
-    const result = getBenefits({
-      lost_job: 'lost-some-income',
-      some_income: 'employed-lost-a-job',
-    })
-
-    expect(result).toContain('cerb')
-  })
-
   test('It checks cerb-only path 3', () => {
 
     const result = getBenefits({
