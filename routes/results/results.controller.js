@@ -14,6 +14,7 @@ module.exports = (app, route) => {
         benefits: benefits,
         no_results: benefits.length === 0,
         no_cerb: getNoCerb(data),
+        hideBackButton: true,
       }))
     })
     .post(route.applySchema(Schema), route.doRedirect())

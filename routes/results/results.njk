@@ -3,6 +3,13 @@
 
 {% block content %}
 
+    <div class="flex flex-row">
+        {% include "_includes/back-link.njk" %}
+        <div class="inline -mt-12">
+            <a class="ml-6 py-3 button-link transparent" href="/clear"><img src="/img/times-circle.svg" aria-hidden="true" /><span>{{ __('start_over') }}</span></a>
+        </div>
+    </div>
+
     {% if no_cerb %}
         <h1>{{ __("results_title_no_cerb") }}</h1>
         <p>{{ __("results.no_cerb.preamble") }}</p>
