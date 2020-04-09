@@ -10,7 +10,6 @@ module.exports = (app, route) => {
     })
     .post(route.applySchema(Schema), (req, res) => {
       if(req.session.formdata.some_income && req.session.formdata.some_income === 'retired') {
-        // if previously answered retired, send to rrif
         return res.redirect(res.locals.routePath('question-rrif'))
       } 
 
