@@ -95,16 +95,6 @@ const getBenefits = (data) => {
     ),
   )
 
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-all-income',
-        no_income: 'unsafe-work-conditions',
-      },
-      'ei_regular',
-    ),
-  )
 
   results.push(
     match(data, { mortgage_payments: 'yes-mortgage' }, 'mortgage_deferral'),
