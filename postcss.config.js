@@ -7,7 +7,13 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
   defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
 
   // whitelist dynamic class names
-  whitelist: ['banner--blue', 'banner--blue__icon', 'banner--red'],
+  whitelist: [
+    'banner--blue',
+    'banner--blue__icon',
+    'banner--red',
+    'hide--desktop',
+    'hide--mobile',
+  ],
 })
 
 module.exports = {
