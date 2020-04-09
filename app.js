@@ -91,6 +91,7 @@ app.use(function (req, res, next) {
 })
 
 // middleware to redirect french paths to the french domain and english paths to the english domain
+/* istanbul ignore next */
 app.use(function (req, res, next) {
   // if not running on production azure, skip this
   if (!process.env.APP_SERVICE) return next()
