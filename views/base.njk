@@ -15,11 +15,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="[{{ __('app.phase') }}] {{ __('app.title') }}">
         <meta name="csrf-token" content="{{ csrfToken }}">
+
+        <!-- Adobe Analytic tags -->
+        <meta name="dcterms.title" content="{{ __('app.title') }}"/> 
+        <meta name="dcterms.language" content="{{ getLocale() }}"/> 
+        <meta name="dcterms.creator" content="CDS"/>	
+        <meta name="dcterms.accessRights" content="2"/> 
+        <meta name="dcterms.service" content="ESDC-EDSC_c19b-c19p"/> 
+
+        {% if ISPROD %}
+            <script src="//assets.adobedtm.com/launch-EN0cf6c2810a2b48f8a4c36502a1b09541.min.js"></script>
+        {% else %}
+            <script src="//assets.adobedtm.com/launch-EN11c0261481f74c56b7656937bbd995e9-staging.min.js"></script>
+        {% endif %}
+        <!-- End of Adobe analytic tags -->
+
+        <!-- Google Analytic Tags -->
+
+        <!-- End of Google Analytic Tags --> 
+
         {% if GITHUB_SHA %}<meta name="github-sha" content="{{ GITHUB_SHA }}">{% endif %}
         <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" sizes="32x32">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
         <link href="https://fonts.googleapis.com/css?family=Lato:700|Noto+Sans:400,700&amp;display=fallback" rel="stylesheet">
         <link rel="stylesheet" href="/dist/css/styles.css">
+        
+
         <title>{{ __('app.title') }}</title>
         {% include "_includes/ga.njk %}
     </head>
@@ -45,6 +66,8 @@
             </main>
             {% include "_includes/footer.njk" %}
         </div>
+        <!-- Required for Adobe Analytics --> 
+        <script type="text/javascript">_satellite.pageBottom();</script>
     </body>
     {% include "_includes/script.njk" %}
     {% block scripts %}
@@ -54,4 +77,5 @@
             {% endfor %}
         {% endif %}
     {% endblock %}
+    
 </html>
