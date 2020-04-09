@@ -1,6 +1,6 @@
 const { routeUtils, getSessionData } = require('./../../utils')
 const { Schema } = require('./schema.js')
-const { getBenefits } = require('./getBenefits');
+const { getBenefits, getNoCerb } = require('./getBenefits');
 
 module.exports = (app, route) => {
   const name = route.name
@@ -13,7 +13,7 @@ module.exports = (app, route) => {
       res.render(name, routeUtils.getViewData(req, {
         benefits: benefits,
         no_results: benefits.length === 0,
-        // no_cerb: true,
+        no_cerb: getNoCerb(data),
       }))
     })
     .post(route.applySchema(Schema), route.doRedirect())
