@@ -126,6 +126,22 @@ li:not(:last-of-type) {
   @extend %page-container;
 }
 
+.hide--mobile {
+  display: none;
+
+  @include sm {
+    display: inherit;
+  }
+}
+
+.hide--desktop {
+  display: inherit;
+
+  @include sm {
+    display: none;
+  }
+}
+
 .pure-table {
   width: 100%;
   margin-bottom: $space-sm;
