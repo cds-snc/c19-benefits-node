@@ -186,7 +186,11 @@ form {
 
       .button-link {
         display: flex;
-        justify-content: center;
+        justify-content: start;
+
+        @include md {
+          justify-content: center;
+        }
 
         img {
           //width of the icon to truly center the text
