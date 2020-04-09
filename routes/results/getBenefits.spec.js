@@ -10,6 +10,16 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('ei_regular_cerb')
   })
 
+  test('It checks ei regular for retired', () => {
+    const result = getBenefits({
+      lost_job: 'lost-some-income',
+      some_income: 'retired',
+      gross_income: '4999_or_less',
+    })
+
+    expect(result).toContain('ei_regular')
+  })
+
   test('It checks ei sickness + cerb path', () => {
     const result = getBenefits({
       lost_job: 'lost-all-income',

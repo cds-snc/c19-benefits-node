@@ -61,6 +61,18 @@ const getBenefits = (data) => {
     match(
       data,
       {
+        lost_job: 'lost-some-income',
+        some_income: 'retired',
+        gross_income: '4999_or_less',
+      },
+      'ei_regular',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
         lost_job: 'lost-all-income',
         no_income: 'sick-or-quarantined',
       },
