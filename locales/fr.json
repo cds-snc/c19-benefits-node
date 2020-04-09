@@ -154,10 +154,6 @@
   "some_income.title": "Votre situation",
   "no_income.title": "Votre situation",
   "unchanged_income.title": "Votre situation",
-<<<<<<< HEAD
   "gross_income.title": "Votre revenu",
   "results.banner": "Vous n’avez pas répondu à quelques questions. <a href='/clear'>Recommencez</a> pour recevoir vos résultats complets."
-=======
-  "gross_income.title": "Votre revenu"
->>>>>>> master
 }
