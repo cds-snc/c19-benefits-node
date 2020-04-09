@@ -24,8 +24,13 @@ resource "azurerm_app_service" "app_service" {
     always_on        = true
   }
 
-  app_settings {
-    APPINSIGHTS_INSTRUMENTATIONKEY = azurerm_application_insights.test.instrumentation_key
+  app_settings = {
+    "APPINSIGHTS_INSTRUMENTATIONKEY" = azurerm_application_insights.covid-benefit.instrumentation_key
+    "APP_SERVICE"                     = "true"
+    "DOCKER_ENABLE_CI"                = "true"
+    "DOCKER_REGISTRY_SERVER_URL"      = "https://${azurerm_container_registry.container_registry.login_server}"
+    "DOCKER_REGISTRY_SERVER_USERNAME" = azurerm_container_registry.container_registry.admin_username
+    "DOCKER_REGISTRY_SERVER_PASSWORD" = azurerm_container_registry.container_registry.admin_password
   }
 
   logs {
