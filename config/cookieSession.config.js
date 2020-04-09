@@ -14,12 +14,14 @@ const sessionName = `ctb-${
 const cookieSessionConfig = {
   name: sessionName,
   secret: sessionName,
-  cookie: {
-    domain: '.alpha.canada.ca',
-    httpOnly: true,
-    maxAge: oneHour,
-    sameSite: true,
-  },
+  httpOnly: true,
+  maxAge: oneHour,
+  sameSite: true,
+}
+
+// if running on Azure, set the cookie domain to .alpha.canada.ca
+if (process.env.APP_SERVICE) {
+  cookieSessionConfig.domain = '.alpha.canada.ca'
 }
 
 module.exports = cookieSessionConfig
