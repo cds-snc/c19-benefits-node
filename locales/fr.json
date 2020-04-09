@@ -154,5 +154,6 @@
   "results.other_potential_help.preamble": "L’aide suivante est également disponible :",
   "some_income.title": "Votre situation",
   "no_income.title": "Votre situation",
-  "unchanged_income.title": "Votre situation"
+  "unchanged_income.title": "Votre situation",
+  "gross_income.title": "Votre revenu"
 }
