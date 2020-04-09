@@ -32,7 +32,7 @@ function match(input, pattern, result) {
   return undefined
 }
 
-const getBenefits = data => {
+const getBenefits = (data) => {
   var results = []
 
   results.push(
@@ -51,7 +51,29 @@ const getBenefits = data => {
       data,
       {
         lost_job: 'lost-all-income',
+        no_income: 'unsafe-work-conditions',
+      },
+      'ei_regular',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
         no_income: 'sick-or-quarantined',
+      },
+      'ei_sickness_cerb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'quarantine',
       },
       'ei_sickness_cerb',
     ),
@@ -73,70 +95,33 @@ const getBenefits = data => {
     ),
   )
 
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-some-income',
-        some_income: 'employed-lost-a-job',
-        gross_income: '5k+',
-        days_stopped_working: '>14days',
-      },
-      'cerb',
-    ),
-  )
 
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-some-income',
-        some_income: 'hours-reduced',
-        gross_income: ['3k-5k', '5k+'],
-        days_stopped_working: '>14days',
-      },
-      'cerb',
-    ),
-  )
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-some-income',
-        some_income: 'hours-reduced',
-        gross_income: ['3k-5k', '5k+'],
-        days_stopped_working: '<14days',
-      },
-      'ei_workshare',
-    ),
-  )
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-some-income',
-        some_income: 'employed-lost-a-job',
-        gross_income: '3k-5k',
-      },
-      'ei_regular',
-    ),
-  )
   results.push(
     match(data, { mortgage_payments: 'yes-mortgage' }, 'mortgage_deferral'),
   )
   results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))
   results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
-  results.push(match(data, { gst: 'unsure' }, 'gst_credit'))
-  results.push(match(data, { gst: 'yes' }, 'gst_credit'))
-  results.push(match(data, { ccb: 'unsure' }, 'ccb_payment'))
-  results.push(match(data, { ccb: 'yes' }, 'ccb_payment'))
+  results.push(match(data, { ccb: ['yes', 'unsure'] }, 'ccb_payment'))
+  results.push(match(data, { gross_income: '5k+' }, 'cerb'))
   results.push(match(data, { rrif: 'yes' }, 'rrif'))
 
-  return results.filter(v => v !== undefined)
+  return results.filter((v) => v !== undefined)
+}
+
+const getNoCerb = (data) => {
+  return (
+    match(
+      data,
+      {
+        lost_job: 'lost_some_income',
+        some_income: ['hours-reduced', 'employed-lost-a-job'],
+      },
+      true,
+    ) || false
+  )
 }
 
 module.exports = {
   getBenefits,
+  getNoCerb,
 }

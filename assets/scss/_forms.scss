@@ -96,6 +96,7 @@ form {
     @extend %form-element;
   }
 
+
   fieldset legend,
   div:not(.multiple-choice__item) > label {
     font-family: 'Lato', sans-serif;
@@ -185,7 +186,11 @@ form {
 
       .button-link {
         display: flex;
-        justify-content: center;
+        justify-content: start;
+
+        @include md {
+          justify-content: center;
+        }
 
         img {
           //width of the icon to truly center the text

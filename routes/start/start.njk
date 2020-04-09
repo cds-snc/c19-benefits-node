@@ -4,15 +4,19 @@
 {% block content %}
     <h1>{{ __('start.title') }}</h1>
 
-    <div>
-    {{ banner('blue', '<p>' + __('start.intro.banner.1') + '<br /><a href="#" >' + __('start.intro.banner.2') + '</a></p>') }}
-    </div>
-
     <h2 class="text-2xl mb-5">{{ __('start.subtitle') }}</h2>
 
     <div>
-    <p>{{ __('start.intro.1') }}</p>
-    <p>{{ __('start.intro.2') | safe }}</p>
+        <p class="mb-8">{{ __('start.intro.2') | safe }}</p>
+        <h2 class="text-2xl mb-5">{{ __('start.lastupdated') }}</h2>
+        <p>{{ __('start.intro.3') | safe }}</p>
+    </div>
+
+    <div>
+        <details>
+            <summary><span>{{ __('start.details.summary') | safe }}</span></summary>
+            <p>{{ __('start.details.p.1') | safe }}</p>
+        </details>
     </div>
 
     <div class="start-button">

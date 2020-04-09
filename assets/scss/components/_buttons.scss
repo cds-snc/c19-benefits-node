@@ -88,11 +88,17 @@ a.button-link {
   }
 }
 
-button.back-button {
-  margin-bottom: $space-md;
+.back-button-container {
+  margin-bottom: $space-lg;
   //this so that if the button doesn't display, it doesn't affect the necessary margin for the header
   margin-top: -$space-lg;
 
+  @include sm {
+    margin-bottom: $space-xl;
+  }
+}
+
+button.back-button {
   img, span {
     display: inline-block;
   }

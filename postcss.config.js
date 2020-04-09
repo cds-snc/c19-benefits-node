@@ -4,10 +4,16 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
   content: ['./routes/**/*.njk', './views/**/*.njk'],
 
   // Include any special characters you're using in this regular expression
-  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+  defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
 
   // whitelist dynamic class names
-  whitelist: ['banner--blue','banner--blue__icon'],
+  whitelist: [
+    'banner--blue',
+    'banner--blue__icon',
+    'banner--red',
+    'hide--desktop',
+    'hide--mobile',
+  ],
 })
 
 module.exports = {
