@@ -102,6 +102,7 @@ const getBenefits = (data) => {
   results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))
   results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
   results.push(match(data, { ccb: ['yes', 'unsure'] }, 'ccb_payment'))
+  results.push(match(data, { gross_income: '5k+' }, 'cerb'))
   results.push(match(data, { rrif: 'yes' }, 'rrif'))
 
   return results.filter((v) => v !== undefined)
