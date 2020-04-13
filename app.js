@@ -1,8 +1,8 @@
 // add app insights instrumentation
 if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
-  const appInsights = require("applicationinsights");
-  appInsights.setup();
-  appInsights.start();
+  const appInsights = require('applicationinsights')
+  appInsights.setup()
+  appInsights.start()
 }
 
 // import environment variables.
@@ -43,9 +43,7 @@ app.use(require('./config/i18n.config').init)
 
 if (process.env.NODE_ENV !== 'test') {
   // CSRF setup
-  app.use(
-    csrf(require('./config/csrf.config')),
-  )
+  app.use(csrf(require('./config/csrf.config')))
 
   // append csrfToken to all responses
   app.use(function (req, res, next) {
@@ -84,6 +82,7 @@ app.use(compression())
 
 // Adding values/functions to app.locals means we can access them in our templates
 app.locals.GITHUB_SHA = process.env.GITHUB_SHA || null
+app.locals.BUILD_DATE = process.env.BUILD_DATE || null
 app.locals.hasData = hasData
 
 // set default views path
