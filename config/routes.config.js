@@ -7,7 +7,7 @@ const routes = [
   { name: 'question-your-situation-no-income', path: { en: '/your-situation/no-income', fr: '/votre-situation/aucun-revenu' } },
   { name: 'question-your-situation-some-income', path: { en: '/your-situation/some-income', fr: '/votre-situation/revenu-partiel' } },
   { name: 'question-your-situation-unchanged-income', path: { en: '/your-situation/unchanged-income', fr: '/votre-situation/revenu-intact' } },
-  
+
   // everyone ends up here (not sure of order?)
   { name: 'question-mortgage-payments', path: { en: '/mortgage-payments', fr: '/paiement-hypothecaire' } },
   { name: 'question-ccb', path: { en: '/CCB', fr: '/ARC' } },
@@ -20,6 +20,9 @@ const routes = [
 
   // 3a/b lost income fork
   { name: 'question-gross-income', path: { en: '/gross-income', fr: '/revenu-brut' } },
+
+  // feedback
+  { name: 'feedback', path: { en: '/feedback', fr: '/feedback' } },
 ]
 
 const locales = ['en', 'fr']
