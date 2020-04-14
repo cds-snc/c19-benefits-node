@@ -21,6 +21,9 @@
                 {% set itemId %}{{ key }}{{ item.value }}{%endset%}
                     <div class="multiple-choice__item">
                         <input id="{{ itemId }}"
+                            {% if attributes.required and loop.index === 1 %}
+                                required
+                            {% endif %}
                             name="{{ key }}"
                             type="radio"
                             value="{{ item.value }}"
