@@ -155,5 +155,5 @@
   "no_income.title": "Votre situation",
   "unchanged_income.title": "Votre situation",
   "gross_income.title": "Votre revenu",
-  "results.banner": "Vous n’avez pas répondu à quelques questions. <a href='/clear'>Recommencez</a> pour recevoir vos résultats complets."
+  "results.banner": "Erreur : Vous n’avez pas répondu à quelques questions. <a href='/clear'>Recommencez</a> pour recevoir vos résultats complets."
 }
