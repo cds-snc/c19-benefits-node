@@ -24,9 +24,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
         <link href="https://fonts.googleapis.com/css?family=Lato:700|Noto+Sans:400,700&amp;display=fallback" rel="stylesheet">
         <link rel="stylesheet" href="/dist/css/styles.css">
-
-        <title>{{ __('app.title') }}</title>
-
+        <title>{% if(title) %}{{ title }} — {% endif %}{{ __('app.title') }}</title>
         {% include "_includes/ga.njk" %}
     </head>
     <body>

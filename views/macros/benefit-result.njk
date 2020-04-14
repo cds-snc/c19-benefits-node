@@ -1,7 +1,13 @@
-{% macro benefitResult(id, header, preamble, button, boxes) %}
+{% macro benefitResult(id, header, preamble, button, boxes, headerSize="h2") %}
 <div class="m-5 p-5 shadow-result">
-    <h2 class="text-2xl font-bold mb-6" id="{{ id }}">{{ header }}</h2>
+    {% if headerSize === "h3" %}
+        <h3 class="text-2xl font-bold mb-6" id="{{ id }}">{{ header }}</h2>
+    {% else %}
+        <h2 class="text-2xl font-bold mb-6" id="{{ id }}">{{ header }}</h2>
+    {% endif %}
+    <ul class="list-none list-outside pl-0">
     {% for box in boxes %}
+        <li>
         <div class="bg-blue-200 p-5 m-1 text-blue-800">
             <p class="relative m-0 pl-8">
                 <svg class="w-6 h-6 mt-1 -ml-8 absolute fill-current" fill="none" aria-hidden="true" width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
@@ -10,7 +16,9 @@
                 <strong>{{ box | safe }}</strong>
             </p>
         </div>
+        </li>
     {% endfor %}
+    </ul>
     <div class="pb-5 mt-6">
         {{ preamble | safe}}
     </div>
