@@ -5,7 +5,7 @@
                 {% if attributes.required %}<span aria-hidden="true" class="required">*</span>{% endif %} {{ question }} {% if attributes.required %} <span class="required">{{ __("required")}}</span>{% endif %}
             </legend>
             {% if attributes.hint %}
-                <span class="form-message">
+                <span class="form-message" id="{{ key }}-hint">
                     {% if attributes.safeHint %}
                         {{attributes.hint | safe }}
                     {% else %}
@@ -21,6 +21,12 @@
                 {% set itemId %}{{ key }}{{ item.value }}{%endset%}
                     <div class="multiple-choice__item">
                         <input id="{{ itemId }}"
+                            {% if attributes.hint %}
+                                aria-describedby='{{ key }}-hint'
+                            {% endif %}
+                            {% if attributes.required and loop.index === 1 %}
+                                required
+                            {% endif %}
                             name="{{ key }}"
                             type="radio"
                             value="{{ item.value }}"

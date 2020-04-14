@@ -100,7 +100,7 @@
   "rent_help.linktext": "Check with your provincial government for more details",
   "rent_help.preamble": "<ul class='list-disc list-outside'><li>Provincial governments are in charge of rental housing rules. </li><li> In most provinces and territories, you cannot be evicted for not paying rent. </li></ul>",
   "required": "(required)",
-  "results.banner": "You missed a couple questions at the beginning. <a href='/clear'>Start over</a> to get your full results.",
+  "results.banner": "Error: You missed a couple questions at the beginning. <a href='/clear'>Start over</a> to get your full results.",
   "results.header_text": "Based on what you’ve told us, the following help is available:",
   "results_title": {
     "one": "%s way to get help",
