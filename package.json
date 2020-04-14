@@ -23,7 +23,8 @@
     "aws": "cd cdk && cdk synth && node deploy",
     "aws-bootstrap": "node cdk/bootstrap.js",
     "aws-destroy": "node cdk/destroy.js",
-    "comb": "jsoncomb --normalise \"./locales/*.json\""
+    "comb": "jsoncomb --normalise \"./locales/*.json\"",
+    "cypress:open": "node ./node_modules/.bin/cypress open"
   },
   "husky": {
     "hooks": {
