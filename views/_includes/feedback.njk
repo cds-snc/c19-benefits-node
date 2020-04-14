@@ -1,6 +1,8 @@
 <details class="w-full sm:w-2/3 lg:w-1/2">
     <summary class="px-4 py-2 bg-gray-300 rounded inline-block">{{ __('feedback.button') }}</summary>
-    <form action="" method="post" class="px-8 py-6 rounded border border-gray-300 bg-gray-100">
+    <form action="/en/feedback" method="post" class="px-8 py-6 rounded border border-gray-300 bg-gray-100">
+      <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+
       <fieldset class="fieldset">
         <legend class="fieldset__legend">
           {{ __('feedback.question') }}
@@ -8,27 +10,27 @@
 
         <div class="multiple-choice multiple-choice--checkboxes" id="">
           <div class="multiple-choice__item">
-              <input id="incorrect_info" name="problems[]" type="checkbox" value="Incorrect information">
+              <input id="incorrect_info" name="problems" type="checkbox" value="{{ __('feedback.1') }}">
               <label for="incorrect_info">{{ __('feedback.1') }}</label>
           </div>
           <div class="multiple-choice__item">
-              <input id="confusing_info" name="problems[]" type="checkbox" value="Confusing or unclear information">
+              <input id="confusing_info" name="problems" type="checkbox" value="{{ __('feedback.2') }}">
               <label for="confusing_info">{{ __('feedback.2') }}</label>
           </div>
           <div class="multiple-choice__item">
-              <input id="didnt_find" name="problems[]" type="checkbox" value="You didn't find what you were looking for">
+              <input id="didnt_find" name="problems" type="checkbox" value="{{ __('feedback.3') }}">
               <label for="didnt_find">{{ __('feedback.3') }}</label>
           </div>
           <div class="multiple-choice__item">
-              <input id="a11y_issue" name="problems[]" type="checkbox" value="Page does not work with your adaptive technologies">
+              <input id="a11y_issue" name="problems" type="checkbox" value="{{ __('feedback.4') }}">
               <label for="a11y_issue">{{ __('feedback.4') }}</label>
           </div>
           <div class="multiple-choice__item">
-              <input id="privacy_concerns" name="problems[]" type="checkbox" value="You're worried about your privacy">
+              <input id="privacy_concerns" name="problems" type="checkbox" value="{{ __('feedback.5') }}">
               <label for="privacy_concerns">{{ __('feedback.5') }}</label>
           </div>
           <div class="multiple-choice__item">
-              <input id="other_issue" name="problems[]" type="checkbox" value="Other">
+              <input id="other_issue" name="problems" type="checkbox" value="{{ __('feedback.6') }}">
               <label for="other_issue">{{ __('feedback.6') }}</label>
           </div>
         </div>
