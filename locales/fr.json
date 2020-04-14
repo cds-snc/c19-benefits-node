@@ -153,5 +153,14 @@
   "no_income.title": "Votre situation",
   "unchanged_income.title": "Votre situation",
   "gross_income.title": "Votre revenu",
-  "results.banner": "Erreur : Vous n’avez pas répondu à quelques questions. <a href='/clear'>Recommencez</a> pour recevoir vos résultats complets."
+  "results.banner": "Erreur : Vous n’avez pas répondu à quelques questions. <a href='/clear'>Recommencez</a> pour recevoir vos résultats complets.",
+  "feedback.button": "Signaler un problème ou une erreur sur cette page",
+  "feedback.question": "Cochez tous les problèmes qui s’appliquent.",
+  "feeback.1": "L’information sur cette page est incorrecte",
+  "feedback.2": "L’information sur cette page porte à confusion.",
+  "feedback.3": "Vous ne trouvez pas l’information dont vous avez besoin",
+  "feedback.4": "Cette page n’est pas compatible avec mon lecteur d’écran ou une autre technologie d’adaptation.",
+  "feedback.5": "Je m’inquiète de la manière dont mes renseignements pourraient être utilisés.",
+  "feedback.6": "Autre",
+  "feedback.submit": "Soumettre"
 }
