@@ -24,7 +24,8 @@
     "aws-bootstrap": "node cdk/bootstrap.js",
     "aws-destroy": "node cdk/destroy.js",
     "comb": "jsoncomb --normalise \"./locales/*.json\"",
-    "cypress:open": "node ./node_modules/.bin/cypress open"
+    "cypress:open": "node ./node_modules/.bin/cypress open",
+    "postinstall": "patch-package"
   },
   "husky": {
     "hooks": {
@@ -87,6 +88,7 @@
     "jest": "^25.2.7",
     "json-comb": "^0.2.43",
     "nodemon": "^2.0.2",
+    "patch-package": "^6.2.0",
     "prettier": "^2.0.4",
     "rimraf": "^3.0.2",
     "supertest": "^4.0.2",
