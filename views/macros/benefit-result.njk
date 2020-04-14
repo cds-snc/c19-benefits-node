@@ -1,6 +1,10 @@
-{% macro benefitResult(id, header, preamble, button, boxes) %}
+{% macro benefitResult(id, header, preamble, button, boxes, headerSize="h2") %}
 <div class="m-5 p-5 shadow-result">
-    <h2 class="text-2xl font-bold mb-6" id="{{ id }}">{{ header }}</h2>
+    {% if headerSize === "h3" %}
+        <h3 class="text-2xl font-bold mb-6" id="{{ id }}">{{ header }}</h2>
+    {% else %}
+        <h2 class="text-2xl font-bold mb-6" id="{{ id }}">{{ header }}</h2>
+    {% endif %}
     <ul class="list-none list-outside pl-0">
     {% for box in boxes %}
         <li>
