@@ -9,7 +9,7 @@
             {{ __('[[sample]].intro') }}
         </p>
 
-        <form method="post">
+        <form novalidate method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             
             {{ textInput('form.firstname', 'form.firstname.desc') }}

@@ -4,7 +4,7 @@
 
     <h1> {{ __("mortgage_payments.title") }} </h1>
     <div>
-        <form method="post">
+        <form novalidate method="post">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
 
             {{ radioButtons('mortgage_payments',
