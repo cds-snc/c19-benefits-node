@@ -12,7 +12,9 @@
 
     var backLinkContainer = document.getElementsByClassName('back-button-container')[0];
     
-    backLinkContainer.className = backLinkContainer.className.replace(/\bno-js\b/g, "");
+    if (backLinkContainer) {
+        backLinkContainer.className = backLinkContainer.className.replace(/\bno-js\b/g, "");
+    }
 
     document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('backButton') && document.getElementById('backButton').addEventListener('click', function() {
