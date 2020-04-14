@@ -4,7 +4,7 @@
 
     <h1>{{ __('rrif.title') }}</h1>
     <div>
-        <form novalidate method="post">
+        {% call form() %}
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
 
             {{ radioButtons('rrif',
@@ -20,7 +20,7 @@
                 }
             )}}
             {{ formButtons() }}
-        </form>
+        {% endcall %}
     </div>
 
 {% endblock %}

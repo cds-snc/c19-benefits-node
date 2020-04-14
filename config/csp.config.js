@@ -5,6 +5,7 @@ const scriptSrc = [
   "'unsafe-inline'",
   'cdnjs.cloudflare.com',
   '*.herokuapp.com',
+  'assets.adobedtm.com',
 ]
 
 let upgradeInsecureRequests = true

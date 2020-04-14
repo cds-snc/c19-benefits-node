@@ -4,7 +4,7 @@
 
     <h1>{{ __('student_debt.title') }}</h1>
     <div>
-        <form novalidate method="post">
+        {% call form() %}
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
 
             {{ radioButtons('student_debt',
@@ -18,7 +18,7 @@
                 { required: true })
             }}
             {{ formButtons() }}
-        </form>
+        {% endcall %}
     </div>
 
 {% endblock %}
