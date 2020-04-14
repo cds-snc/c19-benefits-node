@@ -6,7 +6,9 @@ module.exports = (app, route) => {
 
   route.draw(app)
     .get((req, res) => {
-      res.render(name, routeUtils.getViewData(req, {}))
+      res.render(name, routeUtils.getViewData(req, {
+        title: res.__('some_income.title'),
+      }))
     })
     .post(route.applySchema(Schema), postSomeIncome)
 }
@@ -16,9 +18,9 @@ const postSomeIncome = (req, res) => {
   if (['hours-reduced', 'employed-lost-a-job', 'quarantine'].includes(req.body.some_income)) {
     return res.redirect(res.locals.routePath('question-mortgage-payments'))
   }
-  
+
   if (req.body.some_income === 'retired') {
     return res.redirect(res.locals.routePath('question-gross-income'))
   }
-  
+
 }

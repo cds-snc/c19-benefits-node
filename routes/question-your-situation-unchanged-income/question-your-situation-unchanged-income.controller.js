@@ -6,18 +6,20 @@ module.exports = (app, route) => {
 
   route.draw(app)
     .get((req, res) => {
-      res.render(name, routeUtils.getViewData(req, {}))
+      res.render(name, routeUtils.getViewData(req, {
+        title: res.__('unchanged_income.title'),
+      }))
     })
     .post(route.applySchema(Schema), postUnchangedIncome)
 }
 
 const postUnchangedIncome = (req, res) => {
-  if (['wfh','paid-leave'].includes(req.body.unchanged_income)) {
+  if (['wfh', 'paid-leave'].includes(req.body.unchanged_income)) {
     return res.redirect(res.locals.routePath('question-mortgage-payments'))
   }
 
-  if(req.body.unchanged_income === 'retired') {
+  if (req.body.unchanged_income === 'retired') {
     return res.redirect(res.locals.routePath('question-rrif'))
   }
-  
+
 }
