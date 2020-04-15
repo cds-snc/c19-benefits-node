@@ -24,7 +24,6 @@ const sendNotification = (feedback) => {
     return;
   }
 
-
   const NotifyClient = require('notifications-node-client').NotifyClient
   const notify = new NotifyClient(process.env.NOTIFY_ENDPOINT, process.env.NOTIFY_API_KEY)
 
