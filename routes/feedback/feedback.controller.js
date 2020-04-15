@@ -1,6 +1,5 @@
-var NotifyClient = require('notifications-node-client').NotifyClient
-var notifyClient = new NotifyClient(process.env.NOTIFY_ENDPOINT, process.env.NOTIFY_API_KEY)
-
+const NotifyClient = require('notifications-node-client').NotifyClient
+const notifyClient = new NotifyClient(process.env.NOTIFY_ENDPOINT, process.env.NOTIFY_API_KEY)
 
 module.exports = (app, route) => {
   route.draw(app)
