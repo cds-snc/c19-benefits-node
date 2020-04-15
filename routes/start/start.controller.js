@@ -20,6 +20,9 @@ module.exports = (app, route) => {
 
   route.draw(app).get(async (req, res) => {
     req.session = null
-    res.render(name, routeUtils.getViewData(req, { hideBackButton: true }))
+    res.render(name, routeUtils.getViewData(req, {
+      hideBackButton: true,
+      title: res.__('start.subtitle'),
+    }))
   })
 }

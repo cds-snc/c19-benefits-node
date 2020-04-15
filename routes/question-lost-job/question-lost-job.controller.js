@@ -6,7 +6,9 @@ module.exports = (app, route) => {
 
   route.draw(app)
     .get((req, res) => {
-      res.render(name, routeUtils.getViewData(req, {}))
+      res.render(name, routeUtils.getViewData(req, {
+        title: res.__('lost_job.title'),
+      }))
     })
     .post(route.applySchema(Schema), postLostJob)
 }

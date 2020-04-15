@@ -4,7 +4,7 @@
 
     <h1> {{ __("ccb.title") }} </h1>
     <div>
-        <form method="post">
+        {% call form() %}
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
 
             {{ radioButtons(
@@ -24,7 +24,7 @@
                 }
             )}}
             {{ formButtons() }}
-        </form>
+        {% endcall %}
     </div>
 
 {% endblock %}
