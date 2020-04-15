@@ -1,6 +1,3 @@
-const NotifyClient = require('notifications-node-client').NotifyClient
-const notify = new NotifyClient(process.env.NOTIFY_ENDPOINT, process.env.NOTIFY_API_KEY)
-
 module.exports = (app, route) => {
   route.draw(app)
     .post((req, res) => {
@@ -16,14 +13,21 @@ module.exports = (app, route) => {
       console.log(JSON.stringify({ "feedback": feedback }));
 
       if (process.env.NOTIFY_API_KEY && process.env.FEEDBACK_EMAIL_TO) {
-        notify
-          .sendEmail('111f0bc5-8682-4df1-9e16-d73e86bea46d', process.env.FEEDBACK_EMAIL_TO, {
-            personalisation: feedback,
-          })
-          .then(response => console.log(response))
-          .catch(err => console.error(err))
+        sendNotification(feedback);
       }
 
       return res.redirect('back');
     })
+}
+
+const sendNotification = (feedback) => {
+  const NotifyClient = require('notifications-node-client').NotifyClient
+  const notify = new NotifyClient(process.env.NOTIFY_ENDPOINT, process.env.NOTIFY_API_KEY)
+
+  notify
+    .sendEmail('111f0bc5-8682-4df1-9e16-d73e86bea46d', process.env.FEEDBACK_EMAIL_TO, {
+      personalisation: feedback,
+    })
+    .then(response => console.log(response))
+    .catch(err => console.error(err))
 }
