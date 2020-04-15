@@ -6,6 +6,7 @@ const scriptSrc = [
   'cdnjs.cloudflare.com',
   '*.herokuapp.com',
   'assets.adobedtm.com',
+  'www.googletagmanager.com/',
 ]
 
 let upgradeInsecureRequests = true
