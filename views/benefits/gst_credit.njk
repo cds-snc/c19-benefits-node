@@ -1,14 +1,48 @@
-{{ benefitResult(
-    "gst_credit",
-    __("gst_credit.header"),
-    __("gst_credit.preamble"),
-    {
-        text: __("gst_credit.linktext"),
-        link: __("gst_credit.link")
-    },
-    [
-        __("gst_credit.box1"),
-        __("gst_credit.box2")
-    ],
-    "h3"
-)}}
+{% if getLocale() %}
+<div class="m-5 p-5 shadow-result">
+        <h2 class="text-2xl font-bold mb-6" id="gst_credit">
+           {{ __("gst_credit.header") }}
+        </h2>
+    <ul class="list-none list-outside pl-0">
+        {{ blueLI("Automatic payment in April if you already receive the GST credit") }}
+        {{ blueLI("$400 for single people<span class='hide--mobile'>, </span><br class='hide--desktop' />$600 for couples") }}
+    </ul>
+    <div class="pb-5 mt-6">
+    <p><strong>Good to know:</strong></p>
+    <ul class='list-disc list-outside'>
+        <li>Check your bank account to find out if you’ve been receiving the GST credit.</li>
+        <li><a href='https://www.canada.ca/en/revenue-agency/services/child-family-benefits/benefit-payment-dates.html' target='_blank'>Dates of payments are available</a> online.</li>
+    </ul>
+    </div>
+    <a href="https://www.canada.ca/en/department-finance/economic-response-plan.html#individuals" 
+        data-gc-analytics-customclick="ESDC|EDSC:gst_credit:true" 
+        target="_blank" 
+        class="full-width font-semibold button-link py-6 px-5 border shadow"> 
+        Learn more about the GST credit
+    </a>
+</div>
+
+{% else %}
+<div class="m-5 p-5 shadow-result">
+        <h2 class="text-2xl font-bold mb-6" id="gst_credit">
+            {{ __("gst_credit.header") }}
+        </h2>
+    <ul class="list-none list-outside pl-0">
+        {{ blueLI("Versement automatique au mois d’avril si vous recevez déjà le crédit pour la TPS/TVH") }}
+        {{ blueLI("400 $ pour les célibataires<span class='hide--mobile'>, </span><br class='hide--desktop' />600 $ pour les couples") }}
+    </ul>
+    <div class="pb-5 mt-6">
+        <p>Bon à savoir :</p>
+        <ul class='list-disc list-outside'>
+            <li>Vérifiez votre compte bancaire pour savoir si vous recevez déjà le crédit pour la TPS/TVH.</li>
+            <li><a href='https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/dates-versement-prestations.html' target='_blank'>Les dates de versement</a> sont indiquées en ligne.</li>
+        </ul>
+    </div>
+    <a href="https://www.canada.ca/fr/ministere-finances/plan-intervention-economique.html#particuliers" 
+    data-gc-analytics-customclick="ESDC|EDSC:gst_credit:true" 
+    target="_blank" 
+    class="full-width font-semibold button-link py-6 px-5 border shadow"> 
+        En savoir plus à propos du crédit pour la TPS/TVH
+    </a>
+</div>
+{% endif %}

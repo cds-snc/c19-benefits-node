@@ -1,13 +1,68 @@
-{{ benefitResult(
-    "ei_regular_cerb",
-    __("ei_regular_cerb.header"),
-    __("ei_regular_and_cerb.preamble"),
-    {
-        text: __("ei_regular_and_cerb.linktext"),
-        link: __("ei_regular_and_cerb.link")
-    },
-    [
-        __("ei_regular_and_cerb.box1"),
-        __("ei_regular_and_cerb.box2")
-    ]
-)}}
+{% if getLocale() === "en" %}
+
+<div class="m-5 p-5 shadow-result">
+        <h2 class="text-2xl font-bold mb-6" id="ei_regular_cerb">
+            {{__("ei_regular_cerb.header")}}
+        </h2>
+    <ul class="list-none list-outside pl-0">
+        {{ blueLI("$2,000 for the first 4 weeks") }}
+        {{ blueLI("$1,000 every 2 weeks after that") }}
+    </ul>
+    <div class="pb-5 mt-6">
+
+    <p> <strong>The benefit can help if you:</strong> </p> 
+    <ul class='list-disc list-outside'> 
+        <li> Did not leave your job voluntarily. </li> 
+        <li>Earned at least $5,000 in 2019 or the last 12 months.</li> 
+        <li>Stopped working because of COVID—19: 
+            <ul class='list-disc list-outside'> 
+                <li>In the first 4 weeks you apply for, you received no income for at least 14 consecutive days.</li> 
+                <li>For the next 4-week periods after your first application, you expect to receive no income at all for the whole period.</li> 
+            </ul> 
+        </li> 
+    </ul> 
+    <p><strong>Good to know:</strong></p> 
+    <ul class='list-disc list-outside'> 
+        <li>You’ll need to re-apply for CERB for each 4-week period you’re not working</li> 
+    </ul> 
+ </div>
+    <a href="https://www.canada.ca/en/services/benefits/ei/cerb-application.html" 
+    data-gc-analytics-customclick="ESDC|EDSC:ei_regular_cerb:true" 
+    target="_blank" 
+    class="full-width font-semibold button-link py-6 px-5 border shadow"> 
+    Apply for CERB
+    </a>
+</div>
+{% else %}
+<div class="m-5 p-5 shadow-result">
+        <h2 class="text-2xl font-bold mb-6" id="ei_regular_cerb">
+            {{__("ei_regular_cerb.header")}}
+        </h2>
+    <ul class="list-none list-outside pl-0">
+        {{ blueLI("2000 $ pour les 4 premières semaines") }}
+        {{ blueLI("1000 $ aux 2 semaines par la suite") }}
+    </ul>
+    <div class="pb-5 mt-6">
+    <p><strong>La PCU peut vous aider si :</strong></p> 
+    <ul class='list-disc list-outside'> 
+        <li> vous avez été forcé de quitter votre emploi. </li> 
+        <li> vous avez gagné un revenu d’au moins 5000 $ en 2019 ou dans les 12 derniers mois. </li> 
+        <li> vous avez arrêté de travailler en raison de la COVID-19 : 
+        <ul class='list-disc list-outside'> 
+            <li> Vous n’avez pas eu de revenu pendant au moins 14 jours consécutifs durant les 4 premières semaines de votre demande. </li>
+            <li> Vous anticipez ne pas recevoir aucun revenu pour les prochaines périodes de 4 semaines. </li>
+        </ul> 
+        </li> 
+    </ul> 
+    <p><strong>Bon à savoir :</strong></p> 
+    <ul class='list-disc list-outside'> 
+        <li> Vous devrez présenter une nouvelle déclaration auprès de Service Canada à chaque période de 2 semaines. </li> 
+    </ul> 
+    </div>
+    <a href="https://www.canada.ca/fr/services/prestations/ae/pcusc-application.html" 
+    data-gc-analytics-customclick="ESDC|EDSC:ei_regular_cerb:true" 
+    target="_blank" 
+    class="full-width font-semibold button-link py-6 px-5 border shadow"> 
+        Demander les prestations regulières de l’assurance-emploi et la PCU
+    </a>
+{% endif %}
