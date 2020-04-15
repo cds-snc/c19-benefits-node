@@ -15,7 +15,7 @@
   "button.back": "Retour",
   "ccb.1": "Oui.",
   "ccb.2": "Non.",
-  "ccb.3": "Je ne sais pas.",
+  "ccb.3": "Vous n’êtes pas certain.",
   "ccb.hint": "Consultez vos relevés bancaires afin de déterminer si vous recevez l’Allocation canadienne pour enfants. <a href='https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/dates-versement-prestations.html'>Consultez les dates de versement des prestations.</a>",
   "ccb_payment.box1": "Versement automatique au mois de mai ",
   "ccb_payment.box2": "300 $ par enfant ",
