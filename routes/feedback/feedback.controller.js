@@ -12,15 +12,18 @@ module.exports = (app, route) => {
       }
       console.log(JSON.stringify({ "feedback": feedback }));
 
-      if (process.env.NOTIFY_API_KEY && process.env.FEEDBACK_EMAIL_TO) {
-        sendNotification(feedback);
-      }
+      sendNotification(feedback);
 
       return res.redirect('back');
     })
 }
 
 const sendNotification = (feedback) => {
+  if (!(process.env.NOTIFY_API_KEY && process.env.FEEDBACK_EMAIL_TO && process.env.NOTIFY_ENDPOINT)) {
+    return;
+  }
+
+
   const NotifyClient = require('notifications-node-client').NotifyClient
   const notify = new NotifyClient(process.env.NOTIFY_ENDPOINT, process.env.NOTIFY_API_KEY)
 
