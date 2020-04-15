@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 module.exports = (app, route) => {
   route.draw(app)
     .post((req, res) => {
