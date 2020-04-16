@@ -162,5 +162,6 @@
   "feedback.4": "Cette page n’est pas compatible avec mon lecteur d’écran ou une autre technologie d’adaptation.",
   "feedback.5": "Je m’inquiète de la manière dont mes renseignements pourraient être utilisés.",
   "feedback.6": "Autre",
-  "feedback.submit": "Soumettre"
+  "feedback.submit": "Soumettre",
+  "feedback.thanks": "Merci de nous avoir aidés à améliorer le service!"
 }

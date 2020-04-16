@@ -165,5 +165,6 @@
   "feedback.4": "Page does not work with your adaptive technologies",
   "feedback.5": "You're worried about your privacy",
   "feedback.6": "Other",
-  "feedback.submit": "Submit"
+  "feedback.submit": "Submit",
+  "feedback.thanks": "Thank you for your feedback."
 }
