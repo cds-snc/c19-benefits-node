@@ -62,9 +62,9 @@
         }
 
         // post to our feedback endpoint
-        xmlhttp.open("POST","/en/feedback",true);
-        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        xmlhttp.send("problems=" + problems + "&_csrf=" + csrf.value);
+        xmlhttp.open('POST', '{{ routePath('feedback') }}', true);
+        xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp.send('problems=' + problems + '&_csrf=' + csrf.value);
     }
 
     // intercept the form submit
