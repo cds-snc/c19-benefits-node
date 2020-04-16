@@ -1,8 +1,8 @@
-const spreadParams = env => {
+const spreadParams = (env) => {
   env.addFilter('spreadParams', (str, params) => {
     let paramsStr = ''
 
-    for (let property in params) {
+    for (const property in params) {
       paramsStr += ` ${property}=${params[property]} `
     }
 
