@@ -1,0 +1,30 @@
+<div class="m-5 p-5 shadow-result">
+
+  <h2 class="text-2xl font-bold mb-6" id="gst_credit">
+    {{ __("gst_credit.header") }}
+  </h2>
+
+  <ul class="list-none list-outside pl-0">
+    {{ blueLI("Versement automatique au mois d’avril si vous recevez déjà le crédit pour la TPS/TVH") }}
+    {{ blueLI("400 $ pour les célibataires<span class='hide--mobile'>, </span><br class='hide--desktop' />600 $ pour les couples") }}
+  </ul>
+
+  <div class="pb-5 mt-6">
+
+    <strong>Bon à savoir :</strong>
+    <ul class='list-disc list-outside'>
+      <li>Vérifiez votre compte bancaire pour savoir si vous recevez déjà le crédit pour la TPS/TVH.</li>
+      <li>
+        <a href='https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/dates-versement-prestations.html'
+          target='_blank'>Les dates de versement</a> sont indiquées en ligne.
+      </li>
+    </ul>
+
+  </div>
+
+  {{ infoLink("gst_credit",
+        "https://www.canada.ca/fr/ministere-finances/plan-intervention-economique.html#particuliers",
+        "En savoir plus à propos du crédit pour la TPS/TVH"
+    )}}
+
+</div>

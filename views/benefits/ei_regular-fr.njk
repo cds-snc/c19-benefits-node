@@ -1,0 +1,32 @@
+<div class="m-5 p-5 shadow-result">
+
+  <h2 class="text-2xl font-bold mb-6" id="ei_regular">
+    {{__("ei_regular.header")}}
+  </h2>
+
+  <ul class="list-none list-outside pl-0">
+    {{ blueLI("55 % de votre revenu<span class='hide--mobile'>, </span><br class='hide--desktop' />versement aux 2 semaines") }}
+  </ul>
+
+  <div class="pb-5 mt-6">
+
+    <strong>L’assurance-emploi peut vous aider si :</strong>
+    <ul class='list-disc list-outside'>
+      <li>vous avez contribué à l’assurance-emploi, normalement par votre employeur. Consultez votre paye pour déterminer si vous avez contribué à l’assurance emploi.</li>
+      <li>vous avez travaillé le nombre minimum “d’heure assurables”.</li>
+    </ul>
+
+    <strong>Bon à savoir :</strong>
+    <ul>
+      <li>Vous pourriez être admissible à l’assurance-emploi même si vous avez quitté votre emploi volontairement pour des raisons de santé liées à la COVID—19.</li>
+      <li>Le nombre de semaines admissible dépend du nombre “d’heures assurables” travaillées lors des 52 semaines précédentes.</li>
+    </ul>
+
+  </div>
+
+  {{ infoLink(
+        "ei_regular",
+        "https://www.canada.ca/fr/services/prestations/ae/assurance-emploi-reguliere/demande.html",
+        "Demander les prestations regulières de l’assurance-emploi"
+    )}}
+</div>
