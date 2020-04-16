@@ -54,11 +54,7 @@
   "lost_job.1": "Vous avez perdu votre revenu en entier.",
   "lost_job.2": "Vous avez perdu une partie de votre revenu.",
   "lost_job.3": "Votre revenu n’est pas affecté par la COVID-19.",
-  "mortgage_deferral.box1": "Interrompez vos paiements hypothécaires jusqu’à  ce que vous puissiez les payer à nouveau",
   "mortgage_deferral.header": "Contacter votre banque afin de repousser vos paiements d’hypothèque",
-  "mortgage_deferral.link": "https://cba.ca/mortgage-deferral-to-help-canadians-experiencing-financial-hardship-due-to-covid-19?l=fr",
-  "mortgage_deferral.linktext": "Vérifier auprès de votre banque pour en savoir plus",
-  "mortgage_deferral.preamble": "<p>Bon à savoir :</p><ul class='list-disc list-outside'><li>La banque chargera quand même de l’intérêt.</li><li> Lorsque vous pourrez effectuer vos paiements à nouveau, vous devrez payer l’intérêt encouru depuis le sursis en plus de vos paiements réguliers.</li><li> Vous pouvez aussi parler à votre banque à propos de plans de paiements spéciaux afin de ré-amortir votre hypothèque. </li></ul>",
   "mortgage_payments.1": "Oui, vous êtes inquiet au sujet de votre hypothèque.",
   "mortgage_payments.2": "Oui, vous êtes inquiet au sujet de votre loyer.",
   "mortgage_payments.3": "Non, vous n’êtes pas inquiet en ce moment.",
