@@ -20,6 +20,7 @@ const routes = [
 
   // 3a/b lost income fork
   { name: 'question-gross-income', path: { en: '/gross-income', fr: '/revenu-brut' } },
+  { name: 'question-reduced-income', path: { en: '/reduced-income', fr: '/revenu-partiel' } },
 ]
 
 const locales = ['en', 'fr']
