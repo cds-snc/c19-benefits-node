@@ -2,12 +2,15 @@ $footerInnerHeight: 35px;
 
 footer {
   padding-top: $space-md;
-  padding-bottom: $space-md;
   border-top: 4px solid $color-blue-dark;
   height: $height-footer;
   position: absolute;
   bottom: 0;
   width: 100%;
+
+  .page--container {
+    margin-bottom: $space-lg;
+  }
 
   .footer-links {
     font-size: 0.85em;
