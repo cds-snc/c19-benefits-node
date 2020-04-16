@@ -1,0 +1,35 @@
+<div class="m-5 p-5 shadow-result">
+
+  <h2 class="text-2xl font-bold mb-6" id="ccb_payment">
+    {{__("ccb_payment.header")}}
+  </h2>
+
+  <ul class="list-none list-outside pl-0">
+    {{ blueLI("Automatic payment in May") }}
+    {{ blueLI("$300 per child") }}
+  </ul>
+
+  <div class="pb-5 mt-6">
+
+    <strong>The benefit can help if you:</strong>
+    <ul class='list-disc list-outside'>
+      <li>Care for a child under 18 years old</li>
+    </ul>
+
+    <strong>Good to know:</strong>
+    <ul class='list-disc list-outside'>
+      <li>Check your bank account to find out if you’ve been receiving the Canada Child Benefit. </li>
+      <li>
+        <a href='https://www.canada.ca/en/revenue-agency/services/child-family-benefits/benefit-payment-dates.html'
+          target='_blank'>Dates of payments are available</a> online.
+      </li>
+    </ul>
+
+  </div>
+
+  {{ infoLink(
+        "ccb_payment",
+        "https://www.canada.ca/en/department-finance/economic-response-plan.html#individuals",
+        "Learn more about the Canada Child Benefit"
+    )}}
+</div>
