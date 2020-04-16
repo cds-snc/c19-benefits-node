@@ -47,6 +47,23 @@ describe('Test the getBenefits calculator', () => {
     })
   })
 
+  test('It checks cerb for some-income answers', () => {
+    const options = [
+      'hours-reduced',
+      'employed-lost-a-job',
+    ]
+
+    options.forEach(income => {
+      const result = getBenefits({
+        lost_job: 'lost-some-income',
+        some_income: income,
+        reduced_income: '1000_or_less',
+      })
+
+      expect(result).toContain('cerb')
+    })
+  })
+
   test('Quarantine Lost some ', () => {
     const result = getBenefits({
       lost_job: 'lost-some-income',
@@ -65,6 +82,16 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('cerb')
   })
 
+  test('It checks the ei-workshare add-on', () => {
+
+    const result = getBenefits({
+      lost_job: 'lost-some-income',
+      some_income: 'hours-reduced',
+      reduced_income: '1001_or_more',
+    })
+
+    expect(result).toContain('ei_workshare')
+  })
 
   test('It checks the ei_regular addon', () => {
     const result = getBenefits({
