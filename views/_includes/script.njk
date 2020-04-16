@@ -32,6 +32,7 @@
 <script>
     const form = document.getElementById('feedback-form');
     const confirmation = document.getElementById('feedback-confirmation');
+    const error = document.getElementById('feedback-error');
     const csrf = document.getElementById('feedback-csrf');
 
     const submitFeedback = (event) => {
@@ -42,9 +43,13 @@
 
         // handle post-submit (swap form for confirmation)
         xmlhttp.onreadystatechange = function() {
-            if (this.readyState === 4 && this.status === 200) {
+            if (this.readyState === 4) {
                 form.classList.add('hidden');
-                confirmation.classList.remove('hidden');
+                if (this.status === 200) {
+                    confirmation.classList.remove('hidden');
+                } else {
+                    error.classList.remove('hidden');
+                }
             }
         }
 
