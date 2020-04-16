@@ -24,7 +24,7 @@ const routes = [
   { name: 'question-reduced-income', path: { en: '/reduced-income', fr: '/revenu-partiel' } },
 
   // feedback
-  { name: 'feedback', path: { en: '/feedback', fr: '/feedback' } },
+  { name: 'feedback', path: '/feedback' },
 ]
 
 const locales = ['en', 'fr']
