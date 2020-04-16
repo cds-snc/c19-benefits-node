@@ -41,7 +41,7 @@
     {% endif %}
     <div class="mt-10">
         {% for benefit in benefits %}
-            {% include "benefits/" + benefit + ".njk" %}
+            {% include "benefits/" + benefit + "-" + getLocale() +  ".njk" %}
         {% endfor %}
     </div>
 
