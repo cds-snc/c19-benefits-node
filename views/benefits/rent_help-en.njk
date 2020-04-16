@@ -1,0 +1,21 @@
+<div class="m-5 p-5 shadow-result">
+
+  <h2 class="text-2xl font-bold mb-6" id="rent_help">
+    {{__("rent_help.header")}}
+  </h2>
+
+  <div class="pb-5 mt-6">
+
+    <ul class='list-disc list-outside'>
+      <li>Provincial governments are in charge of rental housing rules. </li>
+      <li> In most provinces and territories, you cannot be evicted for not paying rent. </li>
+    </ul>
+
+  </div>
+
+  {{ infoLink(
+        rent_help"",
+        "https://www.cmhc-schl.gc.ca/en/rental-housing/covid-19-eviction-bans-and-suspensions-to-support-renters",
+        "Check with your provincial government for more details"
+    )}}
+{% endif %}
