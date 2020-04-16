@@ -1,0 +1,33 @@
+<div class="m-5 p-5 shadow-result">
+
+  <h2 class="text-2xl font-bold mb-6" id="ccb_payment">
+    {{__("ccb_payment.header")}}
+  </h2>
+
+  <ul class="list-none list-outside pl-0">
+    {{ blueLI("Versement automatique au mois de mai ") }}
+    {{ blueLI("300 $ par enfant ") }}
+  </ul>
+
+  <div class="pb-5 mt-6">
+
+    <p>Cette prestation peut vous aider si :</p>
+    <ul class='list-disc list-outside'>
+      <li>vous avez la charge d’un enfant de moins de 18 ans. </li>
+    </ul>
+
+    <p>Bon à savoir :</p>
+    <ul class='list-disc list-outside'>
+      <li>Consultez vos relevés bancaires afin de déterminer si vous recevez déjà l’Allocation canadienne pour enfant.</li>
+      <li>
+        <a href='https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/dates-versement-prestations.html' target='_blank'>Consultez les dates de versement des prestations</a>.</li>
+    </ul>
+
+  </div>
+
+  {{ infoLink(
+        "ccb_payment",
+        "https://www.canada.ca/fr/ministere-finances/plan-intervention-economique.html#particuliers",
+        "En savoir plus à propos de l’Allocation canadienne pour enfant "
+    )}}
+{% endif %}
