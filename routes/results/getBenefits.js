@@ -126,7 +126,7 @@ const getBenefits = (data) => {
       data,
       {
         some_income: 'hours-reduced',
-        reduce_income: '1001_or_more',
+        reduced_income: '1001_or_more',
       },
       'ei_workshare',
     ),
