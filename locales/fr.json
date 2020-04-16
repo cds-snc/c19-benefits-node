@@ -106,5 +106,9 @@
   "no_income.title": "Votre situation",
   "unchanged_income.title": "Votre situation",
   "gross_income.title": "Votre revenu",
-  "results.banner": "Erreur : Vous n’avez pas répondu à quelques questions. <a href='/clear'>Recommencez</a> pour recevoir vos résultats complets."
+  "results.banner": "Erreur : Vous n’avez pas répondu à quelques questions. <a href='/clear'>Recommencez</a> pour recevoir vos résultats complets.",
+  "reduced_income.title": "Votre revenu partiel",
+  "reduced_income.1": "1000 $ ou moins.",
+  "reduced_income.2": "1001 $ ou plus.",
+  "form.reduced_income": "Combien de revenu anticipez-vous recevoir à chaque mois à partir de maintenant?"
 }
