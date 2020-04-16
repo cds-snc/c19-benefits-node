@@ -57,7 +57,7 @@
             <a href="#gst_credit"> {{ __("gst_credit.header")}}</a></li>
     </ul>
     <div class="mt-10">
-        {% include "benefits/gst_credit.njk" %}
+        {% include "benefits/gst_credit-" + getLocale() + ".njk" %}
     </div>
 
 {% endblock %}

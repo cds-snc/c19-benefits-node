@@ -1,0 +1,28 @@
+<div class="m-5 p-5 shadow-result">
+  <h2 class="text-2xl font-bold mb-6" id="gst_credit">
+    {{ __("gst_credit.header") }}
+  </h2>
+
+  <ul class="list-none list-outside pl-0">
+    {{ blueLI("Automatic payment in April if you already receive the GST credit") }}
+    {{ blueLI("$400 for single people<span class='hide--mobile'>, </span><br class='hide--desktop' />$600 for couples") }}
+  </ul>
+
+  <div class="pb-5 mt-6">
+
+    <p>
+      <strong>Good to know:</strong>
+    </p>
+    <ul class='list-disc list-outside'>
+      <li>Check your bank account to find out if you’ve been receiving the GST credit.</li>
+      <li>
+        <a href='https://www.canada.ca/en/revenue-agency/services/child-family-benefits/benefit-payment-dates.html' target='_blank'>Dates of payments are available</a> online.</li>
+    </ul>
+
+  </div>
+
+  {{ infoLink("gst_credit",
+        "https://www.canada.ca/en/department-finance/economic-response-plan.html#individuals",
+        "Learn more about the GST credit"
+    )}}
+</div>
