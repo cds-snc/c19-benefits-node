@@ -15,7 +15,11 @@ module.exports = (app, route) => {
 
 const postSomeIncome = (req, res) => {
 
-  if (['hours-reduced', 'employed-lost-a-job', 'quarantine'].includes(req.body.some_income)) {
+  if (['hours-reduced', 'employed-lost-a-job'].includes(req.body.some_income)) {
+    return res.redirect(res.locals.routePath('question-reduced-income'))
+  }
+
+  if (req.body.some_income === 'quarantine') {
     return res.redirect(res.locals.routePath('question-mortgage-payments'))
   }
 

@@ -1,5 +1,5 @@
 // add app insights instrumentation
-if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) { 
+if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
   const appInsights = require("applicationinsights");
   appInsights.setup();
   appInsights.start();
@@ -43,12 +43,7 @@ app.use(require('./config/i18n.config').init)
 if (process.env.NODE_ENV !== 'test') {
   // CSRF setup
   app.use(
-    csrf({
-      cookie: true,
-      signed: true,
-      sameSite: true,
-      secure: true,
-    }),
+    csrf(require('./config/csrf.config')),
   )
 
   // append csrfToken to all responses

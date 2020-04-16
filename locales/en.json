@@ -101,5 +101,9 @@
   "some_income.title": "Your Situation",
   "results.other_potential_help": "Other potential help",
   "results.other_potential_help.preamble": "The following help is available as well:",
-  "unchanged_income.title": "Your situation"
+  "unchanged_income.title": "Your situation",
+  "reduced_income.title": "Your reduced income",
+  "reduced_income.1": "$1,000 or less.",
+  "reduced_income.2": "$1,001 or more.",
+  "form.reduced_income": "How much do you expect to earn per month now?"
 }
