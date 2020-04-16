@@ -99,11 +99,15 @@ form {
 
   fieldset legend,
   div:not(.multiple-choice__item) > label {
-    font-family: 'Lato', sans-serif;
-    font-weight: 600;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
     display: block;
     font-size: 1.07em;
     margin: 0;
+
+    span.required {
+      font-weight: 400;
+    }
   }
 
   .form-message {
@@ -111,6 +115,7 @@ form {
   }
 
   .validation-message {
+    font-weight: 400;
     color: $color-red;
   }
 
