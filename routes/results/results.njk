@@ -1,6 +1,10 @@
 {% extends "base.njk" %}
 {% from 'banner.njk' import banner as banner %}
 
+{#The following imports are used in the imported results pages#}
+{%- from 'benefit-result.njk' import blueLI as blueLI with context -%}
+{%- from 'benefit-result.njk' import infoLink as infoLink with context -%}
+
 {% block content %}
 
     <div class="flex flex-row">
