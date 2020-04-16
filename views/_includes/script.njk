@@ -1,4 +1,4 @@
-<script>
+<script nonce="{{ nonce }}">
     var elements = document.querySelectorAll('a.button-link')
     for (var i = 0, len = elements.length; i < len; i++) {
         elements[i].addEventListener('keydown', function (e) {
@@ -11,7 +11,7 @@
     }
 
     var backLinkContainer = document.getElementsByClassName('back-button-container')[0];
-    
+
     if (backLinkContainer) {
         backLinkContainer.className = backLinkContainer.className.replace(/\bno-js\b/g, "");
     }
@@ -23,7 +23,7 @@
     }, false);
 
 </script>
-<script>
+<script nonce="{{ nonce }}">
     if (typeof Promise !== "function" && document.querySelector('details') !== null)
         document.write('<script src="/js/details-element-polyfill.js"><\/script>');
 </script>

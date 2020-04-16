@@ -20,7 +20,7 @@ const scriptSrc = [
   '*.omniture.com',
   '*.omniture-static.com',
   '*.typekit.net',
-  'httpd@omniture.com',
+  (req, res) => `'nonce-${res.locals.nonce}'`,
 ]
 
 let upgradeInsecureRequests = true
