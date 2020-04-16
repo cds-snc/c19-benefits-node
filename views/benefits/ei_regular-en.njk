@@ -1,0 +1,32 @@
+<div class="m-5 p-5 shadow-result">
+
+  <h2 class="text-2xl font-bold mb-6" id="ei_regular">
+    {{__("ei_regular.header")}}
+  </h2>
+
+  <ul class="list-none list-outside pl-0">
+    {{ blueLI("55% of your income<span class='hide--mobile'>, </span><br class='hide--desktop' />paid every 2 weeks") }}
+  </ul>
+
+  <div class="pb-5 mt-6">
+
+    <strong>EI can help if you:</p>
+    <ul class='list-disc list-outside'>
+      <li>Paid into EI, usually through your employer. Check your pay stub to see if you have EI deductions.</li>
+      <li>Worked the minimum number of “insurable hours.”</li>
+    </ul>
+
+    <strong>Good to know:</strong>
+    <ul>
+      <li>Even if you left your job voluntarily for your health needs during COVID-19, you may still be eligible for EI.</li>
+      <li>The number of weeks you get paid depends on how many “insurable hours” you worked in the last 52 weeks.</li>
+    </ul>
+
+  </div>
+
+  {{ infoLink(
+        "ei_regular",
+        "https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/apply.html",
+        "Apply for EI Regular Benefits"
+    )}}
+</div>

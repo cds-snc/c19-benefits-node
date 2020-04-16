@@ -1,0 +1,28 @@
+<div class="m-5 p-5 shadow-result">
+
+  <h2 class="text-2xl font-bold mb-6" id="student_loan">
+    {{__("student_loan.header")}}
+  </h2>
+
+  <ul class="list-none list-outside pl-0">
+    {{ blueLI("Les paiements sont automatiquement supsendus") }}
+    {{ blueLI("Du 30 mars 2020 jusqu’au 30 septembre 2020") }}
+  </ul>
+
+  <div class="pb-5 mt-6">
+
+    <strong>Bon à savoir:</strong>
+    <ul class='list-disc list-outside'>
+      <li>Vous n’avez pas à faire de demande afin de suspendre vos paiements.</li>
+      <li> Les paiements pré-autorisés sont suspendus.</li>
+      <li> Consultez vous à votre compte au <a href='https://www.csnpe-nslsc.canada.ca/fr/Accueil' target='_blank'>Centre de service national de prêts aux étudiants</a> pour plus de détails.</li>
+    </ul>
+
+  </div>
+
+  {{ infoLink(
+        "student_loan",
+        "En savoir plus à propos de l’aide disponible pour votre dette d’étude",
+        "https://www.csnpe-nslsc.canada.ca/fr/Accueil"
+    )}}
+</div>

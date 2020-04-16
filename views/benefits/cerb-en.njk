@@ -1,0 +1,40 @@
+<div class="m-5 p-5 shadow-result">
+
+  <h2 class="text-2xl font-bold mb-6" id="cerb">
+    {{__("cerb.header")}}
+  </h2>
+
+  <ul class="list-none list-outside pl-0">
+    {{ blueLI("$2,000 every 4 weeks") }}
+    {{ blueLI("Up to 4 months") }}
+    {{ blueLI("First payment within 10 days of applying") }}
+  </ul>
+
+  <div class="pb-5 mt-6">
+
+    <strong>The Canada Emergency Response Benefit (CERB) can help if you:</strong>
+    <ul class='list-outside list-disc'>
+      <li>Did not leave your job voluntarily.</li>
+      <li>Earned at least $5,000 in 2019 or the last 12 months.</li>
+      <li>Stopped working because of COVID-19: <ul>
+          <li>In the first 4 weeks you apply for, you received less than $1,000 for at least 14 consecutive days.</li>
+          <li>For the next 4-week periods after your first application, you expect to receive less than $1,000 for the whole period.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <strong>Good to know:</strong>
+    <ul class='list-outside list-disc'>
+      <li>Available from March 15 to October 3, 2020.</li>
+      <li>You’ll need to re-apply for each 4-week period you’re not working.</li>
+      <li>You’ll need to pay income tax on these payments in the future.</li>
+    </ul>
+
+  </div>
+
+  {{ infoLink(
+        "cerb",
+        "https://www.canada.ca/en/services/benefits/ei/cerb-application.html",
+        "Apply for CERB"
+    )}}
+</div>

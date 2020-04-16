@@ -5,7 +5,6 @@
 {%- from 'checkboxes.njk' import checkBoxes as checkBoxes with context -%}
 {%- from 'buttons.njk' import formButtons as formButtons with context -%}
 {%- from 'input-file.njk' import fileInput as fileInput with context -%}
-{%- from 'benefit-result.njk' import benefitResult as benefitResult with context -%}
 {%- from 'form.njk' import form as form with context -%}
 
 <!DOCTYPE html>
@@ -24,10 +23,21 @@
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
         <link href="https://fonts.googleapis.com/css?family=Lato:700|Noto+Sans:400,700&amp;display=fallback" rel="stylesheet">
         <link rel="stylesheet" href="/dist/css/styles.css">
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MTM7CPP');</script>
+        <!-- End Google Tag Manager -->
         <title>{% if(title) %}{{ title }} — {% endif %}{{ __('app.title') }}</title>
         {% include "_includes/ga.njk" %}
     </head>
     <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTM7CPP"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
         <nav>
             <div id="skip-link-container"><a href="#content" id="skip-link">{{ __('Skip to main content') }}</a></div>
         </nav>
@@ -52,8 +62,10 @@
             {% include "_includes/footer.njk" %}
         </div>
 
-        <!-- Required for Adobe Analytics --> 
+        <!-- Required for Adobe Analytics -->
         <script type="text/javascript">_satellite.pageBottom();</script>
+{%- from 'benefit-result.njk' import blueLI as blueLI with context -%}
+{%- from 'benefit-result.njk' import infoLink as infoLink with context -%}
 
         {% include "_includes/script.njk" %}
         {% block scripts %}
