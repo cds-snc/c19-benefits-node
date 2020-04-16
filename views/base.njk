@@ -62,6 +62,8 @@
 
         <!-- Required for Adobe Analytics -->
         <script type="text/javascript">_satellite.pageBottom();</script>
+{%- from 'benefit-result.njk' import blueLI as blueLI with context -%}
+{%- from 'benefit-result.njk' import infoLink as infoLink with context -%}
 
         {% include "_includes/script.njk" %}
         {% block scripts %}
