@@ -107,6 +107,30 @@ const getBenefits = (data) => {
     ),
   )
 
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: ['hours-reduced', 'employed-lost-a-job'],
+        reduced_income: '1000_or_less',
+      },
+      'cerb',
+    ),
+  )
+
+  results.push(match(data, { gross_income: '5k+' }, 'cerb'))
+
+  results.push(
+    match(
+      data,
+      {
+        some_income: 'hours-reduced',
+        reduce_income: '1001_or_more',
+      },
+      'ei_workshare',
+    ),
+  )
 
   results.push(
     match(data, { mortgage_payments: 'yes-mortgage' }, 'mortgage_deferral'),
@@ -114,7 +138,6 @@ const getBenefits = (data) => {
   results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))
   results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
   results.push(match(data, { ccb: ['yes', 'unsure'] }, 'ccb_payment'))
-  results.push(match(data, { gross_income: '5k+' }, 'cerb'))
   results.push(match(data, { rrif: 'yes' }, 'rrif'))
 
   return results.filter((v) => v !== undefined)
