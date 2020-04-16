@@ -1,7 +1,7 @@
 <details class="w-full sm:w-2/3 lg:w-1/2">
     <summary class="px-4 py-2 bg-gray-300 rounded inline-block">{{ __('feedback.button') }}</summary>
     
-    <form action="{{ routePath('feedback') }}" method="post" class="px-8 py-6 rounded border border-gray-300 bg-gray-100" id="feedback-form">
+    <form action="/{{ getLocale() }}/feedback" method="post" class="px-8 py-6 rounded border border-gray-300 bg-gray-100" id="feedback-form">
       <input type="hidden" name="_csrf" id="feedback-csrf" value="{{ csrfToken }}">
 
       <fieldset class="fieldset">
