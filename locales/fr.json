@@ -120,5 +120,7 @@
   "reduced_income.title": "Votre revenu partiel",
   "reduced_income.1": "1000 $ ou moins.",
   "reduced_income.2": "1001 $ ou plus.",
-  "form.reduced_income": "Combien de revenu anticipez-vous recevoir à chaque mois à partir de maintenant?"
+  "form.reduced_income": "Combien de revenu anticipez-vous recevoir à chaque mois à partir de maintenant?",
+  "feedback-thanks.title": "Merci!",
+  "feedback-thanks.text": "Merci de nous avoir aidés à améliorer le service!"
 }

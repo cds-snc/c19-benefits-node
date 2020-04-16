@@ -15,7 +15,7 @@ module.exports = (app, route) => {
 
       sendNotification(feedback);
 
-      return res.redirect('back');
+      return res.redirect(res.locals.routePath('feedback-thanks'));
     })
 }
 

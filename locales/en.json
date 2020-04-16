@@ -115,5 +115,7 @@
   "reduced_income.title": "Your reduced income",
   "reduced_income.1": "$1,000 or less.",
   "reduced_income.2": "$1,001 or more.",
-  "form.reduced_income": "How much do you expect to earn per month now?"
+  "form.reduced_income": "How much do you expect to earn per month now?",
+  "feedback-thanks.title": "Thanks!",
+  "feedback-thanks.text": "Thank you for your feedback."
 }
