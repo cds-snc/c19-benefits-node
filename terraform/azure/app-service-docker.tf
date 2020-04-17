@@ -19,7 +19,7 @@ resource "azurerm_app_service" "app_service" {
   https_only          = "true"
 
   site_config {
-    linux_fx_version = "DOCKER|${azurerm_container_registry.container_registry.login_server}/${var.docker_image}:${var.docker_image_tag}"
+    #linux_fx_version = "DOCKER|${azurerm_container_registry.container_registry.login_server}/${var.docker_image}:${var.docker_image_tag}"
     http2_enabled    = true
     always_on        = true
   }
