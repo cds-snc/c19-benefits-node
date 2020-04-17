@@ -100,8 +100,20 @@
   "results.other_potential_help": "Other potential help",
   "results.other_potential_help.preamble": "The following help is available as well:",
   "unchanged_income.title": "Your situation",
+  "feedback.button": "Report a problem or mistake on this page",
+  "feedback.question": "Check all the issues that apply",
+  "feedback.1": "Incorrect information",
+  "feedback.2": "Confusing or unclear information",
+  "feedback.3": "You didn't find what you were looking for",
+  "feedback.4": "Page does not work with your adaptive technologies",
+  "feedback.5": "You're worried about your privacy",
+  "feedback.6": "Other",
+  "feedback.submit": "Submit",
+  "feedback.thanks": "Thank you for your feedback.",
   "reduced_income.title": "Your reduced income",
   "reduced_income.1": "$1,000 or less.",
   "reduced_income.2": "$1,001 or more.",
-  "form.reduced_income": "How much do you expect to earn per month now?"
+  "form.reduced_income": "How much do you expect to earn per month now?",
+  "feedback-thanks.title": "Thanks!",
+  "feedback-thanks.text": "Thank you for your feedback."
 }

@@ -1,0 +1,50 @@
+<details class="w-full sm:w-2/3 lg:w-1/2">
+    <summary class="px-4 py-2 bg-gray-300 rounded inline-block">{{ __('feedback.button') }}</summary>
+    
+    <form action="/{{ getLocale() }}/feedback" method="post" class="px-8 py-6 rounded border border-gray-300 bg-gray-100" id="feedback-form">
+      <input type="hidden" name="_csrf" id="feedback-csrf" value="{{ csrfToken }}">
+
+      <fieldset class="fieldset">
+        <legend class="fieldset__legend">
+          {{ __('feedback.question') }}
+        </legend>
+
+        <div class="multiple-choice multiple-choice--checkboxes" id="">
+          <div class="multiple-choice__item">
+              <input id="incorrect_info" name="problems" type="checkbox" value="incorrect_info">
+              <label for="incorrect_info">{{ __('feedback.1') }}</label>
+          </div>
+          <div class="multiple-choice__item">
+              <input id="confusing_info" name="problems" type="checkbox" value="confusing_info">
+              <label for="confusing_info">{{ __('feedback.2') }}</label>
+          </div>
+          <div class="multiple-choice__item">
+              <input id="didnt_find" name="problems" type="checkbox" value="didnt_find">
+              <label for="didnt_find">{{ __('feedback.3') }}</label>
+          </div>
+          <div class="multiple-choice__item">
+              <input id="a11y_issue" name="problems" type="checkbox" value="a11y_issue">
+              <label for="a11y_issue">{{ __('feedback.4') }}</label>
+          </div>
+          <div class="multiple-choice__item">
+              <input id="privacy_concerns" name="problems" type="checkbox" value="privacy_concerns">
+              <label for="privacy_concerns">{{ __('feedback.5') }}</label>
+          </div>
+          <div class="multiple-choice__item">
+              <input id="other_issue" name="problems" type="checkbox" value="other_issue">
+              <label for="other_issue">{{ __('feedback.6') }}</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <button class="mt-8 py-3 px-4 border shadow bg-blue-800 w-auto" type="submit">{{ __('feedback.submit') }}</button>
+    </form>
+
+    <div id="feedback-confirmation" class="mt-2 px-8 py-6 rounded border border-gray-300 bg-gray-100 hidden">
+      <p class="">{{ __('feedback.thanks') }}</p>
+    </div>
+
+    <div id="feedback-error" class="mt-2 px-8 py-6 rounded border border-gray-300 bg-gray-100 hidden">
+      <p class="">{{ __('Internal server error') }}</p>
+    </div>
+</details>
