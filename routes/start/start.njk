@@ -6,8 +6,8 @@
 
     <div>
         <p class="mb-8">{{ __('start.intro.2') | safe }}</p>
-        {% if BUILD_DATE %}
-            <h2 class="text-2xl mb-5">{{ __('start.lastupdated') }} <time datetime="{{ BUILD_DATE }}">{{ BUILD_DATE | lastmodified(getLocale()) }}</time></h2>
+        {% if LAST_UPDATED %}
+            <h2 class="text-2xl mb-5">{{ __('start.lastupdated') }} <time datetime="{{ LAST_UPDATED }}">{{ LAST_UPDATED | lastmodified(getLocale()) }}</time></h2>
         {% endif %}
         <p>{{ __('start.intro.3') | safe }}</p>
     </div>

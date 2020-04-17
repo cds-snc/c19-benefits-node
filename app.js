@@ -24,7 +24,7 @@ const { addNunjucksFilters } = require('./filters')
 const csp = require('./config/csp.config')
 const csrf = require('csurf')
 const uuidv4 = require('uuid').v4
-const crypto = require('crypto');
+const crypto = require('crypto')
 
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
@@ -82,7 +82,7 @@ app.use(compression())
 
 // Adding values/functions to app.locals means we can access them in our templates
 app.locals.GITHUB_SHA = process.env.GITHUB_SHA || null
-app.locals.BUILD_DATE = process.env.BUILD_DATE || null
+app.locals.LAST_UPDATED = process.env.LAST_UPDATED || null
 app.locals.hasData = hasData
 
 // set default views path
@@ -98,8 +98,6 @@ app.use(function (req, res, next) {
 
   next()
 })
-
-
 
 // middleware to redirect french paths to the french domain and english paths to the english domain
 /* istanbul ignore next */
