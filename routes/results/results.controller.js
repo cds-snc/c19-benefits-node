@@ -1,6 +1,6 @@
 const { routeUtils, getSessionData } = require('./../../utils')
 const { Schema } = require('./schema.js')
-const { getBenefits, getNoCerb } = require('./getBenefits');
+const { getBenefits } = require('./getBenefits');
 
 module.exports = (app, route) => {
   const name = route.name
@@ -10,10 +10,6 @@ module.exports = (app, route) => {
       const data = getSessionData(req)
       const benefits = getBenefits(data);
       let title = res.__n('results_title', benefits.length);
-
-      if (getNoCerb(data)) {
-        title = res.__('results_title_no_cerb');
-      }
 
       if (benefits.length === 0) {
         title = res.__('results_title_no_results');
