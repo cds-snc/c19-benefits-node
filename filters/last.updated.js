@@ -3,8 +3,8 @@ const isValid = require('date-fns/isValid')
 const getDate = require('date-fns/getDate')
 const { en, fr } = require('date-fns/locale')
 
-const lastModified = (env) => {
-  env.addFilter('lastmodified', _lastModified)
+const lastUpdated = (env) => {
+  env.addFilter('lastupdated', _lastUpdated)
 }
 
 /**
@@ -18,7 +18,7 @@ const lastModified = (env) => {
  * @param {String} str a (date) string
  * @param {String} locale a locale string, ("en" or "fr")
  */
-const _lastModified = (str, locale) => {
+const _lastUpdated = (str, locale) => {
   const date = new Date(str)
   // return string unmodified if string passed in parseable as a Date
   if (!isValid(date)) return str
@@ -34,6 +34,6 @@ const _lastModified = (str, locale) => {
 }
 
 module.exports = {
-  lastModified,
-  _lastModified,
+  lastUpdated,
+  _lastUpdated,
 }

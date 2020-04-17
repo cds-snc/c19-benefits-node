@@ -1,9 +1,9 @@
 const { spreadParams } = require('./spread.params')
-const { lastModified } = require('./last.modified')
+const { lastUpdated } = require('./last.updated')
 
 const addNunjucksFilters = (env) => {
   spreadParams(env)
-  lastModified(env)
+  lastUpdated(env)
 }
 
 module.exports = {
