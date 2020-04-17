@@ -1,6 +1,7 @@
 const { getBenefits } = require('./getBenefits')
 
 describe('Test the getBenefits calculator', () => {
+
   test('It checks ei regular + cerb path', () => {
     const result = getBenefits({
       lost_job: 'lost-all-income',

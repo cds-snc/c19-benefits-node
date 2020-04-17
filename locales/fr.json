@@ -56,8 +56,6 @@
     "one": "%s programme d’aide pour vous",
     "other": "%s programmes d’aide pour vous"
   },
-  "results_title_no_cerb": "Revenez voir dans une semaine ou deux",
-  "results.no_cerb.preamble": "Pour l’instant, les gens qui ont perdu une portion de leur revenu, et non l’entièreté de leur revenu ne sont pas couverts par la Prestation canadienne d’urgence (PCU). De nouvelles prestations sont constamment créées et nous travaillons à les inclure aussitôt que possible. Revenez consulter cet outil dans une semaine ou deux.",
   "results_title_no_results": "Revenez voir dans quelques semaines",
   "results.no_results.preamble": "Aucune prestation actuelle ne s’applique à votre situation. Nous ajoutons les prestations au fur et à mesure qu’elles sont annoncées et nous travaillons à les inclure aussitôt que possible. Revenez consulter cet outil plus tard, ou si votre situation change.",
   "rrif.1": "Oui.",

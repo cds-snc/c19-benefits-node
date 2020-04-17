@@ -14,10 +14,7 @@
         </div>
     </div>
 
-    {% if no_cerb %}
-        <h1>{{ __('results_title_no_cerb') }}</h1>
-        <p>{{ __('results.no_cerb.preamble') }}</p>
-    {% elif no_results %}
+    {% if no_results %}
         <h1>{{ __('results_title_no_results') }}</h1>
         <p>{{ __('results.no_results.preamble') }}</p>
     {% else %}

@@ -143,20 +143,7 @@ const getBenefits = (data) => {
   return results.filter((v) => v !== undefined)
 }
 
-const getNoCerb = (data) => {
-  return (
-    match(
-      data,
-      {
-        lost_job: 'lost_some_income',
-        some_income: ['hours-reduced', 'employed-lost-a-job'],
-      },
-      true,
-    ) || false
-  )
-}
 
 module.exports = {
   getBenefits,
-  getNoCerb,
 }
