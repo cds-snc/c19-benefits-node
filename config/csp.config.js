@@ -2,10 +2,11 @@
 
 const scriptSrc = [
   "'self'",
-  "'unsafe-inline'",
   'cdnjs.cloudflare.com',
   '*.herokuapp.com',
   'www.googletagmanager.com/',
+  'https://www.google-analytics.com',
+  'https://ssl.google-analytics.com',
   'assets.adobedtm.com',
   '*.2o7.net',
   '*.omtrdc.net',
@@ -18,6 +19,7 @@ const scriptSrc = [
   '*.omniture.com',
   '*.omniture-static.com',
   '*.typekit.net',
+  (req, res) => `'nonce-${res.locals.nonce}'`,
 ]
 
 let upgradeInsecureRequests = true
@@ -33,6 +35,7 @@ module.exports = {
   baseUri: ["'none'"],
   connectSrc: [
     "'self'",
+    'https://www.google-analytics.com',
     '*.demdex.net',
     'cm.everesttech.net',
     'assets.adobedtm.com',
@@ -43,6 +46,7 @@ module.exports = {
   imgSrc: [
     "'self'",
     'data:',
+    'https://www.google-analytics.com',
     '*.demdex.net',
     'cm.everesttech.net',
     'assets.adobedtm.com',
