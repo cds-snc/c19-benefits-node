@@ -19,7 +19,6 @@ resource "azurerm_app_service" "app_service" {
   https_only          = "true"
 
   site_config {
-    linux_fx_version = "DOCKER|${azurerm_container_registry.container_registry.login_server}/${var.docker_image}:${var.docker_image_tag}"
     http2_enabled    = true
     always_on        = true
   }
@@ -56,7 +55,6 @@ resource "azurerm_app_service_slot" "staging" {
   app_service_plan_id = azurerm_app_service_plan.app_service_plan.id
 
   site_config {
-    linux_fx_version = "DOCKER|${azurerm_container_registry.container_registry.login_server}/${var.docker_image}:staging"
     http2_enabled    = true
     always_on        = true
   }
