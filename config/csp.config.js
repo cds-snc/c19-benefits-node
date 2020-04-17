@@ -18,7 +18,6 @@ const scriptSrc = [
   '*.omniture.com',
   '*.omniture-static.com',
   '*.typekit.net',
-  'httpd@omniture.com',
 ]
 
 let upgradeInsecureRequests = true
@@ -34,18 +33,20 @@ module.exports = {
   baseUri: ["'none'"],
   connectSrc: [
     "'self'",
-    'https://*.demdex.net',
-    'https://cm.everesttech.net',
-    'https://assets.adobedtm.com',
+    '*.demdex.net',
+    'cm.everesttech.net',
+    'assets.adobedtm.com',
+    '*.omtrdc.net',
   ],
   fontSrc: ["'self'", 'https://fonts.gstatic.com'],
-  frameSrc: ["'self'", 'https://*.demdex.net'],
+  frameSrc: ["'self'", '*.demdex.net'],
   imgSrc: [
     "'self'",
     'data:',
-    'https://*.demdex.net',
-    'https://cm.everesttech.net',
-    'https://assets.adobedtm.com',
+    '*.demdex.net',
+    'cm.everesttech.net',
+    'assets.adobedtm.com',
+    '*.omtrdc.net',
   ],
   styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
   upgradeInsecureRequests,
