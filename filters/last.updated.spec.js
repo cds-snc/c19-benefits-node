@@ -23,7 +23,7 @@ describe('_lastUpdated', () => {
   })
 
   test('returns French-formatted date with "1er" for the first day of the month when "fr" locale is specified', () => {
-    const firstDayOfMonth = '2020-02-01T23:02:00Z'
+    const firstDayOfMonth = '2020-02-01'
 
     expect(_lastUpdated(firstDayOfMonth, 'fr')).toEqual('1er février 2020')
   })
