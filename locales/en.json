@@ -58,8 +58,6 @@
     "one": "%s way to get help",
     "other": "%s ways to get help"
   },
-  "results_title_no_cerb": "Check back again in a week or two",
-  "results.no_cerb.preamble": "At this time, people who have lost some income but not all their income are not covered by the Canada Emergency Response Benefit (CERB). New measures are still being announced, and we’re working to update this tool as quickly as possible. Check back in a week or two.",
   "results_title_no_results": "Check back in a few weeks",
   "results.no_results.preamble": "Your situation does not match any of the benefits included here at the moment. We’re working to add more programs, so you may want to check back in a few weeks or if your situation changes.",
   "rrif.1": "Yes.",
