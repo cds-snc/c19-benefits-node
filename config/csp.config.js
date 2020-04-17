@@ -2,7 +2,6 @@
 
 const scriptSrc = [
   "'self'",
-  "'unsafe-inline'",
   'cdnjs.cloudflare.com',
   '*.herokuapp.com',
   'www.googletagmanager.com/',
