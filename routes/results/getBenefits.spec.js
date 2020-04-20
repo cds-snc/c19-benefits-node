@@ -51,7 +51,7 @@ describe('Test the getBenefits calculator', () => {
   test('It checks cerb for some-income answers', () => {
     const options = [
       'hours-reduced',
-      'selfemployed-lost-a-job',
+      'selfemployed-some-income',
     ]
 
     options.forEach(income => {
