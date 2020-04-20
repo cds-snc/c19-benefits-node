@@ -52,7 +52,9 @@
   "phase.desc": "This site will change as we test ideas.",
   "rent_help.header": "In most provinces and territories, you cannot be evicted for not paying rent",
   "required": "(required)",
-  "results.banner": "Error: You missed a couple questions at the beginning. <a href='/clear'>Start over</a> to get your full results.",
+  "results.banner": "You missed a couple questions at the beginning. <a href='/clear'>Start over</a> to get your full results.",
+  "results.eligibility_warning": "These results <strong>do not guarantee your eligibility</strong>. Read the details we link to before applying.",
+  "results.situation_changes": "If your situation changes, you can answer the questions again to get new programs.",
   "results.header_text": "Based on what you’ve told us, the following help is available:",
   "results_title": {
     "one": "%s way to get help",
