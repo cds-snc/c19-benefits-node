@@ -77,6 +77,7 @@ jobs:
       - uses: azure/webapps-container-deploy@v1
         with:
           app-name: 'CV19Benefits-appservice'
+          slot-name: 'staging'
           images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19/node-app:${{ github.sha }}'
 
       - name: Azure logout
