@@ -112,7 +112,7 @@ const getBenefits = (data) => {
       data,
       {
         lost_job: 'lost-some-income',
-        some_income: ['hours-reduced', 'employed-lost-a-job'],
+        some_income: ['hours-reduced', 'selfemployed-lost-a-job'],
         reduced_income: '1000_or_less',
       },
       'cerb',

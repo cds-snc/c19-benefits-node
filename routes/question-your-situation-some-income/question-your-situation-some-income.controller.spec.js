@@ -24,7 +24,7 @@ describe('Test redirects for some-income ', () => {
     },
     {
       dest: 'question-reduced-income',
-      values: ['hours-reduced', 'employed-lost-a-job'],
+      values: ['hours-reduced', 'selfemployed-lost-a-job'],
     },
     {
       dest: 'question-mortgage-payments',

@@ -4,7 +4,7 @@ const Schema = {
   some_income: {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
-      options: [['hours-reduced', 'employed-lost-a-job', 'retired', 'quarantine']],
+      options: [['hours-reduced', 'selfemployed-lost-a-job', 'employed-part-time', 'retired', 'quarantine']],
     },
   },
 }
