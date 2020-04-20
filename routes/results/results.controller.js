@@ -8,7 +8,7 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       const data = getSessionData(req)
-      const benefits = getBenefits(data);
+      const benefits = ['ccb_payment', 'cerb', 'ei_regular_cerb', 'ei_sickness_cerb', 'ei_workshare', 'mortgage_deferral', 'rent_help', 'rrif', 'student_loan']; // getBenefits(data);
       let title = res.__n('results_title', benefits.length);
 
       if (benefits.length === 0) {
