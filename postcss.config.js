@@ -20,10 +20,10 @@ module.exports = {
   plugins: [
     require('@csstools/postcss-sass'),
     require('tailwindcss'),
+    require('autoprefixer'),
+    ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),
     cssnano({
       preset: 'default',
     }),
-    require('autoprefixer'),
-    ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),
   ],
 }
