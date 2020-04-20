@@ -2,9 +2,10 @@
 // istanbul ignore next
 if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
   var appInsights = require('applicationinsights')
-  appInsights.setup()
-  appInsights.setSendLiveMetrics(true)
-  appInsights.defaultClient.context.tags[appInsights.defaultClient.context.keys.cloudRole] = process.env.SLOT_NAME
+  appInsights.setup().setAutoCollectConsole(true, true).setSendLiveMetrics(true)
+  appInsights.defaultClient.context.tags[
+    appInsights.defaultClient.context.keys.cloudRole
+  ] = process.env.SLOT_NAME
   appInsights.start()
 }
 
@@ -107,7 +108,7 @@ app.use(function (req, res, next) {
 /* istanbul ignore next */
 app.use(function (req, res, next) {
   // if not running on production azure, skip this
-  if (process.env.SLOT_NAME !== "default") return next()
+  if (process.env.SLOT_NAME !== 'default') return next()
 
   const domain = getDomain(req)
 
@@ -121,7 +122,6 @@ app.use(function (req, res, next) {
 
   next()
 })
-
 
 app.routes = configRoutes(app, routes, locales)
 
@@ -157,7 +157,7 @@ app.use((err, req, res, next) => {
   if (err.type) errObj.type = err.type
 
   if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY) {
-    appInsights.trackeException({exception: errObj})
+    appInsights.trackeException({ exception: errObj })
   }
 
   res.locals.err = errObj
