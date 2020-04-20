@@ -1,4 +1,5 @@
 // add app insights instrumentation
+// istanbul ignore next
 if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
   var appInsights = require('applicationinsights')
   appInsights.setup()
@@ -43,6 +44,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser(process.env.app_session_secret))
 app.use(require('./config/i18n.config').init)
 
+// ignore code coverage since this won't run in test mode
+// istanbul ignore next
 if (process.env.NODE_ENV !== 'test') {
   // CSRF setup
   app.use(csrf(require('./config/csrf.config')))
@@ -139,6 +142,7 @@ nunjucks.installJinjaCompat()
 app.set('view engine', 'njk')
 
 // Pass error information to res.locals
+// istanbul ignore next
 app.use((err, req, res, next) => {
   const errObj = {}
 

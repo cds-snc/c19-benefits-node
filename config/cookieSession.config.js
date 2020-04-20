@@ -20,6 +20,7 @@ const cookieSessionConfig = {
 }
 
 // if running on Azure, set the cookie domain to .alpha.canada.ca
+// istanbul ignore next
 if (process.env.SLOT_NAME !== "default") {
   cookieSessionConfig.domain = '.alpha.canada.ca'
 }
