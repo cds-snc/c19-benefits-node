@@ -1,8 +1,10 @@
 // add app insights instrumentation
 if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
-  const appInsights = require("applicationinsights");
-  appInsights.setup();
-  appInsights.start();
+  var appInsights = require('applicationinsights')
+  appInsights.setup()
+  appInsights.setSendLiveMetrics(true)
+  appInsights.defaultClient.context.tags[appInsights.defaultClient.context.keys.cloudRole] = process.env.SLOT_NAME
+  appInsights.start()
 }
 
 // import environment variables.
@@ -24,7 +26,7 @@ const { addNunjucksFilters } = require('./filters')
 const csp = require('./config/csp.config')
 const csrf = require('csurf')
 const uuidv4 = require('uuid').v4
-const crypto = require('crypto');
+const crypto = require('crypto')
 
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
@@ -43,9 +45,7 @@ app.use(require('./config/i18n.config').init)
 
 if (process.env.NODE_ENV !== 'test') {
   // CSRF setup
-  app.use(
-    csrf(require('./config/csrf.config')),
-  )
+  app.use(csrf(require('./config/csrf.config')))
 
   // append csrfToken to all responses
   app.use(function (req, res, next) {
@@ -100,13 +100,11 @@ app.use(function (req, res, next) {
   next()
 })
 
-
-
 // middleware to redirect french paths to the french domain and english paths to the english domain
 /* istanbul ignore next */
 app.use(function (req, res, next) {
   // if not running on production azure, skip this
-  if (!process.env.APP_SERVICE) return next()
+  if (process.env.SLOT_NAME !== "default") return next()
 
   const domain = getDomain(req)
 
@@ -120,6 +118,7 @@ app.use(function (req, res, next) {
 
   next()
 })
+
 
 app.routes = configRoutes(app, routes, locales)
 
@@ -138,5 +137,27 @@ addNunjucksFilters(env)
 nunjucks.installJinjaCompat()
 
 app.set('view engine', 'njk')
+
+// Pass error information to res.locals
+app.use((err, req, res, next) => {
+  const errObj = {}
+
+  const status = err.status || err.statusCode || 500
+  res.statusCode = status
+
+  errObj.status = status
+  if (err.message) errObj.message = err.message
+  if (err.stack) errObj.stack = err.stack
+  if (err.code) errObj.code = err.code
+  if (err.name) errObj.name = err.name
+  if (err.type) errObj.type = err.type
+
+  if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY) {
+    appInsights.trackeException({exception: errObj})
+  }
+
+  res.locals.err = errObj
+  next(err)
+})
 
 module.exports = app
