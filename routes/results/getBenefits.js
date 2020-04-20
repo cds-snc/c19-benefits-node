@@ -45,27 +45,18 @@ const getBenefits = (data) => {
       'ei_regular_cerb',
     ),
   )
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-all-income',
-        no_income: 'unsafe-work-conditions',
-      },
-      'ei_regular',
-    ),
-  )
-
   results.push(
     match(
       data,
       {
         lost_job: 'lost-some-income',
-        some_income: 'retired',
-        gross_income: '4999_or_less',
+        some_income: [
+          'hours-reduced', 
+          'employed-lost-a-job',
+        ],
+        reduced_income: '1000_or_less',
       },
-      'ei_regular',
+      'ei_regular_cerb',
     ),
   )
 
@@ -112,7 +103,7 @@ const getBenefits = (data) => {
       data,
       {
         lost_job: 'lost-some-income',
-        some_income: ['hours-reduced', 'employed-lost-a-job'],
+        some_income: 'selfemployed-some-income',
         reduced_income: '1000_or_less',
       },
       'cerb',
