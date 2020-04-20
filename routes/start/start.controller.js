@@ -8,6 +8,7 @@ module.exports = (app, route) => {
     const domain = getDomain(req)
 
     // if on the French domain, redirect to the /fr start page
+    // istanbul ignore next
     if (domain.includes(process.env.DOMAIN_FR)) {
       return res.redirect(`${domain}${route.path.fr}`)
     }

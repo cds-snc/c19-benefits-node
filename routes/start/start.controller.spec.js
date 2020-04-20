@@ -18,6 +18,11 @@ jest.mock('../../utils/load.helpers.js', () => ({
   },
 }))
 
+test ('User gets redirect when hitting /', async () => { 
+  const response = await request(app).get('/')
+  expect(response.statusCode).toBe(302)
+})
+
 test('Can send get request to start route and have js src set', async () => {
   const route = app.routes.get('start')
   const response = await request(app).get(route.path.en)

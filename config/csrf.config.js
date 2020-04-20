@@ -1,3 +1,4 @@
+// istanbul ignore file 
 const getCsrfConfig = () => {
   if (process.env.NODE_ENV === 'production') {
     return {
