@@ -1,4 +1,4 @@
-<script nonce="{{ nonce }}">
+<script >
     var elements = document.querySelectorAll('a.button-link')
     for (var i = 0, len = elements.length; i < len; i++) {
         elements[i].addEventListener('keydown', function (e) {
@@ -23,13 +23,13 @@
     }, false);
 
 </script>
-<script nonce="{{ nonce }}">
+<script >
     if (typeof Promise !== "function" && document.querySelector('details') !== null)
         document.write('<script src="/js/details-element-polyfill.js"><\/script>');
 </script>
 
 <!-- Feedback form -->
-<script nonce="{{ nonce }}">
+<script >
     const form = document.getElementById('feedback-form');
     const confirmation = document.getElementById('feedback-confirmation');
     const error = document.getElementById('feedback-error');

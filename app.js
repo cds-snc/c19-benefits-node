@@ -28,7 +28,6 @@ const { addNunjucksFilters } = require('./filters')
 const csp = require('./config/csp.config')
 const csrf = require('csurf')
 const uuidv4 = require('uuid').v4
-const crypto = require('crypto')
 
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
@@ -67,11 +66,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 // add a request logger
 process.env.NODE_ENV !== 'test' && app.use(morgan(morganConfig))
 
-// middleware to add a unique nonce per requrest
-app.use(function (req, res, next) {
-  res.locals.nonce = crypto.randomBytes(16).toString('hex')
-  next()
-})
 
 // dnsPrefetchControl controls browser DNS prefetching
 // frameguard to prevent clickjacking
