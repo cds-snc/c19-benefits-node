@@ -22,14 +22,14 @@
     {% endif %}
 
     {% if not data.lost_job %}
-        <div>{{ banner('red', '<p>' + __('results.banner') + '</p>') }}</div>
+        <div data-cy="missed-questions">{{ banner('red', '<p>' + __('results.banner') + '</p>') }}</div>
     {% endif %}
 
     {% if benefits.length > 0 %}
         <p>
             {{ __("results.header_text") }}
         </p>
-        <ul class="list-none mt-4">
+        <ul  class="list-none mt-4">
             {% for benefit in benefits %}
                 <li class="relative mt-4">
                     <svg class="w-6 h-6 -ml-8 mt-2 absolute left-0" aria-hidden="true" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@
         <p>{{ __('results.eligibility_warning') | safe }}</p>
         <p>{{ __('results.situation_changes') }}</p>
     {% endif %}
-    <div class="mt-10">
+    <div data-cy="benefit-list" class="mt-10">
         {% for benefit in benefits %}
             {% include "benefits/" + benefit + "-" + getLocale() +  ".njk" %}
         {% endfor %}
