@@ -9,6 +9,7 @@ const scriptSrc = [
   'https://ssl.google-analytics.com',
   'assets.adobedtm.com',
   "'unsafe-inline'",
+  'cv19-benefits-cdn.azureedge.net',
 ]
 
 let upgradeInsecureRequests = true
@@ -44,7 +45,8 @@ module.exports = {
     'cm.everesttech.net',
     'assets.adobedtm.com',
     '*.omtrdc.net',
+    'cv19-benefits-cdn.azureedge.net',
   ],
-  styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+  styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com', 'cv19-benefits-cdn.azureedge.net'],
   upgradeInsecureRequests,
 }
