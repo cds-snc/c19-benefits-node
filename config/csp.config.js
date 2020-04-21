@@ -8,18 +8,7 @@ const scriptSrc = [
   'https://www.google-analytics.com',
   'https://ssl.google-analytics.com',
   'assets.adobedtm.com',
-  '*.2o7.net',
-  '*.omtrdc.net',
-  '*.adobe.com',
-  '*.demdex.net',
-  'cm.everesttech.net',
-  'assets.adobedtm.com',
-  'adobe.com',
-  'omniture.com',
-  '*.omniture.com',
-  '*.omniture-static.com',
-  '*.typekit.net',
-  (req, res) => `'nonce-${res.locals.nonce}'`,
+  "'unsafe-inline'",
 ]
 
 let upgradeInsecureRequests = true
@@ -30,7 +19,12 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 module.exports = {
-  defaultSrc: ["'self'"],
+  defaultSrc: [
+    "'self'",
+    '*.omniture.com',
+    '*.2o7.net',
+    '*.adobe.com',
+  ],
   scriptSrc: scriptSrc,
   baseUri: ["'none'"],
   connectSrc: [
@@ -38,7 +32,6 @@ module.exports = {
     'https://www.google-analytics.com',
     '*.demdex.net',
     'cm.everesttech.net',
-    'assets.adobedtm.com',
     '*.omtrdc.net',
   ],
   fontSrc: ["'self'", 'https://fonts.gstatic.com'],
