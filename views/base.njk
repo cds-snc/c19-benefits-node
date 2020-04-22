@@ -55,8 +55,10 @@
             {% include "_includes/footer.njk" %}
         </div>
 
-        <!-- Required for Adobe Analytics -->
-        <script type="text/javascript">_satellite.pageBottom();</script>
+        {% if $env.NODE_ENV !== 'test' %}
+          <!-- Required for Adobe Analytics -->
+          <script type="text/javascript">_satellite.pageBottom();</script>
+        {% endif %}
 
         {% include "_includes/script.njk" %}
         {% block scripts %}
