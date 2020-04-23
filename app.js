@@ -84,6 +84,21 @@ app.use(compression())
 app.locals.GITHUB_SHA = process.env.GITHUB_SHA || null
 app.locals.hasData = hasData
 
+/**
+ * Create an asset path helper for templates
+ * If a CDN_PREFIX is set in env, and mode is production,
+ * the helper will return the path with the CDN prefix,
+ * otherwise it just returns the path
+ */
+app.locals.asset = (path) => {
+  const cdnprefix = process.env.CDN_PREFIX || '';
+
+  if (process.env.NODE_ENV === 'production') {
+    return cdnprefix + path;
+  }
+  return path;
+}
+
 // set default views path
 app.locals.basedir = path.join(__dirname, './views')
 app.set('views', [path.join(__dirname, './views')])
