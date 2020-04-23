@@ -6,7 +6,7 @@ describe('Some Income Stopped', () => {})
 describe('Income not affected', () => {})
 
 describe('Out of flow benefits', () => {
-  function answerQuestion(val){
+  function answerQuestion(val) {
     cy.get(val).click()
     cy.get('[data-cy=next]').click()
     cy.reportA11y()
