@@ -11,15 +11,21 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('ei_regular_cerb')
   })
 
-  test('It checks ei regular for retired', () => {
-    const result = getBenefits({
-      lost_job: 'lost-some-income',
-      some_income: 'retired',
-      gross_income: '4999_or_less',
+  test('It checks ei regular + cerb some-income path', () => {
+    const incomes =  ['hours-reduced', 'employed-lost-a-job']
+
+    incomes.forEach(income => {
+      const result = getBenefits({
+        lost_job: 'lost-some-income',
+        some_income: income,
+        reduced_income: '1000_or_less',
+      })
+
+      expect(result).toContain('ei_regular_cerb')
     })
 
-    expect(result).toContain('ei_regular')
   })
+
 
   test('It checks ei sickness + cerb path', () => {
     const result = getBenefits({
@@ -49,20 +55,15 @@ describe('Test the getBenefits calculator', () => {
   })
 
   test('It checks cerb for some-income answers', () => {
-    const options = [
-      'hours-reduced',
-      'employed-lost-a-job',
-    ]
 
-    options.forEach(income => {
-      const result = getBenefits({
-        lost_job: 'lost-some-income',
-        some_income: income,
-        reduced_income: '1000_or_less',
-      })
-
-      expect(result).toContain('cerb')
+    const result = getBenefits({
+      lost_job: 'lost-some-income',
+      some_income: 'selfemployed-some-income',
+      reduced_income: '1000_or_less',
     })
+
+    expect(result).toContain('cerb')
+  
   })
 
   test('Quarantine Lost some ', () => {
@@ -94,14 +95,6 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('ei_workshare')
   })
 
-  test('It checks the ei_regular addon', () => {
-    const result = getBenefits({
-      lost_job: 'lost-all-income',
-      no_income: 'unsafe-work-conditions',
-    })
-
-    expect(result).toContain('ei_regular')
-  })
 
   test('It checks the mortgage addon', () => {
     const result = getBenefits({

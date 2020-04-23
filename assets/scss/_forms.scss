@@ -191,7 +191,7 @@ form {
 
       .button-link {
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
 
         @include md {
           justify-content: center;

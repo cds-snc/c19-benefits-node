@@ -1,7 +1,11 @@
 // add app insights instrumentation
+// istanbul ignore next
 if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
-  const appInsights = require('applicationinsights')
-  appInsights.setup()
+  var appInsights = require('applicationinsights')
+  appInsights.setup().setAutoCollectConsole(true, true).setSendLiveMetrics(true)
+  appInsights.defaultClient.context.tags[
+    appInsights.defaultClient.context.keys.cloudRole
+  ] = process.env.SLOT_NAME
   appInsights.start()
 }
 
@@ -24,7 +28,6 @@ const { addNunjucksFilters } = require('./filters')
 const csp = require('./config/csp.config')
 const csrf = require('csurf')
 const uuidv4 = require('uuid').v4
-const crypto = require('crypto')
 
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
@@ -41,6 +44,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser(process.env.app_session_secret))
 app.use(require('./config/i18n.config').init)
 
+// ignore code coverage since this won't run in test mode
+// istanbul ignore next
 if (process.env.NODE_ENV !== 'test') {
   // CSRF setup
   app.use(csrf(require('./config/csrf.config')))
@@ -61,11 +66,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 // add a request logger
 process.env.NODE_ENV !== 'test' && app.use(morgan(morganConfig))
 
-// middleware to add a unique nonce per requrest
-app.use(function (req, res, next) {
-  res.locals.nonce = crypto.randomBytes(16).toString('hex')
-  next()
-})
 
 // dnsPrefetchControl controls browser DNS prefetching
 // frameguard to prevent clickjacking
@@ -85,6 +85,21 @@ app.locals.GITHUB_SHA = process.env.GITHUB_SHA || null
 app.locals.LAST_UPDATED = process.env.LAST_UPDATED || null
 app.locals.hasData = hasData
 
+/**
+ * Create an asset path helper for templates
+ * If a CDN_PREFIX is set in env, and mode is production,
+ * the helper will return the path with the CDN prefix,
+ * otherwise it just returns the path
+ */
+app.locals.asset = (path) => {
+  const cdnprefix = process.env.CDN_PREFIX || '';
+
+  if (process.env.NODE_ENV === 'production') {
+    return cdnprefix + path;
+  }
+  return path;
+}
+
 // set default views path
 app.locals.basedir = path.join(__dirname, './views')
 app.set('views', [path.join(__dirname, './views')])
@@ -103,7 +118,7 @@ app.use(function (req, res, next) {
 /* istanbul ignore next */
 app.use(function (req, res, next) {
   // if not running on production azure, skip this
-  if (!process.env.APP_SERVICE) return next()
+  if (process.env.SLOT_NAME !== 'default') return next()
 
   const domain = getDomain(req)
 
@@ -135,5 +150,28 @@ addNunjucksFilters(env)
 nunjucks.installJinjaCompat()
 
 app.set('view engine', 'njk')
+
+// Pass error information to res.locals
+// istanbul ignore next
+app.use((err, req, res, next) => {
+  const errObj = {}
+
+  const status = err.status || err.statusCode || 500
+  res.statusCode = status
+
+  errObj.status = status
+  if (err.message) errObj.message = err.message
+  if (err.stack) errObj.stack = err.stack
+  if (err.code) errObj.code = err.code
+  if (err.name) errObj.name = err.name
+  if (err.type) errObj.type = err.type
+
+  if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY) {
+    appInsights.trackeException({ exception: errObj })
+  }
+
+  res.locals.err = errObj
+  next(err)
+})
 
 module.exports = app
