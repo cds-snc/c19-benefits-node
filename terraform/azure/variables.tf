@@ -14,3 +14,12 @@ variable "docker_image" {
 variable "docker_image_tag" {
   description = "(Optional) Specify the tag to be deployed"
 }
+
+
+variable "airtable_api_key" {
+  description = "(Required) API Key for airtable shoudld be kept secret and in an a terraform variables file that isn't in git"
+}
+
+variable "airtable_base_id" {
+  description = "(Required) API Key for airtable shoudld be kept secret and in an a terraform variables file that isn't in git"
+}

@@ -52,9 +52,35 @@ resource "azurerm_key_vault_access_policy" "staging_slot_identity" {
   depends_on = [azurerm_app_service_slot.staging]
 }
 
+resource "azurerm_key_vault_access_policy" "dev_slot_identity" {
+
+  key_vault_id = azurerm_key_vault.key_vault.id
+  object_id    = azurerm_app_service_slot.dev.identity.0.principal_id
+  tenant_id    = azurerm_app_service_slot.dev.identity.0.tenant_id
+  secret_permissions = [
+    "get",
+    "list",
+  ]
+  depends_on = [azurerm_app_service_slot.dev]
+}
+
 resource "azurerm_key_vault_secret" "docker_password" {
   name         = "dockerpword"
   value        = azurerm_container_registry.container_registry.admin_password
+  key_vault_id = azurerm_key_vault.key_vault.id
+  depends_on   = [azurerm_key_vault_access_policy.tf_identity]
+}
+
+resource "azurerm_key_vault_secret" "airtable_api_key" {
+  name         = "AirtableApiKey"
+  value        = var.airtable_api_key
+  key_vault_id = azurerm_key_vault.key_vault.id
+  depends_on   = [azurerm_key_vault_access_policy.tf_identity]
+}
+
+resource "azurerm_key_vault_secret" "airtable_base_id" {
+  name         = "AirtableBaseId"
+  value        = var.airtable_base_id
   key_vault_id = azurerm_key_vault.key_vault.id
   depends_on   = [azurerm_key_vault_access_policy.tf_identity]
 }
