@@ -31,7 +31,7 @@ Ce produit permet aux canadiens:
 * De recevoir une liste pertinente et personnalisé de prestations pouvant les aider et
 * De prévoir le montant des prestations et le moment où ils recevront celles-ci, afin de mieux planifier leurs dépenses et obligations financières. 
 
-Consulter l’outil ici: [https://covid-prestations.alpha.canada.ca](https://covid-prestations.alpha.canada.ca)
+Consulter l’outil ici: [https://covid-prestations.alpha.canada.ca](https://covid-prestations.alpha.canada.ca).
 
 **Prestations et programmes d’aide compris:**
 * Prestation canadienne d’urgence 
