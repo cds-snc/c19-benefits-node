@@ -11,6 +11,7 @@ This product helps Canadians:
 Explore it here: [https://covid-benefits.alpha.canada.ca](https://covid-benefits.alpha.canada.ca/). 
 
 **Benefits and help included:**
+
 * Canada Emergency Response Benefit
 * Canada Child Benefit
 * GST tax credit
@@ -19,6 +20,120 @@ Explore it here: [https://covid-benefits.alpha.canada.ca](https://covid-benefits
 * Suspending repayment and interest on student and apprentice loans
 * EI Workshare
 * Provincial help for renters
+
+## Built with
+
+This project is based on the [CDS Node Starter](https://github.com/cds-snc/node-starter-app) and is built with:
+
+* Node.js >= 10.x
+* NVM (Node Version Manager) for install Node.js versions
+* [Express](https://expressjs.com/) web framework
+* [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) view templates
+* Sass (Syntactically Awesome Style Sheets) for reusable styles
+* [Tailwindcss](https://tailwindcss.com/) a utility-first css framework for rapidly building custom designs
+* [PostCSS](https://postcss.org/)
+* [PurgeCSS](https://www.purgecss.com/)
+
+## Running locally
+
+Clone this repository
+
+```sh
+git clone https://github.com/cds-snc/c19-benefits-node.git
+```
+
+Install dependencies
+
+```sh
+cd c19-benefits-node
+npm i
+```
+
+Run in development mode:
+
+```sh
+npm run dev
+```
+
+Browse application on `http://localhost:3000`
+
+## Configuration
+
+There are some environment variables that can optionally be configured. You can see a list in  `.env.example`.
+
+### Public vars
+
+There is a `.env.public` file with a few non-sensitive environment variables. These can be kept in this file, or overridden by passing values through the runtime environment.
+
+```sh
+DOMAIN_EN=
+DOMAIN_FR=
+LAST_UPDATED=
+```
+
+`DOMAIN_EN` and `DOMAIN_FR` will be used by the language switcher to switch domains when switching languages. If not provided, language switching will take place strictly by the url prefix.
+
+`LAST_UPDATED` is used to display the Last Updated string on the Start screen.
+
+## Testing
+
+There are Unit (Jest) and e2e (Cypress) tests available.
+
+To run unit tests:
+
+```sh
+npm run test
+```
+
+To run Cypress tests:
+
+```sh
+npm run cypress:open
+```
+
+## Feedback component
+
+The feedback component can be configured to send results to either [Notify](https://notification.alpha.canada.ca/) or [Airtable](https://airtable.com/).
+
+### Notify integration
+
+To send Feedback to an email address, you should configure the following environment variables:
+
+```sh
+NOTIFY_ENDPOINT=
+NOTIFY_API_KEY=
+FEEDBACK_EMAIL_TO=
+```
+
+### Airtable integration
+
+To send Feedback to an Airtable base, you should configure the following environment variables:
+
+```sh
+AIRTABLE_API_KEY=
+AIRTABLE_BASE_ID=
+```
+
+Your airtable base should contain a table named `Feedback` with the following columns:
+
+* date
+* session
+* version
+* url
+* problems
+* language
+
+## Static Asset CDN
+
+When deploying this to a production environment, you can optionally load static assets from a CDN. To do this, configure the `CDN_PREFIX` env variable. This should be the base url of the CDN where the assets are stored.
+
+When referencing static assets (CSS, JS, images) in nunjucks templates, there is a helper available:
+
+```html
+<img src="{{ asset('/img/sig-blk-en.svg') }}" alt="Government of Canada">
+```
+
+The `asset()` helper will return the path to the asset prefixed by the CDN_PREFIX if available, otherwise it will return a local path.
 
 ## ---------------------------------------------------------------------
 
