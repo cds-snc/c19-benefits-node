@@ -1,50 +1,58 @@
+const { route } = require('../routeHelper');
+
 /* eslint-disable no-undef */
-function testError(route, numberOfExpectedErrors) {
+function testError(name, lang, numberOfExpectedErrors) {
   const numErrors = numberOfExpectedErrors || 1
-  cy.visit(`en${route}`)
+  const path = route(name, lang);
+
+  cy.visit(path)
   cy.get('[data-cy=next]').click()
   cy.get('[data-cy=errors]').children().should('have.length', numErrors)
   cy.reportA11y()
 }
 
 describe('Error Pages', () => {
-  it('Lost Job', () => {
-    testError('/lost-job')
-  })
+  ['en', 'fr'].forEach((lang) => {
+    describe('Language: ' + lang, () => {
+      it('Lost Job', () => {
+        testError('question-lost-job', lang)
+      })
 
-  it('No Income', () => {
-    testError('/your-situation/no-income')
-  })
+      it('No Income', () => {
+        testError('question-your-situation-no-income', lang)
+      })
 
-  it('Some Income', () => {
-    testError('/your-situation/some-income')
-  })
+      it('Some Income', () => {
+        testError('question-your-situation-some-income')
+      })
 
-  it('Unchanged Income', () => {
-    testError('/your-situation/unchanged-income')
-  })
+      it('Unchanged Income', () => {
+        testError('question-your-situation-unchanged-income', lang)
+      })
 
-  it('Mortgage Payments', () => {
-    testError('/mortgage-payments')
-  })
+      it('Mortgage Payments', () => {
+        testError('question-mortgage-payments', lang)
+      })
 
-  it('CCB', () => {
-    testError('/CCB')
-  })
+      it('CCB', () => {
+        testError('question-ccb', lang)
+      })
 
-  it('Student Debt', () => {
-    testError('/student-debt')
-  })
+      it('Student Debt', () => {
+        testError('question-student-debt', lang)
+      })
 
-  it('RRIF', () => {
-    testError('/RRIF')
-  })
+      it('RRIF', () => {
+        testError('question-rrif', lang)
+      })
 
-  it('Gross Income', () => {
-    testError('/gross-income')
-  })
+      it('Gross Income', () => {
+        testError('question-gross-income', lang)
+      })
 
-  it('Reduced Income', () => {
-    testError('/reduced-income')
+      it('Reduced Income', () => {
+        testError('question-reduced-income', lang)
+      })
+    })
   })
 })
