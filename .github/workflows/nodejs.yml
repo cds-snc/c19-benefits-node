@@ -115,7 +115,7 @@ jobs:
           password: ${{ secrets.AZURE_CONTAINER_REGISTRY_PASSWORD }}
 
       - name: Build the Docker image
-        run: docker build -t base --build-arg GITHUB_SHA_ARG=${{ github.sha }}  TAG_VERSION=${{  steps.tag_code.outputs.new_tag }} .
+        run: docker build -t base --build-arg GITHUB_SHA_ARG=${{ github.sha }} --build-arg TAG_VERSION=${{  steps.tag_code.outputs.new_tag }} .
 
       - name: Tag :latest
         run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/release:latest
