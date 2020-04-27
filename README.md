@@ -88,7 +88,7 @@ npm run test
 To run Cypress tests:
 
 ```sh
-npm run cypress:open
+npm run cypress:run:test
 ```
 
 ## Feedback component
