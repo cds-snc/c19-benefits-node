@@ -26,7 +26,6 @@ Explore it here: [https://covid-benefits.alpha.canada.ca](https://covid-benefits
 This project is based on the [CDS Node Starter](https://github.com/cds-snc/node-starter-app) and is built with:
 
 * Node.js >= 10.x
-* NVM (Node Version Manager) for install Node.js versions
 * [Express](https://expressjs.com/) web framework
 * [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) view templates
 * Sass (Syntactically Awesome Style Sheets) for reusable styles
