@@ -1,14 +1,11 @@
 const { routeUtils, getSessionData } = require('./../../utils')
 const { Schema } = require('./schema.js')
-const { getBenefits } = require('./getBenefits');
 
 module.exports = (app, route) => {
   const name = route.name
 
   route.draw(app)
     .get((req, res) => {
-      const data = getSessionData(req)
-      const benefits = getBenefits(data);
       let title = res.__n('results_title', benefits.length);
 
       if (benefits.length === 0) {
