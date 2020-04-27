@@ -167,7 +167,7 @@ app.use((err, req, res, next) => {
   if (err.type) errObj.type = err.type
 
   if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY) {
-    appInsights.trackeException({ exception: errObj })
+    appInsights.trackException({ exception: errObj })
   }
 
   res.locals.err = errObj
