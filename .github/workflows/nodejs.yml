@@ -40,7 +40,7 @@ jobs:
         install: false
         start: npm run test:server:start
 
-  deploy:
+  deploy-dev:
     name: Build container and deploy
     env:
       AZURE_CONTAINER_REGISTRY_SERVER: ${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}
@@ -79,6 +79,58 @@ jobs:
           app-name: 'CV19Benefits-appservice'
           slot-name: 'dev'
           images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19/node-app:${{ github.sha }}'
+
+      - name: Azure logout
+        run: |
+          az logout
+
+  deploy-staging:
+    name: Build container and deploy
+    env:
+      AZURE_CONTAINER_REGISTRY_SERVER: ${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/staging'
+    steps:
+      - name: 'Checkout Github Action'
+        uses: actions/checkout@master
+
+      - name: tag_code
+        id: tag
+        uses: anothrNick/github-tag-action@1.13.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: patch
+
+      - name: 'Login via Azure CLI'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}
+          username: ${{ secrets.AZURE_CONTAINER_REGISTRY_USERNAME }}
+          password: ${{ secrets.AZURE_CONTAINER_REGISTRY_PASSWORD }}
+
+      - name: Build the Docker image
+        run: docker build -t base --build-arg GITHUB_SHA_ARG=${{ github.sha }}  TAG_VERSION=${{  steps.tag_code.outputs.new_tag }} .
+
+      - name: Tag :latest
+        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/staging:latest
+
+      - name: Tag :$new_tag
+        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/staging:${{ steps.tag_code.outputs.new_tag }}
+
+      - name: Push container to Azure Container Registry
+        run: docker push $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/node-app
+
+      - uses: azure/webapps-container-deploy@v1
+        with:
+          app-name: 'CV19Benefits-appservice'
+          slot-name: 'staging'
+          images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19/staging:${{ steps.tag_code.outputs.new_tag }}'
 
       - name: Azure logout
         run: |
