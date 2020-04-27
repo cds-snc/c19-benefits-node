@@ -66,19 +66,19 @@ jobs:
         run: docker build -t base --build-arg GITHUB_SHA_ARG=${{ github.sha }} .
 
       - name: Tag :latest
-        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/node-app:latest
+        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/dev:latest
 
       - name: Tag :$GITHUB_SHA
-        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/node-app:${{ github.sha }}
+        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/dev:${{ github.sha }}
 
       - name: Push container to Azure Container Registry
-        run: docker push $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/node-app
+        run: docker push $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/dev
 
       - uses: azure/webapps-container-deploy@v1
         with:
           app-name: 'CV19Benefits-appservice'
           slot-name: 'dev'
-          images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19/node-app:${{ github.sha }}'
+          images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19/dev:${{ github.sha }}'
 
       - name: Azure logout
         run: |
@@ -118,19 +118,19 @@ jobs:
         run: docker build -t base --build-arg GITHUB_SHA_ARG=${{ github.sha }}  TAG_VERSION=${{  steps.tag_code.outputs.new_tag }} .
 
       - name: Tag :latest
-        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/staging:latest
+        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/release:latest
 
       - name: Tag :$new_tag
-        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/staging:${{ steps.tag_code.outputs.new_tag }}
+        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/release:${{ steps.tag_code.outputs.new_tag }}
 
       - name: Push container to Azure Container Registry
-        run: docker push $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/node-app
+        run: docker push $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/release
 
       - uses: azure/webapps-container-deploy@v1
         with:
           app-name: 'CV19Benefits-appservice'
           slot-name: 'staging'
-          images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19/staging:${{ steps.tag_code.outputs.new_tag }}'
+          images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19/release:${{ steps.tag_code.outputs.new_tag }}'
 
       - name: Azure logout
         run: |
