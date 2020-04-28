@@ -2,8 +2,9 @@ on:
   push:
     branches:
       - staging
+jobs:
   build_deploy_staging:
-    name: Build container and deploy
+    name: Build and deploy staging container
     env:
       AZURE_CONTAINER_REGISTRY_SERVER: ${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}
     runs-on: ubuntu-latest
