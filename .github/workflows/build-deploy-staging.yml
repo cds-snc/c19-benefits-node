@@ -33,13 +33,13 @@ jobs:
           password: ${{ secrets.AZURE_CONTAINER_REGISTRY_PASSWORD }}
 
       - name: Build the Docker image
-        run: docker build -t base --build-arg GITHUB_SHA_ARG=${{ github.sha }}  --build-arg TAG_VERSION=${{  steps.tag_code.outputs.new_tag }} .
+        run: docker build -t base --build-arg GITHUB_SHA_ARG=${{ github.sha }}  --build-arg TAG_VERSION=${{  steps.tag.outputs.new_tag }} .
 
       - name: Tag :latest
         run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/release:latest
 
-      - name: Tag :steps.tag_code.output.new_tag
-        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/release:${{ steps.tag_code.outputs.new_tag }}
+      - name: Tag :steps.tag.output.new_tag
+        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/release:${{ steps.tag.outputs.new_tag }}
 
       - name: Push container to Azure Container Registry
         run: docker push $AZURE_CONTAINER_REGISTRY_SERVER/cv-19/release
@@ -48,7 +48,7 @@ jobs:
         with:
           app-name: 'CV19Benefits-appservice'
           slot-name: 'staging'
-          images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19/release:${{ steps.tag_code.outputs.new_tag }}'
+          images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19/release:${{ steps.tag.outputs.new_tag }}'
 
       - name: Azure logout
         run: |
