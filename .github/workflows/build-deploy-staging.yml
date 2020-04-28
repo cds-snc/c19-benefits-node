@@ -8,7 +8,6 @@ on:
       AZURE_CONTAINER_REGISTRY_SERVER: ${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}
     runs-on: ubuntu-latest
     needs: test
-    if: github.ref == 'refs/heads/staging'
     steps:
       - name: 'Checkout Github Action'
         uses: actions/checkout@master
