@@ -103,6 +103,7 @@
   "student_debt.1": "Oui.",
   "student_debt.2": "Non.",
   "student_debt.title": "Dette d’études",
+  "student_financial_aid.header": "Plus d’aide financière aux études pour l’année scolaire 2010-21",
   "student_loan.header": "Arrêt des paiements de votre dette d’étude pendant 6 mois",
   "unchanged_income.title": "Votre situation",
   "wordmark.alt": "Symbole du gouvernement du Canada",
@@ -119,6 +120,5 @@
   "your_situation.some_income.5": "Vous êtes en congé sans solde alors que vous êtes malade ou en quarantaine obligatoire.",
   "your_situation.unchanged_income.1": "Vous faites du télétravail.",
   "your_situation.unchanged_income.2": "Vous êtes en congé payé.",
-  "your_situation.unchanged_income.3": "Vous êtes retraité.",
-  "student_financial_aid.header": "Plus d’aide financière aux études pour l’année scolaire 2010-21"
+  "your_situation.unchanged_income.3": "Vous êtes retraité."
 }
