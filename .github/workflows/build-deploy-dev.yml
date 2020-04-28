@@ -3,7 +3,7 @@ on:
     branches:
       - master
 jobs:
-  deploy-build-dev:
+  deploy_build_dev:
     name: Build container and deploy
     env:
       AZURE_CONTAINER_REGISTRY_SERVER: ${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}

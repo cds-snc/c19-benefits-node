@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - staging
-  build-deploy-staging:
+  build_deploy_staging:
     name: Build container and deploy
     env:
       AZURE_CONTAINER_REGISTRY_SERVER: ${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}
