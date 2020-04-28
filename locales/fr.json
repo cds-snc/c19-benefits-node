@@ -120,5 +120,10 @@
   "your_situation.some_income.5": "Vous êtes en congé sans solde alors que vous êtes malade ou en quarantaine obligatoire.",
   "your_situation.unchanged_income.1": "Vous faites du télétravail.",
   "your_situation.unchanged_income.2": "Vous êtes en congé payé.",
-  "your_situation.unchanged_income.3": "Vous êtes retraité."
+  "your_situation.unchanged_income.3": "Vous êtes retraité.",
+  "plans_for_school.title": "Poursuivre vos études",
+  "plans_for_school.1": "Oui.",
+  "plans_for_school.2": "Non.",
+  "form.plans_for_school": "Planifiez vous poursuivre vos études postsecondaires en septembre 2020?",
+  "your_situation.unchanged_income.4": "Vous étiez étudiant dans une institution postsecondaire lors de l’année scolaire 2019-20 et ne pouvez trouver un emploi."
 }
