@@ -119,5 +119,6 @@
   "your_situation.some_income.5": "You’re sick or in mandatory quarantine and on unpaid leave.",
   "your_situation.unchanged_income.1": "You’re working from home.",
   "your_situation.unchanged_income.2": "You’re on paid leave.",
-  "your_situation.unchanged_income.3": "You’re retired."
+  "your_situation.unchanged_income.3": "You’re retired.",
+  "student_financial_aid.header": "More financial aid for 2020-21 school year"
 }
