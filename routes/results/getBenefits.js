@@ -128,7 +128,7 @@ const getBenefits = (data) => {
       data,
       {
         lost_job: 'lost-all-income',
-        unchanged_income: 'student_2019_20',
+        no_income: 'student_2019_20',
       },
       'cesb',
     ),
