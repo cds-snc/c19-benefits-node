@@ -52,6 +52,10 @@
                 {% block content %}{% endblock %}
 
                 {% include "_includes/feedback.njk" %}
+
+                {% if LAST_UPDATED %}
+                    <dl class="text-base mt-16"><dt class="inline-block">{{ __('date_modified') }} </dt><dd class="inline-block ml-2"><time property="dateModified">{{ LAST_UPDATED }}</time></dd></dl>
+                {% endif %}
             </main>
             {% include "_includes/footer.njk" %}
         </div>
