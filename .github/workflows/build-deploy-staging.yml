@@ -16,7 +16,7 @@ jobs:
         id: tag
         uses: anothrNick/github-tag-action@1.13.0
         env:
-          RELEASE_BRANCH: 'staging'
+          RELEASE_BRANCH: staging
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           DEFAULT_BUMP: patch
