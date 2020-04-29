@@ -5,6 +5,7 @@ module.exports = {
         blue: {
           '200': '#E1F0F8',
           '800': '#194D7B',
+          '900': '#38414d',
         },
         gray: {
           '100': '#f7fafc',
@@ -18,6 +19,14 @@ module.exports = {
     },
     boxShadow: {
       result: '0px 0px 12px -2px rgba(0,0,0,0.4)',
+    },
+    borderWidth: {
+      default: '1px',
+      '0': '0',
+      '2': '2px',
+      '3': '3px',
+      '4': '4px',
+      '8': '8px',
     },
   },
   variants: {},
