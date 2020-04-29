@@ -70,7 +70,7 @@ DOMAIN_FR=
 LAST_UPDATED=
 ```
 
-`DOMAIN_EN` and `DOMAIN_FR` will be used by the language switcher to switch domains when switching languages. If not provided, language switching will only affect the url path.
+`DOMAIN_EN` and `DOMAIN_FR` will be used by the language switcher to swap domains when changing languages. If not provided, language switching will only affect the url path.
 
 `LAST_UPDATED` is used to display the Last Updated string on the Start screen.
 
