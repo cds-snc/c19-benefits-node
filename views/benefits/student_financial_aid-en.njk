@@ -1,0 +1,28 @@
+<div class="m-5 p-5 shadow-result">
+
+  <h2 class="text-2xl font-bold mb-6" id="student_financial_aid">
+    {{__("student_financial_aid.header")}}
+  </h2>
+
+  <ul class="list-none list-outside pl-0">
+    {{ blueLI("$6,000 in grants for full-time students") }}
+    {{ blueLI("$3,600 in grants for part-time students") }}
+    {{ blueLI("Up to $140 more for the weekly amount in student loans") }}
+    {{ blueLI("Removing expected contributions from students and spouses for financial aid") }}
+  </ul>
+
+  <div class="pb-5 mt-6">
+    <strong>Good to know:</strong>
+    <ul class='list-outside list-disc'>
+      <li>The government has proposed changes to laws to deliver this new Canada Student Service Grant. That means it has to go to Parliament, which will take time and could change the proposed details.</li>
+      <li>We’ll update this information once the details are known.</li>
+    </ul>
+
+  </div>
+
+  {{ infoLink(
+        "student_financial_aid",
+        "https://pm.gc.ca/en/news/news-releases/2020/04/22/support-students-and-new-grads-affected-covid-19",
+        "Read the news release about help for students"
+    )}}
+</div>
