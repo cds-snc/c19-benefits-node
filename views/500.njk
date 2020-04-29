@@ -2,9 +2,10 @@
 
 {% block content %}
 
-    <h1>{{ __('500') }}</h1>
+    <h1>{{ __('500.title') }}</h1>
     <div data-gc-analytics-error="500">
-        <p>{{ __('Internal server error') }}</p>
+        <p>{{ __('500.error') }}</p>
+        {% include '_includes/error-link.njk' %}
     </div>
 
     {% if message %}

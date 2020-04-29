@@ -2,12 +2,13 @@
 
 {% block content %}
 
-    <h1>{{ __('404') }}</h1>
+    <h1>{{ __('404.title') }}</h1>
     <div data-gc-analytics-error="404">
-        <p>{{ __('Page not found') }}</p>
+        <p> {{ __('404.error') }}</p>
+        {% include '_includes/error-link.njk' %}
     </div>
 
-    {% if message %}
+    {% if message and NODE_ENV !== 'production' %}
         <pre class="error">{{ message }}</pre>
     {% endif %}
 
