@@ -4,15 +4,21 @@ const url = require('url');
 const { checkSchema } = require('express-validator')
 const { checkErrors } = require('./validate.helpers')
 const { addViewPath } = require('./view.helpers')
-const { routes } = require('../config/routes.config');
+const { routes } = require('../config/routes.config')
 
-const simpleRoute = (name, lang) => {
+const simpleRoute = (name, lang, testMode = false) => {
   if (!name) {
-    throw new Error('Route helper: missing name argument');
+    throw new Error('Route helper: missing name argument')
   }
 
   const language = lang || 'en'
-  return routes.find(rt => rt.name === name).path[language];
+  const route = routes.find(rt => rt.name === name)
+  const path = route.path[language]
+
+  if (testMode){
+    return language + path
+  }
+  return path
 }
 
 class RoutingTable {
