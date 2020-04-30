@@ -1,3 +1,5 @@
+const { simpleRoute } = require('../../utils/route.helpers')
+
 module.exports = (app, table) => {
   // clear session
 
@@ -16,12 +18,12 @@ module.exports = (app, table) => {
     let message = false
 
     const routePath = req.path
-
     /* istanbul ignore next */
     if (process.env.NODE_ENV !== 'production') {
       message = `❌ Forgot to add this route? \n\nAdd the following to config/routes.config.js: \n\nconst routes = [{ name: "${routePath}", path: "${routePath}" }]\n ...\n configRoutes(app){\n  require("../routes${routePath}${routePath}.controller")(app);\n}`
     }
 
+    res.locals.routeHelper = name => simpleRoute(name, res.locals.locale)
     res.render('404', { message })
   })
 
@@ -37,6 +39,7 @@ module.exports = (app, table) => {
       message = `❌ ${err.message}`
     }
 
+    res.locals.routeHelper = name => simpleRoute(name, res.locals.locale)
     res.render('500', { message })
   })
 }

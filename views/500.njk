@@ -8,7 +8,7 @@
         {% include '_includes/error-link.njk' %}
     </div>
 
-    {% if message %}
+    {% if message and NODE_ENV !== 'production' %}
         <pre class="error">{{ message }}</pre>
     {% endif %}
 

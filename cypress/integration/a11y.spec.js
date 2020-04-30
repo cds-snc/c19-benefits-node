@@ -1,4 +1,4 @@
-const { route } = require('../routeHelper');
+const route = require('../../utils/route.helpers').simpleRoute;
 
 /* eslint-disable no-undef */
 describe('Result Page Only tests', () => {
