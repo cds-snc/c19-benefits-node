@@ -72,6 +72,8 @@
                     <script type="text/javascript" src={{ asset(val) }}></script>
                 {%- endfor -%}
             {%- endif -%}
+
+            <script type="text/javascript" src={{ asset('/dist/js/app.js') }}></script>
         {%- endblock -%}
     </body>
 </html>
