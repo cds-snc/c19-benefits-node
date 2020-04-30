@@ -3,16 +3,18 @@ module.exports = (app, route) => {
   route.draw(app)
     .post((req, res) => {
       const date = new Date();
-
+      console.log(req.body);
       const feedback = {
-        "problems": req.body.problems || "n/a",
-        "session": req.locals.session.id || "n/a",
-        "version": process.env.GITHUB_SHA || "n/a",
-        "url": req.headers.referer || req.headers.referrer || "n/a",
-        "date": date.toISOString(),
-        "language": res.locals.getLocale(),
+        'problems': req.body.problems ? req.body.problems.toString() : 'n/a',
+        'details': req.body.details || 'n/a',
+        'session': req.locals.session.id || 'n/a',
+        'version': process.env.GITHUB_SHA || 'n/a',
+        'url': req.headers.referer || req.headers.referrer || 'n/a',
+        'date': date.toISOString(),
+        'language': res.locals.getLocale(),
       }
-      console.log(JSON.stringify({ "feedback": feedback }));
+
+      console.log(JSON.stringify({ 'feedback': feedback }));
 
       sendNotification(feedback);
       saveToAirtable(feedback);
