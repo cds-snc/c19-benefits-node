@@ -18,7 +18,7 @@
                 data.no_income,
                 __('form.your_situation.no_income'),
                 errors,
-                { required: true })
+                { required: true, safe: true })
             }}
             {{ formButtons() }}
         {% endcall %}
