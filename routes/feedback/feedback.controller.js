@@ -3,7 +3,7 @@ module.exports = (app, route) => {
   route.draw(app)
     .post((req, res) => {
       const date = new Date();
-      console.log(req.body);
+
       const feedback = {
         'problems': req.body.problems ? req.body.problems.toString() : 'n/a',
         'details': req.body.details || 'n/a',
