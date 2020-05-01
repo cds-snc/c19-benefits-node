@@ -13,7 +13,7 @@ const routes = [
   { name: 'question-ccb', path: { en: '/CCB', fr: '/ARC' } },
   { name: 'question-student-debt', path: { en: '/student-debt', fr: '/dette-des-etudiants' } },
 
-  { name: 'calculate', path: { en: '/calculate', fr: 'calculate' } },
+  { name: 'prepare', path: { en: '/prepare', fr: '/prepare' } },
   { name: 'results', path: { en: '/results', fr: '/resultats' } },
 
   // retirees only
