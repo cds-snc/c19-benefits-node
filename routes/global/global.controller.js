@@ -23,7 +23,7 @@ module.exports = (app, table) => {
       message = `❌ Forgot to add this route? \n\nAdd the following to config/routes.config.js: \n\nconst routes = [{ name: "${routePath}", path: "${routePath}" }]\n ...\n configRoutes(app){\n  require("../routes${routePath}${routePath}.controller")(app);\n}`
     }
 
-    res.locals.routeHelper = (name, locale) => simpleRoute(name, locale)
+    res.locals.simpleRoute = (name, locale) => simpleRoute(name, locale)
     res.render('404', { message })
   })
 
