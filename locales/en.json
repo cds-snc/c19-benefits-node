@@ -1,8 +1,8 @@
 {
   "500.title": "Unexpected error",
-  "500.error": "There’s a problem with the service. Please try again later. ",
+  "500.error": "There’s a problem with the service. <br/> Please try again later. ",
   "404.title": "Page not found",
-  "404.error": "If you typed the web address, make sure it’s correct. If you pasted the web address, make sure you copied the entire address.",
+  "404.error": "If you typed the web address, make sure it’s correct. <br/> If you pasted the web address, make sure you copied the entire address.",
   "Cancel": "Cancel",
   "Error:": "Error:",
   "Government of Canada": "Government of Canada",

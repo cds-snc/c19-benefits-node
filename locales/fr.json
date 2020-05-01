@@ -1,8 +1,8 @@
 {
   "500.title": "Une erreur innatendue s’est produite",
-  "500.error": "Il y a un problème avec ce service. Veuillez essayer plus tard",
+  "500.error": "Il y a un problème avec ce service. <br/> Veuillez essayer plus tard",
   "404.title": "Nous ne pouvons trouver cette page Web",
-  "404.error": "Si vous avez retranscrit  cette adresse, assurez-vous qu’elle soit correcte. Si vous avez collé cette adresse, assurez-vous d’avoir copié l’adresse complète.",
+  "404.error": "Si vous avez retranscrit  cette adresse, assurez-vous qu’elle soit correcte. <br/> Si vous avez collé cette adresse, assurez-vous d’avoir copié l’adresse complète.",
   "Cancel": "Annuler",
   "Error:": "Erreur",
   "Government of Canada": "Gouvernement du Canada",
