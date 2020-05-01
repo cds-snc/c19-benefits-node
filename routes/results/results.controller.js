@@ -1,14 +1,12 @@
-const { routeUtils, getSessionData } = require('./../../utils')
-const { Schema } = require('./schema.js')
-const { getBenefits } = require('./getBenefits');
+const { routeUtils } = require('./../../utils')
 
 module.exports = (app, route) => {
   const name = route.name
 
   route.draw(app)
     .get((req, res) => {
-      const data = getSessionData(req)
-      const benefits = getBenefits(data);
+      const benefits = req.query.benefits.length ? req.query.benefits.split(',') : [];
+
       let title = res.__n('results_title', benefits.length);
 
       if (benefits.length === 0) {
@@ -22,5 +20,4 @@ module.exports = (app, route) => {
         title: title,
       }))
     })
-    .post(route.applySchema(Schema), route.doRedirect())
 }
