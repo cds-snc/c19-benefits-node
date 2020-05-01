@@ -25,7 +25,9 @@
     "aws-destroy": "node cdk/destroy.js",
     "comb": "jsoncomb --normalise \"./locales/*.json\"",
     "cypress:open": "node ./node_modules/.bin/cypress open",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "husky": {
     "hooks": {
@@ -64,7 +66,8 @@
     "uuid": "^7.0.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@aws-cdk/aws-docdb": "1.32.0",
@@ -104,5 +107,6 @@
       "public/dist/**/*.*",
       "cypress/**/*.*"
     ]
-  }
+  },
+  "snyk": true
 }
