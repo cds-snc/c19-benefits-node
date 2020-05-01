@@ -8,7 +8,7 @@
 {%- from 'form.njk' import form as form with context -%}
 
 <!DOCTYPE html>
-<html lang="{{ getLocale() }}">
+<html lang="{{ 'eng' if getLocale() === 'en' else 'fra' }}">
     <head>
         <!-- Required meta tags-->
         <meta charset="utf-8">
