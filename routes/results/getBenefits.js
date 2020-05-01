@@ -33,8 +33,6 @@ function match(input, pattern, result) {
 }
 
 const getBenefits = (data) => {
-  console.log("getBenefits");
-  console.log(data);
   var results = []
 
   results.push(
