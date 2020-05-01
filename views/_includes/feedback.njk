@@ -37,6 +37,12 @@
         </div>
       </fieldset>
 
+      <div class="mt-6">
+        <label for="feedback-details" class="font-semibold">{{ __('feedback.tell_us_more') }}</label>
+        <span id="feedback-details-hint">{{ __('feedback.personal_warning') }}</span>
+        <textarea name="details" class="h-40" id="feedback-details" aria-describedby="feedback-details-hint"></textarea>
+      </div>
+
       <button class="mt-8 py-3 px-4 border shadow bg-blue-800 w-auto" type="submit">{{ __('feedback.submit') }}</button>
     </form>
 
