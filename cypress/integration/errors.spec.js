@@ -1,5 +1,5 @@
-const { route } = require('../routeHelper');
 
+const route = (name, lang) => require('../../utils/route.helpers').simpleRoute(name, lang, true);
 /* eslint-disable no-undef */
 function testError(name, lang, numberOfExpectedErrors) {
   const numErrors = numberOfExpectedErrors || 1
