@@ -12,7 +12,7 @@ const submitFeedback = (event) => {
   // const formData = serialize(form);
   const data = new URLSearchParams(new FormData(form));
 
-  fetch('/' + getLocale() + '/feedback', {
+  fetch(`/${getLocale()}/feedback`, {
     method: 'POST',
     body: data,
   }).then((response) => {
