@@ -24,6 +24,7 @@ module.exports = (app, table) => {
     }
 
     res.locals.simpleRoute = (name, locale) => simpleRoute(name, locale)
+    res.locals.hideBackButton = true
     res.render('404', { message })
   })
 
@@ -40,6 +41,7 @@ module.exports = (app, table) => {
     }
 
     res.locals.simpleRoute = (name, locale) => simpleRoute(name, locale)
+    res.locals.hideBackButton = true
     res.render('500', { message })
   })
 }
