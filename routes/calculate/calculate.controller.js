@@ -1,17 +1,12 @@
 const { getSessionData } = require('./../../utils')
-const { getBenefits } = require('./getBenefits');
 
 module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
+      // serialize the data object and throw it up on url
       const data = getSessionData(req)
-      const benefits = getBenefits(data);
+      const benefitsParam = new URLSearchParams(data);
 
-      // const benefitsParam = new URLSearchParams(benefits);
-
-      console.log(benefits);
-
-
-      return res.redirect(res.locals.routePath('results') + '?benefits=' + benefits);
+      return res.redirect(res.locals.routePath('results') + '?' + benefitsParam);
     })
 }

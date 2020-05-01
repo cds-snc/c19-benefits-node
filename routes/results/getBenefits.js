@@ -33,6 +33,8 @@ function match(input, pattern, result) {
 }
 
 const getBenefits = (data) => {
+  console.log("getBenefits");
+  console.log(data);
   var results = []
 
   results.push(
@@ -51,7 +53,7 @@ const getBenefits = (data) => {
       {
         lost_job: 'lost-some-income',
         some_income: [
-          'hours-reduced', 
+          'hours-reduced',
           'employed-lost-a-job',
         ],
         reduced_income: '1000_or_less',
