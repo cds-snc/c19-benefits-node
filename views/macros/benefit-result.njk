@@ -1,9 +1,9 @@
-{% macro blueLI(text) %}
+{% macro blueLI(strongText, text) %}
   <li>
     <div class="bg-blue-200 p-5 m-1 text-blue-800">
       <p class="relative m-0 pl-8">
         <img src="{{ asset('/img/check-circle.svg') }}" class="w-6 h-6 mt-1 -ml-8 absolute fill-current" alt="">
-        <strong>{{ text | safe }}</strong>
+        <strong>{{ strongText | safe }}</strong> {% if text %}{{ text }}{% endif %}
       </p>
     </div>
   </li>
