@@ -157,3 +157,115 @@ Consulter l’outil ici: [https://covid-prestations.alpha.canada.ca](https://cov
 * Programme travail partagé de l’assurance-emploi
 * Aide provinciale pour les locataires
 
+## Contributions
+
+Ce projet est conçu sur la base [CDS Node Starter](https://github.com/cds-snc/node-starter-app) et utilise les contributions suivantes :
+
+* Node.js >= 10.x
+* Environnement Web [Express](https://expressjs.com/)
+* Gabarits [Nunjucks](https://mozilla.github.io/nunjucks/templating.html)
+* Feuilles de styles Sass (Syntactically Awesome Style Sheets)
+* [Tailwindcss](https://tailwindcss.com/) un environnement CSS modulaire accélérant la conception de pages web
+* [PostCSS](https://postcss.org/)
+* [PurgeCSS](https://www.purgecss.com/)
+
+## Exécuter localement
+
+Cloner ce référentiel
+
+```sh
+git clone https://github.com/cds-snc/c19-benefits-node.git
+```
+
+Installer les dépendances
+
+```sh
+cd c19-benefits-node
+npm i
+```
+
+Exécuter en mode développement
+
+```sh
+npm run dev
+```
+
+Accéder à l’application au `http://localhost:3000`
+
+## Configuration
+
+Certaines valeurs d'environnement peuvent être configurés. Cette étape est optionnelle. Consultez la liste des valeurs disponibles dans `.env.example`.
+
+### Variables publiques
+
+Le fichier `.env.public` contient des variables d’environnement non-confidentielles. Ces valeurs peuvent être laissées telles-qu’elles, ou écrasées par par les variables d'environnement à l’exécution.
+
+```sh
+DOMAIN_EN=
+DOMAIN_FR=
+LAST_UPDATED=
+```
+
+`DOMAIN_EN` et `DOMAIN_FR` sont employées par le commutateur de langue afin d’échanger les domaines lorsque la langue passe du français à l’anglais, ou vice-versa. Si aucune valeur n’est donnée, le commutateur de langue n’affectera que le chemin de l’URL.
+
+`LAST_UPDATED` est employée pour afficher la valeur Last Updated sur l’écran du début.
+
+## Tests
+
+Des test unitaires (Jest) et bout-à-bout (e2e Cypress) sont disponibles. 
+
+Pour exécuter les tests :
+
+```sh
+npm run test
+```
+
+Pour exécuter les tests Cypress :
+
+```sh
+npm run cypress:run:test
+```
+
+## Composant de rétroaction
+
+Le module de rétroaction peut être configuré pour être envoyé par [Notify](https://notification.alpha.canada.ca/) ou [Airtable](https://airtable.com/).
+
+### Intégration avec Notify
+
+Pour envoyer la rétroaction à une adresse courriel, vous devez configurer les variables suivantes :
+
+```sh
+NOTIFY_ENDPOINT=
+NOTIFY_API_KEY=
+FEEDBACK_EMAIL_TO=
+```
+
+### Intégration avec Airtable
+
+Pour envoyer la rétroaction à une base Airtable, vous devez configurer les variables suivantes :
+
+```sh
+AIRTABLE_API_KEY=
+AIRTABLE_BASE_ID=
+```
+
+Votre base Airtable devrait contenir une table nommée `Feedback` avec les colonnes suivantes :
+
+* date
+* session
+* version
+* url
+* problems
+* language
+
+## Ressource statiques servies par réseau de diffusion de contenu (CDN)
+
+Lors du déploiement vers un environnement de production, vous pouvez optionnellement charger les ressources statiques à partir d’un CDN. Pour ce faire, vous devez configurer la variable d’environnement `CDN_PREFIX` Celle-ci devrait être l’url de base du CDN où cette ressource est est stockée.
+
+Pour lier des ressources statiques (CSS, JS, images) dans les gabarits nunjucks, vous pouvez utiliser la fonction d’aide suivante :
+
+```html
+<img src="{{ asset('/img/sig-blk-en.svg') }}" alt="Government of Canada">
+```
+
+La fonction d’aide `asset()` renvoie le chemin de ressources statiques définie par CDN_PREFIX,ou le chemin local si cette variable n’est pas définie.
