@@ -32,4 +32,7 @@ module.exports = {
   variants: {},
   plugins: [],
   important: true,
+  purge: {
+    content: ['./routes/**/*.njk', './views/**/*.njk'],
+  },
 }

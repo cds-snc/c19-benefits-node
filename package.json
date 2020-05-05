@@ -36,7 +36,6 @@
   },
   "dependencies": {
     "@csstools/postcss-sass": "^4.0.0",
-    "@fullhuman/postcss-purgecss": "^2.1.0",
     "airtable": "^0.8.1",
     "applicationinsights": "^1.7.5",
     "clean-webpack-plugin": "^3.0.0",
