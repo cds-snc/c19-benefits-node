@@ -34,9 +34,25 @@ const getClientJsPath = req => {
   return `${domain}${clientJsDir}`
 }
 
+const CryptoJS = require('crypto-js');
+
+const encryptQuerystring = text => {
+  const passphrase = '123';
+  return CryptoJS.AES.encrypt(text, passphrase).toString();
+};
+
+const decryptQuerystring = ciphertext => {
+  const passphrase = '123';
+  const bytes = CryptoJS.AES.decrypt(ciphertext, passphrase);
+  const originalText = bytes.toString(CryptoJS.enc.Utf8);
+  return originalText;
+};
+
 module.exports = {
   getDomain,
   getHostProtocol,
   getClientJsPath,
   clientJsDir,
+  encryptQuerystring,
+  decryptQuerystring,
 }

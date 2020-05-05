@@ -1,6 +1,7 @@
 const { routeUtils, getSessionData } = require('./../../utils')
 const { Schema } = require('./schema.js')
 const { getBenefits } = require('./getBenefits');
+const { decryptQuerystring } = require('../../utils/url.helpers')
 
 const getData = (req) => {
   /**
@@ -8,7 +9,8 @@ const getData = (req) => {
    * otherwise get it from the session.
    */
   if (req.query) {
-    return req.query;
+    console.log(req.query.data);
+    return decryptQuerystring(req.query.data);
   }
 
   return getSessionData(req);
