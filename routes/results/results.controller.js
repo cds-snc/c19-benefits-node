@@ -1,18 +1,23 @@
 const { routeUtils, getSessionData } = require('./../../utils')
 const { Schema } = require('./schema.js')
-const { getBenefits } = require('./getBenefits');
+const { getBenefits } = require('./getBenefits')
+const _ = require('lodash')
 
 const getData = (req) => {
   /**
    * If there's querystring data use it,
    * otherwise get it from the session.
    */
-  if (req.query) {
-    const qString =Buffer.from(req.query.q, 'base64').toString();
-    return JSON.parse(qString);
+  console.log(`queryString ${JSON.stringify(req.query)}`)
+  if (req.query === undefined || _.isEmpty(req.query)) {
+    return getSessionData(req);
   }
-
-  return getSessionData(req);
+  try {
+    return JSON.parse(Buffer.from(req.query.q, 'base64').toString())
+  } catch (err) {
+    req.locals.logError(`Thrown error: ${JSON.stringify(err)} Invalid QueryString ${JSON.stringify(req.query)}`)
+    return {}
+  }
 }
 
 module.exports = (app, route) => {
