@@ -29,7 +29,7 @@ A11yReporter.configure({
 
 // if we're in CI and on the master branch, do the actual reporting
 if (
-  process.env.NODE_ENV === 'testing' &&
+  process.env.NODE_ENV === 'test' &&
   process.env.GITHUB_REF === 'refs/heads/master'
 ) {
   A11yReporter.configure({
