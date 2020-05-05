@@ -23,7 +23,7 @@ jobs:
       - name: Build the app
         run: npm run build --if-present
 
-      - name: Run Cypress end-to-end
+      - name: Run Cypress end-to-end and Report a11y
         uses: cypress-io/github-action@v1
         env:
           NODE_ENV: test
