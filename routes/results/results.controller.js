@@ -8,7 +8,7 @@ const getData = (req) => {
    * otherwise get it from the session.
    */
   if (req.query) {
-    const qString =Buffer.from(req.query.results, 'base64').toString();
+    const qString =Buffer.from(req.query.q, 'base64').toString();
     return JSON.parse(qString);
   }
 

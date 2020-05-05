@@ -5,7 +5,7 @@ module.exports = (app, route) => {
     .get((req, res) => {
       // serialize the data object and throw it up on url
       const data = getSessionData(req)
-      const encoded = { results: Buffer.from(JSON.stringify(data)).toString('base64')};
+      const encoded = { q: Buffer.from(JSON.stringify(data)).toString('base64')};
       const benefitsParam = new URLSearchParams(encoded);
 
 
