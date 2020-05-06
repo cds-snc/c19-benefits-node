@@ -1,15 +1,17 @@
 
 function addLogger(req, res, next) {
 
-  req.locals.log = (msg) => {
+  res.locals.log = (msg) => {
     const logObject = {}
-    if (req.locals.session.id) {
-      logObject.id = req.locals.session.id
+    if (req.session.id) {
+      logObject.id = req.session.id
     }
 
     if (msg) {
       logObject.msg = msg
     }
+
+    console.log(JSON.stringify(logObject))
   }
 
   next()
