@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
+    "debug:dist": "webpack --config webpack.dev.js && cross-env NODE_ENV=development node --inspect ./bin/www",
     "dev": "cross-env nodemon --exec npm run dev:dist",
     "dev:dist": "webpack --config webpack.dev.js && cross-env NODE_ENV=development  node ./bin/www",
     "start": "npm run build && cross-env NODE_ENV=production node ./bin/www",
