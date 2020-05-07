@@ -1,11 +1,11 @@
-name: reviewdog
+name: shellcheck
 on:
   pull_request:
     paths:
       - "bin/"
 jobs:
   shellcheck:
-    name: runner / shellcheck
+    name: shellcheck
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
