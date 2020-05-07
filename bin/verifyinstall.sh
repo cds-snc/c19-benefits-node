@@ -17,6 +17,10 @@ checkSite() {
 
 }
 
+printf "Running git fetch\n"
+git fetch
+
+
 printf "\nVerifying Development Deployment\n"
 development=$(git rev-parse origin/master)
 printf "latest commit in Development %s \n" "$development"
