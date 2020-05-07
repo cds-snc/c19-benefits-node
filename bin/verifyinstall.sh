@@ -1,20 +1,28 @@
 #!/bin/sh
 
-gitsha=$(git rev-parse origin/staging)
-engsha=$(curl https://covid-benefits.alpha.canada.ca/en/start -s | grep 'github-sha' | awk '{ print $3}' | awk -F'"' '{ print $2 } ')
-frasha=$(curl https://covid-prestations.alpha.canada.ca/fr/debut -s | grep 'github-sha' | awk '{ print $3}' | awk -F'"' '{ print $2 } ')
+getSha() { 
+    curl "$1" -s | grep 'github-sha' |  awk -F'"' '{ print $4 } '
+}
 
-echo "GitSha $gitsha"
-echo "English Sha $engsha"
-echo "French Sha $frasha"
+checkSite() { 
 
-if [ "$gitsha" = "$engsha" ];  then
-    echo "English Site Verified"
-else 
-    echo "English sha's don't match"
-fi
-if [ "$gitsha" = "$frasha" ]; then
-    echo "French Site Verified"
-else
-    echo "French sha's don't match"
-fi
+    site_sha=$(getSha "$1" )
+
+    if [ "$3" = "$site_sha" ];  then
+        echo "✅ $1 verified"
+    else 
+        echo "🛑 $1 sha's don't match"
+        echo "$site_sha !== $3"
+    fi
+
+}
+
+development=$(git rev-parse origin/master)
+echo "latest commit in Development $development"
+checkSite https://cv19benefits-appservice-dev.azurewebsites.net/en/start against "$development"
+
+staging=$(git rev-parse origin/staging)
+echo "latest commit in Staging $staging"
+
+checkSite https://covid-benefits.alpha.canada.ca/en/start against "$staging"
+checkSite https://covid-prestations.alpha.canada.ca/fr/debut against "$staging"
