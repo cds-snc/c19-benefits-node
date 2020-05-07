@@ -2,7 +2,7 @@ name: shellcheck
 on:
   pull_request:
     paths:
-      - "bin/"
+      - "bin/*.sh"
 jobs:
   shellcheck:
     name: shellcheck
