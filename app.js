@@ -28,6 +28,7 @@ const { addNunjucksFilters } = require('./filters')
 const csp = require('./config/csp.config')
 const csrf = require('csurf')
 const uuidv4 = require('uuid').v4
+const addLogger = require('./middleware/logger')
 
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
@@ -115,6 +116,18 @@ app.use(function (req, res, next) {
   next()
 })
 
+// Helper middleware used in languageLink.njk
+app.use(function (req, res, next) {
+  const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  const url = new URL(fullUrl);
+  const querystring = url.search;
+
+  app.locals.getTranslatedRoute = (route, lang) => {
+    return route.path[lang] + querystring;
+  }
+  next()
+})
+
 // middleware to redirect french paths to the french domain and english paths to the english domain
 /* istanbul ignore next */
 app.use(function (req, res, next) {
@@ -133,6 +146,9 @@ app.use(function (req, res, next) {
 
   next()
 })
+
+
+app.use(addLogger)
 
 app.routes = configRoutes(app, routes, locales)
 

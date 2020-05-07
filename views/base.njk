@@ -37,7 +37,7 @@
         </nav>
 
         <div class="outer-container">
-            <header>
+            <header class="border-b-3 border-blue-900 pb-5 mb-10">
                 {% include "_includes/phaseBanner.njk" %}
                 {% include "_includes/fip.njk" %}
             </header>
@@ -52,6 +52,10 @@
                 {% block content %}{% endblock %}
 
                 {% include "_includes/feedback.njk" %}
+
+                {% if LAST_UPDATED %}
+                    <dl class="text-base mt-16"><dt class="inline-block">{{ __('date_modified') }} </dt><dd class="inline-block ml-2"><time datetime="{{ LAST_UPDATED }}">{{ LAST_UPDATED }}</time></dd></dl>
+                {% endif %}
             </main>
             {% include "_includes/footer.njk" %}
         </div>
@@ -61,13 +65,14 @@
           <script type="text/javascript">_satellite.pageBottom();</script>
         {% endif %}
 
-        {%- include "_includes/script.njk" -%}
         {%- block scripts -%}
             {%- if jsFiles -%}
                 {%- for val in jsFiles -%}
                     <script type="text/javascript" src={{ asset(val) }}></script>
                 {%- endfor -%}
             {%- endif -%}
+
+            <script type="text/javascript" src={{ asset('/dist/js/app.js') }}></script>
         {%- endblock -%}
     </body>
 </html>

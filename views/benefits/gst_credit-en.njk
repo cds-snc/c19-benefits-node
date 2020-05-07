@@ -1,11 +1,27 @@
 <div class="m-5 p-5 shadow-result">
-  <h2 class="text-2xl font-bold mb-6" id="gst_credit">
+  <h3 class="text-2xl font-bold mb-6" id="gst_credit">
     {{ __("gst_credit.header") }}
-  </h2>
+  </h3>
 
   <ul class="list-none list-outside pl-0">
     {{ blueLI("Automatic payment in April if you already receive the GST credit") }}
-    {{ blueLI("On average:<br>$400 for single people<br>$600 for couples") }}
+
+    <li>
+      <div class="bg-blue-200 p-5 m-1 text-blue-800">
+        <p class="relative m-0 pl-8 ">
+          <img src="{{ asset('/img/check-circle.svg') }}" class="w-6 h-6 mt-1 -ml-8 absolute fill-current" alt="">
+          <strong>On average:</strong>
+          <ul class='list-none  mt-2'>
+            <li>
+              <strong>$400 for single people</strong>
+            </li>
+            <li>
+              <strong>$600 for couples</strong>
+            </li>
+          </ul>
+        </p>
+      </div>
+    </li>
     {{ blueLI("Amount depends on your 2018 income taxes") }}
   </ul>
 

@@ -30,6 +30,7 @@
 
   &:focus {
     @include focus();
+    outline-offset: 5px !important;
   }
 
   &:hover,

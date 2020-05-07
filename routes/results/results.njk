@@ -22,7 +22,7 @@
     {% endif %}
 
     {% if not data.lost_job %}
-        <div data-cy="missed-questions">{{ banner('red', '<p>' + __('results.banner') + '</p>') }}</div>
+        <div data-cy="missed-questions">{{ banner('red', '<p><strong class="font-normal">' + __('results.banner') + '</strong></p>') }}</div>
     {% endif %}
 
     {% if benefits.length > 0 %}

@@ -2,7 +2,7 @@
     <div class="{{ 'has-error' if errors and errors[key] }}">
         <fieldset class="fieldset">
             <legend class="fieldset__legend">
-                {% if attributes.required %}<span aria-hidden="true" class="required">*</span>{% endif %} {{ question }} {% if attributes.required %} <span class="required">{{ __("required")}}</span>{% endif %}
+                {% if attributes.required %}<strong aria-hidden="true" class="required font-normal">*</strong>{% endif %} {{ question }} {% if attributes.required %} <strong class="required font-normal">{{ __("required")}}</strong>{% endif %}
                 {% if errors and errors[key] %}
                     {{ validationMessage(errors[key].msg, key) }}
                 {% endif %}

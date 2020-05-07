@@ -1,7 +1,7 @@
-<details class="w-full sm:w-2/3 lg:w-1/2">
-    <summary class="px-4 py-2 bg-gray-300 rounded inline-block">{{ __('feedback.button') }}</summary>
+<details class="w-full sm:w-1/2 md:w-3/5 lg:w-2/5 mt-20">
+    <summary class="px-4 py-2 bg-gray-300 rounded text-center">{{ __('feedback.button') }}</summary>
     
-    <form action="/{{ getLocale() }}/feedback" method="post" class="px-8 py-6 rounded border border-gray-300 bg-gray-100" id="feedback-form">
+    <form action="/{{ getLocale() }}/feedback" method="post" class="px-8 py-6 rounded border border-gray-300 bg-gray-200" id="feedback-form">
       <input type="hidden" name="_csrf" id="feedback-csrf" value="{{ csrfToken }}">
 
       <fieldset class="fieldset">
@@ -37,14 +37,20 @@
         </div>
       </fieldset>
 
+      <div class="mt-6">
+        <label for="feedback-details" class="font-semibold">{{ __('feedback.tell_us_more') }}</label>
+        <span id="feedback-details-hint">{{ __('feedback.personal_warning') }}</span>
+        <textarea name="details" class="h-40" id="feedback-details" aria-describedby="feedback-details-hint"></textarea>
+      </div>
+
       <button class="mt-8 py-3 px-4 border shadow bg-blue-800 w-auto" type="submit">{{ __('feedback.submit') }}</button>
     </form>
 
-    <div id="feedback-confirmation" class="mt-2 px-8 py-6 rounded border border-gray-300 bg-gray-100 hidden">
+    <div id="feedback-confirmation" class="mt-2 px-8 py-6 rounded border border-gray-300 bg-gray-200 hidden">
       <p class="">{{ __('feedback.thanks') }}</p>
     </div>
 
-    <div id="feedback-error" class="mt-2 px-8 py-6 rounded border border-gray-300 bg-gray-100 hidden">
+    <div id="feedback-error" class="mt-2 px-8 py-6 rounded border border-gray-300 bg-gray-200 hidden">
       <p class="">{{ __('Internal server error') }}</p>
     </div>
 </details>
