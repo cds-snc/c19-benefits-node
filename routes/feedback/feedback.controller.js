@@ -3,13 +3,21 @@ module.exports = (app, route) => {
   route.draw(app)
     .post((req, res) => {
       const date = new Date();
+      const problems = req.body.problems || [];
+      const url = new URL(req.headers.referer);
 
       const feedback = {
-        'problems': req.body.problems ? req.body.problems.toString() : 'n/a',
+        'incorrect_info': +problems.includes('incorrect_info'),
+        'confusing_info': +problems.includes('confusing_info'),
+        'didnt_find': +problems.includes('didnt_find'),
+        'a11y_issue': +problems.includes('a11y_issue'),
+        'privacy_concerns': +problems.includes('privacy_concerns'),
+        'other_issue': +problems.includes('other_issue'),
         'details': req.body.details || 'n/a',
         'session': req.locals.session.id || 'n/a',
         'version': process.env.GITHUB_SHA || 'n/a',
         'url': req.headers.referer || req.headers.referrer || 'n/a',
+        'path': url.pathname,
         'date': date.toISOString(),
         'language': res.locals.getLocale(),
       }
