@@ -9,21 +9,21 @@ checkSite() {
     site_sha=$(getSha "$1" )
 
     if [ "$3" = "$site_sha" ];  then
-        printf "✅ $1 verified\n"
+        printf "✅ %s verified\n" "$1"
     else 
-        printf "🛑 $1 sha's don't match\n"
-        printf "$site_sha !== $3\n"
+        printf "🛑 %s sha's don't match\n" "$1"
+        printf "$site_sha !== %s\n" "$3"
     fi
 
 }
 
 printf "\nVerifying Development Deployment\n"
 development=$(git rev-parse origin/master)
-printf "latest commit in Development $development\n"
-checkSite https://cv19benefits-appservice-dev.azurewebsites.net/en/start against "$development\n"
+printf "latest commit in Development %s \n" "$development"
+checkSite https://cv19benefits-appservice-dev.azurewebsites.net/en/start against "$development"
 
-printf "Verifying Production Deployment\n"
+printf "\nVerifying Production Deployment\n"
 staging=$(git rev-parse origin/staging)
-printf "latest commit in Staging $staging\n"
+printf "latest commit in Staging %s\n" "$staging"
 checkSite https://covid-benefits.alpha.canada.ca/en/start against "$staging"
 checkSite https://covid-prestations.alpha.canada.ca/fr/debut against "$staging"
