@@ -142,6 +142,16 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('student_loan')
   })
 
+  test('It checks for student financial aid', () => {
+    const result = getBenefits({
+      plans_for_school: 'yes',
+    })
+
+    // expect(result).toContain('cssg')
+    expect(result).toContain('student_financial_aid')
+  })
+
+
   test('It should only pass if it matches everything in the pattern', () => {
     const result = getBenefits({
       lost_job: 'lost-some-income',
