@@ -124,6 +124,16 @@ const getBenefits = (data) => {
   )
 
   results.push(
+    match(
+      data,
+      {
+        plans_for_school: 'yes',
+      },
+      'student_financial_aid',
+    ),
+  )
+
+  results.push(
     match(data, { mortgage_payments: 'yes-mortgage' }, 'mortgage_deferral'),
   )
   results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))

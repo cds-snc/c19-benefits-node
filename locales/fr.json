@@ -23,6 +23,8 @@
   "ccb.title": "Allocation canadienne pour enfants",
   "ccb_payment.header": "Paiements additionnels de l’Allocation canadienne pour enfants ",
   "cerb.header": "Présenter une demande pour la Prestation canadienne d’urgence (PCU)",
+  "cesb.header": "Aide pour les étudiants via la Prestation canadienne d’urgence pour les étudiants",
+  "cssg.header": "Bourse canadienne pour le bénévolat étudiant",
   "date_modified": "Date de modification :",
   "ei_regular.header": "Présenter une demande pour les prestations régulières de l’assurance-emploi (AE)",
   "ei_regular_cerb.header": "Présenter une demande pour la Prestation canadienne d’urgence (PCU)",
@@ -111,6 +113,7 @@
   "student_debt.1": "Oui.",
   "student_debt.2": "Non.",
   "student_debt.title": "Dette d’études",
+  "student_financial_aid.header": "Plus d’aide financière aux études pour l’année scolaire 2020-21",
   "student_loan.header": "Arrêt des paiements de votre dette d’étude pendant 6 mois",
   "unchanged_income.title": "Votre situation",
   "wordmark.alt": "Symbole du gouvernement du Canada",
@@ -119,7 +122,8 @@
   "your_situation.no_income.3": "Vous êtes en congé sans solde pour prendre soin d’un enfant ou d’un proche malade.",
   "your_situation.no_income.4": "Vous êtes en congé sans solde alors que vous êtes malade ou en quarantaine obligatoire.",
   "your_situation.no_income.5": "Vous étiez récemment en congé parental, mais ne pouvez pas retourner travailler en raison de la COVID-19.",
-  "your_situation.no_income.6": "Vous receviez l’assurance-emploi ou la prestations de pêcheur et votre prestation s’est terminée le 29&nbsp;décembre&nbsp;2019 ou plus tard.",
+  "your_situation.no_income.6": "Vous étiez étudiant dans une institution postsecondaire lors de l’année scolaire 2019-20 et ne pouvez trouver un emploi.",
+  "your_situation.no_income.7": "Vous receviez l’assurance-emploi ou la prestations de pêcheur et votre prestation s’est terminée le 29&nbsp;décembre&nbsp;2019 ou plus tard.",
   "your_situation.some_income.1": "Votre employeur a réduit votre horaire de travail en raison de la COVID-19.",
   "your_situation.some_income.2": "Vous avez perdu un ou deux de vos emplois à temps partiel, mais avez toujours un revenu additionnel.",
   "your_situation.some_income.3": "Vous êtes travailleur autonome et avez perdu une partie de votre revenu, mais vous avez toujours un peu de travail rémunéré.",
@@ -127,5 +131,10 @@
   "your_situation.some_income.5": "Vous êtes en congé sans solde alors que vous êtes malade ou en quarantaine obligatoire.",
   "your_situation.unchanged_income.1": "Vous faites du télétravail.",
   "your_situation.unchanged_income.2": "Vous êtes en congé payé.",
-  "your_situation.unchanged_income.3": "Vous êtes retraité."
+  "your_situation.unchanged_income.3": "Vous êtes retraité.",
+  "plans_for_school.title": "Poursuivre vos études",
+  "plans_for_school.1": "Oui.",
+  "plans_for_school.2": "Non.",
+  "form.plans_for_school": "Planifiez vous poursuivre vos études postsecondaires en septembre 2020?",
+  "your_situation.unchanged_income.4": "Vous étiez étudiant dans une institution postsecondaire lors de l’année scolaire 2019-20 et ne pouvez trouver un emploi."
 }
