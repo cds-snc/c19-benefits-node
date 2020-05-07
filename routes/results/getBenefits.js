@@ -123,37 +123,37 @@ const getBenefits = (data) => {
     ),
   )
 
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-all-income',
-        no_income: 'student_2019_20',
-      },
-      'cesb',
-    ),
-  )
+  // results.push(
+  //   match(
+  //     data,
+  //     {
+  //       lost_job: 'lost-all-income',
+  //       no_income: 'student_2019_20',
+  //     },
+  //     'cesb',
+  //   ),
+  // )
 
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-no-income',
-        unchanged_income: 'student_2019_20',
-      },
-      'cesb',
-    ),
-  )
+  // results.push(
+  //   match(
+  //     data,
+  //     {
+  //       lost_job: 'lost-no-income',
+  //       unchanged_income: 'student_2019_20',
+  //     },
+  //     'cesb',
+  //   ),
+  // )
 
-  results.push(
-    match(
-      data,
-      {
-        plans_for_school: 'yes',
-      },
-      'cssg',
-    ),
-  )
+  // results.push(
+  //   match(
+  //     data,
+  //     {
+  //       plans_for_school: 'yes',
+  //     },
+  //     'cssg',
+  //   ),
+  // )
 
   results.push(
     match(
