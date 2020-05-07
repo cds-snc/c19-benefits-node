@@ -17,12 +17,12 @@ checkSite() {
 
 }
 
-echo "Verifying Development Deployment"
+echo "\\nVerifying Development Deployment"
 development=$(git rev-parse origin/master)
 echo "latest commit in Development $development"
 checkSite https://cv19benefits-appservice-dev.azurewebsites.net/en/start against "$development"
 
-echo "Verifying Production Deployment"
+echo "\\nVerifying Production Deployment"
 staging=$(git rev-parse origin/staging)
 echo "latest commit in Staging $staging"
 checkSite https://covid-benefits.alpha.canada.ca/en/start against "$staging"
