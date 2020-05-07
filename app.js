@@ -28,6 +28,7 @@ const { addNunjucksFilters } = require('./filters')
 const csp = require('./config/csp.config')
 const csrf = require('csurf')
 const uuidv4 = require('uuid').v4
+const addLogger = require('./middleware/logger')
 
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
@@ -145,6 +146,9 @@ app.use(function (req, res, next) {
 
   next()
 })
+
+
+app.use(addLogger)
 
 app.routes = configRoutes(app, routes, locales)
 

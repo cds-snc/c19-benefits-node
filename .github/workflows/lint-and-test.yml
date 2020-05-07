@@ -26,8 +26,13 @@ jobs:
       env:
         CI: true
 
-    - name: npm lint
+    - name: npm lint json
       run: npm run lint
+      env:
+        CI: true
+
+    - name: npm lint locales
+      run: npm run lint:locales
       env:
         CI: true
 
