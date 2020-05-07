@@ -8,7 +8,6 @@ const Schema = {
         'lost-job-employer-closed','self-employed-closed', 
         'unpaid-leave-to-care', 
         'sick-or-quarantined', 'parental-recently-cant-return', 
-        'student_2019_20',
         'ei-recently-claim-ended',
       ]],
     },

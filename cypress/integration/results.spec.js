@@ -85,7 +85,7 @@ describe('Paths and Benefits', () => {
 
       it('Rent Help, Student Financial Aid', () => {
         cy.answerQuestion('#lost_joblost-no-income')
-        cy.answerQuestion('#unchanged_incomestudent_2019_20')
+        cy.answerQuestion('#unchanged_incomewfh')
         cy.answerQuestion('#mortgage_paymentsyes-rent')
         cy.answerQuestion('#ccbno')
         cy.answerQuestion('#student_debtno')
@@ -93,8 +93,6 @@ describe('Paths and Benefits', () => {
         cy.reportA11y()
         cy.get('[data-cy=benefit-list]').children().should('have.length', '2')
         cy.get('#rent_help')
-        // cy.get('#cesb')
-        // cy.get('#cssg')
         cy.get('#student_financial_aid')
       })
     })

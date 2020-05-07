@@ -14,7 +14,7 @@ module.exports = (app, route) => {
 }
 
 const postUnchangedIncome = (req, res) => {
-  if (['wfh', 'paid-leave', 'student_2019_20'].includes(req.body.unchanged_income)) {
+  if (['wfh', 'paid-leave'].includes(req.body.unchanged_income)) {
     return res.redirect(res.locals.routePath('question-mortgage-payments'))
   }
 
