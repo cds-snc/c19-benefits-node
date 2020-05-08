@@ -12,7 +12,7 @@ describe('Test the getBenefits calculator', () => {
   })
 
   test('It checks ei regular + cerb some-income path', () => {
-    const incomes =  ['hours-reduced', 'employed-lost-a-job']
+    const incomes = ['hours-reduced', 'employed-lost-a-job']
 
     incomes.forEach(income => {
       const result = getBenefits({
@@ -63,7 +63,7 @@ describe('Test the getBenefits calculator', () => {
     })
 
     expect(result).toContain('cerb')
-  
+
   })
 
   test('Quarantine Lost some ', () => {
@@ -78,7 +78,7 @@ describe('Test the getBenefits calculator', () => {
   test('It checks cerb-only path 3', () => {
 
     const result = getBenefits({
-      gross_income: '5k+',
+      gross_income: 'over_5k',
     })
 
     expect(result).toContain('cerb')

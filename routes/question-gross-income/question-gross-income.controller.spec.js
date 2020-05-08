@@ -35,7 +35,7 @@ test('Redirects to mortgage-payments route path 2', async () => {
   await request(app)
     .post(route.path.en)
     .send({
-      gross_income: '5k+',
+      gross_income: 'over_5k',
     })
     .expect(302)
     .then(response => {
