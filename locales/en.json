@@ -19,7 +19,7 @@
   "ccb.1": "Yes.",
   "ccb.2": "No.",
   "ccb.3": "You’re not sure.",
-  "ccb.hint": "Check your bank account to find out if you’ve been receiving the Canada Child Benefit. <a href='https://www.canada.ca/en/revenue-agency/services/child-family-benefits/benefit-payment-dates.htmlk'>Dates of payments are available.</a> ",
+  "ccb.hint": "Check your bank account to find out if you’ve been receiving the Canada Child Benefit. <a href='https://www.canada.ca/en/revenue-agency/services/child-family-benefits/benefit-payment-dates.html' target='_blank'>Dates of payments are available.</a> ",
   "ccb.title": "Canada Child Benefit",
   "ccb_payment.header": "Extra payment from Canada Child Benefit",
   "cerb.header": "Apply for the Canada Emergency Response Benefit (CERB)",
