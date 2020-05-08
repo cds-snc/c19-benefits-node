@@ -1,5 +1,5 @@
 
-function addLogger(req, res, next) {
+const logger = (req, res, next) => {
 
   res.locals.log = (msg) => {
     const logObject = {}
@@ -17,4 +17,6 @@ function addLogger(req, res, next) {
   next()
 }
 
-module.exports = addLogger
+module.exports = {
+  logger,
+}

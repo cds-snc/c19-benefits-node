@@ -23,12 +23,18 @@ const morganConfig = require('./config/morgan.config')
 const path = require('path')
 const cookieSession = require('cookie-session')
 const cookieSessionConfig = require('./config/cookieSession.config')
-const { hasData, getDomain } = require('./utils')
+const { hasData } = require('./utils')
 const { addNunjucksFilters } = require('./filters')
 const csp = require('./config/csp.config')
 const csrf = require('csurf')
-const uuidv4 = require('uuid').v4
-const addLogger = require('./middleware/logger')
+const {
+  logger,
+  session,
+  languageLinkHelper,
+  domainRedirector,
+  errorHandler,
+  csrfToken,
+}= require('./middleware')
 
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
@@ -52,10 +58,7 @@ if (process.env.NODE_ENV !== 'test') {
   app.use(csrf(require('./config/csrf.config')))
 
   // append csrfToken to all responses
-  app.use(function (req, res, next) {
-    res.locals.csrfToken = req.csrfToken()
-    next()
-  })
+  app.use(csrfToken)
 }
 
 // cookie sessions are character limited, but this works for now
@@ -107,48 +110,12 @@ app.locals.basedir = path.join(__dirname, './views')
 app.set('views', [path.join(__dirname, './views')])
 
 // middleware to set a unique user id per session
-app.use(function (req, res, next) {
-  // set a unique user id per session
-  if (!req.session.id) req.session.id = uuidv4()
-  // add user session req.locals so that the logger has access to it
-  req.locals = { session: req.session }
-
-  next()
-})
-
+app.use(session)
 // Helper middleware used in languageLink.njk
-app.use(function (req, res, next) {
-  const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-  const url = new URL(fullUrl);
-  const querystring = url.search;
-
-  app.locals.getTranslatedRoute = (route, lang) => {
-    return route.path[lang] + querystring;
-  }
-  next()
-})
-
+app.use(languageLinkHelper(app))
 // middleware to redirect french paths to the french domain and english paths to the english domain
-/* istanbul ignore next */
-app.use(function (req, res, next) {
-  // if not running on production azure, skip this
-  if (process.env.SLOT_NAME !== 'default') return next()
-
-  const domain = getDomain(req)
-
-  // if `/fr/` appears in the path for the english domain, redirect to DOMAIN_FR
-  if (req.path.startsWith('/fr/') && domain.includes(process.env.DOMAIN_EN))
-    return res.redirect(`https://${process.env.DOMAIN_FR}${req.path}`)
-
-  // if `/en/` appears in the path for the french domain, redirect to DOMAIN_EN
-  if (req.path.startsWith('/en/') && domain.includes(process.env.DOMAIN_FR))
-    return res.redirect(`https://${process.env.DOMAIN_EN}${req.path}`)
-
-  next()
-})
-
-
-app.use(addLogger)
+app.use(domainRedirector)
+app.use(logger)
 
 app.routes = configRoutes(app, routes, locales)
 
@@ -170,25 +137,6 @@ app.set('view engine', 'njk')
 
 // Pass error information to res.locals
 // istanbul ignore next
-app.use((err, req, res, next) => {
-  const errObj = {}
-
-  const status = err.status || err.statusCode || 500
-  res.statusCode = status
-
-  errObj.status = status
-  if (err.message) errObj.message = err.message
-  if (err.stack) errObj.stack = err.stack
-  if (err.code) errObj.code = err.code
-  if (err.name) errObj.name = err.name
-  if (err.type) errObj.type = err.type
-
-  if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY) {
-    appInsights.trackException({ exception: errObj })
-  }
-
-  res.locals.err = errObj
-  next(err)
-})
+app.use(errorHandler(appInsights))
 
 module.exports = app
