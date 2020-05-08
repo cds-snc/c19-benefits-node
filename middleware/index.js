@@ -4,6 +4,7 @@ const session = require('./session')
 const logger = require('./logger')
 const errorHandler = require('./errorHandler')
 const csrfToken = require('./csrfToken')
+const { setLocale } = require('./setLocale')
 
 module.exports = {
   ...domainRedirector,
@@ -12,4 +13,5 @@ module.exports = {
   ...logger,
   ...errorHandler,
   ...csrfToken,
+  ...setLocale,
 }

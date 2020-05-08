@@ -1,7 +1,11 @@
+const path = require('path')
 const { routeUtils, getDomain } = require('../../utils/index')
+const { getNextRouteURL, getRoutePathDefinition } = require('../../utils/router.helpers')
+const { setLocale } = require('../../middleware/setLocale');
 
 module.exports = (app, route) => {
   const name = route.name
+  routeUtils.addViewPath(app, path.join(__dirname, './'))
 
   // redirect from "/" → "/start"
   app.get('/', (req, res) => {
@@ -19,10 +23,11 @@ module.exports = (app, route) => {
   app.get('/en', (req, res) => res.redirect(route.path.en))
   app.get('/fr', (req, res) => res.redirect(route.path.fr))
 
-  route.draw(app).get(async (req, res) => {
+  app.get(getRoutePathDefinition(route), setLocale, async (req, res) => {
     req.session = null
     res.render(name, routeUtils.getViewData(req, {
       hideBackButton: true,
+      nextRoute: getNextRouteURL(name, req),
       title: res.__('start.title'),
     }))
   })

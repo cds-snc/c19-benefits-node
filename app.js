@@ -34,12 +34,12 @@ const {
   domainRedirector,
   errorHandler,
   csrfToken,
-}= require('./middleware')
+} = require('./middleware')
 
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
 
-if (!configRoutes) configRoutes = require('./utils/route.helpers').configRoutes
+if (!configRoutes) configRoutes = require('./utils/router.helpers').configRoutes
 if (!locales) locales = ['en', 'fr']
 
 // initialize application.
@@ -117,7 +117,9 @@ app.use(languageLinkHelper(app))
 app.use(domainRedirector)
 app.use(logger)
 
-app.routes = configRoutes(app, routes, locales)
+// app.use(routeHelper);
+// TODO: need to replace app.routes in tests with another route helper
+configRoutes(app, routes)
 
 // view engine setup
 const nunjucks = require('nunjucks')

@@ -3,6 +3,7 @@ const routes = [
   { name: 'start', path: { en: '/start', fr: '/debut' } },
   { name: 'question-lost-job', path: { en: '/lost-job', fr: '/perte-emploi' } },
 
+  /*
   // main sorting
   { name: 'question-your-situation-no-income', path: { en: '/your-situation/no-income', fr: '/votre-situation/aucun-revenu' } },
   { name: 'question-your-situation-some-income', path: { en: '/your-situation/some-income', fr: '/votre-situation/revenu-partiel' } },
@@ -28,6 +29,7 @@ const routes = [
   // feedback
   { name: 'feedback', path: { en: '/feedback', fr: '/feedback' } },
   { name: 'feedback-thanks', path: { en: '/thanks', fr: 'merci' } },
+  */
 ]
 
 const locales = ['en', 'fr']

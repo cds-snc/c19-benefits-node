@@ -1,4 +1,4 @@
-const routeHelpers = require('./route.helpers.js')
+// const routeHelpers = require('./route.helpers.js')
 const dataHelpers = require('./data.helpers.js')
 const sessionHelpers = require('./session.helpers.js')
 const urlHelpers = require('./url.helpers.js')
@@ -8,7 +8,7 @@ const flashMessageHelpers = require('./flash.message.helpers')
 const loadHelpers = require('./load.helpers')
 
 module.exports = {
-  ...routeHelpers,
+  //  ...routeHelpers,
   ...viewHelpers,
   ...sessionHelpers,
   ...urlHelpers,
