@@ -1,6 +1,4 @@
-
-function addLogger(req, res, next) {
-
+const logger = (req, res, next) => {
   res.locals.log = (msg) => {
     const logObject = {}
     if (req.session.id) {
@@ -17,4 +15,6 @@ function addLogger(req, res, next) {
   next()
 }
 
-module.exports = addLogger
+module.exports = {
+  logger,
+}
