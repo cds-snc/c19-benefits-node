@@ -1,4 +1,4 @@
-const { getSessionData, saveSessionData } = require('./session.helpers')
+const { getSessionData, saveSessionData, pruneSessionData } = require('./session.helpers')
 
 const formVals = [
   {
@@ -13,7 +13,7 @@ const formVals = [
   },
   {
     name: 'but NOT the redirect key',
-    before: { phone: '613-111-1111', redirect: '/end' },
+    before: { phone: '613-111-1111', dataToPrune: 'foo', redirect: '/end' },
     after: { phone: '613-111-1111' },
   },
 ]
@@ -24,6 +24,7 @@ formVals.map(formVal => {
     req.body = formVal.before
     expect(getSessionData(req)).toStrictEqual({})
     saveSessionData(req)
+    pruneSessionData(req, ['dataToPrune'])
     expect(req.session.formdata).toStrictEqual(formVal.after)
     expect(getSessionData(req)).toStrictEqual(formVal.after)
   })

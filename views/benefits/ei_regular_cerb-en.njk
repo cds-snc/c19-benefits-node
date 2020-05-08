@@ -1,21 +1,22 @@
-<div class="m-5 p-5 shadow-result">
+<div class="m-5 p-5 shadow-result" data-cy="ei_regular_cerb-benefit">
+
   <h2 class="text-2xl font-bold mb-6" id="ei_regular_cerb">
     {{__("ei_regular_cerb.header")}}
   </h2>
+
   <ul class="list-none list-outside pl-0">
     {{ blueLI("$500 per week") }}
     {{ blueLI("Up to 16 weeks", "if you keep  meeting the eligibility criteria") }}
     {{ blueLI("First payment within 10 days of applying") }}
   </ul>
-  <div class="pb-5 mt-6">
 
+  <div class="pb-5 mt-6">
     <strong>Next steps:</strong>
     <ul class='list-disc list-outside'>
       <li>You’ll be asked some questions to direct you to apply through either the Canada Revenue Agency (CRA) or Service Canada.</li>
       <li>The application will ask you to declare that you meet the eligibility criteria, so read the details carefully. </li>
       <li>You’ll need to pay income tax on these payments in the future.</li>
     </ul>
-
   </div>
 
   {{ infoLink(

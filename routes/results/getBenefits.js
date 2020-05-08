@@ -110,7 +110,7 @@ const getBenefits = (data) => {
     ),
   )
 
-  results.push(match(data, { gross_income: '5k+' }, 'cerb'))
+  results.push(match(data, { gross_income: 'over_5k' }, 'cerb'))
 
   results.push(
     match(
