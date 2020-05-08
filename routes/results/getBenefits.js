@@ -1,7 +1,7 @@
-/* 
-This method checks to see if an input object matches a pattern 
+/*
+This method checks to see if an input object matches a pattern
 This pattern can have scalar values, or arrays as the item being matched
-If it's a scalar we need an exact match, if it's an array we only care if the value 
+If it's a scalar we need an exact match, if it's an array we only care if the value
 matches one of the items in the output.
 */
 function match(input, pattern, result) {
@@ -13,9 +13,9 @@ function match(input, pattern, result) {
 
     // If the value is an array we only care if we match one item
     if (typeof patternValueToMatch === typeof []) {
-      /* algorithm is as follows: 
+      /* algorithm is as follows:
         Logical OR the result of the current match against the previous
-        Since all we care is if the value we are matching is equal to 
+        Since all we care is if the value we are matching is equal to
         one item in the patternValueToMatch array we are iterating through
       */
       return patternValueToMatch.reduce((p, c) => p || c === actualValue, false)
@@ -50,10 +50,7 @@ const getBenefits = (data) => {
       data,
       {
         lost_job: 'lost-some-income',
-        some_income: [
-          'hours-reduced',
-          'employed-lost-a-job',
-        ],
+        some_income: ['hours-reduced', 'employed-lost-a-job'],
         reduced_income: '1000_or_less',
       },
       'ei_regular_cerb',
@@ -124,6 +121,15 @@ const getBenefits = (data) => {
   )
 
   results.push(
+    match(data, { mortgage_payments: 'yes-mortgage' }, 'mortgage_deferral'),
+  )
+
+  results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))
+  results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
+  results.push(match(data, { ccb: ['yes', 'unsure'] }, 'ccb_payment'))
+  results.push(match(data, { rrif: 'yes' }, 'rrif'))
+
+  results.push(
     match(
       data,
       {
@@ -133,17 +139,8 @@ const getBenefits = (data) => {
     ),
   )
 
-  results.push(
-    match(data, { mortgage_payments: 'yes-mortgage' }, 'mortgage_deferral'),
-  )
-  results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))
-  results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
-  results.push(match(data, { ccb: ['yes', 'unsure'] }, 'ccb_payment'))
-  results.push(match(data, { rrif: 'yes' }, 'rrif'))
-
   return results.filter((v) => v !== undefined)
 }
-
 
 module.exports = {
   getBenefits,
