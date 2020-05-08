@@ -17,7 +17,7 @@ module.exports = (app, route) => {
 
 const postUnchangedIncome = (req, res) => {
 
-  pruneSessionData(req, ['some_income', 'no_income', 'gross-income', 'income-earned'])
+  pruneSessionData(req, ['some_income', 'no_income', 'gross_income', 'income-earned'])
 
   if (['wfh', 'paid-leave'].includes(req.body.unchanged_income)) {
     // prune rrif since we won't go down that path
