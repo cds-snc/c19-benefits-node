@@ -3,7 +3,6 @@ const csrfToken = function (req, res, next) {
   next()
 }
 
-
 module.exports = {
   csrfToken,
 }

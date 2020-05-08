@@ -1,4 +1,3 @@
-// istanbul ignore file
 
 const { getDomain } = require('../utils')
 const domainRedirector = function (req, res, next) {

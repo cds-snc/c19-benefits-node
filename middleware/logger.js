@@ -1,6 +1,4 @@
-
 const logger = (req, res, next) => {
-
   res.locals.log = (msg) => {
     const logObject = {}
     if (req.session.id) {

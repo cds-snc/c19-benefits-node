@@ -1,7 +1,6 @@
 const uuidv4 = require('uuid').v4
 
 const session = (req, res, next) => {
-
   // set a unique user id per session
   if (!req.session.id) req.session.id = uuidv4()
 
