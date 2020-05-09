@@ -1,13 +1,8 @@
-const path = require('path')
 const { routeUtils, getDomain } = require('../../utils/index')
 const { getNextRouteURL, getRoutePathDefinition } = require('../../utils/router.helpers')
-const { setLocale } = require('../../middleware/setLocale');
 
 module.exports = (app, route) => {
   const name = route.name
-
-  // this should probably move to global?
-  app.all('/:lang(en|fr)/*', setLocale);
 
   // redirect from "/" → "/start"
   app.get('/', (req, res) => {

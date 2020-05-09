@@ -111,6 +111,8 @@ const path = require('path')
 const { addViewPath } = require('./view.helpers')
 
 const configRoutes = (app, routes = []) => {
+  require('../routes/global/global.controller')(app)
+
   // require the controllers defined in the routes
   // dir and file name based on the route name
   routes.forEach(routeObj => {
@@ -123,7 +125,9 @@ const configRoutes = (app, routes = []) => {
     addViewPath(app, path.join(__dirname, `../routes/${routeName}`))
   })
 
-  require('../routes/global/global.controller')(app)
+  // errors.controller should be included after
+  // all other routes have been loaded
+  require('../routes/global/errors.controller')(app)
 }
 
 const getDefaultMiddleware = options => {
