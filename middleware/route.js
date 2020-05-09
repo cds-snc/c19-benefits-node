@@ -14,6 +14,14 @@ const routeHelpers = (req, res, next) => {
     return getNextRouteURL(route, req);
   }
 
+  const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  const url = new URL(fullUrl);
+  const querystring = url.search;
+
+  res.locals.getTranslatedRoute = (route, lang) => {
+    return `/${lang}${route.path[lang]}` + querystring;
+  }
+
   next()
 }
 

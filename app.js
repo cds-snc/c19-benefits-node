@@ -30,7 +30,6 @@ const csrf = require('csurf')
 const {
   logger,
   session,
-  languageLinkHelper,
   domainRedirector,
   errorHandler,
   csrfToken,
@@ -114,8 +113,7 @@ app.set('views', [path.join(__dirname, './views')])
 
 // middleware to set a unique user id per session
 app.use(session)
-// Helper middleware used in languageLink.njk
-app.use(languageLinkHelper(app))
+
 // middleware to redirect french paths to the french domain and english paths to the english domain
 app.use(domainRedirector)
 app.use(logger)

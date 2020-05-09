@@ -151,11 +151,10 @@ const doRedirect = routeName => {
   }
 }
 
+// returns a lang-prefixed bilingual route path for express router
 const getRoutePathDefinition = (route) => {
-  // should trim / route.path.en and add here
   return ['/:lang(en)' + route.path.en, '/:lang(fr)' + route.path.fr]
 }
-
 
 module.exports = {
   routeHasIndex,
