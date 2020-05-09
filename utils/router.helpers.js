@@ -74,7 +74,6 @@ const getNextRoute = (name, routes = defaultRoutes) => {
 
 
 const getNextRouteURL = (name, req) => {
-
   const nextRoute = getNextRoute(name)
 
   /* istanbul ignore next */
@@ -82,8 +81,10 @@ const getNextRouteURL = (name, req) => {
     throw new Error(`[POST ${req.path}] 'redirect' missing`)
   }
 
+  const path = `/${req.locale}${nextRoute.path[req.locale]}`
+
   return url.format({
-    pathname: nextRoute.path[i18n.getLocale()],
+    pathname: path,
     query: req.query,
   })
 }
