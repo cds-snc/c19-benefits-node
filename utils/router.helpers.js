@@ -107,14 +107,20 @@ const getRouteWithIndexByName = (name, routes = defaultRoutes) => {
   if (index >= 0) return { index, route: routes[index] }
 }
 
+const path = require('path')
+const { addViewPath } = require('./view.helpers')
+
 const configRoutes = (app, routes = []) => {
-  // console.log('configRoutes');
   // require the controllers defined in the routes
   // dir and file name based on the route name
   routes.forEach(routeObj => {
     const routeName = routeObj.name
-    // console.log(routeObj);
+
+    // load controller
     require(`../routes/${routeName}/${routeName}.controller`)(app, routeObj)
+
+    // add path for views
+    addViewPath(app, path.join(__dirname, `../routes/${routeName}`))
   })
 
   require('../routes/global/global.controller')(app)
