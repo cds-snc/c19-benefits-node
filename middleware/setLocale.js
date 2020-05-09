@@ -6,8 +6,7 @@ const getLangFromUrl = (req) => {
 
 const setLocale = (req, res, next) => {
   const locale = getLangFromUrl(req);
-  res.setLocale(locale)
-  console.log('setLanguage:' + locale);
+  req.setLocale(locale)
 
   res.cookie('lang', locale, {
     httpOnly: true,
