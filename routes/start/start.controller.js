@@ -5,7 +5,9 @@ const { setLocale } = require('../../middleware/setLocale');
 
 module.exports = (app, route) => {
   const name = route.name
-  routeUtils.addViewPath(app, path.join(__dirname, './'))
+
+  // this should probably move to global?
+  app.all('/:lang(en|fr)/*', setLocale);
 
   // redirect from "/" → "/start"
   app.get('/', (req, res) => {
@@ -23,7 +25,7 @@ module.exports = (app, route) => {
   app.get('/en', (req, res) => res.redirect(route.path.en))
   app.get('/fr', (req, res) => res.redirect(route.path.fr))
 
-  app.get(getRoutePathDefinition(route), setLocale, async (req, res) => {
+  app.get(getRoutePathDefinition(route), async (req, res) => {
     req.session = null
     res.render(name, routeUtils.getViewData(req, {
       hideBackButton: true,

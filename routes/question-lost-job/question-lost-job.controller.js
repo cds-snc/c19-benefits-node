@@ -1,10 +1,11 @@
 const { routeUtils } = require('./../../utils')
 const { Schema } = require('./schema.js')
+const { getRoutePathDefinition } = require('../../utils/router.helpers')
 
 module.exports = (app, route) => {
   const name = route.name
 
-  app.get((req, res) => {
+  app.get(getRoutePathDefinition(route), (req, res) => {
     res.render(name, routeUtils.getViewData(req, {
       title: res.__('lost_job.title'),
     }))
