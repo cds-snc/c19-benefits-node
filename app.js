@@ -36,6 +36,9 @@ const {
   csrfToken,
 } = require('./middleware')
 
+// I don't know why this doesn't work in the require above
+const { routeHelpers } = require('./middleware/route')
+
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
 
@@ -116,8 +119,8 @@ app.use(languageLinkHelper(app))
 // middleware to redirect french paths to the french domain and english paths to the english domain
 app.use(domainRedirector)
 app.use(logger)
+app.use(routeHelpers)
 
-// app.use(routeHelper);
 // TODO: need to replace app.routes in tests with another route helper
 configRoutes(app, routes)
 

@@ -5,6 +5,7 @@ const logger = require('./logger')
 const errorHandler = require('./errorHandler')
 const csrfToken = require('./csrfToken')
 const { setLocale } = require('./setLocale')
+const { routeHelpers } = require('./route')
 
 module.exports = {
   ...domainRedirector,
@@ -14,4 +15,5 @@ module.exports = {
   ...errorHandler,
   ...csrfToken,
   ...setLocale,
+  ...routeHelpers,
 }

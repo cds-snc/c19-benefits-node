@@ -1,10 +1,7 @@
 const { routeUtils, getDomain } = require('../../utils/index')
-const { getNextRouteURL, getRoutePathDefinition } = require('../../utils/router.helpers')
+const { getRoutePathDefinition } = require('../../utils/router.helpers')
 
 module.exports = (app, route) => {
-  const name = route.name
-
-  // redirect from "/" → "/start"
   app.get('/', (req, res) => {
     const domain = getDomain(req)
 
@@ -22,9 +19,10 @@ module.exports = (app, route) => {
 
   app.get(getRoutePathDefinition(route), async (req, res) => {
     req.session = null
-    res.render(name, routeUtils.getViewData(req, {
+
+    res.render(route.name, routeUtils.getViewData(req, {
+      route: route,
       hideBackButton: true,
-      nextRoute: getNextRouteURL(name, req),
       title: res.__('start.title'),
     }))
   })
