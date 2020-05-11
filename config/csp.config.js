@@ -10,6 +10,7 @@ const scriptSrc = [
   'assets.adobedtm.com',
   "'unsafe-inline'",
   'cv19-benefits-cdn.azureedge.net',
+  'sitecatalyst.omniture.com',
 ]
 
 let upgradeInsecureRequests = true
