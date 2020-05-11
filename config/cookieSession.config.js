@@ -8,8 +8,8 @@
 */
 const oneHour = 1000 * 60 * 60
 const sessionName = `ctb-${
-  process.env.COOKIE_SECRET || Math.floor(new Date().getTime() / oneHour)
-}`
+  process.env.COOKIE_SECRET || 'session'
+  }`
 
 const cookieSessionConfig = {
   name: sessionName,
