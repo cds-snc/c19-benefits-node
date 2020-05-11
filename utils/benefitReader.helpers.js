@@ -1,6 +1,6 @@
 const fs = require('fs').promises
 
-// process.env.FORMAT_LOGS = false
+ process.env.FORMAT_LOGS = false
 function dlog(obj) {
   console.log(
     JSON.stringify({ msg: obj }, null, process.env.FORMAT_LOGS ? 2 : 0),
@@ -21,7 +21,6 @@ const get4SectionBenefit = (sections) => {
 }
 
 const get5SectionBenefit = (sections) => {
-  dlog('getting 5 section benefit')
   const section = {
     header: sections[0],
     blueLinks: sections[1],
@@ -29,7 +28,6 @@ const get5SectionBenefit = (sections) => {
     linkText: sections[3],
     url: sections[4],
   }
-  dlog(section)
   return section
 }
 
@@ -38,7 +36,7 @@ const getSections = (benefit) =>
     .toString()
     .split('---')
     .map((s) => {
-      return s.replace(nlAtBeginning, '').replace(nlAtEnd, '')
+      return s.replace(nlAtBeginning, '').replace(nlAtEnd, '').split('\n')
     })
 
 const readBenefitFile = async (file) => {
@@ -56,14 +54,19 @@ const readBenefitFile = async (file) => {
 
 const readBenefits = async (benefitsDirectory) => {
   const files = await fs.readdir(benefitsDirectory)
-  return files.filter((filename) => filename.endsWith('.md'))
-              .map(async (filename) => {
-      const benefit = await readBenefitFile(filename)
-      return benefit
-    })
+  return await Promise.all(
+    files
+      .filter((filename) => filename.endsWith('.md'))
+      .map(async (filename) => {
+        const benefit = await readBenefitFile(filename)
+        return benefit
+      }),
+  )
 }
 
-readBenefits('../views/benefits').then().then(x => dlog(`final result ${x}`))
+readBenefits('../views/benefits').then((x) => {
+  dlog(x)
+})
 
 module.exports = {
   readBenefits,
