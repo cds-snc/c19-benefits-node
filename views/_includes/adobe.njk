@@ -1,5 +1,5 @@
 <!-- Adobe Analytic tags -->
-<meta name="dcterms.title" content="{{ __('app.title') }}"/>
+<meta name="dcterms.title" content="{% if(title) %}{{ title }} — {% endif %}{{ __('app.title') }}" />
 <meta name="dcterms.language" content="{{ 'eng' if getLocale() === 'en' else 'fra' }}"/>
 <meta name="dcterms.creator" content="CDS"/>
 <meta name="dcterms.accessRights" content="2"/>
