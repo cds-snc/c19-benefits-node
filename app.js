@@ -122,6 +122,15 @@ app.use(routeHelpers)
 // TODO: need to replace app.routes in tests with another route helper
 configRoutes(app, routes)
 
+const { getRouteByName } = require('./utils/router.helpers')
+
+app.routes = {
+  get: (name) => {
+    console.log(name);
+    return getRouteByName(name)
+  },
+}
+
 // view engine setup
 const nunjucks = require('nunjucks')
 

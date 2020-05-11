@@ -2,9 +2,57 @@ const { checkSchema } = require('express-validator')
 const { routes: defaultRoutes } = require('../config/routes.config')
 const { checkErrors } = require('./validate.helpers')
 const url = require('url');
-const i18n = require('i18n');
 
 const DefaultRouteObj = { name: false, path: false }
+
+
+/**
+ * REFACTORED METHODS
+ */
+
+const path = require('path')
+const { addViewPath } = require('./view.helpers')
+
+const configRoutes = (app, routes = []) => {
+  require('../routes/global/global.controller')(app)
+
+  // require the controllers defined in the routes
+  // dir and file name based on the route name
+  routes.forEach(routeObj => {
+    const routeName = routeObj.name
+
+    // load controller
+    require(`../routes/${routeName}/${routeName}.controller`)(app, routeObj)
+
+    // add path for views
+    addViewPath(app, path.join(__dirname, `../routes/${routeName}`))
+  })
+
+  // errors.controller should be included after
+  // all other routes have been loaded
+  require('../routes/global/errors.controller')(app)
+}
+
+// returns a lang-prefixed bilingual route path for express router
+const getRoutePathDefinition = (route) => {
+  return ['/:lang(en)' + route.path.en, '/:lang(fr)' + route.path.fr]
+}
+
+/**
+ * @param {String} name route name
+ * @param {Array} routes array of route objects { name: "start", path: "/start" }
+ * @returns { name: "", path: { en: "", fr: "" } }
+ */
+const getRouteByName = (name, routes = defaultRoutes) => {
+  const route = routes.find(r => r.name === name)
+
+  return route
+}
+
+/**
+ * ORIGINAL METHODS BELOW
+ */
+
 
 /**
  * This request middleware checks if we are visiting a public path
@@ -89,48 +137,6 @@ const getNextRouteURL = (name, req) => {
   })
 }
 
-/**
- * @param {String} name route name
- * @param {Array} routes array of route objects { name: "start", path: "/start" }
- * @returns { name: "", path: "" }
- */
-const getRouteByName = (name, routes = defaultRoutes) => {
-  return getRouteWithIndexByName(name, routes).route
-}
-
-/**
- * @param {String} name route name
- * @param {Array} routes array of route objects { name: "start", path: "/start" }
- * @returns { index: "1", route: { name: "start", path: "/start" } }
- */
-const getRouteWithIndexByName = (name, routes = defaultRoutes) => {
-  const index = routes.findIndex(r => r.name === name)
-  if (index >= 0) return { index, route: routes[index] }
-}
-
-const path = require('path')
-const { addViewPath } = require('./view.helpers')
-
-const configRoutes = (app, routes = []) => {
-  require('../routes/global/global.controller')(app)
-
-  // require the controllers defined in the routes
-  // dir and file name based on the route name
-  routes.forEach(routeObj => {
-    const routeName = routeObj.name
-
-    // load controller
-    require(`../routes/${routeName}/${routeName}.controller`)(app, routeObj)
-
-    // add path for views
-    addViewPath(app, path.join(__dirname, `../routes/${routeName}`))
-  })
-
-  // errors.controller should be included after
-  // all other routes have been loaded
-  require('../routes/global/errors.controller')(app)
-}
-
 const getDefaultMiddleware = options => {
   return [
     checkSchema(options.schema),
@@ -152,9 +158,14 @@ const doRedirect = routeName => {
   }
 }
 
-// returns a lang-prefixed bilingual route path for express router
-const getRoutePathDefinition = (route) => {
-  return ['/:lang(en)' + route.path.en, '/:lang(fr)' + route.path.fr]
+/**
+ * @param {String} name route name
+ * @param {Array} routes array of route objects { name: "start", path: "/start" }
+ * @returns { index: "1", route: { name: "start", path: "/start" } }
+ */
+const getRouteWithIndexByName = (name, routes = defaultRoutes) => {
+  const index = routes.findIndex(r => r.name === name)
+  if (index >= 0) return { index, route: routes[index] }
 }
 
 module.exports = {
