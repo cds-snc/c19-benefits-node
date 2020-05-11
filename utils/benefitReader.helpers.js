@@ -1,40 +1,70 @@
 const fs = require('fs').promises
-const _ = require('lodash')
+
+// process.env.FORMAT_LOGS = false
 function dlog(obj) {
   console.log(
     JSON.stringify({ msg: obj }, null, process.env.FORMAT_LOGS ? 2 : 0),
   )
 }
 
-process.env.FORMAT_LOGS = true
-const readSection = (lines) => _.takeWhile(lines, endOfSection)
-const dropSection = (lines) => _.drop(_.dropWhile(lines, endOfSection), 1)
-const endOfSection = (l) => l !== '---'
+const nlAtBeginning = /^\n/
+const nlAtEnd = /\n$/
 
-const readBenefits = async () => {
-  const files = await fs.readdir('../views/benefits')
-  const benefitFiles = files.filter((filename) => filename.endsWith('.md'))
-
-  benefitFiles.forEach(async (file) => {
-    const benefit = await fs.readFile(`../views/benefits/${file}`)
-    var lines = benefit.toString().split('\n')
-
-    const retVal = {}
-    retVal.header = readSection(lines)
-    lines = dropSection(lines)
-    retVal.list = readSection(lines)
-    lines = dropSection(lines)
-    retVal.Markdown = readSection(lines)
-    lines = dropSection(lines)
-    retVal.LinkText = readSection(lines)
-    lines = dropSection(lines)
-    retVal.URL = readSection(lines)
-    lines = dropSection(lines)
-    return retVal
-  })
+const get4SectionBenefit = (sections) => {
+  const section = {
+    header: sections[0],
+    markdown: sections[1],
+    linkText: sections[2],
+    url: sections[3],
+  }
+  return section
 }
 
-dlog(readBenefits())
+const get5SectionBenefit = (sections) => {
+  dlog('getting 5 section benefit')
+  const section = {
+    header: sections[0],
+    blueLinks: sections[1],
+    markdown: sections[2],
+    linkText: sections[3],
+    url: sections[4],
+  }
+  dlog(section)
+  return section
+}
+
+const getSections = (benefit) =>
+  benefit
+    .toString()
+    .split('---')
+    .map((s) => {
+      return s.replace(nlAtBeginning, '').replace(nlAtEnd, '')
+    })
+
+const readBenefitFile = async (file) => {
+  const benefit = await fs.readFile(`../views/benefits/${file}`)
+  const sections = getSections(benefit)
+  switch (sections.length) {
+    case 4:
+      return get4SectionBenefit(sections)
+    case 5:
+      return get5SectionBenefit(sections)
+    default:
+      throw new Error('Invalid Benefit')
+  }
+}
+
+const readBenefits = async (benefitsDirectory) => {
+  const files = await fs.readdir(benefitsDirectory)
+  return files.filter((filename) => filename.endsWith('.md'))
+              .map(async (filename) => {
+      const benefit = await readBenefitFile(filename)
+      return benefit
+    })
+}
+
+readBenefits('../views/benefits').then().then(x => dlog(`final result ${x}`))
+
 module.exports = {
   readBenefits,
 }
