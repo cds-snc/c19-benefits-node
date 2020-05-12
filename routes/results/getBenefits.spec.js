@@ -142,12 +142,30 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('student_loan')
   })
 
+  test('It checks for cesb no-income', () => {
+    const result = getBenefits({
+      lost_job: 'lost-all-income',
+      no_income: 'student_2019_20',
+    })
+
+    expect(result).toContain('cesb')
+  })
+
+  test('It checks for cesb unchanged-income', () => {
+    const result = getBenefits({
+      lost_job: 'lost-no-income',
+      unchanged_income: 'student_2019_20',
+    })
+
+    expect(result).toContain('cesb')
+  })
+
   test('It checks for student financial aid', () => {
     const result = getBenefits({
       plans_for_school: 'yes',
     })
 
-    // expect(result).toContain('cssg')
+    expect(result).toContain('cssg')
     expect(result).toContain('student_financial_aid')
   })
 

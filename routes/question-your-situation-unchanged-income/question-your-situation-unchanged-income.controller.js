@@ -19,7 +19,7 @@ const postUnchangedIncome = (req, res) => {
 
   pruneSessionData(req, ['some_income', 'no_income', 'gross_income', 'income-earned'])
 
-  if (['wfh', 'paid-leave'].includes(req.body.unchanged_income)) {
+  if (['wfh', 'paid-leave', 'student_2019_20'].includes(req.body.unchanged_income)) {
     // prune rrif since we won't go down that path
     pruneSessionData(req, ['rrif'])
     return res.redirect(res.locals.routePath('question-mortgage-payments'))
