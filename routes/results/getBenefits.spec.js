@@ -165,7 +165,6 @@ describe('Test the getBenefits calculator', () => {
       plans_for_school: 'yes',
     })
 
-    expect(result).toContain('cssg')
     expect(result).toContain('student_financial_aid')
   })
 

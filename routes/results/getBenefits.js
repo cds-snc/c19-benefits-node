@@ -157,16 +157,6 @@ const getBenefits = (data) => {
       {
         plans_for_school: 'yes',
       },
-      'cssg',
-    ),
-  )
-
-  results.push(
-    match(
-      data,
-      {
-        plans_for_school: 'yes',
-      },
       'student_financial_aid',
     ),
   )
