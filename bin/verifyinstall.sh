@@ -26,8 +26,11 @@ development=$(git rev-parse origin/master)
 printf "latest commit in Development %s \n" "$development"
 checkSite https://cv19benefits-appservice-dev.azurewebsites.net/en/start against "$development"
 
-printf "\nVerifying Production Deployment\n"
+printf "\nVerifying Staging Environment"
 staging=$(git rev-parse origin/staging)
 printf "latest commit in Staging %s\n" "$staging"
+checkSite https://cv19benefits-appservice-staging.azurewebsites.net/en/start against "$staging"
+
+printf "\nVerifying Production Deployment\n"
 checkSite https://covid-benefits.alpha.canada.ca/en/start against "$staging"
 checkSite https://covid-prestations.alpha.canada.ca/fr/debut against "$staging"
