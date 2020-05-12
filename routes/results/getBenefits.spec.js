@@ -142,10 +142,19 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('student_loan')
   })
 
-  test('It checks for cesb no-income', () => {
+  test('It checks for cesb no-income student_2019_20', () => {
     const result = getBenefits({
       lost_job: 'lost-all-income',
       no_income: 'student_2019_20',
+    })
+
+    expect(result).toContain('cesb')
+  })
+
+  test('It checks for cesb unchanged-income high_school_grad', () => {
+    const result = getBenefits({
+      lost_job: 'lost-no-income',
+      unchanged_income: 'high_school_grad',
     })
 
     expect(result).toContain('cesb')
