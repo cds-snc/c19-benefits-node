@@ -20,7 +20,7 @@ describe('Test redirects for unchanged-income ', () => {
   const redirects = [
     {
       dest: 'question-mortgage-payments',
-      values: ['wfh','paid-leave'],
+      values: ['wfh','paid-leave', 'student_2019_20', 'high_school_grad'],
     },
     {
       dest: 'question-rrif',
