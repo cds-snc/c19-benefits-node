@@ -97,7 +97,7 @@
   "results.banner": "You missed a couple questions at the beginning. <a href='/clear'>Start over</a> to get your full results.",
   "results.eligibility_warning": "These results <strong>do not guarantee your eligibility</strong>. Read the details we link to before applying.",
   "results.header_text": "Based on what you’ve told us, the following help is available:",
-  "results.no_results.preamble": "Your situation does not match any of the benefits included here at the moment. We’re working to add more programs, so you may want to check back in a few weeks or if your situation changes.",
+  "results.no_results.preamble": "Your situation does not match any of the benefits included here at the moment. We’re working to add more programs, so you may want to check back in the future or if your situation changes.",
   "results.other_potential_help": "Other potential help",
   "results.other_potential_help.preamble": "The following help is available as well:",
   "results.situation_changes": "If your situation changes, you can answer the questions again to get new programs.",
@@ -105,7 +105,7 @@
     "one": "%s way to get help",
     "other": "%s ways to get help"
   },
-  "results_title_no_results": "Check back in a few weeks",
+  "results_title_no_results": "Check back again",
   "rrif.1": "Yes.",
   "rrif.2": "No.",
   "rrif.header": "Lower mandatory withdrawals for your Registered Retirement Income Fund (RRIF)",
