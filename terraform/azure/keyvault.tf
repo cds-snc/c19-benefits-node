@@ -43,15 +43,26 @@ resource "azurerm_key_vault_access_policy" "ap_identity" {
 resource "azurerm_key_vault_access_policy" "staging_slot_identity" {
 
   key_vault_id = azurerm_key_vault.key_vault.id
-  object_id    = azurerm_app_service_slot.staging.identity.0.principal_id
-  tenant_id    = azurerm_app_service_slot.staging.identity.0.tenant_id
+  object_id    = azurerm_app_service.non_prod.identity.0.principal_id
+  tenant_id    = azurerm_app_service.non_prod.identity.0.tenant_id
   secret_permissions = [
     "get",
     "list",
   ]
-  depends_on = [azurerm_app_service_slot.staging]
+  depends_on = [azurerm_app_service.non_prod]
 }
 
+resource "azurerm_key_vault_access_policy" "research_slot_identity" {
+
+  key_vault_id = azurerm_key_vault.key_vault.id
+  object_id    = azurerm_app_service_slot.research.identity.0.principal_id
+  tenant_id    = azurerm_app_service_slot.research.identity.0.tenant_id
+  secret_permissions = [
+    "get",
+    "list",
+  ]
+  depends_on = [azurerm_app_service_slot.research]
+}
 resource "azurerm_key_vault_access_policy" "dev_slot_identity" {
 
   key_vault_id = azurerm_key_vault.key_vault.id
