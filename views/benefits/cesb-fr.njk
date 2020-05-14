@@ -6,33 +6,51 @@
 
   <ul class="list-none list-outside pl-0">
     {{ blueLI("De mai à août 2020") }}
-    {{ blueLI("1250 $ par mois ou") }}
-    {{ blueLI("2000 $ par mois si vous avez une incapacité permanente ou") }}
-    {{ blueLI("2000 $ par mois si vous avez des personnes à charge") }}
+    <li>
+      <div class="bg-blue-200 p-5 m-1 text-blue-800">
+        <p class="relative m-0 pl-8 ">
+          <img src="{{ asset('/img/check-circle.svg') }}" class="w-6 h-6 mt-1 -ml-8 absolute fill-current" alt="">
+          <ul class='list-none  mt-2'>
+            <li>
+              <strong>1250 $ par mois </strong>
+            </li>
+            <li>
+              <strong>OU 2000 $ par mois si vous avez une incapacité permanente</strong>
+            </li>
+            <li>
+              <strong>OU 2000 $ par mois si vous avez des personnes à charge</strong>
+            </li>
+          </ul>
+        </p>
+      </div>
+    </li>
   </ul>
 
   <div class="pb-5 mt-6">
 
-    <strong>Cette prestation peut vous aider si :</strong>
+    <strong>Cette prestation peut vous aider si l’un des scénario suivants s’appliquent à vous :</strong>
     <ul class='list-outside list-disc'>
-      <li>vous êtes étudiant au niveau postsecondaire ou récemment diplômé d’un programme postsecondaire ou secondaire.</li>
-      <li>vous ne recevez pas la Prestation canadienne d’urgence.</li>
+      <li>Vous êtes étudiant au niveau postsecondaire ou récemment diplômé d’un programme postsecondaire.</li>
+      <li>Vous recevrez votre diplôme d’études secondaires en 2020 et avez appliqué pour un programme d’études postsecondaires débutant avant le 1er février 2021.</li>
+    </ul>
+
+    <strong>De plus :</strong>
+    <ul class="list-outside list-disc">
+      <li>vous ne recevez pas la Prestation canadienne d’urgence. (PCU)</li>
       <li>vous ne pouvez pas travailler ou ne gagnez pas plus de 1000 $ par mois, avant impôts.</li>
     </ul>
 
     <strong>Bon à savoir :</strong>
     <ul class='list-outside list-disc'>
       <li>Ce programme d’aide sera disponible pour 4 mois entre mai et août 2020.</li>
-      <li>La prestation sera distribuée par l’Agence du revenu du Canada (ARC).</li>
-      <li>Vous pouvez appliquer via Mon dossier de l’ARC dès que la prestation sera disponible.</li>
-      <li>Nous mettrons ces renseignements à jour lorsqu’ils seront connus.</li>
+      <li>Vous pouvez appliquer via Mon dossier de l’ARC dès le 15 mai 2020.</li>
     </ul>
 
   </div>
 
   {{ infoLink(
         "cesb",
-        "https://pm.gc.ca/fr/nouvelles/communiques/2020/04/22/aide-aux-etudiants-et-aux-nouveaux-diplomes-touches-la-covid-19",
-        "Tenez vous informés au sujet de l’aide pour les étudiants"
+        "https://www.canada.ca/fr/agence-revenu/services/prestations/prestation-urgence-etudiants/pcue-qui-demande.html",
+        "Vérifier votre admissibilité à la PCUE"
     )}}
 </div>
