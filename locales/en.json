@@ -102,8 +102,8 @@
   "results.other_potential_help.preamble": "The following help is available as well:",
   "results.situation_changes": "If your situation changes, you can answer the questions again to get new programs.",
   "results_title": {
-    "one": "%s way to get help",
-    "other": "%s ways to get help"
+    "one": "Results",
+    "other": "%s results"
   },
   "results_title_no_results": "Check back again",
   "rrif.1": "Yes.",

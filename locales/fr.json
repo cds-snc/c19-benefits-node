@@ -102,8 +102,8 @@
   "results.other_potential_help.preamble": "L’aide suivante est également disponible :",
   "results.situation_changes": "Si votre situation change, vous pouvez répondre aux questions à nouveau pour trouver de nouveaux programmes d’aide.",
   "results_title": {
-    "one": "%s programme pour vous aider",
-    "other": "%s programmes pour vous aider"
+    "one": "Résultats",
+    "other": "%s résultats"
   },
   "results_title_no_results": "Revenez voir plus tard",
   "rrif.1": "Oui.",
