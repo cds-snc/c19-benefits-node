@@ -128,6 +128,7 @@ const getBenefits = (data) => {
   results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
   results.push(match(data, { ccb: ['yes', 'unsure'] }, 'ccb_payment'))
   results.push(match(data, { rrif: 'yes' }, 'rrif'))
+  results.push(match(data, { oas: ['yes', 'unsure'] }, 'oas'))
 
   results.push(
     match(
