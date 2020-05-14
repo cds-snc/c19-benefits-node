@@ -20,6 +20,7 @@ Explore it here: [https://covid-benefits.alpha.canada.ca](https://covid-benefits
 * Suspending repayment and interest on student and apprentice loans
 * EI Workshare
 * Provincial help for renters
+* One-time payments for OAS and GIS recipients 
 
 ## Built with
 
@@ -156,6 +157,7 @@ Consulter l’outil ici: [https://covid-prestations.alpha.canada.ca](https://cov
 * Suspension du remboursement des prêts d'études et aux apprentis et des intérêts applicables
 * Programme travail partagé de l’assurance-emploi
 * Aide provinciale pour les locataires
+* Paiement unique pour les personnes reçevant la pension SV et le SRG
 
 ## Contributions
 
