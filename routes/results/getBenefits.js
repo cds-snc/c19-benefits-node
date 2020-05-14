@@ -107,6 +107,28 @@ const getBenefits = (data) => {
     ),
   )
 
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: 'student_2019_20',
+      },
+      'cesb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-no-income',
+        unchanged_income: ['student_2019_20', 'high_school_grad'],
+      },
+      'cesb',
+    ),
+  )
+
   results.push(match(data, { gross_income: 'over_5k' }, 'cerb'))
 
   results.push(
@@ -129,28 +151,6 @@ const getBenefits = (data) => {
   results.push(match(data, { ccb: ['yes', 'unsure'] }, 'ccb_payment'))
   results.push(match(data, { oas: ['yes', 'unsure'] }, 'oas'))
   results.push(match(data, { rrif: 'yes' }, 'rrif'))
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-all-income',
-        no_income: 'student_2019_20',
-      },
-      'cesb',
-    ),
-  )
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-no-income',
-        unchanged_income: ['student_2019_20', 'high_school_grad'],
-      },
-      'cesb',
-    ),
-  )
 
   results.push(
     match(
