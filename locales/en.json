@@ -23,7 +23,7 @@
   "ccb.title": "Canada Child Benefit",
   "ccb_payment.header": "Extra payment from Canada Child Benefit",
   "cerb.header": "Apply for the Canada Emergency Response Benefit (CERB)",
-  "cesb.header": "Help for students through the Canada Emergency Student Benefit",
+  "cesb.header": "Help for students through the Canada Emergency Student Benefit (CESB)",
   "cssg.header": "Money for school if you volunteer for national service during the pandemic",
   "date_modified": "Date modified:",
   "ei_regular.header": "Apply for Employment Insurance (EI) Regular Benefits",
@@ -141,5 +141,6 @@
   "your_situation.unchanged_income.1": "You’re working from home.",
   "your_situation.unchanged_income.2": "You’re on paid leave.",
   "your_situation.unchanged_income.3": "You’re retired.",
-  "your_situation.unchanged_income.4": "You were a college or university student during the 2019-20 school year and now cannot find work."
+  "your_situation.unchanged_income.4": "You were a college or university student during the 2019-20 school year and now cannot find work.",
+  "your_situation.unchanged_income.5": "You’re graduating high school in the 2019-20 school year and have applied for post-secondary education that will start before February 1, 2021."
 }
