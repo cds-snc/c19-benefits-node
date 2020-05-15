@@ -28,7 +28,7 @@ const routes = [
 
   // feedback
   { name: 'feedback', path: { en: '/feedback', fr: '/feedback' } },
-  { name: 'feedback-thanks', path: { en: '/thanks', fr: 'merci' } },
+  { name: 'feedback-thanks', path: { en: '/thanks', fr: '/merci' } },
 ]
 
 const locales = ['en', 'fr']
