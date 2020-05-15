@@ -13,13 +13,16 @@ Explore it here: [https://covid-benefits.alpha.canada.ca](https://covid-benefits
 **Benefits and help included:**
 
 * Canada Emergency Response Benefit
-* Canada Child Benefit
-* GST tax credit
+* Canada Emergency Student Benefit (CESB)
+* Work-Sharing
 * Mortgage support
-* Reduced minimum withdrawals for Registered Retirement Income Funds
-* Suspending repayment and interest on student and apprentice loans
-* EI Workshare
 * Provincial help for renters
+* Suspending repayment and interest on student and apprentice loans
+* Canada Child Benefit
+* One-time payments for OAS and GIS recipients 
+* Reduced minimum withdrawals for Registered Retirement Income Funds
+* Financial aid for 2021 school year 
+* GST tax credit
 
 ## Built with
 
@@ -148,14 +151,17 @@ Ce produit permet aux canadiens:
 Consulter l’outil ici: [https://covid-prestations.alpha.canada.ca](https://covid-prestations.alpha.canada.ca).
 
 **Prestations et programmes d’aide compris:**
-* Prestation canadienne d’urgence 
-* Allocation canadienne pour enfants
-* Crédit pour la TPS
+* Prestation canadienne d’urgence (PCU)
+* Prestation canadienne d'urgence pour les étudiants (PCUE)
+* Travail partagé
 * Soutien hypothécaire
-* Réduction du retrait minimal des FERR
-* Suspension du remboursement des prêts d'études et aux apprentis et des intérêts applicables
-* Programme travail partagé de l’assurance-emploi
 * Aide provinciale pour les locataires
+* Suspension du remboursement des prêts d'études et aux apprentis et des intérêts applicables
+* Allocation canadienne pour enfants
+* Paiement unique pour les personnes reçevant la pension SV et le SRG
+* Réduction du retrait minimal des FERR
+* Aide financière aux études pour l’année scolaire 2021
+* Crédit pour la TPS
 
 ## Contributions
 
