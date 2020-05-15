@@ -13,6 +13,7 @@ Explore it here: [https://covid-benefits.alpha.canada.ca](https://covid-benefits
 **Benefits and help included:**
 
 * Canada Emergency Response Benefit
+* Canada Emergency Student Benefit (CESB)
 * Canada Child Benefit
 * GST tax credit
 * Mortgage support
@@ -149,7 +150,8 @@ Ce produit permet aux canadiens:
 Consulter l’outil ici: [https://covid-prestations.alpha.canada.ca](https://covid-prestations.alpha.canada.ca).
 
 **Prestations et programmes d’aide compris:**
-* Prestation canadienne d’urgence 
+* Prestation canadienne d’urgence (PCU)
+* Prestation canadienne d'urgence pour les étudiants (PCUE)
 * Allocation canadienne pour enfants
 * Crédit pour la TPS
 * Soutien hypothécaire
