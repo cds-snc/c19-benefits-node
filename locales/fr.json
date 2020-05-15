@@ -23,7 +23,7 @@
   "ccb.title": "Allocation canadienne pour enfants",
   "ccb_payment.header": "Paiements additionnels de l’Allocation canadienne pour enfants ",
   "cerb.header": "Présenter une demande pour la Prestation canadienne d’urgence (PCU)",
-  "cesb.header": "Aide pour les étudiants via la Prestation canadienne d’urgence pour les étudiants",
+  "cesb.header": "Aide pour les étudiants via la Prestation canadienne d’urgence pour les étudiants (PCUE)",
   "cssg.header": "Bourse canadienne pour le bénévolat étudiant",
   "date_modified": "Date de modification :",
   "ei_regular.header": "Présenter une demande pour les prestations régulières de l’assurance-emploi (AE)",
@@ -141,5 +141,6 @@
   "your_situation.unchanged_income.1": "Vous faites du télétravail.",
   "your_situation.unchanged_income.2": "Vous êtes en congé payé.",
   "your_situation.unchanged_income.3": "Vous êtes retraité.",
-  "your_situation.unchanged_income.4": "Vous étiez étudiant dans une institution postsecondaire lors de l’année scolaire 2019-20 et ne pouvez trouver un emploi."
+  "your_situation.unchanged_income.4": "Vous étiez étudiant dans une institution postsecondaire lors de l’année scolaire 2019-20 et ne pouvez trouver un emploi.",
+  "your_situation.unchanged_income.5": "Vous obtiendrez un diplôme d’études secondaires pour l’année scolaire 2019-2020 et avez appliqué pour un programme d’études postsecondaires débutant avant le 1er février 2021."
 }
