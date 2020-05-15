@@ -111,6 +111,9 @@
   "rrif.header": "Lower mandatory withdrawals for your Registered Retirement Income Fund (RRIF)",
   "rrif.title": "RRIF",
   "some_income.title": "Your situation",
+  "start.business": "Own a business?",
+  "start.businesslink.text": "Find support for your business.",
+  "start.businesslink.url": "https://innovation.ised-isde.canada.ca/s/?language=en",
   "start.intro.2": "Answer some questions to find which federal programs can help you. We cannot guarantee your eligibility, but we can point you to the program details.",
   "start.intro.3": "<strong>New measures are still being announced</strong>, and we’re working to include them as quickly as possible.",
   "start.lastupdated": "Last updated",
@@ -140,8 +143,5 @@
   "your_situation.unchanged_income.2": "You’re on paid leave.",
   "your_situation.unchanged_income.3": "You’re retired.",
   "your_situation.unchanged_income.4": "You were a college or university student during the 2019-20 school year and now cannot find work.",
-  "your_situation.unchanged_income.5": "You’re graduating high school in the 2019-20 school year and have applied for post-secondary education that will start before February 1, 2021.",
-  "start.business": "Own a business?",
-  "start.businesslink.url": "https://innovation.ised-isde.canada.ca/s/?language=en",
-  "start.businesslink.text": "Find support for your business."
+  "your_situation.unchanged_income.5": "You’re graduating high school in the 2019-20 school year and have applied for post-secondary education that will start before February 1, 2021."
 }
