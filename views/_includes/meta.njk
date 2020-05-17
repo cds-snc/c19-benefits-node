@@ -1,9 +1,7 @@
 {% if (title) and (title !== __('app.title')) %}
   {% set metaTitle = title + ' - ' + __('app.title') %}
-  {% set metaUrl =  pageUrl %}
 {% else %}
   {% set metaTitle = title %}
-  {% set metaUrl =  siteUrl %}
 {% endif %}
 
 {% set metaImage = asset('/img/meta-img-' + getLocale() + '.png') %}
@@ -14,11 +12,11 @@
 <meta name="title" content="{{ metaTitle }}">
 <meta name="description" content="{{ __('app.description') }}">
 
-<link rel="canonical" href="{{ metaUrl }}">
+<link rel="canonical" href="{{ pageUrl }}">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="{{ metaUrl }}">
+<meta property="og:url" content="{{ pageUrl }}">
 <meta property="og:title" content="{{ metaTitle }}">
 <meta property="og:description" content="{{ __('app.description') }}">
 <meta property="og:image" content="{{siteUrl}}{{ metaImage }}">
@@ -28,7 +26,7 @@
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary">
-<meta property="twitter:url" content="{{ metaUrl }}">
+<meta property="twitter:url" content="{{ pageUrl }}">
 <meta property="twitter:title" content="{{ metaTitle }}">
 <meta property="twitter:description" content="{{ __('app.description') }}">
 <meta property="twitter:image" content="{{siteUrl}}{{ metaImage }}">
