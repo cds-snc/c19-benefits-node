@@ -11,7 +11,7 @@ module.exports = (app, route) => {
       res.render(
         name,
         routeUtils.getViewData(req, {
-          title:res.__('no_income.title'),
+          title: res.__('no_income.title'),
         }),
       )
     })

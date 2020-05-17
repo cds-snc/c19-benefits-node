@@ -9,7 +9,7 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       res.render(name, routeUtils.getViewData(req, {
-        title:res.__('unchanged_income.title'),
+        title: res.__('unchanged_income.title'),
       }))
     })
     .post(route.applySchema(Schema), postUnchangedIncome)
