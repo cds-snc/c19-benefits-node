@@ -12,7 +12,7 @@ module.exports = (app, route) => {
         name,
         routeUtils.getViewData(req, {
           siteUrl: req.protocol + '://' + req.get('host'),
-        title:res.__('no_income.title'),
+          title:res.__('no_income.title'),
         }),
       )
     })
