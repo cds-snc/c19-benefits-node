@@ -6,7 +6,8 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       res.render(name, routeUtils.getViewData(req, {
-        title: res.__('feedback-thanks.text'),
+        siteUrl: req.protocol + '://' + req.get('host'),
+        title:res.__('feedback-thanks.text'),
       }))
     })
 }

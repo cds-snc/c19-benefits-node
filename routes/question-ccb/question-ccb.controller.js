@@ -7,7 +7,8 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       res.render(name, routeUtils.getViewData(req, {
-        title: res.__("ccb.title"),
+        siteUrl: req.protocol + '://' + req.get('host'),
+        title:res.__("ccb.title"),
       }))
     })
     .post(route.applySchema(Schema), route.doRedirect())

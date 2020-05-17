@@ -7,7 +7,8 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       res.render(name, routeUtils.getViewData(req, {
-        title: res.__('rrif.title'),
+        siteUrl: req.protocol + '://' + req.get('host'),
+        title:res.__('rrif.title'),
       }))
     })
     .post(route.applySchema(Schema), (req, res) => {
