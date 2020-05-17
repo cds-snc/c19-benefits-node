@@ -36,8 +36,7 @@ module.exports = (app, route) => {
         benefits: benefits,
         no_results: benefits.length === 0,
         hideBackButton: true,
-        siteUrl: req.protocol + '://' + req.get('host'),
-        title:title,
+        title: title,
         data: data,
       }))
     })

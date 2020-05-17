@@ -4,7 +4,7 @@
   {% set metaTitle = title %}
 {% endif %}
 
-{% set metaImage = asset('/img/meta-image-' + getLocale() + '.png') %}
+{% set metaImage = asset('/img/meta-img-' + getLocale() + '.png') %}
   
 <!-- Primary Meta Tags -->
 <title>{{ metaTitle }}</title>
@@ -19,7 +19,7 @@
 <meta property="og:title" content="{{ metaTitle }}">
 <meta property="og:description" content="{{ __('app.description') }}">
 <meta property="og:image" content="{{siteUrl}}{{ metaImage }}">
-<meta property="og:image:alt" content="{{ __(app.metaImageAlt) }}">
+<meta property="og:image:alt" content="{{ __('app.metaImageAlt') }}">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary">
@@ -27,4 +27,4 @@
 <meta property="twitter:title" content="{{ metaTitle }}">
 <meta property="twitter:description" content="{{ __('app.description') }}">
 <meta property="twitter:image" content="{{siteUrl}}{{ metaImage }}">
-<meta property="twitter:image:alt" content="{{ __(app.metaImageAlt) }}">
+<meta property="twitter:image:alt" content="{{ __('app.metaImageAlt') }}">

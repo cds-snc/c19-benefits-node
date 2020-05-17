@@ -11,7 +11,6 @@ module.exports = (app, route) => {
       res.render(
         name,
         routeUtils.getViewData(req, {
-          siteUrl: req.protocol + '://' + req.get('host'),
           title:res.__('some_income.title'),
         }),
       )

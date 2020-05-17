@@ -23,7 +23,6 @@ module.exports = (app, route) => {
     req.session = null
     res.render(name, routeUtils.getViewData(req, {
       hideBackButton: true,
-      siteUrl: req.protocol + '://' + req.get('host'),
       title:res.__('start.title'),
     }))
   })

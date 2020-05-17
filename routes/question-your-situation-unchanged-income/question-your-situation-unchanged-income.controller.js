@@ -9,7 +9,6 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       res.render(name, routeUtils.getViewData(req, {
-        siteUrl: req.protocol + '://' + req.get('host'),
         title:res.__('unchanged_income.title'),
       }))
     })
