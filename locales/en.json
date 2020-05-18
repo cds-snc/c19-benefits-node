@@ -144,5 +144,7 @@
   "your_situation.unchanged_income.2": "You’re on paid leave.",
   "your_situation.unchanged_income.3": "You’re retired.",
   "your_situation.unchanged_income.4": "You were a college or university student during the 2019-20 school year and now cannot find work.",
-  "your_situation.unchanged_income.5": "You’re graduating high school in the 2019-20 school year and have applied for post-secondary education that will start before February 1, 2021."
+  "your_situation.unchanged_income.5": "You’re graduating high school in the 2019-20 school year and have applied for post-secondary education that will start before February 1, 2021.",
+  "app.description": "Answer some questions to find which federal programs can help you.",
+  "app.metaImageAlt": "Screen shot of the Find financial help during COVID-19 start page"
 }

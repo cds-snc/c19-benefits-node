@@ -144,5 +144,7 @@
   "your_situation.unchanged_income.2": "Vous êtes en congé payé.",
   "your_situation.unchanged_income.3": "Vous êtes retraité.",
   "your_situation.unchanged_income.4": "Vous étiez étudiant dans une institution postsecondaire lors de l’année scolaire 2019-20 et ne pouvez trouver un emploi.",
-  "your_situation.unchanged_income.5": "Vous obtiendrez un diplôme d’études secondaires pour l’année scolaire 2019-2020 et avez appliqué pour un programme d’études postsecondaires débutant avant le 1er février 2021."
+  "your_situation.unchanged_income.5": "Vous obtiendrez un diplôme d’études secondaires pour l’année scolaire 2019-2020 et avez appliqué pour un programme d’études postsecondaires débutant avant le 1er février 2021.",
+  "app.description": "Répondez à quelques questions pour trouver quels programmes d’aide financière fédéraux s’offrent à vous.",
+  "app.metaImageAlt": "Capture d’écran de la page de démarrage «Trouver de l’aide financière pendant la COVID-19»"
 }

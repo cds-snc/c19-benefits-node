@@ -105,6 +105,12 @@ app.locals.asset = (path) => {
   return path;
 }
 
+app.use((req, res, next) => {
+  app.locals.siteUrl = req.protocol + '://' + req.get('host')
+  app.locals.pageUrl = req.protocol + '://' + req.get('host') + req.originalUrl
+  next()
+})
+
 // set default views path
 app.locals.basedir = path.join(__dirname, './views')
 app.set('views', [path.join(__dirname, './views')])
