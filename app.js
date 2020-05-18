@@ -99,21 +99,17 @@ app.locals.hasData = hasData
 
 /**
  * Create an asset path helper for templates
- * If a CDN_PREFIX is set in env, and mode is production,
- * the helper will return the path with the CDN prefix,
- * otherwise it just returns the path
+ * If a CDN_PREFIX is set in env, the helper 
+ * will return the path with the CDN prefix,
+ * otherwise it just returns the path with 
+ * current protocol and host prefix
  */
 app.use((req, res, next) => {
   app.locals.asset = (path) => {
-    const cdnprefix = process.env.CDN_PREFIX || '';
-  
-    if (process.env.NODE_ENV === 'production') {
-      // this because the cdn prefix already has a double slash in the url (ex. //cv19-benefits-cdn.azureedge.net/img/arrow-circle-left.svg)
-      return req.protocol + ':' + cdnprefix + path;
-    }
-    return req.protocol + '://' + req.get('host') + path;
-  }
+    const assetPrefix = process.env.CDN_PREFIX || '//' + req.get('host');
 
+    return req.protocol + ':' + assetPrefix + path;
+  }
   next()
 })
 
