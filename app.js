@@ -108,6 +108,7 @@ app.use((req, res) => {
     const cdnprefix = process.env.CDN_PREFIX || '';
   
     if (process.env.NODE_ENV === 'production') {
+      // this because the cdn prefix already has a double slash in the url (ex. //cv19-benefits-cdn.azureedge.net/img/arrow-circle-left.svg)
       return req.protocol + ':' + cdnprefix + path;
     }
     return req.protocol + '://' + req.get('host') + path;
