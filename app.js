@@ -34,7 +34,7 @@ const {
   domainRedirector,
   errorHandler,
   csrfToken,
-}= require('./middleware')
+} = require('./middleware')
 
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
@@ -64,8 +64,15 @@ if (process.env.NODE_ENV !== 'test') {
 // cookie sessions are character limited, but this works for now
 app.use(cookieSession(cookieSessionConfig))
 
+const staticOptions = {
+  dotfiles: 'ignore',
+  index: false,
+  maxAge: '1d',
+  redirect: false,
+}
+
 // public assets go here (css, js, etc)
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public'), staticOptions))
 
 // add a request logger
 process.env.NODE_ENV !== 'test' && app.use(morgan(morganConfig))
