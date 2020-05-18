@@ -70,6 +70,7 @@
   "gross_income.2": "$5,000 or more.",
   "gross_income.title": "Income earned",
   "gst_credit.header": "More money through the GST credit",
+  "header.fip-link": "https://www.canada.ca/en.html",
   "lost_job.1": "All your income has stopped.",
   "lost_job.2": "Some of your income has stopped.",
   "lost_job.3": "Your income is not affected by COVID-19.",
@@ -143,5 +144,7 @@
   "your_situation.unchanged_income.2": "You’re on paid leave.",
   "your_situation.unchanged_income.3": "You’re retired.",
   "your_situation.unchanged_income.4": "You were a college or university student during the 2019-20 school year and now cannot find work.",
-  "your_situation.unchanged_income.5": "You’re graduating high school in the 2019-20 school year and have applied for post-secondary education that will start before February 1, 2021."
+  "your_situation.unchanged_income.5": "You’re graduating high school in the 2019-20 school year and have applied for post-secondary education that will start before February 1, 2021.",
+  "app.description": "Answer some questions to find which federal programs can help you.",
+  "app.metaImageAlt": "Screen shot of the Find financial help during COVID-19 start page"
 }
