@@ -103,14 +103,16 @@ app.locals.hasData = hasData
  * the helper will return the path with the CDN prefix,
  * otherwise it just returns the path
  */
-app.locals.asset = (path) => {
-  const cdnprefix = process.env.CDN_PREFIX || '';
-
-  if (process.env.NODE_ENV === 'production') {
-    return cdnprefix + path;
+app.use((req, res) => {
+  app.locals.asset = (path) => {
+    const cdnprefix = process.env.CDN_PREFIX || '';
+  
+    if (process.env.NODE_ENV === 'production') {
+      return req.protocol + ':' + cdnprefix + path;
+    }
+    return path;
   }
-  return path;
-}
+})
 
 app.use((req, res, next) => {
   app.locals.pageUrl = req.protocol + '://' + req.get('host') + req.originalUrl
