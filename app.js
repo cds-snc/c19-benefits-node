@@ -110,7 +110,7 @@ app.use((req, res) => {
     if (process.env.NODE_ENV === 'production') {
       return req.protocol + ':' + cdnprefix + path;
     }
-    return path;
+    return req.protocol + '://' + req.get('host') + path;
   }
 })
 
