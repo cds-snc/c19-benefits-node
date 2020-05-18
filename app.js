@@ -45,6 +45,10 @@ if (!locales) locales = ['en', 'fr']
 // initialize application.
 const app = express()
 
+// Get req.protocol from X-Forwarded-Proto
+// see: https://docs.microsoft.com/en-us/azure/app-service/containers/configure-language-nodejs#detect-https-session
+app.set('trust proxy', 1)
+
 // general app configuration.
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
