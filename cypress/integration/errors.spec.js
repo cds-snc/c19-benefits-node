@@ -14,6 +14,10 @@ function testError(name, lang, numberOfExpectedErrors) {
 describe('Error Pages', () => {
   ['en', 'fr'].forEach((lang) => {
     describe('Language: ' + lang, () => {
+      it('Province', () => {
+        testError('question-province', lang)
+      })
+
       it('Lost Job', () => {
         testError('question-lost-job', lang)
       })
