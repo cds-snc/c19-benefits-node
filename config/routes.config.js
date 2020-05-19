@@ -1,7 +1,7 @@
 // 1) add your route(s) here ⬇️
 const routes = [
   { name: 'start', path: { en: '/start', fr: '/debut' } },
-  { name: 'question-province', path: { en: '/province', fr: '/provence' } },
+  { name: 'question-province', path: { en: '/province', fr: '/province' } },
   { name: 'question-lost-job', path: { en: '/lost-job', fr: '/perte-emploi' } },
 
   // main sorting
