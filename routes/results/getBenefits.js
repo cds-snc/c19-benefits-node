@@ -162,12 +162,6 @@ const getBenefits = (data) => {
     ),
   )
 
-  if (data.province) {
-    results.push(
-      'province-' + data.province,
-    )
-  }
-
   return results.filter((v) => v !== undefined)
 }
 
