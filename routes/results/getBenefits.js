@@ -165,6 +165,11 @@ const getBenefits = (data) => {
   return results.filter((v) => v !== undefined)
 }
 
+const getProvincialBenefits = (data) => {
+  return data.province ? 'province-' + data.province : false
+}
+
 module.exports = {
   getBenefits,
+  getProvincialBenefits,
 }

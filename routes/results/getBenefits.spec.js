@@ -1,4 +1,4 @@
-const { getBenefits } = require('./getBenefits')
+const { getBenefits, getProvincialBenefits } = require('./getBenefits')
 
 describe('Test the getBenefits calculator', () => {
 
@@ -183,5 +183,17 @@ describe('Test the getBenefits calculator', () => {
     })
 
     expect(result).toHaveLength(0)
+  })
+
+  test('It checks provincial benefits', () => {
+    const provinces = ['ab', 'bc', 'mb', 'nb', 'nl', 'ns', 'nt', 'nu', 'on', 'pe', 'qc', 'sk', 'yt']
+
+    provinces.forEach((province) => {
+      const result = getProvincialBenefits({
+        province: province,
+      })
+
+      expect(result).toContain('province-' + province)
+    })
   })
 })
