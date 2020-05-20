@@ -1,8 +1,6 @@
 const { simpleRoute } = require('../../utils/route.helpers')
 
 module.exports = (app, table) => {
-  // clear session
-
   app.get('/test-500', (req, res) => {
     throw new Error('something bad')
   })
@@ -12,7 +10,8 @@ module.exports = (app, table) => {
     res.redirect(302, '/')
   })
 
-  app.use(function(req, res, next) {
+  // fall-through 404
+  app.use(function (req, res, next) {
     res.status(404)
 
     let message = false
@@ -26,22 +25,5 @@ module.exports = (app, table) => {
     res.locals.simpleRoute = (name, locale) => simpleRoute(name, locale)
     res.locals.hideBackButton = true
     res.render('404', { message })
-  })
-
-  app.use(function(err, req, res, next) {
-    res.status(500)
-
-    console.error(`☠️ Error => ${err.message}`)
-
-    let message = false
-
-    /* istanbul ignore next */
-    if (process.env.NODE_ENV !== 'production') {
-      message = `❌ ${err.message}`
-    }
-
-    res.locals.simpleRoute = (name, locale) => simpleRoute(name, locale)
-    res.locals.hideBackButton = true
-    res.render('500', { message })
   })
 }
