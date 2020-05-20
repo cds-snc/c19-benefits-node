@@ -14,10 +14,8 @@ const errorHandler = (appInsights) => (err, req, res, next) => {
       'message': err.message,
       'url': req.originalUrl,
       'method': req.method,
-
     },
   }))
-  // console.error(`☠️ Error => ${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method}`)
 
   res.locals.simpleRoute = (name, locale) => simpleRoute(name, locale)
   res.locals.hideBackButton = true
