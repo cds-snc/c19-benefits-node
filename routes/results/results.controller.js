@@ -1,6 +1,6 @@
 const { routeUtils, getSessionData } = require('./../../utils')
 const { Schema } = require('./schema.js')
-const { getBenefits } = require('./getBenefits')
+const { getBenefits, getProvincialBenefits } = require('./getBenefits')
 const _ = require('lodash')
 
 const getData = (req, res) => {
@@ -26,6 +26,8 @@ module.exports = (app, route) => {
     .get((req, res) => {
       const data = getData(req, res);
       const benefits = getBenefits(data);
+      const provincial = getProvincialBenefits(data);
+
       let title = res.__n('results_title', benefits.length);
 
       if (benefits.length === 0) {
@@ -34,6 +36,7 @@ module.exports = (app, route) => {
 
       res.render(name, routeUtils.getViewData(req, {
         benefits: benefits,
+        provincial: provincial,
         no_results: benefits.length === 0,
         hideBackButton: true,
         title: title,
