@@ -1,0 +1,49 @@
+.benefits {
+  &__header {
+    color: $color-green;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: $space-sm;
+    }
+  }
+
+  .benefit {
+    background: $color-white; 
+    border-left: 4px solid $color-green;
+
+    &__header {
+      background: $color-green;
+      color: $color-white; 
+      font-weight: 400;
+    }
+  }
+}
+
+.benefits--other {
+  .benefits__header {
+    color: $color-blue-light;
+  }
+
+  .benefit {
+    border-left: 4px solid $color-blue-light;
+
+    &__header {
+      background: $color-blue-light;
+    }
+  }
+}
+.benefits--unavailable {
+  .benefits__header {
+    color: $color-red;
+  }
+
+  .benefit {
+    border-left: 4px solid $color-red;
+
+    &__header {
+      background: $color-red;
+    }
+  }
+}

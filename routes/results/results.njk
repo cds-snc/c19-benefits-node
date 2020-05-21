@@ -2,7 +2,7 @@
 {% from 'banner.njk' import banner as banner %}
 
 {#The following imports are used in the imported results pages#}
-{%- from 'benefit-result.njk' import blueLI as blueLI with context -%}
+{%- from 'benefit-result.njk' import benefitLi as benefitLi with context -%}
 {%- from 'benefit-result.njk' import infoLink as infoLink with context -%}
 
 {% block content %}
@@ -14,60 +14,73 @@
         </div>
     </div>
 
-    {% if no_results %}
-        <h1>{{ __('results_title_no_results') }}</h1>
-        <p>{{ __('results.no_results.preamble') }}</p>
-    {% else %}
-        <h1>{{ __n('results_title', benefits.length) }}</h1>
-    {% endif %}
+    <h1>{{ __('results.header') }}</h1>
 
     {% if not data.lost_job %}
         <div data-cy="missed-questions">{{ banner('red', '<p><strong class="font-normal">' + __('results.banner') + '</strong></p>') }}</div>
     {% endif %}
 
+    {% if no_results %}
+        <h2 class="text-2xl font-bold mb-6">{{ __('results_title_no_results') }}</h2>
+        <p>{{ __('results.no_results.preamble') }}</p>
+    {% endif %}
+
     {% if benefits.length > 0 %}
-        <p>
-            {{ __("results.header_text") }}
-        </p>
-        <ul  class="list-none mt-4">
-            {% for benefit in benefits %}
-                <li class="relative mt-4">
-                    <img src="{{ asset('/img/arrow-circle-right.svg') }}" aria-hidden="true" class="w-6 h-6 -ml-8 mt-2 absolute left-0" alt="">
-                    <a href="#{{benefit}}"> {{ __(benefit + ".header")}}</a>
-                </li>
-            {% endfor %}
-        </ul>
         <p>{{ __('results.eligibility_warning') | safe }}</p>
         <p>{{ __('results.situation_changes') }}</p>
     {% endif %}
-    <div data-cy="benefit-list" class="mt-10">
+
+    <div data-cy="benefit-list" class="mt-10 bg-green-100 benefits benefits--available">
+        {% if benefits.length > 0 %}
+            <div class="benefits__header mb-6">
+                <svg class="benefits__svg" width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.875 23.4375C11.125 23.8125 11.5 23.9375 12 23.9375C12.4375 23.9375 12.8125 23.8125 13.125 23.4375L31.5625 5.0625C31.8125 4.8125 32 4.4375 32 3.9375C32 3.5 31.8125 3.125 31.5625 2.8125L29.25 0.5625C28.9375 0.25 28.5625 0.0625 28.125 0.0625C27.6875 0.0625 27.3125 0.25 27 0.5625L12 15.5625L5 8.5625C4.625 8.25 4.25 8.0625 3.8125 8.0625C3.375 8.0625 3 8.25 2.75 8.5625L0.4375 10.8125C0.125 11.125 0 11.5 0 11.9375C0 12.4375 0.125 12.8125 0.4375 13.0625L10.875 23.4375Z" fill="#138A00"/>
+                </svg>
+                <h2 class="text-3xl font-bold m-0">{{benefits.length}} {{ __('results.results') }}</h2>
+            </div>
+            <p>{{ __("results.header_text") }}</p>
+        {% endif %}
         {% for benefit in benefits %}
             {% include "benefits/" + benefit + "-" + getLocale() +  ".njk" %}
         {% endfor %}
     </div>
 
-    <h2 class="text-3xl">{{ __('results.other_potential_help') }}</h2>
+    <div class="benefits benefits--other bg-blue-200 bg-opacity-50">
+        <div class="benefits__header">
+            <svg class="benefits__svg" width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.875 23.4375C11.125 23.8125 11.5 23.9375 12 23.9375C12.4375 23.9375 12.8125 23.8125 13.125 23.4375L31.5625 5.0625C31.8125 4.8125 32 4.4375 32 3.9375C32 3.5 31.8125 3.125 31.5625 2.8125L29.25 0.5625C28.9375 0.25 28.5625 0.0625 28.125 0.0625C27.6875 0.0625 27.3125 0.25 27 0.5625L12 15.5625L5 8.5625C4.625 8.25 4.25 8.0625 3.8125 8.0625C3.375 8.0625 3 8.25 2.75 8.5625L0.4375 10.8125C0.125 11.125 0 11.5 0 11.9375C0 12.4375 0.125 12.8125 0.4375 13.0625L10.875 23.4375Z" fill="#335075"/>
+            </svg>
+            <h2 class="text-3xl m-0">
+                {{ __('results.other_potential_help') }}
+            </h2>
+        </div>
 
-    <p>{{ __('results.other_potential_help.preamble') }}</p>
+        <p>{{ __('results.other_potential_help.preamble') }}</p>
 
-    <ul class="list-none mt-4">
-        <li class="relative mt-4">
-            <img src="{{ asset('/img/arrow-circle-right.svg') }}" aria-hidden="true" class="w-6 h-6 -ml-8 mt-2 absolute left-0" alt="">
+        <div data-cy="other-benefits-list" class="mt-10">
             {% if provincial %}
-                <a href="#{{ provincial }}"> {{ __(provincial + ".header")}}</a>
+                {% include "benefits/" + provincial + "-" + getLocale() +  ".njk" %}
             {% endif %}
-        </li>
-
-        <li class="relative mt-4">
-            <img src="{{ asset('/img/arrow-circle-right.svg') }}" aria-hidden="true" class="w-6 h-6 -ml-8 mt-2 absolute left-0" alt="">
-            <a href="#gst_credit"> {{ __("gst_credit.header")}}</a>
-        </li>
-    </ul>
-    <div data-cy="other-benefits-list" class="mt-10">
-        {% if provincial %}
-            {% include "benefits/" + provincial + "-" + getLocale() +  ".njk" %}
-        {% endif %}
-        {% include "benefits/gst_credit-" + getLocale() + ".njk" %}
+            {% include "benefits/gst_credit-" + getLocale() + ".njk" %}
+        </div>
     </div>
+
+    <div data-cy="benefit-list" class="bg-red-100 mt-10 benefits benefits--unavailable">
+        <div class="benefits__header">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.1875 11L21.4375 17.25C21.8125 17.625 22 18.125 22 18.625C22 19.1875 21.8125 19.6875 21.4375 20.0625L20.0625 21.4375C19.625 21.8125 19.125 22 18.625 22C18.0625 22 17.625 21.8125 17.25 21.4375L11 15.1875L4.75 21.4375C4.375 21.8125 3.875 22 3.375 22C2.8125 22 2.3125 21.8125 1.9375 21.4375L0.5625 20.0625C0.1875 19.6875 0 19.1875 0 18.625C0 18.125 0.1875 17.625 0.5625 17.25L6.8125 11L0.5625 4.75C0.1875 4.375 0 3.9375 0 3.375C0 2.875 0.1875 2.375 0.5625 1.9375L1.9375 0.5625C2.3125 0.1875 2.8125 0 3.375 0C3.875 0 4.375 0.1875 4.75 0.5625L11 6.8125L17.25 0.5625C17.625 0.1875 18.0625 0 18.625 0C19.125 0 19.625 0.1875 20.0625 0.5625L21.4375 1.9375C21.8125 2.375 22 2.875 22 3.375C22 3.9375 21.8125 4.375 21.4375 4.75L15.1875 11Z" fill="#C80707"/>
+            </svg>
+            <h2 class="text-3xl m-0">
+                {{ __('results.other_potential_help') }}
+            </h2>
+        </div>
+        <button id="unavailableBenefitsButton" aria-controls="unavailableBenefitsList" aria-expanded="false">View list of benefits not relevant for you</button>
+        <div class="benefits__list" id="unavailableBenefitsList" aria-labelledby="unavailableBenefitsButton" tabindex="-1">
+            {% set unavailableBenefit = true %}
+            {% for benefit in unavailableBenefits %}
+                {% include "benefits/" + benefit + "-" + getLocale() +  ".njk" %}
+            {% endfor %}
+        </div>
+    </div>    
 
 {% endblock %}

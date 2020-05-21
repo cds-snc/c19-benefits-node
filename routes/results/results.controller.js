@@ -25,7 +25,10 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       const data = getData(req, res);
+      const benefitsFullList = ['cerb', 'cesb', 'ei_workshare', 'mortgage_deferral', 'rent_help', 'student_loan', 'ccb_payment',  'oas', 'student_financial_aid'];
       const benefits = getBenefits(data);
+      const unavailableBenefits = benefitsFullList.filter((benefit) => !benefits.includes(benefit))
+
       const provincial = getProvincialBenefits(data);
 
       let title = res.__n('results_title', benefits.length);
@@ -36,6 +39,7 @@ module.exports = (app, route) => {
 
       res.render(name, routeUtils.getViewData(req, {
         benefits: benefits,
+        unavailableBenefits: unavailableBenefits,
         provincial: provincial,
         no_results: benefits.length === 0,
         hideBackButton: true,

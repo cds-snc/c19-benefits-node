@@ -1,13 +1,13 @@
-<div class="m-5 p-5 shadow-result" data-cy="cerb-benefit">
+<div class="m-5 p-5 benefit" data-cy="cerb-benefit">
 
-  <h2 class="text-2xl font-bold mb-6" id="cerb">
+   <h2 class="benefit__header -mx-5 -mt-5 pl-5  text-2xl mb-6 p-4" id="cerb">
     {{__("cerb.header")}}
   </h2>
 
   <ul class="list-none list-outside pl-0">
-    {{ blueLI("$500 per week") }}
-    {{ blueLI("Up to 16 weeks", "if you keep  meeting the eligibility criteria") }}
-    {{ blueLI("First payment within 10 days of applying") }}
+    {{ benefitLi("$500 per week") }}
+    {{ benefitLi("Up to 16 weeks", "if you keep  meeting the eligibility criteria") }}
+    {{ benefitLi("First payment within 10 days of applying") }}
   </ul>
 
   <div class="pb-5 mt-6">
