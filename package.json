@@ -16,7 +16,7 @@
     "dev:dist": "webpack --config webpack.dev.js && cross-env NODE_ENV=development  node ./bin/www",
     "start": "npm run build && cross-env NODE_ENV=production node ./bin/www",
     "lint": "node node_modules/eslint/bin/eslint.js config utils routes bin/www app.js",
-    "lint:locales": "npx jsonlint -q ./locales/en.json && npx jsonlint -q ./locales/fr.json", 
+    "lint:locales": "npx jsonlint -q ./locales/en.json && npx jsonlint -q ./locales/fr.json",
     "prettier": "prettier --write '**/*.{ts,js,css,html}'",
     "test": "node node_modules/jest/bin/jest.js --coverage",
     "test:server": "cross-env nodemon --exec npm run test:server:start",
@@ -70,7 +70,8 @@
     "uuid": "^7.0.3",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "@aws-cdk/aws-docdb": "1.32.0",

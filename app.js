@@ -36,6 +36,8 @@ const {
   csrfToken,
 } = require('./middleware')
 
+const winston = require('./config/winston.config');
+
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
 
@@ -79,8 +81,9 @@ const staticOptions = {
 app.use(express.static(path.join(__dirname, 'public'), staticOptions))
 
 // add a request logger
-process.env.NODE_ENV !== 'test' && app.use(morgan(morganConfig))
-
+if (process.env.NODE_ENV !== 'test') {
+  app.use(morgan(morganConfig, { stream: winston.stream }))
+}
 
 // dnsPrefetchControl controls browser DNS prefetching
 // frameguard to prevent clickjacking
