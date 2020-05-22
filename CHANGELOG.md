@@ -1,11 +1,17 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-05-22
+
+### Changed:
+* OAS question now includes options for people receiving the Allowance or Allowance for the Survivor  
+* OAS result now includes one-time payment information for people receiving the Allowance or Allowance for the Survivor 
+* Changed OAS result payment to be "as soon as possible" for alignment with the program page 
 
 ## 2020-05-20
 
-## Added: 
-* [BENEFIT] Links to provincial and territorial benefits
+### Added: 
+* [NEW BENEFIT] Links to provincial and territorial benefits
 
 ## 2020-05-17
 
@@ -30,8 +36,8 @@ All notable changes to this product will be documented in this file.
 ## 2020-05-14
 
 ### Added
- * [BENEFIT] One-time payments for OAS and GIS recipients
- * [BENEFIT] Canada Emergency Student Benefit (CESB)
+ * [NEW BENEFIT] One-time payments for OAS and GIS recipients
+ * [NEW BENEFIT] Canada Emergency Student Benefit (CESB)
 
 ## 2020-05-11 - Initial launch 
 
