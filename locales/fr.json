@@ -89,7 +89,7 @@
   "oas.3": "Allocation au survivant.",
   "oas.4": "Vous ne recevez aucune de ces pensions.",
   "oas.header": "Plus d’argent pour les aînés",
-  "oas.hint": "Les détails de la <a href=\"https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc/securite-vieillesse.html\">Pension de la sécurité de la vieillesse</a> sont disponibles.",
+  "oas.hint": "Les détails de la <a href=\"https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc/securite-vieillesse.html\" target=\"_blank\">Pension de la sécurité de la vieillesse</a> sont disponibles.",
   "oas.title": "Pension de la Sécurité de vieillesse",
   "phase.desc": "Ce site évoluera au fur et à mesure que nous testons des idées.",
   "plans_for_school.1": "Oui.",
