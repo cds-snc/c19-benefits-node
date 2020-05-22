@@ -24,6 +24,8 @@ Explore it here: [https://covid-benefits.alpha.canada.ca](https://covid-benefits
 * Financial aid for 2021 school year 
 * GST tax credit
 
+This product is updated frequently. Notable updates are captured in [the changelog](/CHANGELOG.md).
+
 ## Built with
 
 This project is based on the [CDS Node Starter](https://github.com/cds-snc/node-starter-app) and is built with:
@@ -162,6 +164,8 @@ Consulter l’outil ici: [https://covid-prestations.alpha.canada.ca](https://cov
 * Réduction du retrait minimal des FERR
 * Aide financière aux études pour l’année scolaire 2021
 * Crédit pour la TPS
+
+Ce produit est mis-à-jour fréquemment. Les changements majeurs apparaissent dans [le journal des modifications (anglais seulement)](/CHANGELOG.md).
 
 ## Contributions
 
