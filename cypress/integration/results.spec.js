@@ -101,7 +101,7 @@ describe('Paths and Benefits', () => {
         cy.answerQuestion('#ccbno')
         cy.answerQuestion('#student_debtno')
         cy.answerQuestion('#plans_for_schoolno')
-        cy.answerQuestion('#oasyes')
+        cy.answerQuestion('#oasoas')
         cy.reportA11y()
         cy.get('[data-cy=benefit-list]').children().should('have.length', '1')
         cy.get('#oas')

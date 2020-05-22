@@ -6,7 +6,7 @@ module.exports = (app, table) => {
   })
 
   app.get('/clear', (req, res) => {
-    req.session = null
+    req.session.formdata = null
     res.redirect(302, '/')
   })
 
