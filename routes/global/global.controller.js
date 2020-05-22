@@ -8,11 +8,11 @@ module.exports = (app, table) => {
   })
 
   app.get('/clear', (req, res) => {
-    req.session = null
+    req.session.formdata = null
     res.redirect(302, '/')
   })
 
-  app.use(function(req, res, next) {
+  app.use(function (req, res, next) {
     res.status(404)
 
     let message = false
@@ -28,7 +28,7 @@ module.exports = (app, table) => {
     res.render('404', { message })
   })
 
-  app.use(function(err, req, res, next) {
+  app.use(function (err, req, res, next) {
     res.status(500)
 
     console.error(`☠️ Error => ${err.message}`)

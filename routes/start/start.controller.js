@@ -20,7 +20,7 @@ module.exports = (app, route) => {
   app.get('/fr', (req, res) => res.redirect(route.path.fr))
 
   route.draw(app).get(async (req, res) => {
-    req.session = null
+    req.session.formdata = null
     res.render(name, routeUtils.getViewData(req, {
       hideBackButton: true,
       title: res.__('start.title'),
