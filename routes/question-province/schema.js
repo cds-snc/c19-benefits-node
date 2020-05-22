@@ -1,10 +1,10 @@
 /* istanbul ignore file */
 
 const Schema = {
-  oas: {
+  province: {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
-      options: [['oas', 'allowance', 'survivor', 'no']],
+      options: [['ab', 'bc', 'mb', 'nb', 'nl', 'ns', 'nt', 'nu', 'on', 'pe', 'qc', 'sk', 'yt']],
     },
   },
 }

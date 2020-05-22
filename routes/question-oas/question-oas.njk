@@ -9,15 +9,18 @@
 
             {{ radioButtons('oas',
                 [
-                    { value: 'yes', text:__('oas.1') },
-                    { value: 'no', text:__('oas.2') },
-                    { value: 'unsure', text:__('oas.3') }
+                    { value: 'oas', text:__('oas.1') },
+                    { value: 'allowance', text:__('oas.2') },
+                    { value: 'survivor', text:__('oas.3') },
+                    { value: 'no', text:__('oas.4') }
                 ],
                 data.oas,
                 __('form.oas'),
                 errors,
                 {
-                    required: true
+                    required: true,
+                    hint: __('oas.hint'),
+                    safeHint: true
                 }
             )}}
             {{ formButtons() }}

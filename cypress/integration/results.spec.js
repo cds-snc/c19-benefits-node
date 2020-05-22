@@ -30,6 +30,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('EI Sickness CERB, Mortgage, Student Loans, CCB', () => {
+        cy.answerQuestion('#provinceon')
         cy.answerQuestion('#lost_joblost-all-income')
         cy.answerQuestion('#no_incomesick-or-quarantined')
         cy.answerQuestion('#mortgage_paymentsyes-mortgage')
@@ -46,6 +47,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('CERB', () => {
+        cy.answerQuestion('#provinceon')
         cy.answerQuestion('#lost_joblost-all-income')
         cy.answerQuestion('#no_incomeself-employed-closed')
         cy.answerQuestion('#mortgage_paymentsno')
@@ -59,6 +61,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('EI Regular Cerb', () => {
+        cy.answerQuestion('#provinceon')
         cy.answerQuestion('#lost_joblost-some-income')
         cy.answerQuestion('#some_incomehours-reduced')
         cy.answerQuestion('#reduced_income1000_or_less')
@@ -73,6 +76,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('RRIF', () => {
+        cy.answerQuestion('#provinceon')
         cy.answerQuestion('#lost_joblost-some-income')
         cy.answerQuestion('#some_incomeretired')
         cy.answerQuestion('#gross_income4999_or_less')
@@ -88,6 +92,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('OAS', () => {
+        cy.answerQuestion('#provinceon')
         cy.answerQuestion('#lost_joblost-some-income')
         cy.answerQuestion('#some_incomeretired')
         cy.answerQuestion('#gross_income4999_or_less')
@@ -96,13 +101,14 @@ describe('Paths and Benefits', () => {
         cy.answerQuestion('#ccbno')
         cy.answerQuestion('#student_debtno')
         cy.answerQuestion('#plans_for_schoolno')
-        cy.answerQuestion('#oasyes')
+        cy.answerQuestion('#oasoas')
         cy.reportA11y()
         cy.get('[data-cy=benefit-list]').children().should('have.length', '1')
         cy.get('#oas')
       })
 
       it('Rent Help, Student Financial Aid', () => {
+        cy.answerQuestion('#provinceon')
         cy.answerQuestion('#lost_joblost-no-income')
         cy.answerQuestion('#unchanged_incomestudent_2019_20')
         cy.answerQuestion('#mortgage_paymentsyes-rent')

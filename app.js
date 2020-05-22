@@ -45,6 +45,10 @@ if (!locales) locales = ['en', 'fr']
 // initialize application.
 const app = express()
 
+// Get req.protocol from X-Forwarded-Proto
+// see: https://docs.microsoft.com/en-us/azure/app-service/containers/configure-language-nodejs#detect-https-session
+app.set('trust proxy', 1)
+
 // general app configuration.
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -99,21 +103,21 @@ app.locals.hasData = hasData
 
 /**
  * Create an asset path helper for templates
- * If a CDN_PREFIX is set in env, and mode is production,
- * the helper will return the path with the CDN prefix,
- * otherwise it just returns the path
+ * If a CDN_PREFIX is set in env, the helper 
+ * will return the path with the CDN prefix,
+ * otherwise it just returns the path with 
+ * current protocol and host prefix
  */
-app.locals.asset = (path) => {
-  const cdnprefix = process.env.CDN_PREFIX || '';
+app.use((req, res, next) => {
+  app.locals.asset = (path) => {
+    const assetPrefix = process.env.CDN_PREFIX || '//' + req.get('host');
 
-  if (process.env.NODE_ENV === 'production') {
-    return cdnprefix + path;
+    return req.protocol + ':' + assetPrefix + path;
   }
-  return path;
-}
+  next()
+})
 
 app.use((req, res, next) => {
-  app.locals.siteUrl = req.protocol + '://' + req.get('host')
   app.locals.pageUrl = req.protocol + '://' + req.get('host') + req.originalUrl
   next()
 })

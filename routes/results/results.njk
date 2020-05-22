@@ -53,9 +53,20 @@
     <ul class="list-none mt-4">
         <li class="relative mt-4">
             <img src="{{ asset('/img/arrow-circle-right.svg') }}" aria-hidden="true" class="w-6 h-6 -ml-8 mt-2 absolute left-0" alt="">
-            <a href="#gst_credit"> {{ __("gst_credit.header")}}</a></li>
+            {% if provincial %}
+                <a href="#{{ provincial }}"> {{ __(provincial + ".header")}}</a>
+            {% endif %}
+        </li>
+
+        <li class="relative mt-4">
+            <img src="{{ asset('/img/arrow-circle-right.svg') }}" aria-hidden="true" class="w-6 h-6 -ml-8 mt-2 absolute left-0" alt="">
+            <a href="#gst_credit"> {{ __("gst_credit.header")}}</a>
+        </li>
     </ul>
-    <div class="mt-10">
+    <div data-cy="other-benefits-list" class="mt-10">
+        {% if provincial %}
+            {% include "benefits/" + provincial + "-" + getLocale() +  ".njk" %}
+        {% endif %}
         {% include "benefits/gst_credit-" + getLocale() + ".njk" %}
     </div>
 

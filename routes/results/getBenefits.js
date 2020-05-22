@@ -149,7 +149,7 @@ const getBenefits = (data) => {
   results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))
   results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
   results.push(match(data, { ccb: ['yes', 'unsure'] }, 'ccb_payment'))
-  results.push(match(data, { oas: ['yes', 'unsure'] }, 'oas'))
+  results.push(match(data, { oas: ['oas', 'allowance', 'survivor'] }, 'oas'))
   results.push(match(data, { rrif: 'yes' }, 'rrif'))
 
   results.push(
@@ -165,6 +165,11 @@ const getBenefits = (data) => {
   return results.filter((v) => v !== undefined)
 }
 
+const getProvincialBenefits = (data) => {
+  return data.province ? 'province-' + data.province : false
+}
+
 module.exports = {
   getBenefits,
+  getProvincialBenefits,
 }

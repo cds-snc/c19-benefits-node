@@ -1,4 +1,4 @@
-const { getBenefits } = require('./getBenefits')
+const { getBenefits, getProvincialBenefits } = require('./getBenefits')
 
 describe('Test the getBenefits calculator', () => {
 
@@ -142,6 +142,18 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('student_loan')
   })
 
+  test('It checks the oas addon', () => {
+    const options = ['oas', 'allowance', 'survivor']
+
+    options.forEach(oas => {
+      const result = getBenefits({
+        oas: oas,
+      })
+
+      expect(result).toContain('oas')
+    })
+  })
+
   test('It checks for cesb no-income student_2019_20', () => {
     const result = getBenefits({
       lost_job: 'lost-all-income',
@@ -177,12 +189,23 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('student_financial_aid')
   })
 
-
   test('It should only pass if it matches everything in the pattern', () => {
     const result = getBenefits({
       lost_job: 'lost-some-income',
     })
 
     expect(result).toHaveLength(0)
+  })
+
+  test('It checks provincial benefits', () => {
+    const provinces = ['ab', 'bc', 'mb', 'nb', 'nl', 'ns', 'nt', 'nu', 'on', 'pe', 'qc', 'sk', 'yt']
+
+    provinces.forEach((province) => {
+      const result = getProvincialBenefits({
+        province: province,
+      })
+
+      expect(result).toContain('province-' + province)
+    })
   })
 })
