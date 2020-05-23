@@ -67,7 +67,7 @@
     "postcss-loader": "^3.0.0",
     "request": "^2.88.0",
     "snyk": "^1.316.2",
-    "tailwindcss": "^1.4.2",
+    "tailwindcss": "^1.4.4",
     "uuid": "^7.0.3",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
