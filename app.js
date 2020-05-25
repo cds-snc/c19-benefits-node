@@ -27,16 +27,14 @@ const { hasData } = require('./utils')
 const { addNunjucksFilters } = require('./filters')
 const csp = require('./config/csp.config')
 const csrf = require('csurf')
+const fs = require('fs')
 const {
-  logger,
   session,
   languageLinkHelper,
   domainRedirector,
   errorHandler,
   csrfToken,
 } = require('./middleware')
-
-const winston = require('./config/winston.config');
 
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
@@ -50,6 +48,18 @@ const app = express()
 // Get req.protocol from X-Forwarded-Proto
 // see: https://docs.microsoft.com/en-us/azure/app-service/containers/configure-language-nodejs#detect-https-session
 app.set('trust proxy', 1)
+
+// configure logging
+const { logger } = require('./config/winston.config');
+
+// ensure log folder exists
+const logDirectory = path.join(__dirname, './logs');
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+
+// add a request logger
+if (process.env.NODE_ENV !== 'test') {
+  app.use(morgan(morganConfig, { stream: logger.stream }))
+}
 
 // general app configuration.
 app.use(express.json())
@@ -79,11 +89,6 @@ const staticOptions = {
 
 // public assets go here (css, js, etc)
 app.use(express.static(path.join(__dirname, 'public'), staticOptions))
-
-// add a request logger
-if (process.env.NODE_ENV !== 'test') {
-  app.use(morgan(morganConfig, { stream: winston.stream }))
-}
 
 // dnsPrefetchControl controls browser DNS prefetching
 // frameguard to prevent clickjacking
@@ -135,7 +140,6 @@ app.use(session)
 app.use(languageLinkHelper(app))
 // middleware to redirect french paths to the french domain and english paths to the english domain
 app.use(domainRedirector)
-app.use(logger)
 
 app.routes = configRoutes(app, routes, locales)
 
