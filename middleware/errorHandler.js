@@ -1,5 +1,5 @@
 const { simpleRoute } = require('../utils/route.helpers')
-const winston = require('../config/winston.config');
+const { logger } = require('../config/winston.config');
 
 const errorHandler = (appInsights) => (err, req, res, next) => {
   res.status(err.status || 500)
@@ -9,11 +9,12 @@ const errorHandler = (appInsights) => (err, req, res, next) => {
     appInsights.trackException({ exception: err })
   }
 
-  winston.error(JSON.stringify({
+  logger.error(JSON.stringify({
     'status': err.status,
     'message': err.message,
     'url': req.originalUrl,
     'method': req.method,
+    'version': process.env.GITHUB_SHA,
   }))
 
   res.locals.simpleRoute = (name, locale) => simpleRoute(name, locale)
