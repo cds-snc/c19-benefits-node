@@ -5,23 +5,7 @@
 
   <ul class="benefit__featured_list">
     {{ benefitLi("Automatic payment in April if you already receive the GST credit") }}
-
-    <li>
-      <div class="p-5 m-1">
-        <p class="relative m-0 pl-8 ">
-          <img src="{{ asset('/img/check-circle.svg') }}" class="w-6 h-6 mt-1 -ml-8 absolute fill-current" alt="">
-          <strong>On average:</strong>
-          <ul class='list-none  mt-2'>
-            <li>
-              <strong>$400 for single people</strong>
-            </li>
-            <li>
-              <strong>$600 for couples</strong>
-            </li>
-          </ul>
-        </p>
-      </div>
-    </li>
+    {{ benefitLi("On average:<br>$400 for single people<br>$600 for couples") }}
     {{ benefitLi("Amount depends on your 2018 income taxes") }}
   </ul>
 

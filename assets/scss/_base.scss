@@ -88,25 +88,10 @@ h6 {
 main {
   @extend %page-container;
   padding: 0 $space-md;
-  
 
   h1 {
     border-bottom: 1px solid $color-red;
     margin: $space-md 0;
-  }
-
-  > div {
-    margin-bottom: $space-lg;
-
-    &:not(.w-full) {
-      @include md {
-        width: 90%;
-      }
-
-      @include xl {
-        width: 80%;
-      }
-    }
   }
 }
 

@@ -1,5 +1,5 @@
 .benefits {
-  @apply  -mx-5 mt-10 bg-green-100;
+  @apply  -mx-5 bg-green-100;
   &__header {
     @apply mb-6 p-4 flex items-center;
 
@@ -21,6 +21,20 @@
 
     &__featured_list {
       @apply list-none list-outside pl-0;
+      
+      > li {
+        @apply py-2;
+        > div > p {
+          @apply relative m-0 pl-10;
+          > img {
+            @apply w-6 h-6 mt-1 -ml-10 absolute fill-current;
+          }
+        }
+      }
+      
+      ul {
+        @apply list-none mt-2 ml-2;
+      }
     }
 
     &__body {
@@ -30,6 +44,7 @@
 }
 
 .benefits--other {
+  @apply bg-blue-200 bg-opacity-50;
   .benefits__header {
     @apply p-4;
     color: $color-blue-light;
@@ -44,6 +59,7 @@
   }
 }
 .benefits--unavailable {
+  @apply bg-red-100;
   .benefits__header {
     @apply p-4;
     color: $color-red;
