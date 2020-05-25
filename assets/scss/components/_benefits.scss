@@ -18,6 +18,17 @@
       background: $color-green;
       @apply text-white font-normal -mx-5 -mt-5 pl-5  text-2xl mb-6 p-4;
     }
+
+    &__featured_list {
+      @apply list-none list-outside pl-0;
+    }
+
+    &__body {
+      @apply pb-5 mt-6;
+      ul {
+        @apply list-disc list-outside;
+      }
+    }
   }
 }
 
