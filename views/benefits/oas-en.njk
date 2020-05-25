@@ -4,29 +4,31 @@
     {{__("oas.header")}}
   </h2>
 
-  <ul class="benefit__featured_list">
-    {{ benefitLi("$300 one-time, tax-free payment if you are eligible for the Old Age Security (OAS) pension
-        <br><br> 
-        OR $500 one-time, tax-free payment if you receive the Guaranteed Income Supplement (GIS) 
-        <br><br> 
-        OR $500 one-time, tax-free payment if you receive the Allowance or the Allowance for the Survivor") }}
-    {{ benefitLi("Payments will be sent as soon as possible") }}
-  </ul>
-
-  <div class="benefit__body">
-
-    <strong>Good to know:</strong>
-    <ul>
-      <li>You’ll receive this payment if you are eligible to receive OAS or its related benefits in June 2020.</li>
-      <li>You become eligible for OAS the month after you turn 65. So if you turn 65 in June, you will not receive this one-time payment.</li>
-      <li>Payments will be sent automatically. You don’t need to do anything to receive it.</li>
+  <div class="benefit__main">
+    <ul class="benefit__featured_list">
+      {{ benefitLi("$300 one-time, tax-free payment if you are eligible for the Old Age Security (OAS) pension
+          <br><br> 
+          OR $500 one-time, tax-free payment if you receive the Guaranteed Income Supplement (GIS) 
+          <br><br> 
+          OR $500 one-time, tax-free payment if you receive the Allowance or the Allowance for the Survivor") }}
+      {{ benefitLi("Payments will be sent as soon as possible") }}
     </ul>
 
-  </div>
+    <div class="benefit__body">
 
-  {{ infoLink(
-        "oas",
-        "https://www.canada.ca/en/services/benefits/publicpensions/notice-covid-19/one-time-payment.html",
-        "Learn more about help for seniors"
-    )}}
+      <strong>Good to know:</strong>
+      <ul>
+        <li>You’ll receive this payment if you are eligible to receive OAS or its related benefits in June 2020.</li>
+        <li>You become eligible for OAS the month after you turn 65. So if you turn 65 in June, you will not receive this one-time payment.</li>
+        <li>Payments will be sent automatically. You don’t need to do anything to receive it.</li>
+      </ul>
+
+    </div>
+
+    {{ infoLink(
+          "oas",
+          "https://www.canada.ca/en/services/benefits/publicpensions/notice-covid-19/one-time-payment.html",
+          "Learn more about help for seniors"
+      )}}
+  </div>
 </div>

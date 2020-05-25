@@ -4,25 +4,26 @@
     {{ __("gst_credit.header") }}
   </h3>
 
-  <ul class="benefit__featured_list">
-    {{ benefitLi("Versement automatique au mois d’avril si vous recevez déjà le crédit pour la TPS") }}
-    {{ benefitLi("En moyenne :<br> 400 $ pour les célibataires<br>600 $ pour les couples") }}
-    {{ benefitLi("Le montant du crédit dépend de votre revenu pour l’année imposable 2018") }}
-  </ul>
-
-  <div class="benefit__body">
-
-    <strong>Bon à savoir :</strong>
-    <ul>
-      <li>Vous n’avez pas à faire la demande pour recevoir ce montant. À compter du 9 avril, il sera envoyé automatiquement si vous recevez déjà le crédit pour la TPS.</li>
-      <li>Vérifiez votre compte bancaire ou votre courrier pour voir si vous avez  recu le crédit pour la TPS.</li>
+  <div class="benefit__main">
+    <ul class="benefit__featured_list">
+      {{ benefitLi("Versement automatique au mois d’avril si vous recevez déjà le crédit pour la TPS") }}
+      {{ benefitLi("En moyenne :<br> 400 $ pour les célibataires<br>600 $ pour les couples") }}
+      {{ benefitLi("Le montant du crédit dépend de votre revenu pour l’année imposable 2018") }}
     </ul>
 
+    <div class="benefit__body">
+
+      <strong>Bon à savoir :</strong>
+      <ul>
+        <li>Vous n’avez pas à faire la demande pour recevoir ce montant. À compter du 9 avril, il sera envoyé automatiquement si vous recevez déjà le crédit pour la TPS.</li>
+        <li>Vérifiez votre compte bancaire ou votre courrier pour voir si vous avez  recu le crédit pour la TPS.</li>
+      </ul>
+
+    </div>
+
+    {{ infoLink("gst_credit",
+          "https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/ctpstvh-augmentation-covid-19.html",
+          "En savoir plus à propos du crédit pour la TPS"
+      )}}
   </div>
-
-  {{ infoLink("gst_credit",
-        "https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/ctpstvh-augmentation-covid-19.html",
-        "En savoir plus à propos du crédit pour la TPS"
-    )}}
-
 </div>

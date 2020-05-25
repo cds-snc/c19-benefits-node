@@ -3,24 +3,26 @@
     {{ __("gst_credit.header") }}
   </h3>
 
-  <ul class="benefit__featured_list">
-    {{ benefitLi("Automatic payment in April if you already receive the GST credit") }}
-    {{ benefitLi("On average:<br>$400 for single people<br>$600 for couples") }}
-    {{ benefitLi("Amount depends on your 2018 income taxes") }}
-  </ul>
-
-  <div class="benefit__body">
-
-    <strong>Good to know:</strong>
-    <ul>
-      <li>You don’t need to do anything to receive this payment. It was sent automatically if you already receive the GST credit, starting April 9.</li>
-      <li>Check your bank account or mailbox to see if you’ve received it.</li>
+  <div class="benefit__main">
+    <ul class="benefit__featured_list">
+      {{ benefitLi("Automatic payment in April if you already receive the GST credit") }}
+      {{ benefitLi("On average:<br>$400 for single people<br>$600 for couples") }}
+      {{ benefitLi("Amount depends on your 2018 income taxes") }}
     </ul>
 
-  </div>
+    <div class="benefit__body">
 
-  {{ infoLink("gst_credit",
-        "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/covid-19-gsthstc-increase.html",
-        "Learn more about the GST credit"
-    )}}
+      <strong>Good to know:</strong>
+      <ul>
+        <li>You don’t need to do anything to receive this payment. It was sent automatically if you already receive the GST credit, starting April 9.</li>
+        <li>Check your bank account or mailbox to see if you’ve received it.</li>
+      </ul>
+
+    </div>
+
+    {{ infoLink("gst_credit",
+          "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/covid-19-gsthstc-increase.html",
+          "Learn more about the GST credit"
+      )}}
+  </div>
 </div>

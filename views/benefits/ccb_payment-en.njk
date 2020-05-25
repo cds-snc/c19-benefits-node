@@ -4,32 +4,34 @@
     {{__("ccb_payment.header")}}
   </h2>
 
-  <ul class="benefit__featured_list">
-    {{ benefitLi("Automatic payment in May") }}
-    {{ benefitLi("$300 per child") }}
-  </ul>
-
-  <div class="benefit__body">
-
-    <strong>The benefit can help if you:</strong>
-    <ul>
-      <li>Care for a child under 18 years old.</li>
+  <div class="benefit__main">
+    <ul class="benefit__featured_list">
+      {{ benefitLi("Automatic payment in May") }}
+      {{ benefitLi("$300 per child") }}
     </ul>
 
-    <strong>Good to know:</strong>
-    <ul>
-      <li>Check your bank account to find out if you’ve been receiving the Canada Child Benefit. </li>
-      <li>
-        <a href='https://www.canada.ca/en/revenue-agency/services/child-family-benefits/benefit-payment-dates.html'
-          target='_blank'>Dates of payments are available</a> online.
-      </li>
-    </ul>
+    <div class="benefit__body">
 
+      <strong>The benefit can help if you:</strong>
+      <ul>
+        <li>Care for a child under 18 years old.</li>
+      </ul>
+
+      <strong>Good to know:</strong>
+      <ul>
+        <li>Check your bank account to find out if you’ve been receiving the Canada Child Benefit. </li>
+        <li>
+          <a href='https://www.canada.ca/en/revenue-agency/services/child-family-benefits/benefit-payment-dates.html'
+            target='_blank'>Dates of payments are available</a> online.
+        </li>
+      </ul>
+
+    </div>
+
+    {{ infoLink(
+          "ccb_payment",
+          "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html",
+          "Learn more about the Canada Child Benefit"
+      )}}
   </div>
-
-  {{ infoLink(
-        "ccb_payment",
-        "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html",
-        "Learn more about the Canada Child Benefit"
-    )}}
 </div>

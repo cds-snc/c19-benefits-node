@@ -4,25 +4,27 @@
     {{__("student_loan.header")}}
   </h2>
 
-  <ul class="benefit__featured_list">
-    {{ benefitLi("Les paiements sont automatiquement suspendus") }}
-    {{ benefitLi("Du 30 mars 2020 jusqu’au 30 septembre 2020") }}
-  </ul>
-
-  <div class="benefit__body">
-
-    <strong>Bon à savoir :</strong>
-    <ul>
-      <li>Vous n’avez pas à faire de demande afin de suspendre vos paiements.</li>
-      <li> Les paiements pré-autorisés sont suspendus.</li>
-      <li> Consultez vous à votre compte au <a href='https://www.csnpe-nslsc.canada.ca/fr/Accueil' target='_blank'>Centre de service national de prêts aux étudiants</a> pour plus de détails.</li>
+  <div class="benefit__main">
+    <ul class="benefit__featured_list">
+      {{ benefitLi("Les paiements sont automatiquement suspendus") }}
+      {{ benefitLi("Du 30 mars 2020 jusqu’au 30 septembre 2020") }}
     </ul>
 
-  </div>
+    <div class="benefit__body">
 
-  {{ infoLink(
-        "student_loan",
-        "https://www.csnpe-nslsc.canada.ca/fr/Accueil",
-        "En savoir plus à propos de l’aide disponible pour votre dette d’étude"
-    )}}
+      <strong>Bon à savoir :</strong>
+      <ul>
+        <li>Vous n’avez pas à faire de demande afin de suspendre vos paiements.</li>
+        <li> Les paiements pré-autorisés sont suspendus.</li>
+        <li> Consultez vous à votre compte au <a href='https://www.csnpe-nslsc.canada.ca/fr/Accueil' target='_blank'>Centre de service national de prêts aux étudiants</a> pour plus de détails.</li>
+      </ul>
+
+    </div>
+
+    {{ infoLink(
+          "student_loan",
+          "https://www.csnpe-nslsc.canada.ca/fr/Accueil",
+          "En savoir plus à propos de l’aide disponible pour votre dette d’étude"
+      )}}
+  </div>
 </div>

@@ -4,24 +4,26 @@
     {{__("mortgage_deferral.header")}}
   </h2>
 
-  <ul class="benefit__featured_list">
-    {{ benefitLi("Interrompez vos paiements hypothécaires jusqu’à ce que vous puissiez les payer à nouveau") }}
-  </ul>
-
-  <div class="benefit__body">
-
-    <strong>Bon à savoir :</strong>
-    <ul>
-      <li>La banque chargera quand même de l’intérêt.</li>
-      <li> Lorsque vous pourrez effectuer vos paiements à nouveau, vous devrez payer l’intérêt encouru depuis le sursis en plus de vos paiements réguliers.</li>
-      <li> Vous pouvez aussi parler à votre banque à propos de plans de paiements spéciaux afin de ré-amortir votre hypothèque.</li>
+  <div class="benefit__main">
+    <ul class="benefit__featured_list">
+      {{ benefitLi("Interrompez vos paiements hypothécaires jusqu’à ce que vous puissiez les payer à nouveau") }}
     </ul>
 
-  </div>
+    <div class="benefit__body">
 
-  {{ infoLink(
-        "mortgage_deferral",
-        "https://cba.ca/mortgage-deferral-to-help-canadians-experiencing-financial-hardship-due-to-covid-19?l=fr",
-        "En savoir plus à propos du soutien hypothécaire"
-    )}}
+      <strong>Bon à savoir :</strong>
+      <ul>
+        <li>La banque chargera quand même de l’intérêt.</li>
+        <li> Lorsque vous pourrez effectuer vos paiements à nouveau, vous devrez payer l’intérêt encouru depuis le sursis en plus de vos paiements réguliers.</li>
+        <li> Vous pouvez aussi parler à votre banque à propos de plans de paiements spéciaux afin de ré-amortir votre hypothèque.</li>
+      </ul>
+
+    </div>
+
+    {{ infoLink(
+          "mortgage_deferral",
+          "https://cba.ca/mortgage-deferral-to-help-canadians-experiencing-financial-hardship-due-to-covid-19?l=fr",
+          "En savoir plus à propos du soutien hypothécaire"
+      )}}
+  </div>
 </div>

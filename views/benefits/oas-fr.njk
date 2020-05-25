@@ -4,29 +4,31 @@
     {{__("oas.header")}}
   </h2>
 
-  <ul class="benefit__featured_list">
-    {{ benefitLi("Paiement unique de 300 $, non imposable, si vous êtes admissible à la pension de la Sécurité de vieillesse (SV) 
-      <br><br>
-      OU paiement unique de 500 $, non imposable, si vous recevez le supplément de revenu garanti (SRG)
-      <br><br>
-      OU paiement unique de 500 $, non imposable, si vous recevez L’Allocation ou l’Allocation au survivant") }}
-    {{ benefitLi("Le paiement sera envoyé dès que possible") }}
-  </ul>
-
-  <div class="benefit__body">
-
-    <strong>Bon à savoir :</strong>
-    <ul>
-      <li>Vous recevrez ce paiement si vous êtes admissible à la pension ou aux programmes connexes de la SV en juin 2020.</li>
-      <li>Vous devenez admissibles à la pension de la SV le mois suivant votre 65ème anniversaire. Si votre 65ème anniversaire est en juin 2020, vous ne recevrez pas ce paiement.</li>
-      <li>Les paiements seront déposés automatiquement. Vous n’avez pas à faire quoi que ce soit pour le recevoir.</li>
+  <div class="benefit__main">
+    <ul class="benefit__featured_list">
+      {{ benefitLi("Paiement unique de 300 $, non imposable, si vous êtes admissible à la pension de la Sécurité de vieillesse (SV) 
+        <br><br>
+        OU paiement unique de 500 $, non imposable, si vous recevez le supplément de revenu garanti (SRG)
+        <br><br>
+        OU paiement unique de 500 $, non imposable, si vous recevez L’Allocation ou l’Allocation au survivant") }}
+      {{ benefitLi("Le paiement sera envoyé dès que possible") }}
     </ul>
 
-  </div>
+    <div class="benefit__body">
 
-  {{ infoLink(
-        "oas",
-        "https://www.canada.ca/fr/services/prestations/pensionspubliques/avis-covid-19/paiement-unique.html",
-        "En savoir plus à propos de l’aide pour les aînés"
-    )}}
+      <strong>Bon à savoir :</strong>
+      <ul>
+        <li>Vous recevrez ce paiement si vous êtes admissible à la pension ou aux programmes connexes de la SV en juin 2020.</li>
+        <li>Vous devenez admissibles à la pension de la SV le mois suivant votre 65ème anniversaire. Si votre 65ème anniversaire est en juin 2020, vous ne recevrez pas ce paiement.</li>
+        <li>Les paiements seront déposés automatiquement. Vous n’avez pas à faire quoi que ce soit pour le recevoir.</li>
+      </ul>
+
+    </div>
+
+    {{ infoLink(
+          "oas",
+          "https://www.canada.ca/fr/services/prestations/pensionspubliques/avis-covid-19/paiement-unique.html",
+          "En savoir plus à propos de l’aide pour les aînés"
+      )}}
+  </div>
 </div>

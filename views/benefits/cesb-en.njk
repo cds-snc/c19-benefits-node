@@ -3,12 +3,8 @@
    <h2 class="benefit__header" id="cesb">
     {{__("cesb.header")}}
   </h2>
-
-  {% if unavailableBenefit %}
-  <button id="benefitInfoButtonCESB" aria-controls="benefitInfoCESB" aria-expanded="false">More Info</button>
-
-  <div id="benefitInfoCESB" aria-labelledby="benefitInfoButtonCESB" tabindex="-1">
-  {% endif %}
+  
+  <div class="benefit__main">
     <ul class="benefit__featured_list">
       {{ benefitLi("From May to August 2020") }}
       <li>
@@ -58,7 +54,5 @@
           "https://www.canada.ca/en/revenue-agency/services/benefits/emergency-student-benefit/cesb-who-apply.html",
           "Check your eligibility for CESB"
       )}}
-  {% if unavailableBenefit %}
   </div>
-  {% endif %}
 </div>
