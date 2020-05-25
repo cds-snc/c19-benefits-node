@@ -19,7 +19,6 @@ test('The error object gets appended to res.locals and passed to the next middle
   // Make sure we pass on the err object
   expect(result).toBe(testError)
   expect(res.locals.err).toStrictEqual({
-    status: 500,
     message: 'foo',
     stack: 'bar',
     code: 'baz',

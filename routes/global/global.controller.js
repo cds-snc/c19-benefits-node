@@ -1,8 +1,7 @@
 const { simpleRoute } = require('../../utils/route.helpers')
+const { logger } = require('../../config/winston.config');
 
 module.exports = (app, table) => {
-  // clear session
-
   app.get('/test-500', (req, res) => {
     throw new Error('something bad')
   })
@@ -12,6 +11,7 @@ module.exports = (app, table) => {
     res.redirect(302, '/')
   })
 
+  // fall-through 404
   app.use(function (req, res, next) {
     res.status(404)
 
@@ -28,20 +28,23 @@ module.exports = (app, table) => {
     res.render('404', { message })
   })
 
+  // 500 error
   app.use(function (err, req, res, next) {
-    res.status(500)
+    res.status(err.status || 500)
 
-    console.error(`☠️ Error => ${err.message}`)
-
-    let message = false
-
-    /* istanbul ignore next */
-    if (process.env.NODE_ENV !== 'production') {
-      message = `❌ ${err.message}`
-    }
+    logger.error(JSON.stringify({
+      'status': err.status,
+      'message': err.message,
+      'url': req.originalUrl,
+      'method': req.method,
+      'version': process.env.GITHUB_SHA,
+    }))
 
     res.locals.simpleRoute = (name, locale) => simpleRoute(name, locale)
     res.locals.hideBackButton = true
-    res.render('500', { message })
+
+    res.render('500', {
+      message: process.env.NODE_ENV !== 'production' ? err.message : false,
+    })
   })
 }

@@ -2,6 +2,7 @@ const { routeUtils, getSessionData } = require('./../../utils')
 const { Schema } = require('./schema.js')
 const { getBenefits, getProvincialBenefits } = require('./getBenefits')
 const _ = require('lodash')
+const { logger } = require('../../config/winston.config')
 
 const getData = (req, res) => {
   /**
@@ -14,7 +15,8 @@ const getData = (req, res) => {
   try {
     return JSON.parse(Buffer.from(req.query.q, 'base64').toString())
   } catch (err) {
-    res.locals.log(`Thrown error: ${JSON.stringify(err)} Invalid QueryString ${JSON.stringify(req.query)}`)
+    // TODO: structure this
+    logger.error(`Thrown error: ${JSON.stringify(err)} Invalid QueryString ${JSON.stringify(req.query)}`)
     return {}
   }
 }
