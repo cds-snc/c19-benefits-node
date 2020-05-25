@@ -46,7 +46,7 @@ jobs:
 
       - uses: azure/webapps-container-deploy@v1
         with:
-          app-name: 'testinfra-appservice'
+          app-name: 'CV19Benefits-appservice'
           slot-name: 'dev'
           images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19-benefit:${{ steps.tag.outputs.new_tag }}'
 
