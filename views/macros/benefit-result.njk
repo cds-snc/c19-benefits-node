@@ -1,8 +1,8 @@
 {% macro benefitLi(strongText, text) %}
   <li>
-    <div class="p-5 m-1">
-      <p class="relative m-0 pl-8">
-        <img src="{{ asset('/img/check-circle.svg') }}" class="w-6 h-6 mt-1 -ml-8 absolute fill-current" alt="">
+    <div class="py-2">
+      <p class="relative m-0 pl-10">
+        <img src="{{ asset('/img/check-circle.svg') }}" class="w-6 h-6 mt-1 -ml-10 absolute fill-current" alt="">
         <strong>{{ strongText | safe }}</strong> {% if text %}{{ text }}{% endif %}
       </p>
     </div>
