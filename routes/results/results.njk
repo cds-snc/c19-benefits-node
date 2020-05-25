@@ -75,9 +75,10 @@
                     {{ __('results.other_potential_help') }}
                 </h2>
             </div>
+            
             <button id="unavailableBenefitsButton" aria-controls="unavailableBenefitsList" aria-expanded="false" class="px-4">View list of benefits not relevant for you</button>
-            <div class="benefits__list" id="unavailableBenefitsList" aria-labelledby="unavailableBenefitsButton" tabindex="-1">
-                {% set unavailableBenefit = true %}
+            
+            <div class="benefits__list" id="unavailableBenefitsList" aria-labelledby="unavailableBenefitsButton">
                 {% for benefit in unavailableBenefits %}
                     {% include "benefits/" + benefit + "-" + getLocale() +  ".njk" %}
                 {% endfor %}
