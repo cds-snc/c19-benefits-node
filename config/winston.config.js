@@ -8,14 +8,15 @@ var options = {
     handleExceptions: true,
     maxsize: 5242880, // 5MB
     maxFiles: 5,
+    format: winston.format.simple(),
   },
   error: {
     level: "error",
     filename: path.join(__dirname, '../logs/error.log'),
     handleExceptions: true,
-    json: true,
     maxsize: 5242880, // 5MB
     maxFiles: 5,
+    format: winston.format.simple(),
   },
   console: {
     level: 'debug',
