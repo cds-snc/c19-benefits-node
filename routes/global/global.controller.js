@@ -26,4 +26,16 @@ module.exports = (app, table) => {
     res.locals.hideBackButton = true
     res.render('404', { message })
   })
+
+  // 500 error
+  app.use(function (err, req, res, next) {
+    res.status(err.status || 500)
+
+    res.locals.simpleRoute = (name, locale) => simpleRoute(name, locale)
+    res.locals.hideBackButton = true
+
+    res.render('500', {
+      message: process.env.NODE_ENV !== 'production' ? err.message : false,
+    })
+  })
 }

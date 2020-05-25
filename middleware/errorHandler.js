@@ -1,9 +1,6 @@
-const { simpleRoute } = require('../utils/route.helpers')
 const { logger } = require('../config/winston.config');
 
 const errorHandler = (appInsights) => (err, req, res, next) => {
-  res.status(err.status || 500)
-
   // istanbul ignore next
   if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY) {
     appInsights.trackException({ exception: err })
@@ -17,12 +14,8 @@ const errorHandler = (appInsights) => (err, req, res, next) => {
     'version': process.env.GITHUB_SHA,
   }))
 
-  res.locals.simpleRoute = (name, locale) => simpleRoute(name, locale)
-  res.locals.hideBackButton = true
-
-  res.render('500', {
-    message: process.env.NODE_ENV !== 'production' ? err.message : false,
-  })
+  res.locals.err = err
+  next(err)
 }
 
 module.exports = {
