@@ -142,6 +142,18 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('student_loan')
   })
 
+  test('It checks the oas addon', () => {
+    const options = ['oas', 'allowance', 'survivor']
+
+    options.forEach(oas => {
+      const result = getBenefits({
+        oas: oas,
+      })
+
+      expect(result).toContain('oas')
+    })
+  })
+
   test('It checks for cesb no-income student_2019_20', () => {
     const result = getBenefits({
       lost_job: 'lost-all-income',
