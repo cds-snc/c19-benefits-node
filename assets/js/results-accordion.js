@@ -1,4 +1,6 @@
-jQuery(document).ready(function ($) {
+const $ = window.$;
+
+$(document).ready(function () {
   const locale = document.documentElement.lang;
 
   const moreInfo = {
