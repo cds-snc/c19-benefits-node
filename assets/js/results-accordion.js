@@ -2,9 +2,34 @@ const $ = window.$;
 const { __ } = require('./i18n')
 
 $(document).ready(function () {
+  // Outer container open/close
+  const $container = $('.benefits--unavailable .benefits__list');
+  $container.addClass('hidden');
+
+  $('#unavailableBenefitsButton').removeClass('hidden');
+
+  $('#unavailableBenefitsButton').on('click', function (event) {
+    event.preventDefault();
+
+    if ($(this).attr('aria-expanded') === 'true') {
+      $container.addClass('hidden');
+      $container.attr('aria-hidden', true);
+      $(this).attr('aria-expanded', false);
+      $(this).find('div.closed').removeClass('hidden');
+      $(this).find('div.open').addClass('hidden');
+    } else {
+      $container.removeClass('hidden');
+      $container.attr('aria-hidden', false);
+      $(this).attr('aria-expanded', true);
+      $(this).find('div.closed').addClass('hidden');
+      $(this).find('div.open').removeClass('hidden');
+    }
+  })
+
+  // Inner container open/close
   // Hide all cards by default
   $('.benefits--unavailable .benefit__main')
-    .addClass('hidden')
+    .addClass('hidden');
 
   const $accordion = $('.benefits--unavailable .benefits__list');
   const plusImg = '<img src="/img/plus.svg" class="w-6 h-6 inline" alt="">';
@@ -19,6 +44,7 @@ $(document).ready(function () {
 
   // Loop over all the acc-trigger links we just created
   $('.acc-trigger').each(function (index, elem) {
+    // Generate unique Ids to populate aria-controls and aria-labelledby
     const accControlId = 'acc_control_' + index
     const containerId = 'benefit_' + index
 
