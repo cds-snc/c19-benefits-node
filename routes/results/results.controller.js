@@ -2,6 +2,8 @@ const { routeUtils, getSessionData } = require('./../../utils')
 const { Schema } = require('./schema.js')
 const { getBenefits, getProvincialBenefits } = require('./getBenefits')
 const _ = require('lodash')
+const glob = require('glob')
+const path = require('path')
 
 const getData = (req, res) => {
   /**
@@ -25,7 +27,26 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       const data = getData(req, res);
-      const benefitsFullList = ['cerb', 'cesb', 'ei_workshare', 'mortgage_deferral', 'rent_help', 'student_loan', 'ccb_payment',  'oas', 'student_financial_aid'];
+
+      const benefitList = [];
+
+      // Get a list of all the benefit cards (except provincial)
+      const files = glob.sync("**/*.njk", {
+        cwd: path.join(__dirname, '../../views/benefits'),
+        ignore: 'province-*',
+      })
+
+      // Grab the benefit name portion of the filename
+      files.forEach((file) => {
+        const fileParts = file.split('-');
+        benefitList.push(fileParts[0]);
+      })
+
+      // We just the unique items in the list
+      const benefitsFullList = benefitList.filter(function (item, pos) {
+        return benefitList.indexOf(item) === pos;
+      })
+
       const benefits = getBenefits(data);
       const unavailableBenefits = benefitsFullList.filter((benefit) => !benefits.includes(benefit))
 
