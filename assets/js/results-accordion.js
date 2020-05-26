@@ -1,13 +1,5 @@
 const $ = window.$;
-
-const locale = document.documentElement.lang || 'en';
-const locales = {
-  'en': require('../../locales/en.json'),
-  'fr': require('../../locales/fr.json'),
-}
-const __ = (key) => {
-  return locales[locale][key] || '[MISSING TRANSLATION STRING]'
-}
+const { __ } = require('./i18n')
 
 $(document).ready(function () {
   // Hide all cards by default
