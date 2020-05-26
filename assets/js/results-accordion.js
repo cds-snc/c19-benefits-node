@@ -1,18 +1,15 @@
 const $ = window.$;
 
+const locale = document.documentElement.lang || 'en';
+const locales = {
+  'en': require('../../locales/en.json'),
+  'fr': require('../../locales/fr.json'),
+}
+const __ = (key) => {
+  return locales[locale][key] || '[MISSING TRANSLATION STRING]'
+}
+
 $(document).ready(function () {
-  const locale = document.documentElement.lang;
-
-  const moreInfo = {
-    'en': 'More info',
-    'fr': 'More info FR',
-  }
-
-  const lessInfo = {
-    'en': 'Less info',
-    'fr': 'Less info FR',
-  }
-
   // Hide all cards by default
   $('.benefits--unavailable .benefit__main')
     .addClass('hidden')
@@ -20,8 +17,11 @@ $(document).ready(function () {
   const $accordion = $('.benefits--unavailable .benefits__list');
 
   // Insert the "More info" link into each card
-  $('<button class="acc-trigger cursor-pointer">+ <span class="underline">' + moreInfo[locale] + '</span></button>')
-    .insertBefore('.benefits--unavailable .benefit__main')
+  $('.benefits--unavailable .benefit__main').each(function (index, elem) {
+    const $heading = $(this).prev(':header');
+    $('<button class="acc-trigger cursor-pointer">+ <span class="moreless underline">' + __('results.more_info') + '</span> <span class="sr-only">' + __('results.about') + ' ' + $heading.text() + '</span></button>')
+      .insertBefore($(this));
+  })
 
   // Loop over all the acc-trigger links we just created
   $('.acc-trigger').each(function (index, elem) {
@@ -47,12 +47,12 @@ $(document).ready(function () {
 
       // Toggle between expanded/not
       if ($(this).attr('aria-expanded') === 'true') {
-        $(this).html(`+ <span class="underline">${moreInfo[locale]}</span>`)
+        $(this).find('span.moreless').text(__('results.more_info'))
         $container.addClass('hidden')
         $container.attr('aria-hidden', true);
         $(this).attr('aria-expanded', false)
       } else {
-        $(this).html(`- <span class="underline">${lessInfo[locale]}</span>`)
+        $(this).find('span.moreless').text(__('results.less_info'))
         $container.removeClass('hidden')
         $container.attr('aria-hidden', false);
         $(this).attr('aria-expanded', true)
