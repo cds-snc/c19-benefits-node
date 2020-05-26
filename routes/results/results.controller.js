@@ -27,7 +27,8 @@ module.exports = (app, route) => {
     .get((req, res) => {
       const data = getData(req, res);
 
-      const benefitsFullList = getAllBenefits()
+      // get All Benefits (except provinces and GST)
+      const benefitsFullList = _.pull(getAllBenefits(), 'gst_credit');
 
       const benefits = getBenefits(data);
       const unavailableBenefits = benefitsFullList.filter((benefit) => !benefits.includes(benefit))
