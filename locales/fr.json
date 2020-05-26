@@ -139,6 +139,9 @@
   "results.other_potential_help.preamble": "L’aide suivante est également disponible :",
   "results.results": "résultats",
   "results.situation_changes": "Si votre situation change, vous pouvez répondre aux questions à nouveau pour trouver de nouveaux programmes d’aide.",
+  "results.unavailable_benefits_preamble": "Based on what you told us, the following options do not fit your situation.",
+  "results.unavailable_close_link": "Close list of benefits not relevant for you",
+  "results.unavailable_view_link": "Open list of benefits not relevant for you",
   "results_title": {
     "one": "Résultats",
     "other": "%s résultats"
