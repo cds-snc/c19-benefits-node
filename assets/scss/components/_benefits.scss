@@ -1,9 +1,7 @@
 .benefits {
-  @apply  -mx-5 bg-green-100 pb-10;
+  @apply  -mx-5 bg-green-lighter pb-10;
   &__header {
-    @apply mb-6 p-4 flex items-center;
-
-    color: $color-green;
+    @apply mb-6 p-4 flex items-center text-green-darker;
 
     svg {
       @apply mr-4;
@@ -11,12 +9,10 @@
   }
 
   .benefit {
-    @apply mt-5 p-5 bg-white border-l-4;
-    border-color: $color-green;
+    @apply mt-5 p-5 bg-white border-l-4 border-green-darker;
 
     &__header {
-      background: $color-green;
-      @apply text-white font-normal -mx-5 -mt-5 pl-5  text-2xl mb-6 p-4;
+      @apply text-white font-normal -mx-5 -mt-5 pl-5  text-2xl mb-6 p-4 bg-green-darker;
     }
 
     &__featured_list {
@@ -44,32 +40,30 @@
 }
 
 .benefits--other {
-  @apply bg-blue-200 bg-opacity-50;
+  @apply bg-blue-lighter;
   .benefits__header {
-    @apply p-4;
-    color: $color-blue-light;
+    @apply p-4 text-blue-darker;
   }
 
   .benefit {
-    border-color: $color-blue-light;
+    @apply border-blue-darker;
 
     &__header {
-      background: $color-blue-light;
+      @apply bg-blue-darker;
     }
   }
 }
 .benefits--unavailable {
-  @apply bg-red-100;
+  @apply bg-red-lighter;
   .benefits__header {
-    @apply p-4;
-    color: $color-red;
+    @apply p-4 text-red-darker;
   }
 
   .benefit {
-    border-color: $color-red;
+    @apply border-red-darker;
 
     &__header {
-      background: $color-red;
+      @apply bg-red-darker;
     }
   }
 }
