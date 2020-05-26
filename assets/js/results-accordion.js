@@ -15,11 +15,13 @@ $(document).ready(function () {
     .addClass('hidden')
 
   const $accordion = $('.benefits--unavailable .benefits__list');
+  const plusImg = '<img src="/img/plus.svg" class="w-6 h-6 inline" alt="">';
+  const minusImg = '<img src="/img/minus.svg" class="w-6 h-6 inline" alt="">';
 
   // Insert the "More info" link into each card
   $('.benefits--unavailable .benefit__main').each(function (index, elem) {
     const $heading = $(this).prev(':header');
-    $('<button class="acc-trigger cursor-pointer">+ <span class="moreless underline">' + __('results.more_info') + '</span> <span class="sr-only">' + __('results.about') + ' ' + $heading.text() + '</span></button>')
+    $('<button class="acc-trigger cursor-pointer"><span class="moreless underline">' + __('results.more_info') + '</span> <span class="sr-only">' + __('results.about') + ' ' + $heading.text() + '</span></button>')
       .insertBefore($(this));
   })
 
@@ -34,6 +36,7 @@ $(document).ready(function () {
     $(this).attr('aria-expanded', false)
     $(this).attr('aria-controls', containerId)
     $(this).attr('id', accControlId)
+    $(this).prepend(plusImg);
 
     // Attach aria-labelled by and unique id to accordion container
     $container.attr('aria-labelledby', accControlId)
@@ -48,11 +51,13 @@ $(document).ready(function () {
       // Toggle between expanded/not
       if ($(this).attr('aria-expanded') === 'true') {
         $(this).find('span.moreless').text(__('results.more_info'))
+        $(this).find('img').replaceWith(plusImg);
         $container.addClass('hidden')
         $container.attr('aria-hidden', true);
         $(this).attr('aria-expanded', false)
       } else {
         $(this).find('span.moreless').text(__('results.less_info'))
+        $(this).find('img').replaceWith(minusImg);
         $container.removeClass('hidden')
         $container.attr('aria-hidden', false);
         $(this).attr('aria-expanded', true)
