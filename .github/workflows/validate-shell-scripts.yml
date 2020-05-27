@@ -12,5 +12,6 @@ jobs:
       - name: shellcheck
         run: shellcheck ./bin/*.sh
       - name: shfmt
-        go get mvdan.cc/sh/cmd/shfmt
-        shfmt -ci -i 2 -d ./bin/*.sh
+        run: |
+          go get mvdan.cc/sh/cmd/shfmt
+          shfmt -ci -i 2 -d ./bin/*.sh
