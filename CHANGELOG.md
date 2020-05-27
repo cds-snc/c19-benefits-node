@@ -9,6 +9,9 @@ All notable changes to this product will be documented in this file.
 ### Added:
 * Custom i18n module for client-side access to locale files
 
+## Removed:
+* Removed the ei_regular_cerb and ei_sickness_cerb cards and updated the calculations/tests
+
 ## 2020-05-22
 
 ### Changed:
