@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-05-27
+
+## Removed:
+* Removed the ei_regular_cerb and ei_sickness_cerb cards and updated the calculations/tests
+
 ## 2020-05-22
 
 ### Changed:

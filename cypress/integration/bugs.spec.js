@@ -13,7 +13,7 @@ describe('Found Bugs', () => {
       cy.answerQuestion('#student_debtno')
       cy.answerQuestion('#plans_for_schoolno')
       cy.answerQuestion('#oasno')
-      cy.get('[data-cy=ei_regular_cerb-benefit]')
+      cy.get('[data-cy=cerb-benefit]')
 
       cy.visit('/en/lost-job')
       cy.answerQuestion('#lost_joblost-all-income')
@@ -24,7 +24,7 @@ describe('Found Bugs', () => {
       cy.answerQuestion('#plans_for_schoolno')
       cy.answerQuestion('#oasno')
       cy.get('[data-cy=benefit-list]').children().should('have.length', '1')
-      cy.get('[data-cy=ei_regular_cerb-benefit]')
+      cy.get('[data-cy=cerb-benefit]')
     })
 
     it('Check some-income retired to some-income quarantine', () => {
@@ -49,7 +49,7 @@ describe('Found Bugs', () => {
       cy.answerQuestion('#plans_for_schoolno')
       cy.answerQuestion('#oasno')
       cy.get('[data-cy=benefit-list]').children().should('have.length', '1')
-      cy.get('[data-cy=ei_sickness_cerb-benefit]')
+      cy.get('[data-cy=cerb-benefit]')
     })
 
     it('Check some-income retired to no-income', () => {

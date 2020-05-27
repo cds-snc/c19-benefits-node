@@ -8,7 +8,7 @@ describe('Test the getBenefits calculator', () => {
       no_income: 'lost-job-employer-closed',
     })
 
-    expect(result).toContain('ei_regular_cerb')
+    expect(result).toContain('cerb')
   })
 
   test('It checks ei regular + cerb some-income path', () => {
@@ -21,7 +21,7 @@ describe('Test the getBenefits calculator', () => {
         reduced_income: '1000_or_less',
       })
 
-      expect(result).toContain('ei_regular_cerb')
+      expect(result).toContain('cerb')
     })
 
   })
@@ -33,7 +33,7 @@ describe('Test the getBenefits calculator', () => {
       no_income: 'sick-or-quarantined',
     })
 
-    expect(result).toContain('ei_sickness_cerb')
+    expect(result).toContain('cerb')
   })
 
   test('It checks cerb-only path 1', () => {
@@ -72,7 +72,7 @@ describe('Test the getBenefits calculator', () => {
       some_income: 'quarantine',
     })
 
-    expect(result).toContain('ei_sickness_cerb')
+    expect(result).toContain('cerb')
   })
 
   test('It checks cerb-only path 3', () => {
