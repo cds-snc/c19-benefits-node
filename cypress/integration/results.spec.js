@@ -40,7 +40,7 @@ describe('Paths and Benefits', () => {
         cy.answerQuestion('#oasno')
         cy.reportA11y()
         cy.get('[data-cy=benefit-list]').children().should('have.length', '4')
-        cy.get('#ei_sickness_cerb')
+        cy.get('#cerb')
         cy.get('#mortgage_deferral')
         cy.get('#student_loan')
         cy.get('#ccb_payment')
@@ -72,7 +72,7 @@ describe('Paths and Benefits', () => {
         cy.answerQuestion('#oasno')
         cy.reportA11y()
         cy.get('[data-cy=benefit-list]').children().should('have.length', '1')
-        cy.get('#ei_regular_cerb')
+        cy.get('#cerb')
       })
 
       it('RRIF', () => {
