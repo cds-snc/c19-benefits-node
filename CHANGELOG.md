@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-05-27
+
+### Changed:
+* Redesigned Results screen that displays benefits that we know about, but you weren't eligible for, with accordion expand/collapse sections
+
+### Added:
+* Custom i18n module for client-side access to locale files
+
 ## 2020-05-22
 
 ### Changed:
