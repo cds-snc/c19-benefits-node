@@ -11,7 +11,3 @@ jobs:
       - uses: actions/checkout@v1
       - name: shellcheck
         run: shellcheck ./bin/*.sh
-      - name: shfmt
-        run: |
-          go get mvdan.cc/sh/cmd/shfmt
-          shfmt -ci -i 2 -d ./bin/*.sh
