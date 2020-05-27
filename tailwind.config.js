@@ -31,6 +31,9 @@ module.exports = {
           'darker': '#138A00',
         },
       },
+      maxWidth: {
+        '950': '950px',
+      },
     },
 
     boxShadow: {

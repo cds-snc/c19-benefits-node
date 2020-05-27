@@ -1,5 +1,5 @@
 .benefits {
-  @apply  -mx-5 bg-green-lighter pb-8 px-3 mb-12;
+  @apply  -mx-5 bg-green-lighter pb-8 px-3 mb-12 max-w-950;
   &__header {
     @apply px-4 py-6 flex items-center text-green-darker;
     h2 {
