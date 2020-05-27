@@ -58,7 +58,7 @@
 
             <p class="px-4">{{ __('results.other_potential_help.preamble') }}</p>
 
-            <div data-cy="other-benefits-list" class="mt-10">
+            <div data-cy="other-benefits-list">
                 {% if provincial %}
                     {% include "benefits/" + provincial + "-" + getLocale() +  ".njk" %}
                 {% endif %}

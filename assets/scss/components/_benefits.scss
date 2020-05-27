@@ -1,7 +1,10 @@
 .benefits {
   @apply  -mx-5 bg-green-lighter pb-8 px-3 mb-12;
   &__header {
-    @apply mb-6 p-4 flex items-center text-green-darker;
+    @apply px-4 py-6 flex items-center text-green-darker;
+    h2 {
+      @apply my-6;
+    }
 
     svg {
       @apply mr-4;
