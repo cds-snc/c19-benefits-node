@@ -10,14 +10,11 @@
             {{ radioButtons('some_income',
                 [
                     { value: 'hours-reduced', text:__('your_situation.some_income.1')},
-
                     { value: 'employed-lost-a-job', text:__('your_situation.some_income.2')},
-                    
                     { value: 'selfemployed-some-income', text:__('your_situation.some_income.3')},
-
                     { value: 'retired', text:__('your_situation.some_income.4')},
-
-                    { value: 'quarantine', text:__('your_situation.some_income.5')}
+                    { value: 'quarantine', text:__('your_situation.some_income.5')},
+                    { value: 'none-of-the-above', text:__('your_situation.some_income.none')}
                 ],
                 data.some_income,
                 __('form.your_situation.some_income'),
