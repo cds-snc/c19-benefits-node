@@ -6,6 +6,9 @@
   </summary>
   
   <div class="benefit__main">
+    <div class="benefit__preamble mb-4">
+      {% block preamble %}{% endblock %}
+    </div>
     <ul class="benefit__featured_list">
       {% block featured_list_items %}{% endblock %}
     </ul>

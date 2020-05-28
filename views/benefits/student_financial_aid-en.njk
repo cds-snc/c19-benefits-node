@@ -6,7 +6,10 @@
   {{__("student_financial_aid.header")}}
 {% endblock %}
 
-<strong>Increasing Canada Student Grants and Loans</strong>
+{% block preamble %}
+  Increasing Canada Student Grants and Loans
+{% endblock %}
+
 {% block featured_list_items %}
   {{ benefitLi("Up to $6,000 in grants for full-time students") }}
   {{ benefitLi("Up to $3,600 in grants for part-time students") }}

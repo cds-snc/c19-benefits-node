@@ -6,7 +6,10 @@
   {{__("student_financial_aid.header")}}
 {% endblock %}
 
-<strong>Hausse des bourses et prêts canadiens d’études</strong>
+{% block preamble %}
+  Hausse des bourses et prêts canadiens d’études
+{% endblock %}
+
 {% block featured_list_items %}
   {{ benefitLi("Jusqu’à 6000 $ en bourses pour les étudiants à temps plein") }}
   {{ benefitLi("Jusqu’à 3600 $ en bourses pour les étudiants à temps partiel") }}
