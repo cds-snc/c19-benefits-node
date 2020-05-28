@@ -16,6 +16,11 @@
 
     &__header {
       @apply text-white font-bold pl-5 text-2xl p-4 bg-green-darker cursor-pointer;
+
+      &:focus {
+        @include focus(3px, 3px)
+      }
+      
       h3 {
         @apply inline;
       }
