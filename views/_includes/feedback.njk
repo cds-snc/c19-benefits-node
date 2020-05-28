@@ -1,6 +1,6 @@
 <details class="w-full sm:w-1/2 md:w-3/5 lg:w-2/5 mt-20">
     <summary class="px-4 py-2 bg-gray-300 rounded text-center">{{ __('feedback.button') }}</summary>
-    
+
     <form action="/{{ getLocale() }}/feedback" method="post" class="px-8 py-6 rounded border border-gray-300 bg-gray-200" id="feedback-form">
       <input type="hidden" name="_csrf" id="feedback-csrf" value="{{ csrfToken }}">
 
@@ -39,12 +39,16 @@
 
       <div class="mt-6">
         <label for="feedback-details" class="font-semibold">{{ __('feedback.tell_us_more') }}</label>
-        <span id="feedback-details-hint">{{ __('feedback.personal_warning') }}</span>
+        <span id="feedback-details-hint">{{ __('feedback.personal_warning') | safe }}</span>
         <textarea name="details" class="h-40" id="feedback-details" aria-describedby="feedback-details-hint"></textarea>
       </div>
 
       <button class="mt-8 py-3 px-4 border shadow bg-blue-800 w-auto" type="submit">{{ __('feedback.submit') }}</button>
     </form>
+
+    <div class="mt-10 text-2xl border-l-0 pl-0">
+      <a href="{{__('feedback.help_link_url') }}">{{__('feedback.help_link_text')}}</a>
+    </div>
 
     <div id="feedback-confirmation" class="mt-2 px-8 py-6 rounded border border-gray-300 bg-gray-200 hidden">
       <p class="">{{ __('feedback.thanks') }}</p>

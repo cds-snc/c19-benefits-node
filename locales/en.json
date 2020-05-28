@@ -45,7 +45,7 @@
   "feedback.5": "You're worried about your privacy",
   "feedback.6": "Other",
   "feedback.button": "Report a problem or mistake on this page",
-  "feedback.personal_warning": "Do not include your personal or financial details.",
+  "feedback.personal_warning": "Do not include your personal or financial details. We use this information to improve this service, but we do not reply.",
   "feedback.question": "Check all the issues that apply",
   "feedback.submit": "Submit",
   "feedback.tell_us_more": "Can you tell us more?",
@@ -177,5 +177,7 @@
   "your_situation.unchanged_income.3": "You’re retired.",
   "your_situation.unchanged_income.4": "You were a college or university student during the 2019-20 school year and now cannot find work.",
   "your_situation.unchanged_income.5": "You’re graduating high school in the 2019-20 school year and have applied for post-secondary education that will start before February 1, 2021.",
-  "oas.hint": "Information about <a href=\"https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security.html\" target=\"_blank\">Old Age Security and related benefits</a> is available."
+  "oas.hint": "Information about <a href=\"https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security.html\" target=\"_blank\">Old Age Security and related benefits</a> is available.",
+  "feedback.help_link_url": "https://www.canada.ca/en/contact/contact-1-800-o-canada.html",
+  "feedback.help_link_text": "Need help with your application?"
 }
