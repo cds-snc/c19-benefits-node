@@ -1,30 +1,29 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-   <h3 class="benefit__header" id="student_loan">
-    {{__("student_loan.header")}}
-  </h3>
+{% set sectionId = 'student_loan' %}
 
-  <div class="benefit__main">
-    <ul class="benefit__featured_list">
-      {{ benefitLi("Payments automatically paused") }}
-      {{ benefitLi("From March 30, 2020 until September 30, 2020") }}
-    </ul>
+{% block header %}
+  {{__("student_loan.header")}}
+{% endblock %}
 
-    <div class="benefit__body">
+{% block featured_list_items %}
+  {{ benefitLi("Payments automatically paused") }}
+  {{ benefitLi("From March 30, 2020 until September 30, 2020") }}
+{% endblock %}
 
-      <strong>Good to know:</strong>
-      <ul>
-        <li>You don’t need to apply to pause your payments.</li>
-        <li> Pre-authorized payments are stopped.</li>
-        <li> Log in to your <a href='https://www.csnpe-nslsc.canada.ca/en/home' target='_blank'>National Student Loans Service Centre</a> account to see how much you will save.</li>
-      </ul>
+{% block body %}
+  <strong>Good to know:</strong>
+  <ul>
+    <li>You don’t need to apply to pause your payments.</li>
+    <li> Pre-authorized payments are stopped.</li>
+    <li> Log in to your <a href='https://www.csnpe-nslsc.canada.ca/en/home' target='_blank'>National Student Loans Service Centre</a> account to see how much you will save.</li>
+  </ul>
+{% endblock %}
 
-    </div>
-
-    {{ infoLink(
-          "student_loan",
-          "https://www.csnpe-nslsc.canada.ca/en/home",
-          "Learn more about help with student loan payments"
-      )}}
-  </div>
-</div>
+{% block info_link %}
+  {{ infoLink(
+    "student_loan",
+    "https://www.csnpe-nslsc.canada.ca/en/home",
+    "Learn more about help with student loan payments"
+  )}}
+{% endblock %}

@@ -1,18 +1,19 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-   <h3 class="benefit__header" id="province-ns">
-    {{__("province-ns.header")}}
-  </h3>
+{% set sectionId = 'province-ns' %}
 
-  <div class="benefit__body">
+{% block header %}
+  {{__("province-ns.header")}}
+{% endblock %}
 
-    <p>Certains gouvernements provinciaux offrent des programmes d’aide financière additionnels pendant la COVID-19.</p>
+{% block body %}
+  <p>Certains gouvernements provinciaux offrent des programmes d’aide financière additionnels pendant la COVID-19.</p>
+{% endblock %}
 
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "province-ns",
-        "https://novascotia.ca/coronavirus/support/fr/",
-        "En savoir plus à propos des prestations de la Nouvelle-Écosse"
-    )}}
-</div>
+    "province-ns",
+    "https://novascotia.ca/coronavirus/support/fr/",
+    "En savoir plus à propos des prestations de la Nouvelle-Écosse"
+  )}}
+{% endblock %}

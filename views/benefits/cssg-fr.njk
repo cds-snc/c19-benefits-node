@@ -1,27 +1,27 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-  <h3 class="benefit__header" id="cssg">
-    {{__("cssg.header")}}
-  </h3>
+{% set sectionId = 'cssg' %}
 
-  <div class="benefit__main">
-    <ul class="benefit__featured_list">
-      {{ benefitLi("Jusqu’à concurrence de 5000 $ à l’automne") }}
-    </ul>
+{% block header %}
+  {{__("cssg.header") }}
+{% endblock %}
 
-    <div class="benefit__body">
-      <strong>Bon à savoir :</strong>
-      <ul>
-        <li>Le gouvernement doit apporter des modifications à certaines lois afin de rendre cette prestation possible. Cela prendra un peu de temps et pourrait inflencer certains détails de cette prestation.</li>
-        <li>Nous mettrons ces renseignements à jour lorsqu’ils seront connus.</li>
-      </ul>
+{% block featured_list_items %}
+  {{ benefitLi("Jusqu’à concurrence de 5000 $ à l’automne") }}
+{% endblock %}
 
-    </div>
+{% block body %}
+  <strong>Bon à savoir :</strong>
+  <ul>
+    <li>Le gouvernement doit apporter des modifications à certaines lois afin de rendre cette prestation possible. Cela prendra un peu de temps et pourrait inflencer certains détails de cette prestation.</li>
+    <li>Nous mettrons ces renseignements à jour lorsqu’ils seront connus.</li>
+  </ul>
+{% endblock %}
 
-    {{ infoLink(
-          "cssg",
-          "https://pm.gc.ca/fr/nouvelles/communiques/2020/04/22/aide-aux-etudiants-et-aux-nouveaux-diplomes-touches-la-covid-19",
-          "Tenez vous informés au sujet de l’aide pour les étudiants"
-      )}}
-  </div>
-</div>
+{% block info_link %}
+  {{ infoLink(
+    "cssg",
+    "https://pm.gc.ca/fr/nouvelles/communiques/2020/04/22/aide-aux-etudiants-et-aux-nouveaux-diplomes-touches-la-covid-19",
+    "Tenez vous informés au sujet de l’aide pour les étudiants"
+  )}}
+{% endblock %}

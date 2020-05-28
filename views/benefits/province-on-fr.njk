@@ -1,22 +1,24 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-   <h3 class="benefit__header" id="province-on">
-    {{__("province-on.header")}}
-  </h3>
+{% set sectionId = 'province-on' %}
 
-  <div class="benefit__body">
+{% block header %}
+  {{__("province-on.header")}}
+{% endblock %}
 
-    <p>Certains gouvernements provinciaux offrent des programmes d’aide financière additionnels pendant la COVID-19.</p>
+{% block body %}
+  <p>Certains gouvernements provinciaux offrent des programmes d’aide financière additionnels pendant la COVID-19.</p>
 
-    <strong>Bon à savoir :</strong>
-    <ul>
-      <li>Information pour <a href="https://www.ontario.ca/fr/page/covid-19-soutien-aux-travailleurs" target="_blank">les travailleurs de la santé et les autres personnes en service en Ontario</a>.</li>
-    </ul>
-  </div>
+  <strong>Bon à savoir :</strong>
+  <ul>
+    <li>Information pour <a href="https://www.ontario.ca/fr/page/covid-19-soutien-aux-travailleurs" target="_blank">les travailleurs de la santé et les autres personnes en service en Ontario</a>.</li>
+  </ul>
+{% endblock %}
 
+{% block info_link %}
   {{ infoLink(
-        "province-on",
-        "https://www.ontario.ca/fr/page/covid-19-soutien-aux-personnes",
-        "En savoir plus à propos des prestations de l’Ontario"
-    )}}
-</div>
+    "province-on",
+    "https://www.ontario.ca/fr/page/covid-19-soutien-aux-personnes",
+    "En savoir plus à propos des prestations de l’Ontario"
+  )}}
+{% endblock %}

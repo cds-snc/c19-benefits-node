@@ -1,58 +1,57 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-  <h3 class="benefit__header" id="cesb">
-    {{__("cesb.header")}}
-  </h3>
-  
-  <div class="benefit__main">
-    <ul class="benefit__featured_list">
-      {{ benefitLi("From May to August 2020") }}
-      <li>
-        <div>
-          <p>
-            <img src="{{ asset('/img/check-circle.svg') }}" alt="">
-            <ul>
-              <li>
-                <strong>$1,250 per month</strong>
-              </li>
-              <li>
-                <strong>OR $2,000 per month if you have disabilities</strong>
-              </li>
-              <li>
-                <strong>OR $2,000 per month if you have dependants</strong>
-              </li>
-            </ul>
-          </p>
-        </div>
-      </li>
-    </ul>
+{% set sectionId = 'cesb' %}
 
-    <div class="benefit__body">
+{% block header %}
+  {{__("cesb.header")}}
+{% endblock %}
 
-      <strong>The benefit can help if you are in one of the following situations:</strong>
-      <ul>
-        <li>Are a post-secondary student or recent post-secondary graduate.</li>
-        <li>Are graduating high school in 2020 and have applied to post-secondary education that will start before February 1, 2021.</li>
-      </ul>
-
-      <strong>And you:</strong>
-      <ul>
-        <li>Are not receiving the Canada Emergency Response Benefit (CERB).</li>
-        <li>Are not able to work or you’re earning no more than $1,000 before taxes per month.</li>
-      </ul>
-
-      <strong>Good to know:</strong>
-      <ul>
-        <li>It will be available for 4 months between May and August 2020.</li>
-        <li>You can apply through your MyCRA account starting May 15, 2020.</li>
-      </ul>
-
+{% block featured_list_items %}
+  {{ benefitLi("From May to August 2020") }}
+  <li>
+    <div>
+      <p>
+        <img src="{{ asset('/img/check-circle.svg') }}" alt="">
+        <ul>
+          <li>
+            <strong>$1,250 per month</strong>
+          </li>
+          <li>
+            <strong>OR $2,000 per month if you have disabilities</strong>
+          </li>
+          <li>
+            <strong>OR $2,000 per month if you have dependants</strong>
+          </li>
+        </ul>
+      </p>
     </div>
+  </li>
+{% endblock %}
 
-    {{ infoLink(
-          "cesb",
-          "https://www.canada.ca/en/revenue-agency/services/benefits/emergency-student-benefit/cesb-who-apply.html",
-          "Check your eligibility for CESB"
-      )}}
-  </div>
-</div>
+{% block body %}
+  <strong>The benefit can help if you are in one of the following situations:</strong>
+  <ul>
+    <li>Are a post-secondary student or recent post-secondary graduate.</li>
+    <li>Are graduating high school in 2020 and have applied to post-secondary education that will start before February 1, 2021.</li>
+  </ul>
+
+  <strong>And you:</strong>
+  <ul>
+    <li>Are not receiving the Canada Emergency Response Benefit (CERB).</li>
+    <li>Are not able to work or you’re earning no more than $1,000 before taxes per month.</li>
+  </ul>
+
+  <strong>Good to know:</strong>
+  <ul>
+    <li>It will be available for 4 months between May and August 2020.</li>
+    <li>You can apply through your MyCRA account starting May 15, 2020.</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "cesb",
+    "https://www.canada.ca/en/revenue-agency/services/benefits/emergency-student-benefit/cesb-who-apply.html",
+    "Check your eligibility for CESB"
+  )}}
+{% endblock %}

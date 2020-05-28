@@ -1,20 +1,21 @@
-<div class="benefit" data-cy="rrif-benefit">
+{% extends "benefit-template.njk" %}
 
-   <h3 class="benefit__header" id="rrif">
-    {{__("rrif.header")}}
-  </h3>
+{% set sectionId = 'rrif' %}
 
-  <div class="benefit__main">
-    <div class="benefit__body">
-      <ul>
-        <li>The mandatory amount you need to withdraw from your RRIF in 2020 will be 25% lower so you can save more money.</li>
-      </ul>
-    </div>
+{% block header %}
+  {{__("rrif.header") }}
+{% endblock %}
 
-    {{ infoLink(
-          "rrif",
-          "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/registered-retirement-income-fund-rrif.html",
-          "Contact your bank for more details"
-      )}}
-  </div>
-</div>
+{% block body %}
+  <ul>
+    <li>The mandatory amount you need to withdraw from your RRIF in 2020 will be 25% lower so you can save more money.</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "rrif",
+    "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/registered-retirement-income-fund-rrif.html",
+    "Contact your bank for more details"
+  )}}
+{% endblock %}

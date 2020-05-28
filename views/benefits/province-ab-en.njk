@@ -1,18 +1,19 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-  <h3 class="benefit__header" id="province-ab">
-    {{__("province-ab.header")}}
-  </h3>
+{% set sectionId = 'province-ab' %}
 
-  <div class="benefit__body">
+{% block header %}
+  {{__("province-ab.header")}}
+{% endblock %}
 
-    <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+{% block body %}
+  <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+{% endblock %}
 
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "province-ab",
-        "https://www.alberta.ca/covid-19-supports-for-albertans.aspx",
-        "Learn more about Alberta’s response"
-    )}}
-</div>
+    "province-ab",
+    "https://www.alberta.ca/covid-19-supports-for-albertans.aspx",
+    "Learn more about Alberta’s response"
+  )}}
+{% endblock %}

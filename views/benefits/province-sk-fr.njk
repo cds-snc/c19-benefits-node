@@ -1,18 +1,19 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-   <h3 class="benefit__header" id="province-sk">
-    {{__("province-sk.header")}}
-  </h3>
+{% set sectionId = 'province-sk' %}
 
-  <div class="benefit__body">
+{% block header %}
+  {{__("province-sk.header")}}
+{% endblock %}
 
-    <p>Certains gouvernements provinciaux offrent des programmes d’aide financière additionnels pendant la COVID-19.</p>
+{% block body %}
+  <p>Certains gouvernements provinciaux offrent des programmes d’aide financière additionnels pendant la COVID-19.</p>
+{% endblock %}
 
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "province-sk",
-        "https://www.saskatchewan.ca/government/health-care-administration-and-provider-resources/treatment-procedures-and-guidelines/emerging-public-health-issues/2019-novel-coronavirus/covid-19-information-for-businesses-and-workers/support-for-workers#saskatchewan-support",
-        "En savoir plus à propos des prestations de la Saskatchewan  (anglais seulement)"
-    )}}
-</div>
+    "province-sk",
+    "https://www.saskatchewan.ca/government/health-care-administration-and-provider-resources/treatment-procedures-and-guidelines/emerging-public-health-issues/2019-novel-coronavirus/covid-19-information-for-businesses-and-workers/support-for-workers#saskatchewan-support",
+    "En savoir plus à propos des prestations de la Saskatchewan  (anglais seulement)"
+  )}}
+{% endblock %}

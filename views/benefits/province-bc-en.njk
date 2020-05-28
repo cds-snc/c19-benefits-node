@@ -1,18 +1,20 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-  <h3 class="benefit__header" id="province-bc">
-    {{__("province-bc.header")}}
-  </h3>
+{% set sectionId = 'province-bc' %}
 
-  <div class="benefit__body">
+{% block header %}
+  {{__("province-bc.header")}}
+{% endblock %}
 
-    <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+{% block body %}
+  <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+{% endblock %}
 
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "province-bc",
-        "https://www2.gov.bc.ca/gov/content/safety/emergency-preparedness-response-recovery/covid-19-provincial-support/financial-benefits#individuals",
-        "Learn more about BC benefits"
-    )}}
-</div>
+    "province-bc",
+    "https://www2.gov.bc.ca/gov/content/safety/emergency-preparedness-response-recovery/covid-19-provincial-support/financial-benefits#individuals",
+    "Learn more about BC benefits"
+  )}}
+{% endblock %}
+  

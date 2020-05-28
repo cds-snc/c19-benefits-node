@@ -1,18 +1,19 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-   <h3 class="benefit__header" id="province-mb">
-    {{__("province-mb.header")}}
-  </h3>
+{% set sectionId = 'province-mb' %}
 
-  <div class="benefit__body">
+{% block header %}
+  {{__("province-mb.header")}}
+{% endblock %}
 
-    <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+{% block body %}
+  <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+{% endblock %}
 
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "province-mb",
-        "https://www.gov.mb.ca/covid19/infomanitobans/index.html#individuals",
-        "Learn more about Manitoba benefits"
-    )}}
-</div>
+    "province-mb",
+    "https://www.gov.mb.ca/covid19/infomanitobans/index.html#individuals",
+    "Learn more about Manitoba benefits"
+  )}}
+{% endblock %}

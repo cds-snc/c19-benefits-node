@@ -1,18 +1,19 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-   <h3 class="benefit__header" id="province-nl">
-    {{__("province-nl.header")}}
-  </h3>
+{% set sectionId = 'province-nl' %}
 
-  <div class="benefit__body">
+{% block header %}
+  {{__("province-nl.header")}}
+{% endblock %}
 
-    <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+{% block body %}
+  <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+{% endblock %}
 
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "province-nl",
-        "https://www.gov.nl.ca/covid-19/resources/",
-        "Learn more about Newfoundland and Labrador’s response"
-    )}}
-</div>
+    "province-nl",
+    "https://www.gov.nl.ca/covid-19/resources/",
+    "Learn more about Newfoundland and Labrador’s response"
+  )}}
+{% endblock %}

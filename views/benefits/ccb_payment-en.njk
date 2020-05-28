@@ -1,37 +1,36 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-  <h3 class="benefit__header" id="ccb_payment">
-    {{__("ccb_payment.header")}}
-  </h3>
+{% set sectionId = 'ccb_payment' %}
 
-  <div class="benefit__main">
-    <ul class="benefit__featured_list">
-      {{ benefitLi("Automatic payment in May") }}
-      {{ benefitLi("$300 per child") }}
-    </ul>
+{% block header %}
+  {{__("ccb_payment.header")}}
+{% endblock %}
 
-    <div class="benefit__body">
+{% block featured_list_items %}
+  {{ benefitLi("Automatic payment in May") }}
+  {{ benefitLi("$300 per child") }}
+{% endblock %}
 
-      <strong>The benefit can help if you:</strong>
-      <ul>
-        <li>Care for a child under 18 years old.</li>
-      </ul>
+{% block body %}
+  <strong>The benefit can help if you:</strong>
+  <ul>
+    <li>Care for a child under 18 years old.</li>
+  </ul>
 
-      <strong>Good to know:</strong>
-      <ul>
-        <li>Check your bank account to find out if you’ve been receiving the Canada Child Benefit. </li>
-        <li>
-          <a href='https://www.canada.ca/en/revenue-agency/services/child-family-benefits/benefit-payment-dates.html'
-            target='_blank'>Dates of payments are available</a> online.
-        </li>
-      </ul>
+  <strong>Good to know:</strong>
+  <ul>
+    <li>Check your bank account to find out if you’ve been receiving the Canada Child Benefit. </li>
+    <li>
+      <a href='https://www.canada.ca/en/revenue-agency/services/child-family-benefits/benefit-payment-dates.html'
+        target='_blank'>Dates of payments are available</a> online.
+    </li>
+  </ul>
+{% endblock %}
 
-    </div>
-
-    {{ infoLink(
-          "ccb_payment",
-          "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html",
-          "Learn more about the Canada Child Benefit"
-      )}}
-  </div>
-</div>
+{% block info_link %}
+  {{ infoLink(
+      "ccb_payment",
+      "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html",
+      "Learn more about the Canada Child Benefit"
+  )}}
+{% endblock %}

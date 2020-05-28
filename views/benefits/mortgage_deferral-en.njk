@@ -1,29 +1,28 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-  <h3 class="benefit__header" id="mortgage_deferral">
-    {{__("mortgage_deferral.header")}}
-  </h3>
+{% set sectionId = 'mortgage_deferral' %}
 
-  <div class="benefit__main">
-    <ul class="benefit__featured_list">
-      {{ benefitLi("Skip mortgage payments until you’re able to pay again") }}
-    </ul>
+{% block header %}
+  {{__("mortgage_deferral.header")}}
+{% endblock %}
 
-    <div class="benefit__body">
+{% block featured_list_items %}
+  {{ benefitLi("Skip mortgage payments until you’re able to pay again") }}
+{% endblock %}
 
-      <strong>Good to know:</strong>
-      <ul>
-        <li>The bank will still charge interest.</li>
-        <li> When you’re able to pay again, you’ll have to pay the interest that was collected during the deferral, as well as your regular payments.</li>
-        <li> You can also talk to your bank about special payment arrangements or re-amortizing your mortgage.</li>
-      </ul>
+{% block body %}
+  <strong>Good to know:</strong>
+  <ul>
+    <li>The bank will still charge interest.</li>
+    <li> When you’re able to pay again, you’ll have to pay the interest that was collected during the deferral, as well as your regular payments.</li>
+    <li> You can also talk to your bank about special payment arrangements or re-amortizing your mortgage.</li>
+  </ul>
+{% endblock %}
 
-    </div>
-
-    {{ infoLink(
-          "mortgage_deferral",
-          "https://cba.ca/mortgage-deferral-to-help-canadians-experiencing-financial-hardship-due-to-covid-19",
-          "Learn more about help with your mortgage"
-      )}}
-  </div>
-</div>
+{% block info_link %}
+  {{ infoLink(
+    "mortgage_deferral",
+    "https://cba.ca/mortgage-deferral-to-help-canadians-experiencing-financial-hardship-due-to-covid-19",
+    "Learn more about help with your mortgage"
+  )}}
+{% endblock %}

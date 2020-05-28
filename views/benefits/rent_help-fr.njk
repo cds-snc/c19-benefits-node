@@ -1,21 +1,22 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-   <h3 class="benefit__header" id="rent_help">
-    {{__("rent_help.header")}}
-  </h3>
+{% set sectionId = 'rent_help' %}
 
-  <div class="benefit__main">
-    <div class="benefit__body">
-      <ul>
-        <li>Les gouvernements provinciaux sont responsables de la réglementation des logements locatifs.</li>
-        <li> Dans la majorité des provinces et territoires, vous ne pouvez pas être expulsé pour ne pas avoir payé votre loyer.</li>
-      </ul>
-    </div>
+{% block header %}
+  {{__("rent_help.header")}}
+{% endblock %}
 
-    {{ infoLink(
-          "rent_help",
-          "https://www.cmhc-schl.gc.ca/fr/rental-housing/covid-19-eviction-bans-and-suspensions-to-support-renters",
-          "Vérifier auprès de votre gouvernement provincial pour en savoir plus"
-      )}}
-  </div>
-</div>
+{% block body %}
+  <ul>
+    <li>Les gouvernements provinciaux sont responsables de la réglementation des logements locatifs.</li>
+    <li> Dans la majorité des provinces et territoires, vous ne pouvez pas être expulsé pour ne pas avoir payé votre loyer.</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "rent_help",
+    "https://www.cmhc-schl.gc.ca/fr/rental-housing/covid-19-eviction-bans-and-suspensions-to-support-renters",
+    "Vérifier auprès de votre gouvernement provincial pour en savoir plus"
+  )}}
+{% endblock %}

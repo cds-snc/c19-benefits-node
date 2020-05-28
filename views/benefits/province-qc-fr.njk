@@ -1,18 +1,19 @@
-<div class="benefit">
+{% extends "benefit-template.njk" %}
 
-   <h3 class="benefit__header" id="province-qc">
-    {{__("province-qc.header")}}
-  </h3>
+{% set sectionId = 'province-qc' %}
 
-  <div class="benefit__body">
+{% block header %}
+  {{__("province-qc.header")}}
+{% endblock %}
 
-    <p>Certains gouvernements provinciaux offrent des programmes d’aide financière additionnels pendant la COVID-19.</p>
+{% block body %}
+  <p>Certains gouvernements provinciaux offrent des programmes d’aide financière additionnels pendant la COVID-19.</p>
+{% endblock %}
 
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "province-qc",
-        "https://www.quebec.ca/sante/problemes-de-sante/a-z/coronavirus-2019/aide-financiere-covid19/",
-        "En savoir plus à propos des prestations du Québec"
-    )}}
-</div>
+    "province-qc",
+    "https://www.quebec.ca/sante/problemes-de-sante/a-z/coronavirus-2019/aide-financiere-covid19/",
+    "En savoir plus à propos des prestations du Québec"
+  )}}
+{% endblock %}

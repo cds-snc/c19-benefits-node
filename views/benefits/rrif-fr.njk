@@ -1,23 +1,24 @@
-<div class="benefit" data-cy="rrif-benefit">
+{% extends "benefit-template.njk" %}
 
-   <h3 class="benefit__header" id="rrif">
-    {{__("rrif.header")}}
-  </h3>
+{% set sectionId = 'rrif' %}
 
-  <div class="benefit__main">
-    <div class="benefit__body">
-      <ul>
-        <li>
-          Le montant obligatoire que vous devrez retirer de votre fond enregistré de revenu de retraire
-          en 2020 sera 25% plus bas afin que vous puissiez économiser.
-        </li>
-      </ul>
-    </div>
+{% block header %}
+  {{__("rrif.header")}}
+{% endblock %}
 
-    {{ infoLink(
-          "rrif",
-          "https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/fonds-enregistre-revenu-retraite-ferr.html",
-          "Contactez votre banque pour plus de détails"
-      )}}
-  </div>
-</div>
+{% block body %}
+  <ul>
+    <li>
+      Le montant obligatoire que vous devrez retirer de votre fond enregistré de revenu de retraire
+      en 2020 sera 25% plus bas afin que vous puissiez économiser.
+    </li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "rrif",
+    "https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/fonds-enregistre-revenu-retraite-ferr.html",
+    "Contactez votre banque pour plus de détails"
+  )}}
+{% endblock %}
