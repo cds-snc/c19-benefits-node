@@ -12,10 +12,17 @@
   }
 
   .benefit {
-    @apply mt-5 p-5 bg-white border-l-4 border-green-darker text-lg;
+    @apply bg-white border-l-4 border-green-darker text-lg mb-6;
 
     &__header {
-      @apply text-white font-bold -mx-5 -mt-5 pl-5 text-2xl mb-6 p-4 bg-green-darker;
+      @apply text-white font-bold pl-5 text-2xl p-4 bg-green-darker cursor-pointer;
+      h3 {
+        @apply inline;
+      }
+    }
+
+    &__main {
+      @apply p-4;
     }
 
     &__featured_list {
