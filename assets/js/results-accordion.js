@@ -1,129 +1,28 @@
-const $ = window.$;
-const { __ } = require('./i18n')
 
-$(document).ready(function () {
-  // Outer container open/close
-  const $container = $('.benefits--unavailable .benefits__list');
-  $container.addClass('hidden');
+const details = document.querySelectorAll(".benefits--unavailable details");
 
-  $('#unavailableBenefitsButton').removeClass('hidden');
+details.forEach((targetDetail) => {
+  targetDetail.removeAttribute('open');
+});
 
-  $('#unavailableBenefitsButton').on('click', function (event) {
-    event.preventDefault();
+const container = document.querySelector('.benefits--unavailable .benefits__list');
+container.classList.add('hidden');
 
-    if ($(this).attr('aria-expanded') === 'true') {
-      $container.addClass('hidden');
-      $container.attr('aria-hidden', true);
-      $(this).attr('aria-expanded', false);
-      $(this).find('div.closed').removeClass('hidden');
-      $(this).find('div.open').addClass('hidden');
-    } else {
-      $container.removeClass('hidden');
-      $container.attr('aria-hidden', false);
-      $(this).attr('aria-expanded', true);
-      $(this).find('div.closed').addClass('hidden');
-      $(this).find('div.open').removeClass('hidden');
-    }
-  })
+const expando = document.getElementById('unavailableBenefitsButton');
+expando.classList.remove('hidden');
 
-  // Inner container open/close
-  // Hide all cards by default
-  $('.benefits--unavailable .benefit__main')
-    .addClass('hidden');
-
-  const $accordion = $('.benefits--unavailable .benefits__list');
-  const plusImg = '<img src="/img/plus.svg" class="w-6 h-6 inline" alt="">';
-  const minusImg = '<img src="/img/minus.svg" class="w-6 h-6 inline" alt="">';
-
-  // Insert the "More info" link into each card
-  $('.benefits--unavailable .benefit__main').each(function (index, elem) {
-    const $heading = $(this).prev(':header');
-    $('<button class="acc-trigger cursor-pointer"><span class="moreless underline">' + __('results.more_info') + '</span> <span class="sr-only">' + __('results.about') + ' ' + $heading.text() + '</span></button>')
-      .insertBefore($(this));
-  })
-
-  // Loop over all the acc-trigger links we just created
-  $('.acc-trigger').each(function (index, elem) {
-    // Generate unique Ids to populate aria-controls and aria-labelledby
-    const accControlId = 'acc_control_' + index
-    const containerId = 'benefit_' + index
-
-    const $container = $(elem).next('div.benefit__main')
-
-    // Attach aria attributes and unique id to accordion controller
-    $(this).attr('aria-expanded', false)
-    $(this).attr('aria-controls', containerId)
-    $(this).attr('id', accControlId)
-    $(this).prepend(plusImg);
-
-    // Attach aria-labelled by and unique id to accordion container
-    $container.attr('aria-labelledby', accControlId)
-    $container.attr('role', 'region');
-    $container.attr('id', containerId)
-
-    // Attach a click handler to toggle between more/less
-    $(this).on('click', function (e) {
-      e.preventDefault()
-      const $container = $(this).next('div.benefit__main')
-
-      // Toggle between expanded/not
-      if ($(this).attr('aria-expanded') === 'true') {
-        $(this).find('span.moreless').text(__('results.more_info'))
-        $(this).find('img').replaceWith(plusImg);
-        $container.addClass('hidden')
-        $container.attr('aria-hidden', true);
-        $(this).attr('aria-expanded', false)
-      } else {
-        $(this).find('span.moreless').text(__('results.less_info'))
-        $(this).find('img').replaceWith(minusImg);
-        $container.removeClass('hidden')
-        $container.attr('aria-hidden', false);
-        $(this).attr('aria-expanded', true)
-      }
-    })
-  })
-
-  // Grab the list of generated triggers
-  const triggers = Array.prototype.slice.call($('.acc-trigger'));
-
-  // Attach some key triggers for keyboard navigation
-  $accordion.on('keydown', function (event) {
-    const target = event.target;
-    const key = event.which.toString();
-
-    // 33 = Page Up, 34 = Page Down
-    var ctrlModifier = (event.ctrlKey && key.match(/33|34/));
-
-    if (target.classList.contains('acc-trigger')) {
-      // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
-      // 38 = Up, 40 = Down
-      if (key.match(/38|40/) || ctrlModifier) {
-
-        const index = triggers.indexOf(target);
-
-        var direction = (key.match(/34|40/)) ? 1 : -1;
-        var length = triggers.length;
-        var newIndex = (index + length + direction) % length;
-
-        triggers[newIndex].focus();
-
-        event.preventDefault();
-      }
-      else if (key.match(/35|36/)) {
-        // 35 = End, 36 = Home keyboard operations
-        switch (key) {
-          // Go to first accordion
-          case '36':
-            triggers[0].focus();
-            break;
-          // Go to last accordion
-          case '35':
-            triggers[triggers.length - 1].focus();
-            break;
-        }
-        event.preventDefault();
-
-      }
-    }
-  })
+expando.addEventListener("click", () => {
+  if (expando.getAttribute('aria-expanded') === 'true') {
+    container.classList.add('hidden')
+    container.setAttribute('aria-hidden', true)
+    expando.setAttribute('aria-expanded', false)
+    expando.querySelector('div.closed').classList.remove('hidden')
+    expando.querySelector('div.open').classList.add('hidden')
+  } else {
+    container.classList.remove('hidden')
+    container.setAttribute('aria-hidden', false)
+    expando.setAttribute('aria-expanded', true)
+    expando.querySelector('div.closed').classList.add('hidden')
+    expando.querySelector('div.open').classList.remove('hidden')
+  }
 });
