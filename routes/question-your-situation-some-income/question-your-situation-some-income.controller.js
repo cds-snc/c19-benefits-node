@@ -31,7 +31,7 @@ const postSomeIncome = (req, res) => {
     return res.redirect(res.locals.routePath('question-reduced-income'))
   }
 
-  if (req.body.some_income === 'quarantine') {
+  if (['quarantine','none-of-the-above'].includes(req.body.some_income)) {
     pruneSessionData(req, ['rrif', 'reduced-income', 'gross-income'])
     return res.redirect(res.locals.routePath('question-mortgage-payments'))
   }
