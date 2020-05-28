@@ -13,7 +13,6 @@ test('Can send post request some-income route ', async () => {
   expect(response.statusCode).toBe(302)
 })
 
-
 describe('Test redirects for some-income ', () => {
   const route = app.routes.get('question-your-situation-some-income')
 
@@ -24,27 +23,33 @@ describe('Test redirects for some-income ', () => {
     },
     {
       dest: 'question-reduced-income',
-      values: ['hours-reduced', 'selfemployed-some-income', 'employed-lost-a-job'],
+      values: [
+        'hours-reduced',
+        'selfemployed-some-income',
+        'employed-lost-a-job',
+      ],
     },
     {
       dest: 'question-mortgage-payments',
-      values: ['quarantine'],
+      values: ['quarantine', 'none-of-the-above'],
     },
   ]
 
   redirects.map((redirect) => {
-    redirect.values.map(value => {
+    redirect.values.map((value) => {
       test(`Redirects to ${redirect.dest} with a post value of ${value} `, async () => {
         const dest = app.routes.get(redirect.dest)
 
-        await request(app).post(route.path.en).send({
-          some_income: value,
-        })
-        .expect(302)
-        .then(response => {
-          expect(response.headers.location).toBe(dest.path.en)
-        })
+        await request(app)
+          .post(route.path.en)
+          .send({
+            some_income: value,
+          })
+          .expect(302)
+          .then((response) => {
+            expect(response.headers.location).toBe(dest.path.en)
+          })
       })
     })
   })
-}) 
+})
