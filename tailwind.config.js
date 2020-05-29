@@ -1,11 +1,16 @@
+const { colors } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   theme: {
     extend: {
       colors: {
         blue: {
+          ...colors.blue,
           '200': '#E1F0F8',
           '800': '#194D7B',
           '900': '#38414d',
+          'lighter': '#E1F0F8',
+          'darker': '#194D7B',
         },
         gray: {
           '100': '#f8f8f8',
@@ -15,8 +20,22 @@ module.exports = {
           '600': '#808080',
           '700': '#666666',
         },
+        red: {
+          ...colors.red,
+          'lighter': '#FFE7E7',
+          'darker': '#C80707',
+        },
+        green: {
+          ...colors.green,
+          'lighter': '#DFF0D8',
+          'darker': '#138A00',
+        },
+      },
+      maxWidth: {
+        '950': '950px',
       },
     },
+
     boxShadow: {
       result: '0px 0px 12px -2px rgba(0,0,0,0.4)',
     },

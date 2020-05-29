@@ -1,29 +1,30 @@
-<div class="m-5 p-5 shadow-result" data-cy="cerb-benefit">
+{% extends "benefit-template.njk" %}
 
-  <h2 class="text-2xl font-bold mb-6" id="cerb">
-    {{__("cerb.header")}}
-  </h2>
+{% set sectionId = 'cerb' %}
 
-  <ul class="list-none list-outside pl-0">
-    {{ blueLI("500 $ par semaine") }}
-    {{ blueLI("Jusqu’à 16 semaines", "tant que vous répondez aux critères d’admissibilité") }}
-    {{ blueLI("À recevoir au plus tard 10 jours après la demande") }}
+{% block header %}
+  {{__("cerb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("500 $ par semaine") }}
+  {{ benefitLi("Jusqu’à 16 semaines", "tant que vous répondez aux critères d’admissibilité") }}
+  {{ benefitLi("À recevoir au plus tard 10 jours après la demande") }}
+{% endblock %}
+
+{% block body %}
+  <strong>Prochaines étapes :</strong>
+  <ul>
+    <li>Vous devrez répondre à quelques questions afin de déterminer si vous devez présenter la demande auprès de l’agence du revenu du Canada (ARC) ou Services Canada.</li>
+    <li>L’application vous demandera de confirmer que vous répondez aux critères d’admissibilité. Lisez attentivement les détails.</li>
+    <li>Ces montants sont imposables.</li>
   </ul>
+{% endblock %}
 
-  <div class="pb-5 mt-6">
-
-    <strong>Prochaines étapes :</strong>
-    <ul class='list-outside list-disc'>
-      <li>Vous devrez répondre à quelques questions afin de déterminer si vous devez présenter la demande auprès de l’agence du revenu du Canada (ARC) ou Services Canada.</li>
-      <li>L’application vous demandera de confirmer que vous répondez aux critères d’admissibilité. Lisez attentivement les détails.</li>
-      <li>Ces montants sont imposables.</li>
-    </ul>
-
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "cerb",
-        "https://www.canada.ca/fr/services/prestations/ae/pcusc-application.html",
-        "Découvrez comment appliquer"
-    )}}
-</div>
+      "cerb",
+      "https://www.canada.ca/fr/services/prestations/ae/pcusc-application.html",
+      "Découvrez comment appliquer"
+  )}}
+{% endblock %}

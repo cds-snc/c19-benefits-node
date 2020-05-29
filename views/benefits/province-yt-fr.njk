@@ -1,18 +1,19 @@
-<div class="m-5 p-5 shadow-result">
+{% extends "benefit-template.njk" %}
 
-  <h2 class="text-2xl font-bold mb-6" id="province-yt">
-    {{__("province-yt.header")}}
-  </h2>
+{% set sectionId = 'province-yt' %}
 
-  <div class="pb-5 mt-6">
+{% block header %}
+  {{__("province-yt.header")}}
+{% endblock %}
 
-    <p>Certains gouvernements provinciaux et territoriaux offrent des programmes d’aide financière additionnels pendant la COVID-19.</p>
+{% block body %}
+  <p>Certains gouvernements provinciaux et territoriaux offrent des programmes d’aide financière additionnels pendant la COVID-19.</p>
+{% endblock %}
 
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "province-yt",
-        "https://yukon.ca/fr/covid-19-support-yukoners",
-        "En savoir plus à propos du plan du Yukon"
-    )}}
-</div>
+    "province-yt",
+    "https://yukon.ca/fr/covid-19-support-yukoners",
+    "En savoir plus à propos du plan du Yukon"
+  )}}
+{% endblock %}

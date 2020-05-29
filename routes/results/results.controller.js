@@ -1,7 +1,8 @@
 const { routeUtils, getSessionData } = require('./../../utils')
 const { Schema } = require('./schema.js')
-const { getBenefits, getProvincialBenefits } = require('./getBenefits')
+const { getBenefits, getProvincialBenefits, getAllBenefits } = require('./getBenefits')
 const _ = require('lodash')
+
 
 const getData = (req, res) => {
   /**
@@ -25,7 +26,13 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       const data = getData(req, res);
+
+      // get All Benefits (except provinces and GST)
+      const benefitsFullList = _.pull(getAllBenefits(), 'gst_credit');
+
       const benefits = getBenefits(data);
+      const unavailableBenefits = benefitsFullList.filter((benefit) => !benefits.includes(benefit))
+
       const provincial = getProvincialBenefits(data);
 
       let title = res.__n('results_title', benefits.length);
@@ -36,6 +43,7 @@ module.exports = (app, route) => {
 
       res.render(name, routeUtils.getViewData(req, {
         benefits: benefits,
+        unavailableBenefits: unavailableBenefits,
         provincial: provincial,
         no_results: benefits.length === 0,
         hideBackButton: true,

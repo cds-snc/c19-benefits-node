@@ -10,8 +10,10 @@ All notable changes to this product will be documented in this file.
 
 ### Changed:
 * Added none of the above to *No Income*, *Some Income*, and *Unchanged Income* questions.
+* Redesigned Results screen that displays benefits that we know about, but you weren't eligible for, with accordion expand/collapse sections
 
-## 2020-05-27
+### Added:
+* Custom i18n module for client-side access to locale files
 
 ### Removed:
 * Removed the ei_regular_cerb and ei_sickness_cerb cards and updated the calculations/tests

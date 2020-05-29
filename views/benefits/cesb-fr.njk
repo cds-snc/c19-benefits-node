@@ -1,56 +1,57 @@
-<div class="m-5 p-5 shadow-result">
+{% extends "benefit-template.njk" %}
 
-  <h2 class="text-2xl font-bold mb-6" id="cesb">
-    {{__("cesb.header")}}
-  </h2>
+{% set sectionId = 'cesb' %}
 
-  <ul class="list-none list-outside pl-0">
-    {{ blueLI("De mai à août 2020") }}
-    <li>
-      <div class="bg-blue-200 p-5 m-1 text-blue-800">
-        <p class="relative m-0 pl-8 ">
-          <img src="{{ asset('/img/check-circle.svg') }}" class="w-6 h-6 mt-1 -ml-8 absolute fill-current" alt="">
-          <ul class='list-none  mt-2'>
-            <li>
-              <strong>1250 $ par mois </strong>
-            </li>
-            <li>
-              <strong>OU 2000 $ par mois si vous avez une incapacité permanente</strong>
-            </li>
-            <li>
-              <strong>OU 2000 $ par mois si vous avez des personnes à charge</strong>
-            </li>
-          </ul>
-        </p>
-      </div>
-    </li>
+{% block header %}
+  {{__("cesb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("De mai à août 2020") }}
+  <li>
+    <div>
+      <p>
+        <img src="{{ asset('/img/check-circle.svg') }}" alt="">
+        <ul>
+          <li>
+            <strong>1250 $ par mois </strong>
+          </li>
+          <li>
+            <strong>OU 2000 $ par mois si vous avez une incapacité permanente</strong>
+          </li>
+          <li>
+            <strong>OU 2000 $ par mois si vous avez des personnes à charge</strong>
+          </li>
+        </ul>
+      </p>
+    </div>
+  </li>
+{% endblock %}
+
+{% block body %}
+  <strong>Cette prestation peut vous aider si l’un des scénario suivants s’appliquent à vous :</strong>
+  <ul>
+    <li>Vous êtes étudiant au niveau postsecondaire ou récemment diplômé d’un programme postsecondaire.</li>
+    <li>Vous recevrez votre diplôme d’études secondaires en 2020 et avez appliqué pour un programme d’études postsecondaires débutant avant le 1er février 2021.</li>
   </ul>
 
-  <div class="pb-5 mt-6">
+  <strong>De plus :</strong>
+  <ul>
+    <li>vous ne recevez pas la Prestation canadienne d’urgence. (PCU)</li>
+    <li>vous ne pouvez pas travailler ou ne gagnez pas plus de 1000 $ par mois, avant impôts.</li>
+  </ul>
 
-    <strong>Cette prestation peut vous aider si l’un des scénario suivants s’appliquent à vous :</strong>
-    <ul class='list-outside list-disc'>
-      <li>Vous êtes étudiant au niveau postsecondaire ou récemment diplômé d’un programme postsecondaire.</li>
-      <li>Vous recevrez votre diplôme d’études secondaires en 2020 et avez appliqué pour un programme d’études postsecondaires débutant avant le 1er février 2021.</li>
-    </ul>
+  <strong>Bon à savoir :</strong>
+  <ul>
+    <li>Ce programme d’aide sera disponible pour 4 mois entre mai et août 2020.</li>
+    <li>Vous pouvez appliquer via Mon dossier de l’ARC dès le 15 mai 2020.</li>
+  </ul>
+{% endblock %}
 
-    <strong>De plus :</strong>
-    <ul class="list-outside list-disc">
-      <li>vous ne recevez pas la Prestation canadienne d’urgence. (PCU)</li>
-      <li>vous ne pouvez pas travailler ou ne gagnez pas plus de 1000 $ par mois, avant impôts.</li>
-    </ul>
-
-    <strong>Bon à savoir :</strong>
-    <ul class="list-outside list-disc">
-      <li>Ce programme d’aide sera disponible pour 4 mois entre mai et août 2020.</li>
-      <li>Vous pouvez appliquer via Mon dossier de l’ARC dès le 15 mai 2020.</li>
-    </ul>
-
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "cesb",
-        "https://www.canada.ca/fr/agence-revenu/services/prestations/prestation-urgence-etudiants/pcue-qui-demande.html",
-        "Vérifier votre admissibilité à la PCUE"
-    )}}
-</div>
+    "cesb",
+    "https://www.canada.ca/fr/agence-revenu/services/prestations/prestation-urgence-etudiants/pcue-qui-demande.html",
+    "Vérifier votre admissibilité à la PCUE"
+  )}}
+{% endblock %}

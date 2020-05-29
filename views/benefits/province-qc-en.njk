@@ -1,18 +1,19 @@
-<div class="m-5 p-5 shadow-result">
+{% extends "benefit-template.njk" %}
 
-  <h2 class="text-2xl font-bold mb-6" id="province-qc">
-    {{__("province-qc.header")}}
-  </h2>
+{% set sectionId = 'province-qc' %}
 
-  <div class="pb-5 mt-6">
+{% block header %}
+  {{__("province-qc.header")}}
+{% endblock %}
 
-    <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+{% block body %}
+  <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+{% endblock %}
 
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "province-qc",
-        "https://www.quebec.ca/en/health/health-issues/a-z/2019-coronavirus/financial-assistance-covid19/",
-        "Learn more about Quebec benefits"
-    )}}
-</div>
+    "province-qc",
+    "https://www.quebec.ca/en/health/health-issues/a-z/2019-coronavirus/financial-assistance-covid19/",
+    "Learn more about Quebec benefits"
+  )}}
+{% endblock %}

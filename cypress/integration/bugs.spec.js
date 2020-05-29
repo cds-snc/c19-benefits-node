@@ -23,7 +23,7 @@ describe('Found Bugs', () => {
       cy.answerQuestion('#student_debtno')
       cy.answerQuestion('#plans_for_schoolno')
       cy.answerQuestion('#oasno')
-      cy.get('[data-cy=benefit-list]').children().should('have.length', '1')
+      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
       cy.get('[data-cy=cerb-benefit]')
     })
 
@@ -38,7 +38,7 @@ describe('Found Bugs', () => {
       cy.answerQuestion('#student_debtno')
       cy.answerQuestion('#plans_for_schoolno')
       cy.answerQuestion('#oasno')
-      cy.get('[data-cy=benefit-list]').children().should('have.length', '1')
+      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
       cy.get('[data-cy=rrif-benefit]')
 
       cy.visit('/en/your-situation/some-income')
@@ -48,7 +48,7 @@ describe('Found Bugs', () => {
       cy.answerQuestion('#student_debtno')
       cy.answerQuestion('#plans_for_schoolno')
       cy.answerQuestion('#oasno')
-      cy.get('[data-cy=benefit-list]').children().should('have.length', '1')
+      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
       cy.get('[data-cy=cerb-benefit]')
     })
 
@@ -63,7 +63,7 @@ describe('Found Bugs', () => {
       cy.answerQuestion('#student_debtno')
       cy.answerQuestion('#plans_for_schoolno')
       cy.answerQuestion('#oasno')
-      cy.get('[data-cy=benefit-list]').children().should('have.length', '2')
+      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
       cy.get('[data-cy=rrif-benefit]')
 
       cy.visit('/en/lost-job')
@@ -74,7 +74,7 @@ describe('Found Bugs', () => {
       cy.answerQuestion('#student_debtno')
       cy.answerQuestion('#plans_for_schoolno')
       cy.answerQuestion('#oasno')
-      cy.get('[data-cy=benefit-list]').children().should('have.length', '0')
+      cy.get('[data-cy=eligible-benefit-list]').should('not.exist')
     })
   })
 })

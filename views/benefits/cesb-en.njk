@@ -1,56 +1,57 @@
-<div class="m-5 p-5 shadow-result">
+{% extends "benefit-template.njk" %}
 
-  <h2 class="text-2xl font-bold mb-6" id="cesb">
-    {{__("cesb.header")}}
-  </h2>
+{% set sectionId = 'cesb' %}
 
-  <ul class="list-none list-outside pl-0">
-    {{ blueLI("From May to August 2020") }}
-    <li>
-      <div class="bg-blue-200 p-5 m-1 text-blue-800">
-        <p class="relative m-0 pl-8 ">
-          <img src="{{ asset('/img/check-circle.svg') }}" class="w-6 h-6 mt-1 -ml-8 absolute fill-current" alt="">
-          <ul class='list-none  mt-2'>
-            <li>
-              <strong>$1,250 per month</strong>
-            </li>
-            <li>
-              <strong>OR $2,000 per month if you have disabilities</strong>
-            </li>
-            <li>
-              <strong>OR $2,000 per month if you have dependants</strong>
-            </li>
-          </ul>
-        </p>
-      </div>
-    </li>
+{% block header %}
+  {{__("cesb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("From May to August 2020") }}
+  <li>
+    <div>
+      <p>
+        <img src="{{ asset('/img/check-circle.svg') }}" alt="">
+        <ul>
+          <li>
+            <strong>$1,250 per month</strong>
+          </li>
+          <li>
+            <strong>OR $2,000 per month if you have disabilities</strong>
+          </li>
+          <li>
+            <strong>OR $2,000 per month if you have dependants</strong>
+          </li>
+        </ul>
+      </p>
+    </div>
+  </li>
+{% endblock %}
+
+{% block body %}
+  <strong>The benefit can help if you are in one of the following situations:</strong>
+  <ul>
+    <li>Are a post-secondary student or recent post-secondary graduate.</li>
+    <li>Are graduating high school in 2020 and have applied to post-secondary education that will start before February 1, 2021.</li>
   </ul>
 
-  <div class="pb-5 mt-6">
+  <strong>And you:</strong>
+  <ul>
+    <li>Are not receiving the Canada Emergency Response Benefit (CERB).</li>
+    <li>Are not able to work or you’re earning no more than $1,000 before taxes per month.</li>
+  </ul>
 
-    <strong>The benefit can help if you are in one of the following situations:</strong>
-    <ul class='list-outside list-disc'>
-      <li>Are a post-secondary student or recent post-secondary graduate.</li>
-      <li>Are graduating high school in 2020 and have applied to post-secondary education that will start before February 1, 2021.</li>
-    </ul>
+  <strong>Good to know:</strong>
+  <ul>
+    <li>It will be available for 4 months between May and August 2020.</li>
+    <li>You can apply through your MyCRA account starting May 15, 2020.</li>
+  </ul>
+{% endblock %}
 
-    <strong>And you:</strong>
-    <ul class='list-outside list-disc'>
-      <li>Are not receiving the Canada Emergency Response Benefit (CERB).</li>
-      <li>Are not able to work or you’re earning no more than $1,000 before taxes per month.</li>
-    </ul>
-
-    <strong>Good to know:</strong>
-    <ul class='list-outside list-disc'>
-      <li>It will be available for 4 months between May and August 2020.</li>
-      <li>You can apply through your MyCRA account starting May 15, 2020.</li>
-    </ul>
-
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "cesb",
-        "https://www.canada.ca/en/revenue-agency/services/benefits/emergency-student-benefit/cesb-who-apply.html",
-        "Check your eligibility for CESB"
-    )}}
-</div>
+    "cesb",
+    "https://www.canada.ca/en/revenue-agency/services/benefits/emergency-student-benefit/cesb-who-apply.html",
+    "Check your eligibility for CESB"
+  )}}
+{% endblock %}

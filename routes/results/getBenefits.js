@@ -1,3 +1,6 @@
+const glob = require('glob')
+const path = require('path')
+
 /*
 This method checks to see if an input object matches a pattern
 This pattern can have scalar values, or arrays as the item being matched
@@ -169,7 +172,31 @@ const getProvincialBenefits = (data) => {
   return data.province ? 'province-' + data.province : false
 }
 
+const getAllBenefits = () => {
+  const benefitList = [];
+
+  // Get a list of all the benefit cards (except provincial)
+  const files = glob.sync("**/*.njk", {
+    cwd: path.join(__dirname, '../../views/benefits'),
+    ignore: 'province-*',
+  })
+
+  // Grab the benefit name portion of the filename
+  files.forEach((file) => {
+    const fileParts = file.split('-');
+    benefitList.push(fileParts[0]);
+  })
+
+  // We just the unique items in the list
+  const benefitsFullList = benefitList.filter(function (item, pos) {
+    return benefitList.indexOf(item) === pos;
+  })
+
+  return benefitsFullList;
+}
+
 module.exports = {
   getBenefits,
   getProvincialBenefits,
+  getAllBenefits,
 }
