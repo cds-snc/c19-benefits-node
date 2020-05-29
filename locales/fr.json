@@ -182,5 +182,7 @@
   "your_situation.unchanged_income.3": "Vous êtes retraité.",
   "your_situation.unchanged_income.4": "Vous étiez étudiant dans une institution postsecondaire lors de l’année scolaire 2019-20 et ne pouvez trouver un emploi.",
   "your_situation.unchanged_income.5": "Vous obtiendrez un diplôme d’études secondaires pour l’année scolaire 2019-2020 et avez appliqué pour un programme d’études postsecondaires débutant avant le 1er février 2021.",
-  "your_situation.unchanged_income.none": "Aucune de ces options."
+  "your_situation.unchanged_income.none": "Aucune de ces options.",
+  "start.enable_cookies_title": "Activez les témoins pour utiliser ce service",
+  "start.enable_cookies_body": "Vous semblez avoir désactivé les témoins. Ce service utilise les témoins afin d’afficher vos résultats. Vous ne pourrez recevoir de résultats sans activer les témoins."
 }
