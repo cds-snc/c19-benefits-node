@@ -4,6 +4,11 @@
 {% block content %}
     <h1>{{ __('start.title') }}</h1>
 
+    <div class="bg-red-100 border-l-4 border-red-800 p-4 mt-8 hidden cookie-warning">
+        <h2 class="text-2xl">{{ __('start.enable_cookies_title') }}</h2>
+        <p class="p-0">{{ __('start.enable_cookies_body') }}</p>
+    </div>
+
     <div>
         <p class="mb-8">{{ __('start.intro.2') | safe }}</p>
         <h2 class="text-2xl">{{ __('start.subheader') }}</h2>

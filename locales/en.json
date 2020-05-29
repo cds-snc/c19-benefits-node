@@ -192,5 +192,7 @@
   "your_situation.unchanged_income.3": "You’re retired.",
   "your_situation.unchanged_income.4": "You were a college or university student during the 2019-20 school year and now cannot find work.",
   "your_situation.unchanged_income.5": "You’re graduating high school in the 2019-20 school year and have applied for post-secondary education that will start before February 1, 2021.",
-  "your_situation.unchanged_income.none": "None of the above."
+  "your_situation.unchanged_income.none": "None of the above.",
+  "start.enable_cookies_title": "Enable cookies to use this service",
+  "start.enable_cookies_body": "It looks like you have cookies disabled. This service uses cookies to show your results. You will not see results without enabling cookies."
 }
