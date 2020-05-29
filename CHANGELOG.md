@@ -5,6 +5,7 @@ All notable changes to this product will be documented in this file.
 
 ### Added:
 * Added new option on feedback form "You don't know where to go for help."
+* Added warning on start page if cookies are disabled
 
 ## 2020-05-28
 
