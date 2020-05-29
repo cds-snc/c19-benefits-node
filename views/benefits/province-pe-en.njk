@@ -1,18 +1,19 @@
-<div class="m-5 p-5 shadow-result">
+{% extends "benefit-template.njk" %}
 
-  <h2 class="text-2xl font-bold mb-6" id="province-pe">
-    {{__("province-pe.header")}}
-  </h2>
+{% set sectionId = 'province-pe' %}
 
-  <div class="pb-5 mt-6">
+{% block header %}
+  {{__("province-pe.header")}}
+{% endblock %}
 
-    <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+{% block body %}
+  <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+{% endblock %}
 
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "province-pe",
-        "https://www.princeedwardisland.ca/en/topic/covid-19-supports-and-services",
-        "Learn more about PEI benefits"
-    )}}
-</div>
+    "province-pe",
+    "https://www.princeedwardisland.ca/en/topic/covid-19-supports-and-services",
+    "Learn more about PEI benefits"
+  )}}
+{% endblock %}

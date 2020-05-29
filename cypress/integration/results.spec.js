@@ -39,7 +39,7 @@ describe('Paths and Benefits', () => {
         cy.answerQuestion('#plans_for_schoolno')
         cy.answerQuestion('#oasno')
         cy.reportA11y()
-        cy.get('[data-cy=benefit-list]').children().should('have.length', '4')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '4')
         cy.get('#cerb')
         cy.get('#mortgage_deferral')
         cy.get('#student_loan')
@@ -56,7 +56,7 @@ describe('Paths and Benefits', () => {
         cy.answerQuestion('#plans_for_schoolno')
         cy.answerQuestion('#oasno')
         cy.reportA11y()
-        cy.get('[data-cy=benefit-list]').children().should('have.length', '1')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
         cy.get('#cerb')
       })
 
@@ -71,7 +71,7 @@ describe('Paths and Benefits', () => {
         cy.answerQuestion('#plans_for_schoolno')
         cy.answerQuestion('#oasno')
         cy.reportA11y()
-        cy.get('[data-cy=benefit-list]').children().should('have.length', '1')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
         cy.get('#cerb')
       })
 
@@ -87,7 +87,7 @@ describe('Paths and Benefits', () => {
         cy.answerQuestion('#plans_for_schoolno')
         cy.answerQuestion('#oasno')
         cy.reportA11y()
-        cy.get('[data-cy=benefit-list]').children().should('have.length', '1')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
         cy.get('#rrif')
       })
 
@@ -103,7 +103,7 @@ describe('Paths and Benefits', () => {
         cy.answerQuestion('#plans_for_schoolno')
         cy.answerQuestion('#oasoas')
         cy.reportA11y()
-        cy.get('[data-cy=benefit-list]').children().should('have.length', '1')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
         cy.get('#oas')
       })
 
@@ -117,7 +117,7 @@ describe('Paths and Benefits', () => {
         cy.answerQuestion('#plans_for_schoolyes')
         cy.answerQuestion('#oasno')
         cy.reportA11y()
-        cy.get('[data-cy=benefit-list]').children().should('have.length', '3')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '3')
         cy.get('#rent_help')
         cy.get('#cesb')
         cy.get('#student_financial_aid')

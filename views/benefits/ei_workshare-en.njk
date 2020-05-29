@@ -1,32 +1,33 @@
-<div class="m-5 p-5 shadow-result">
+{% extends "benefit-template.njk" %}
 
-  <h2 class="text-2xl font-bold mb-6" id="ei_workshare">
-    {{__("ei_workshare.header")}}
-  </h2>
+{% set sectionId = 'ei_workshare' %}
 
-  <ul class="list-none list-outside pl-0">
-    {{ blueLI("Receive EI benefits") }}
-    {{ blueLI("Up to 76 weeks") }}
+{% block header %}
+  {{__("ei_workshare.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("Receive EI benefits") }}
+  {{ benefitLi("Up to 76 weeks") }}
+{% endblock %}
+
+{% block body %}
+  <strong>The benefit can help if:</strong>
+  <ul>
+    <li>Your hours have been reduced by 10 to 60% because of COVID-19.</li>
   </ul>
 
-  <div class="pb-5 mt-6">
+  <strong>To do this:</strong>
+  <ul>
+    <li>You would enter into an agreement with your employer and other coworkers who do the exact same work as you.</li>
+    <li>All employees who do the same work need to agree to share the work equally, and your employer has to agree as well. </li>
+  </ul>
+{% endblock %}
 
-    <strong>The benefit can help if:</strong>
-    <ul class='list-disc list-outside'>
-      <li>Your hours have been reduced by 10 to 60% because of COVID-19.</li>
-    </ul>
-
-    <strong>To do this:</strong>
-    <ul class='list-disc list-outside'>
-      <li>You would enter into an agreement with your employer and other coworkers who do the exact same work as you.</li>
-      <li>All employees who do the same work need to agree to share the work equally, and your employer has to agree as well. </li>
-    </ul>
-
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "ei_workshare",
-        "https://www.canada.ca/en/employment-social-development/corporate/notices/coronavirus.html#h4.02",
-        "Learn more about EI Work-Sharing"
-    )}}
-</div>
+    "ei_workshare",
+    "https://www.canada.ca/en/employment-social-development/corporate/notices/coronavirus.html#h4.02",
+    "Learn more about EI Work-Sharing"
+  )}}
+{% endblock %}

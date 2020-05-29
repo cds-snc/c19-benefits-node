@@ -1,4 +1,4 @@
-details {
+details:not(.benefit) {
   margin-bottom: $space-lg;
   font-size: 0.875em;
 

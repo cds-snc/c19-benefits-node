@@ -1,33 +1,37 @@
-<div class="m-5 p-5 shadow-result">
+{% extends "benefit-template.njk" %}
 
-  <h2 class="text-2xl font-bold mb-6" id="student_financial_aid">
-    {{__("student_financial_aid.header")}}
-  </h2>
+{% set sectionId = 'student_financial_aid' %}
 
-  <strong>Increasing Canada Student Grants and Loans</strong>
+{% block header %}
+  {{__("student_financial_aid.header")}}
+{% endblock %}
 
-  <ul class="list-none list-outside pl-0">
-    {{ blueLI("Up to $6,000 in grants for full-time students") }}
-    {{ blueLI("Up to $3,600 in grants for part-time students") }}
-    {{ blueLI("Doubling grants for students with dependants") }}
-    {{ blueLI("Doubling grants for students with permanent disabilities") }}
-    {{ blueLI("Removing expected contributions from students and spouses") }}
-    {{ blueLI("Up to $350 for the weekly amount in student loans") }}
+{% block preamble %}
+  Increasing Canada Student Grants and Loans
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("Up to $6,000 in grants for full-time students") }}
+  {{ benefitLi("Up to $3,600 in grants for part-time students") }}
+  {{ benefitLi("Doubling grants for students with dependants") }}
+  {{ benefitLi("Doubling grants for students with permanent disabilities") }}
+  {{ benefitLi("Removing expected contributions from students and spouses") }}
+  {{ benefitLi("Up to $350 for the weekly amount in student loans") }}
+{% endblock %}
+
+{% block body %}
+  <strong>Good to know:</strong>
+  <ul>
+    <li>This financial aid starts August 1, 2020.</li>
+    <li>It’s available for 1 year.</li>
+    <li>You can apply <a href="https://www.canada.ca/en/services/benefits/education/student-aid/grants-loans/province-apply.html" target="_blank">in your province or territory of residence</a>.</li>
   </ul>
+{% endblock %}
 
-  <div class="pb-5 mt-6">
-    <strong>Good to know:</strong>
-    <ul class='list-outside list-disc'>
-      <li>This financial aid starts August 1, 2020.</li>
-      <li>It’s available for 1 year.</li>
-      <li>You can apply <a href="https://www.canada.ca/en/services/benefits/education/student-aid/grants-loans/province-apply.html" target="_blank">in your province or territory of residence</a>.</li>
-    </ul>
-
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "student_financial_aid",
-        "https://www.canada.ca/en/services/benefits/education/student-aid/notice-covid-19.html",
-        "Read more about financial aid for students"
-    )}}
-</div>
+    "student_financial_aid",
+    "https://www.canada.ca/en/services/benefits/education/student-aid/notice-covid-19.html",
+    "Read more about financial aid for students"
+  )}}
+{% endblock %}

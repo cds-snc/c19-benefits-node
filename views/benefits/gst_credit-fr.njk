@@ -1,28 +1,28 @@
-<div class="m-5 p-5 shadow-result">
+{% extends "benefit-template.njk" %}
 
-  <h2 class="text-2xl font-bold mb-6" id="gst_credit">
-    {{ __("gst_credit.header") }}
-  </h2>
+{% set sectionId = 'gst_credit' %}
 
-  <ul class="list-none list-outside pl-0">
-    {{ blueLI("Versement automatique au mois d’avril si vous recevez déjà le crédit pour la TPS") }}
-    {{ blueLI("En moyenne :<br> 400 $ pour les célibataires<br>600 $ pour les couples") }}
-    {{ blueLI("Le montant du crédit dépend de votre revenu pour l’année imposable 2018") }}
+{% block header %}
+  {{ __("gst_credit.header") }}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("Versement automatique au mois d’avril si vous recevez déjà le crédit pour la TPS") }}
+  {{ benefitLi("En moyenne :<br> 400 $ pour les célibataires<br>600 $ pour les couples") }}
+  {{ benefitLi("Le montant du crédit dépend de votre revenu pour l’année imposable 2018") }}
+{% endblock %}
+
+{% block body %}
+  <strong>Bon à savoir :</strong>
+  <ul>
+    <li>Vous n’avez pas à faire la demande pour recevoir ce montant. À compter du 9 avril, il sera envoyé automatiquement si vous recevez déjà le crédit pour la TPS.</li>
+    <li>Vérifiez votre compte bancaire ou votre courrier pour voir si vous avez  recu le crédit pour la TPS.</li>
   </ul>
+{% endblock %}
 
-  <div class="pb-5 mt-6">
-
-    <strong>Bon à savoir :</strong>
-    <ul class='list-disc list-outside'>
-      <li>Vous n’avez pas à faire la demande pour recevoir ce montant. À compter du 9 avril, il sera envoyé automatiquement si vous recevez déjà le crédit pour la TPS.</li>
-      <li>Vérifiez votre compte bancaire ou votre courrier pour voir si vous avez  recu le crédit pour la TPS.</li>
-    </ul>
-
-  </div>
-
+{% block info_link %}
   {{ infoLink("gst_credit",
-        "https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/ctpstvh-augmentation-covid-19.html",
-        "En savoir plus à propos du crédit pour la TPS"
-    )}}
-
-</div>
+    "https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/ctpstvh-augmentation-covid-19.html",
+    "En savoir plus à propos du crédit pour la TPS"
+  )}}
+{% endblock %}

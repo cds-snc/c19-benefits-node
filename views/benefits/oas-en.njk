@@ -1,32 +1,33 @@
-<div class="m-5 p-5 shadow-result">
+{% extends "benefit-template.njk" %}
 
-  <h2 class="text-2xl font-bold mb-6" id="oas">
-    {{__("oas.header")}}
-  </h2>
+{% set sectionId = 'oas' %}
 
-  <ul class="list-none list-outside pl-0">
-    {{ blueLI("$300 one-time, tax-free payment if you are eligible for the Old Age Security (OAS) pension
-        <br><br> 
-        OR $500 one-time, tax-free payment if you receive the Guaranteed Income Supplement (GIS) 
-        <br><br> 
-        OR $500 one-time, tax-free payment if you receive the Allowance or the Allowance for the Survivor") }}
-    {{ blueLI("Payments will be sent as soon as possible") }}
+{% block header %}
+  {{__("oas.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("$300 one-time, tax-free payment if you are eligible for the Old Age Security (OAS) pension
+      <br><br> 
+      OR $500 one-time, tax-free payment if you receive the Guaranteed Income Supplement (GIS) 
+      <br><br> 
+      OR $500 one-time, tax-free payment if you receive the Allowance or the Allowance for the Survivor") }}
+  {{ benefitLi("Payments will be sent as soon as possible") }}
+{% endblock %}
+
+{% block body %}
+  <strong>Good to know:</strong>
+  <ul>
+    <li>You’ll receive this payment if you are eligible to receive OAS or its related benefits in June 2020.</li>
+    <li>You become eligible for OAS the month after you turn 65. So if you turn 65 in June, you will not receive this one-time payment.</li>
+    <li>Payments will be sent automatically. You don’t need to do anything to receive it.</li>
   </ul>
+{% endblock %}
 
-  <div class="pb-5 mt-6">
-
-    <strong>Good to know:</strong>
-    <ul class='list-disc list-outside'>
-      <li>You’ll receive this payment if you are eligible to receive OAS or its related benefits in June 2020.</li>
-      <li>You become eligible for OAS the month after you turn 65. So if you turn 65 in June, you will not receive this one-time payment.</li>
-      <li>Payments will be sent automatically. You don’t need to do anything to receive it.</li>
-    </ul>
-
-  </div>
-
+{% block info_link %}
   {{ infoLink(
-        "oas",
-        "https://www.canada.ca/en/services/benefits/publicpensions/notice-covid-19/one-time-payment.html",
-        "Learn more about help for seniors"
-    )}}
-</div>
+    "oas",
+    "https://www.canada.ca/en/services/benefits/publicpensions/notice-covid-19/one-time-payment.html",
+    "Learn more about help for seniors"
+  )}}
+{% endblock %}
