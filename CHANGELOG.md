@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-05-29
+
+### Added:
+* Added new option on feedback form "You don't know where to go for help."
+
 ## 2020-05-28
 
 ### Changed:

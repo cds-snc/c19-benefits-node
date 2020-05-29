@@ -12,6 +12,7 @@ module.exports = (app, route) => {
         'didnt_find': +problems.includes('didnt_find'),
         'a11y_issue': +problems.includes('a11y_issue'),
         'privacy_concerns': +problems.includes('privacy_concerns'),
+        'dont_know': +problems.includes('dont_know'),
         'other_issue': +problems.includes('other_issue'),
         'details': req.body.details || 'n/a',
         'session': req.locals.session.id || 'n/a',
