@@ -132,6 +132,7 @@
   "required": "(required)",
   "results.about": "about",
   "results.banner": "You missed a couple questions at the beginning. <a href='/clear'>Start over</a> to get your full results.",
+  "results.check_back": "We’re working to add more programs, so you may want to check back in the future or if your situation changes.",
   "results.eligibility_warning": "These results <strong>do not guarantee your eligibility</strong>. Read the details we link to before applying.",
   "results.header": "COVID-19 benefits",
   "results.header_text": "Based on what you’ve told us, the following help is available:",
@@ -159,11 +160,12 @@
   "start.business": "Own a business?",
   "start.businesslink.text": "Find support for your business.",
   "start.businesslink.url": "https://innovation.ised-isde.canada.ca/s/?language=en",
-  "start.intro.2": "Answer some questions to find financial help. We cannot guarantee your eligibility, but we can point you to the program details.",
-  "start.intro.3": "You may want to keep checking back for updates.",
+  "start.enable_cookies_body": "It looks like you have cookies disabled. This service uses cookies to show your results. You will not see results without enabling cookies.",
+  "start.enable_cookies_title": "Enable cookies to use this service",
+  "start.intro.2": "Here, you’ll be asked 7 to 10 questions, one at a time. ",
+  "start.intro.3": "Then we’ll show you a list of benefits that may help in your situation. It will also have links for more information.",
   "start.lastupdated": "Last updated",
-  "start.subheader": "More benefits being added",
-  "start.submit": "Find help",
+  "start.submit": "Start now",
   "start.title": "Find financial help during COVID-19",
   "start_over": "Start over",
   "student_debt.1": "Yes.",
@@ -192,7 +194,5 @@
   "your_situation.unchanged_income.3": "You’re retired.",
   "your_situation.unchanged_income.4": "You were a college or university student during the 2019-20 school year and now cannot find work.",
   "your_situation.unchanged_income.5": "You’re graduating high school in the 2019-20 school year and have applied for post-secondary education that will start before February 1, 2021.",
-  "your_situation.unchanged_income.none": "None of the above.",
-  "start.enable_cookies_title": "Enable cookies to use this service",
-  "start.enable_cookies_body": "It looks like you have cookies disabled. This service uses cookies to show your results. You will not see results without enabling cookies."
+  "your_situation.unchanged_income.none": "None of the above."
 }
