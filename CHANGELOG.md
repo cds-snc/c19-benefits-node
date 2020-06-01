@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-06-01
+
+### Changed: 
+* Modified content on start page
+* Modified content on results page
+
 ## 2020-05-29
 
 ### Added:
