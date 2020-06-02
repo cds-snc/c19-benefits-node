@@ -3,6 +3,9 @@ All notable changes to this product will be documented in this file.
 
 ## 2020-06-01
 
+### Fixed:
+* Added French text for Non-Matching Results Header on Results Page
+
 ### Changed: 
 * Modified content on start page
 * Modified content on results page
