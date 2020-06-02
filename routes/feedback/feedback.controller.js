@@ -4,8 +4,11 @@ module.exports = (app, route) => {
     .post((req, res) => {
       const date = new Date();
       const problems = req.body.problems || [];
-      const url = new URL(req.headers.referer);
+      if (problems.length === 0) {
+        return res.redirect(res.locals.routePath('feedback-error'));
+      }
 
+      const url = new URL(req.headers.referer);
       const feedback = {
         'incorrect_info': +problems.includes('incorrect_info'),
         'confusing_info': +problems.includes('confusing_info'),

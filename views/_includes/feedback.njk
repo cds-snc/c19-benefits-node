@@ -1,6 +1,11 @@
 <details class="w-full sm:w-1/2 md:w-3/5 lg:w-2/5 mt-20">
     <summary class="px-4 py-2 bg-gray-300 rounded text-center">{{ __('feedback.button') }}</summary>
     <div class="px-8 py-6 rounded border border-gray-300 bg-gray-200">
+
+      <div id="feedback-submit-error" class="hidden">
+        {{ banner('red', '<p><strong>' + __('feedback.error') + '</strong></p>')}}
+      </div>
+
       <form action="/{{ getLocale() }}/feedback" method="post" class="" id="feedback-form">
         <input type="hidden" name="_csrf" id="feedback-csrf" value="{{ csrfToken }}">
 

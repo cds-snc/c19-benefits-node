@@ -1,33 +1,56 @@
 const getLocale = () => {
-  return document.documentElement.lang || 'en';
+  return document.documentElement.lang || 'en'
 }
 
-const form = document.getElementById('feedback-form');
-const confirmation = document.getElementById('feedback-confirmation');
-const errorMsg = document.getElementById('feedback-error');
+const form = document.getElementById('feedback-form')
+const confirmation = document.getElementById('feedback-confirmation')
+const errorMsg = document.getElementById('feedback-error')
+const submitErrorMsg = document.getElementById('feedback-submit-error')
+
+function isEmpty(iter) {
+  const values = [...iter]
+  if (values.length > 2) {
+    return false
+  }
+
+  if (values.every(ele => (ele[0] === '_csrf' || (ele[0] === 'details' && ele[1] === '')))) {
+    return true;
+  }
+
+  return false;
+}
 
 const submitFeedback = (event) => {
-  event.preventDefault();
+  event.preventDefault()
 
-  // const formData = serialize(form);
-  const data = new URLSearchParams(new FormData(form));
+  // eslint-disable-next-line no-undef
+  const data = new URLSearchParams(new FormData(form))
 
+
+  if (isEmpty(data.entries())) {
+    submitErrorMsg.classList.remove('hidden')
+    submitErrorMsg.focus()
+    return
+  }
+
+  // eslint-disable-next-line no-undef
   fetch(`/${getLocale()}/feedback`, {
     method: 'POST',
     body: data,
-  }).then((response) => {
-    if (response.ok) {
-      form.classList.add('hidden');
-      confirmation.classList.remove('hidden');
-    }
-  }).catch((error) => {
-    console.log(error);
-    errorMsg.classList.remove('hidden');
   })
+    .then((response) => {
+      if (response.ok) {
+        form.classList.add('hidden')
+        confirmation.classList.remove('hidden')
+      }
+    })
+    .catch((error) => {
+      console.log(error)
+      errorMsg.classList.remove('hidden')
+    })
 }
-
 
 if (form) {
   // intercept the form submit
-  form.addEventListener('submit', submitFeedback);
+  form.addEventListener('submit', submitFeedback)
 }
