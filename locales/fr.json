@@ -139,14 +139,14 @@
   "results.less_info": "Moin d'infos",
   "results.more_info": "Plus d'infos",
   "results.no_results.preamble": "Aucune des prestations actuellement disponibles ne s’applique à votre situation. Nous ajoutons régulièrement de nouvelles prestations. Revenez consulter cet outil plus tard ou si votre situation change.",
-  "results.not_for_you": "Not for you",
+  "results.not_for_you": "Ne s’appliquent pas à vous",
   "results.other_potential_help": "Aide supplémentaire disponible",
   "results.other_potential_help.preamble": "L’aide suivante est également disponible :",
   "results.results": "résultats",
   "results.situation_changes": false,
-  "results.unavailable_benefits_preamble": "Based on what you told us, the following options do not fit your situation.",
-  "results.unavailable_close_link": "Close list of benefits not relevant for you",
-  "results.unavailable_view_link": "Open list of benefits not relevant for you",
+  "results.unavailable_benefits_preamble": "Selon les réponses que vous nous avez fournies, les prestations suivantes ne s’appliquent pas à votre situation.",
+  "results.unavailable_close_link": "Fermer la liste des prestations qui ne s'appliquent pas à vous",
+  "results.unavailable_view_link": "Voir la liste des prestations qui ne s’appliquent pas à vous.",
   "results_title": {
     "one": "Résultats",
     "other": "%s résultats"
