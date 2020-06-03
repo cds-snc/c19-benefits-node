@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-06-02
+
+### Added:
+* Added error messages informing a user not to submit empty feedback forms
+
 ## 2020-06-01
 
 ### Fixed:
