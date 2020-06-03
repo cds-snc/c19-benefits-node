@@ -29,7 +29,7 @@ const submitFeedback = (event) => {
 
   if (isEmpty(data.entries())) {
     submitErrorMsg.classList.remove('hidden')
-    submitErrorMsg.focus()
+    submitErrorMsg.focus({preventScroll : false})
     return
   }
 
