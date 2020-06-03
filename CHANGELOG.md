@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-06-03
+
+### Changed:
+* Updated static asset version number to match app version number
+
 ## 2020-06-02
 
 ### Added:
