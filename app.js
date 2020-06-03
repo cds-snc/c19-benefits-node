@@ -117,6 +117,19 @@ app.use((req, res, next) => {
   next()
 })
 
+/**
+ * Used to append the apps version to the end of an asset declaration in a view
+ * Will invalidate older versions of that asset.
+ */
+app.use((req, res, next) => {
+  app.locals.assetUniqueId = () => {
+    const id = process.env.TAG_VERSION;
+    return id;
+  }
+  next()
+})
+
+
 app.use((req, res, next) => {
   app.locals.pageUrl = req.protocol + '://' + req.get('host') + req.originalUrl
   next()
