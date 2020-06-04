@@ -102,34 +102,8 @@ app.locals.TAG_VERSION = process.env.TAG_VERSION || null
 app.locals.LAST_UPDATED = process.env.LAST_UPDATED || null
 app.locals.hasData = hasData
 
-/**
- * Create an asset path helper for templates
- * If a CDN_PREFIX is set in env, the helper 
- * will return the path with the CDN prefix,
- * otherwise it just returns the path with 
- * current protocol and host prefix
- */
+// add static asset management
 app.use(assetManagement(app))
-// app.use((req, res, next) => {
-//   app.locals.asset = (path) => {
-//     const assetPrefix = process.env.CDN_PREFIX || '//' + req.get('host');
-
-//     return req.protocol + ':' + assetPrefix + path;
-//   }
-//   next()
-// })
-
-/**
- * Used to append the apps version to the end of an asset declaration in a view
- * Will invalidate older versions of that asset.
- */
-// app.use((req, res, next) => {
-//   app.locals.assetUniqueId = () => {
-//     const id = process.env.TAG_VERSION;
-//     return id;
-//   }
-//   next()
-// })
 
 
 app.use((req, res, next) => {
