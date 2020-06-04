@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-06-04
+
+### Added 
+* Tracking when users click on the button to view the not-relevant benefits.
+
 ## 2020-06-02
 
 ### Added:
