@@ -34,6 +34,7 @@ const {
   domainRedirector,
   errorHandler,
   csrfToken,
+  assetManagement,
 } = require('./middleware')
 
 // check to see if we have a custom configRoutes function
@@ -108,26 +109,27 @@ app.locals.hasData = hasData
  * otherwise it just returns the path with 
  * current protocol and host prefix
  */
-app.use((req, res, next) => {
-  app.locals.asset = (path) => {
-    const assetPrefix = process.env.CDN_PREFIX || '//' + req.get('host');
+app.use(assetManagement(app))
+// app.use((req, res, next) => {
+//   app.locals.asset = (path) => {
+//     const assetPrefix = process.env.CDN_PREFIX || '//' + req.get('host');
 
-    return req.protocol + ':' + assetPrefix + path;
-  }
-  next()
-})
+//     return req.protocol + ':' + assetPrefix + path;
+//   }
+//   next()
+// })
 
 /**
  * Used to append the apps version to the end of an asset declaration in a view
  * Will invalidate older versions of that asset.
  */
-app.use((req, res, next) => {
-  app.locals.assetUniqueId = () => {
-    const id = process.env.TAG_VERSION;
-    return id;
-  }
-  next()
-})
+// app.use((req, res, next) => {
+//   app.locals.assetUniqueId = () => {
+//     const id = process.env.TAG_VERSION;
+//     return id;
+//   }
+//   next()
+// })
 
 
 app.use((req, res, next) => {
