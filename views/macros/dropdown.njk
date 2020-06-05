@@ -20,20 +20,14 @@
             {% endif %}
             <div id="{{ key }}">
             <select id="location-picker">
+                <option id="default"
+                        value=""
+                        ></option>
                 {% for item in values | sort(attribute="text") %}
                 {% set itemId %}{{ key }}{{ item.value }}{%endset%}
                     <option id="{{ itemId }}"
-                        {% if attributes.hint %}
-                            aria-describedby='{{ key }}-hint'
-                        {% endif %}
-                        {% if attributes.required and loop.index === 1 %}
-                            required
-                        {% endif %}
                         name="{{ key }}"
                         value="{{ item.value }}"
-                        {% if selectedValue == item.value %}
-                            checked="checked"
-                        {% endif %}
                         {% if errors and errors[key] %}
                             aria-describedby="{{ key + '-error' }}"
                             aria-invalid="true"
@@ -48,6 +42,8 @@
 <script>
     accessibleAutocomplete.enhanceSelectElement({
     selectElement: document.querySelector('#location-picker'),
-    showAllValues: true
+    showAllValues: true,
+    showNoOptionsFound: false,
+    default: ''
   })</script>
 {% endmacro %}
