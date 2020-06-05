@@ -5,6 +5,7 @@ All notable changes to this product will be documented in this file.
 
 ### Added 
 * Tracking when users click on the button to view the not-relevant benefits.
+* Added Date for sending payments to seniors
 
 ## 2020-06-02
 
