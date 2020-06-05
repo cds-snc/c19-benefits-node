@@ -1,6 +1,6 @@
 
 .autocomplete__wrapper {
-  @apply relative;
+  @apply relative outline-none;
 }
 
 .autocomplete__hint,
@@ -55,19 +55,17 @@
 }
 
 .autocomplete__option {
-  @apply outline-none border-r-0 border-l-0 cursor-pointer block relative;
+  @apply border-r-0 border-l-0  cursor-pointer block relative ;
 }
 
 .autocomplete__option > * {
-  @apply outline-none pointer-events-none;
+  @apply  pointer-events-none outline-none;
 }
 
-.autocomplete__option--focused {
-  @apply  border-orange-700 border-2.5  -mx-2 px-2;
-}
-
+.autocomplete__option:focus,
+.autocomplete__option--focused,
 .autocomplete__option:hover {
-  @apply  border-orange-700 border-2.5  -mx-2 px-2;
+  @apply border-orange-700 border-2 outline-none border-solid -mx-2 px-2; 
 }
 
 .autocomplete__option--no-results {

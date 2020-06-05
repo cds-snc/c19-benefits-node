@@ -10,7 +10,7 @@ button,
 iframe,
 [tabindex],
 [contentEditable="true"] {
-  &:not([disabled]):focus {
+  &:not([disabled]):focus:not(.autocomplete__option) {
     @include focus();
   }
 }
