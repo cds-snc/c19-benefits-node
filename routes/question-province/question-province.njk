@@ -7,7 +7,7 @@
         {% call form() %}
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
 
-            {{ radioButtons('province',
+            {{ dropdown('province',
                 [
                     { value: 'ab', text:__('province.ab')},
                     { value: 'bc', text:__('province.bc')},

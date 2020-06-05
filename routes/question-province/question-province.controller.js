@@ -9,6 +9,7 @@ module.exports = (app, route) => {
       res.render(name, routeUtils.getViewData(req, {
         title: res.__('province.title'),
       }))
+      
     })
     .post(route.applySchema(Schema), route.doRedirect())
 }

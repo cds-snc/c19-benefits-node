@@ -1,0 +1,53 @@
+{% macro dropdown(key, values, selectedValue, question, errors, attributes) %}
+    <script type="text/javascript" src="{{ asset('/js/accessible-autocomplete.min.js') }}"></script>
+    <!--<link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />-->
+    <div class="{{ 'has-error' if errors and errors[key] }}">
+        <fieldset class="fieldset">
+            <legend class="fieldset__legend">
+                {% if attributes.required %}<strong aria-hidden="true" class="required font-normal">*</strong>{% endif %} {{ question }} {% if attributes.required %} <strong class="required font-normal">{{ __("required")}}</strong>{% endif %}
+                {% if errors and errors[key] %}
+                    {{ validationMessage(errors[key].msg, key) }}
+                {% endif %}
+            </legend>
+            {% if attributes.hint %}
+                <span class="form-message" id="{{ key }}-hint">
+                    {% if attributes.safeHint %}
+                        {{attributes.hint | safe }}
+                    {% else %}
+                        {{ attributes.hint }}
+                    {% endif %}
+                </span>
+            {% endif %}
+            <div id="{{ key }}">
+            <select id="location-picker">
+                {% for item in values | sort(attribute="text") %}
+                {% set itemId %}{{ key }}{{ item.value }}{%endset%}
+                    <option id="{{ itemId }}"
+                        {% if attributes.hint %}
+                            aria-describedby='{{ key }}-hint'
+                        {% endif %}
+                        {% if attributes.required and loop.index === 1 %}
+                            required
+                        {% endif %}
+                        name="{{ key }}"
+                        value="{{ item.value }}"
+                        {% if selectedValue == item.value %}
+                            checked="checked"
+                        {% endif %}
+                        {% if errors and errors[key] %}
+                            aria-describedby="{{ key + '-error' }}"
+                            aria-invalid="true"
+                        {% endif %}
+                        >{% if attributes.safe %}{{ item.text | safe }}{% else %}{{ item.text }}{% endif %}</option>
+                {% endfor %}
+                </select>
+            </div>
+        </fieldset>
+    </div>
+   
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+    selectElement: document.querySelector('#location-picker'),
+    showAllValues: true
+  })</script>
+{% endmacro %}

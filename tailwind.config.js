@@ -13,6 +13,7 @@ module.exports = {
           'darker': '#194D7B',
         },
         gray: {
+          ...colors.gray,
           '100': '#f8f8f8',
           '200': '#f7fafc',
           '300': '#e2e8f0',
@@ -30,6 +31,10 @@ module.exports = {
           'lighter': '#DFF0D8',
           'darker': '#138A00',
         },
+        orange: { 
+          ... colors.orange,
+          '700': '#C78100',
+        },
       },
       maxWidth: {
         '950': '950px',
@@ -43,9 +48,14 @@ module.exports = {
       default: '1px',
       '0': '0',
       '2': '2px',
+      '2.5': '2.5px',
       '3': '3px',
       '4': '4px',
       '8': '8px',
+    },
+    zIndex: { 
+      '-1': '-1,',
+      '100': '100,',
     },
   },
   variants: {},
@@ -53,5 +63,8 @@ module.exports = {
   important: true,
   purge: {
     content: ['./routes/**/*.njk', './views/**/*.njk'],
+    options: {
+      whitelist: ['./assets/components/_dropdown.scss'],
+    },
   },
 }
