@@ -7,6 +7,11 @@ All notable changes to this product will be documented in this file.
 * Tracking when users click on the button to view the not-relevant benefits.
 * Added Date for sending payments to seniors
 
+## 2020-06-03
+
+### Changed:
+* Updated static asset version number to match app version number
+
 ## 2020-06-02
 
 ### Added:
