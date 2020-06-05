@@ -34,7 +34,8 @@ const {
   domainRedirector,
   errorHandler,
   csrfToken,
-  assetManagement,
+  assetPath,
+  assetVersion,
 } = require('./middleware')
 
 // check to see if we have a custom configRoutes function
@@ -103,7 +104,8 @@ app.locals.LAST_UPDATED = process.env.LAST_UPDATED || null
 app.locals.hasData = hasData
 
 // add static asset management
-app.use(assetManagement(app))
+app.use(assetPath(app))
+app.use(assetVersion(app))
 
 
 app.use((req, res, next) => {

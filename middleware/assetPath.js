@@ -1,4 +1,4 @@
-const assetManagement = (app) => function (req, res, next) {
+const assetPath = (app) => function (req, res, next) {
   /**
  * Create an asset path helper for templates
  * If a CDN_PREFIX is set in env, the helper 
@@ -11,20 +11,9 @@ const assetManagement = (app) => function (req, res, next) {
 
     return req.protocol + ':' + assetPrefix + path;
   }
-
-  /**
-   * Used to append the apps version to the end of an asset declaration in a view
-   * Will invalidate older versions of that asset.
-   */
-  app.locals.assetVersion = () => {
-    const id = process.env.TAG_VERSION;
-    return id;
-  }
-
-  next()
+  next();
 }
 
-
 module.exports = {
-  assetManagement,
+  assetPath,
 }
