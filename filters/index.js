@@ -1,11 +1,11 @@
 const { spreadParams } = require('./spread.params')
 const { lastUpdated } = require('./last.updated')
-const { normalizedSort } = require('./normalized.sort')
+const { localizedSort } = require('./localized.sort')
 
 const addNunjucksFilters = (env) => {
   spreadParams(env)
   lastUpdated(env)
-  normalizedSort(env)
+  localizedSort(env)
 }
 
 module.exports = {

@@ -25,7 +25,8 @@
       <div id="{{ key }}">
       <select id="{{ key }}-select" name="{{ key }}" class="no-focus">
           <option id="default" value=""></option>
-          {%- for item in values | normalizedSort("text", getLocale()) -%}
+          {%- for item in values | localizedSort("text", getLocale()) -%}
+
             {% set itemId %}{{ key }}{{ item.value }}{%endset%}
             <option name="{{ itemId }}"
                 value="{{ item.value }}"
