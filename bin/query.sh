@@ -22,12 +22,5 @@ query() {
 
 
 ## Run it on the following Session IDs
-query a039d6db-2d68-42de-b6f7-acc7fc36e9e0
-query b0f5f391-19c7-455c-b48e-c6f023e6d26b
-query f3b8e1fe-0d8e-42c6-8a20-2441de9c2d6f
-query bff76c9f-e290-4c70-9ec5-77abdf84046b
-query d9123436-31ec-4f18-839d-e3d767834cc7
-query 4474a81d-2fc2-45a9-9ee0-90314352224f
-query dc375769-90e8-4875-864b-df39851b8d96
-query c26e6080-470c-417b-95bc-0d36bad5e348
-query 114aa016-c650-4971-95f9-4474e9472666
+# query 2f0c7f09-7f53-491a-9c28-4d7ab94cb796
+# query 0dc78079-ba91-4b8a-9c85-0e359987532m
