@@ -1,50 +1,53 @@
 {%- macro dropdown(key, values, selectedValue, question, errors, attributes) -%}
     <script type="text/javascript" src="{{ asset('/js/accessible-autocomplete.min.js') }}"></script>
-    <!--<link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />-->
     <div class="{{ 'has-error' if errors and errors[key] }} outline-none">
-        <fieldset class="fieldset">
-            <legend class="fieldset__legend">
-                {% if attributes.required %}<strong aria-hidden="true" class="required font-normal">*</strong>{% endif %} {{ question }} {% if attributes.required %} <strong class="required font-normal">{{ __("required")}}</strong>{% endif %}
-                {% if errors and errors[key] %}
-                    {{ validationMessage(errors[key].msg, key) }}
-                {% endif %}
-            </legend>
-            {% if attributes.hint %}
-                <span class="form-message" id="{{ key }}-hint">
-                    {% if attributes.safeHint %}
-                        {{attributes.hint | safe }}
-                    {% else %}
-                        {{ attributes.hint }}
-                    {% endif %}
-                </span>
-            {% endif %}
-            <div id="{{ key }}">
-            <select id="location-picker" name="{{ key }}" class="no-focus">
-                <option id="default"
-                        value=""
-                        ></option>
-                {%- for item in values | sort(attribute="text") -%}
-                {% set itemId %}{{ key }}{{ item.value }}{%endset%}
-                    <option id="{{ itemId }}"
-                        name="{{ itemId }}"
-                        value="{{ item.value }}"
-                        {% if errors and errors[key] %}
-                            aria-describedby="{{ key + '-error' }}"
-                            aria-invalid="true"
-                        {% endif %}
-                        {% if selectedValue === item.value %}
-                          selected
-                        {% endif %}
-                        >{% if attributes.safe %}{{- item.text | safe -}}{% else %}{{- item.text -}}{% endif %}</option>
-                {%- endfor -%}
-                </select>
-            </div>
-        </fieldset>
+      <label for="{{ key }}-select" id="{{ name }}__label">
+          {% if attributes.required %}
+              <strong aria-hidden="true" class="required font-normal">*</strong>
+          {% endif %}
+          {{ question }}
+          {% if attributes.required %}
+              <strong class="required font-normal">{{ __("required")}}</strong>
+          {% endif %}
+      </label>
+      {% if attributes.hint %}
+          <span class="form-message" id="{{ key }}-hint">
+              {% if attributes.safeHint %}
+                  {{attributes.hint | safe }}
+              {% else %}
+                  {{ attributes.hint }}
+              {% endif %}
+          </span>
+      {% endif %}
+      {% if errors and errors[key] %}
+          {{ validationMessage(errors[key].msg,key) }}
+      {% endif %}
+      <div id="{{ key }}">
+      <select id="{{ key }}-select" name="{{ key }}" class="no-focus">
+          <option id="default"
+                  value=""
+                  ></option>
+          {%- for item in values | sort(attribute="text") -%}
+          {% set itemId %}{{ key }}{{ item.value }}{%endset%}
+              <option id="{{ itemId }}"
+                  name="{{ itemId }}"
+                  value="{{ item.value }}"
+                  {% if errors and errors[key] %}
+                      aria-describedby="{{ key + '-error' }}"
+                      aria-invalid="true"
+                  {% endif %}
+                  {% if selectedValue === item.value %}
+                    selected
+                  {% endif %}
+                  >{% if attributes.safe %}{{- item.text | safe -}}{% else %}{{- item.text -}}{% endif %}</option>
+          {%- endfor -%}
+          </select>
+      </div>
     </div>
 
 <script>
     accessibleAutocomplete.enhanceSelectElement({
-    selectElement: document.querySelector('#location-picker'),
+    selectElement: document.querySelector('#{{ key }}-select'),
     showAllValues: true,
     showNoOptionsFound: false
   })</script>
