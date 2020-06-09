@@ -24,22 +24,15 @@
       {% endif %}
       <div id="{{ key }}">
       <select id="{{ key }}-select" name="{{ key }}" class="no-focus">
-          <option id="default"
-                  value=""
-                  ></option>
+          <option id="default" value=""></option>
           {%- for item in values | sort(attribute="text") -%}
-          {% set itemId %}{{ key }}{{ item.value }}{%endset%}
-              <option id="{{ itemId }}"
-                  name="{{ itemId }}"
-                  value="{{ item.value }}"
-                  {% if errors and errors[key] %}
-                      aria-describedby="{{ key + '-error' }}"
-                      aria-invalid="true"
-                  {% endif %}
-                  {% if selectedValue === item.value %}
-                    selected
-                  {% endif %}
-                  >{% if attributes.safe %}{{- item.text | safe -}}{% else %}{{- item.text -}}{% endif %}</option>
+            {% set itemId %}{{ key }}{{ item.value }}{%endset%}
+            <option name="{{ itemId }}"
+                value="{{ item.value }}"
+                {% if selectedValue === item.value %}
+                  selected
+                {% endif %}
+                >{% if attributes.safe %}{{- item.text | safe -}}{% else %}{{- item.text -}}{% endif %}</option>
           {%- endfor -%}
           </select>
       </div>
