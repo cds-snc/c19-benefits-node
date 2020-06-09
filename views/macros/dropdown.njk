@@ -1,4 +1,4 @@
-{% macro dropdown(key, values, selectedValue, question, errors, attributes) %}
+{%- macro dropdown(key, values, selectedValue, question, errors, attributes) -%}
     <script type="text/javascript" src="{{ asset('/js/accessible-autocomplete.min.js') }}"></script>
     <!--<link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />-->
     <div class="{{ 'has-error' if errors and errors[key] }} outline-none">
@@ -23,7 +23,7 @@
                 <option id="default"
                         value=""
                         ></option>
-                {% for item in values | sort(attribute="text") %}
+                {%- for item in values | sort(attribute="text") -%}
                 {% set itemId %}{{ key }}{{ item.value }}{%endset%}
                     <option id="{{ itemId }}"
                         name="{{ itemId }}"
@@ -32,18 +32,20 @@
                             aria-describedby="{{ key + '-error' }}"
                             aria-invalid="true"
                         {% endif %}
-                        >{% if attributes.safe %}{{ item.text | safe }}{% else %}{{ item.text }}{% endif %}</option>
-                {% endfor %}
+                        {% if selectedValue === item.value %}
+                          selected
+                        {% endif %}
+                        >{% if attributes.safe %}{{- item.text | safe -}}{% else %}{{- item.text -}}{% endif %}</option>
+                {%- endfor -%}
                 </select>
             </div>
         </fieldset>
     </div>
-   
+
 <script>
     accessibleAutocomplete.enhanceSelectElement({
     selectElement: document.querySelector('#location-picker'),
     showAllValues: true,
-    showNoOptionsFound: false,
-    defaultValue: ''
+    showNoOptionsFound: false
   })</script>
-{% endmacro %}
+{%- endmacro -%}
