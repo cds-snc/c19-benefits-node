@@ -9,22 +9,23 @@
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("<strong>$600 one-time, tax-free payment</strong> if your child receives the Disability Tax Credit.") }}
-  {{ benefitLi("<strong>Automatic payment starting August 10, 2020.</strong>") }}
+  {{ benefitLi("<strong>Paiement unique de 600 $, non imposable.</strong>") }}
+  {{ benefitLi("<strong>Les paiements automatiques débutent le 10 août 2020.</strong>") }}
 {% endblock %}
 
 {% block body %}
-  <strong>Good to know:</strong>
+  <strong>Bon à savoir :</strong>
   <ul>
-    <li>Payments will be sent automatically, as soon as possible. You don’t need to do anything to receive it.</li>
-    <li>If you share custody for the child receiving the Disability Tax Credit, this payment will be split $300 to each parent.</li>
+    <li>Ce paiement peut aider si votre enfant détient un certificat valide pour le crédit d'impôt pour personnes handicapées.</li>
+    <li>Les paiements seront déposés automatiquement dès que possible. Vous n’avez pas à faire quoi que ce soit pour le recevoir. </li>
+    <li>Si vous partagez la garde de votre enfant, le paiement sera divisé en deux. Chaque parent recevra 300 $.</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "dtc_child",
-    "https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/disability-tax-credit.html",
-    "Learn more about the Disability Tax Credit"
+    "",
+    "En savoir plus à propos du crédit d'impôt pour personnes handicapées "
   )}}
 {% endblock %}
