@@ -15,6 +15,7 @@ const routes = [
   { name: 'question-student-debt', path: { en: '/student-debt', fr: '/dette-des-etudiants' } },
   { name: 'question-plans-for-school', path: { en: '/plans-for-school', fr: '/poursuivre-vos-etudes' } },
   { name: 'question-oas', path: { en: '/oas', fr: '/sv' } },
+  { name: 'question-dtc', path: { en: '/dtc', fr: '/ciph' } },
 
   { name: 'prepare', path: { en: '/prepare', fr: '/preparer' } },
   { name: 'results', path: { en: '/results', fr: '/resultats' } },
