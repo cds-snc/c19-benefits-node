@@ -7,25 +7,20 @@
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("From May to August 2020") }}
-  <li>
-    <div>
-      <p>
-        <img src="{{ asset('/img/check-circle.svg') }}" alt="">
+  {{ benefitLi("<strong>From May to August 2020</strong>") }}
+  {{ benefitLi("
         <ul>
-          <li>
+          <li class='mb-2'>
             <strong>$1,250 per month</strong>
           </li>
-          <li>
+          <li class='mb-2'>
             <strong>OR $2,000 per month if you have disabilities</strong>
           </li>
           <li>
             <strong>OR $2,000 per month if you have dependants</strong>
           </li>
         </ul>
-      </p>
-    </div>
-  </li>
+  ")}}
 {% endblock %}
 
 {% block body %}

@@ -11,11 +11,20 @@
 
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
+const htmlvalidate = require("cypress-html-validate/dist/plugin.js");
 
 /**
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
+  htmlvalidate.install(on, {
+    rules: {
+      'require-sri' : 'off',
+      'prefer-native-element': 'off',
+      'heading-level': 'off',
+      'long-title': 'off',
+    },
+  },{});
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 }

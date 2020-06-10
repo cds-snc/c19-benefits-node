@@ -7,25 +7,18 @@
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("De mai à août 2020") }}
-  <li>
-    <div>
-      <p>
-        <img src="{{ asset('/img/check-circle.svg') }}" alt="">
-        <ul>
-          <li>
-            <strong>1250 $ par mois </strong>
-          </li>
-          <li>
-            <strong>OU 2000 $ par mois si vous avez une incapacité permanente</strong>
-          </li>
-          <li>
-            <strong>OU 2000 $ par mois si vous avez des personnes à charge</strong>
-          </li>
-        </ul>
-      </p>
-    </div>
-  </li>
+  {{ benefitLi("<strong>De mai à août 2020</strong>") }}
+  {{ benefitLi("<ul>
+      <li>
+        <strong>1250 $ par mois </strong>
+      </li>
+      <li>
+        <strong>OU 2000 $ par mois si vous avez une incapacité permanente</strong>
+      </li>
+      <li>
+        <strong>OU 2000 $ par mois si vous avez des personnes à charge</strong>
+      </li>
+    </ul>") }}
 {% endblock %}
 
 {% block body %}
