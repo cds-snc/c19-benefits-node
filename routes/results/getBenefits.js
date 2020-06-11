@@ -183,10 +183,11 @@ const getProvincialBenefits = (data) => {
 const getAllBenefits = () => {
   const benefitList = [];
 
-  // Get a list of all the benefit cards (except provincial)
+  // Get a list of all the benefit cards
+  // Ignore provincial benefits and the dtc variants
   const files = glob.sync("**/*.njk", {
     cwd: path.join(__dirname, '../../views/benefits'),
-    ignore: 'province-*',
+    ignore: ['province-*','dtc_*.njk'],
   })
 
   // Grab the benefit name portion of the filename
