@@ -1,5 +1,9 @@
 # Changelog
 All notable changes to this product will be documented in this file.
+## 2020-06-10
+
+### Added
+* The Disability Tax Credit
 
 ## 2020-06-04
 
