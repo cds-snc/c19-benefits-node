@@ -22,14 +22,14 @@
         {% if TAG_VERSION %}<meta name="version" content="{{ TAG_VERSION }}">{% endif %}
         <link rel="shortcut icon" href="{{ asset('/favicon.png') }}" type="image/x-icon" sizes="32x32">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans:400,700&amp;display=fallback" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CNoto+Sans:400,700&amp;display=fallback" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('/dist/css/styles.css') }}?{{ assetVersion() }}">
         {% include "_includes/meta.njk" %}
         {% include "_includes/ga.njk" %}
     </head>
     <body>
         <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTM7CPP"
+        <noscript><iframe aria-hidden="true" title="GTM" src="https://www.googletagmanager.com/ns.html?id=GTM-MTM7CPP"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
         <nav>
@@ -62,17 +62,17 @@
 
         {% if $env.NODE_ENV !== 'test' %}
           <!-- Required for Adobe Analytics -->
-          <script type="text/javascript">_satellite.pageBottom();</script>
+          <script >_satellite.pageBottom();</script>
         {% endif %}
 
         {%- block scripts -%}
             {%- if jsFiles -%}
                 {%- for val in jsFiles -%}
-                    <script type="text/javascript" src={{ asset(val) }}></script>
+                    <script  src={{ asset(val) }}></script>
                 {%- endfor -%}
             {%- endif -%}
 
-            <script type="text/javascript" src="{{ asset('/dist/js/app.js') }}?{{ assetVersion() }}"></script>
+            <script  src="{{ asset('/dist/js/app.js') }}?{{ assetVersion() }}"></script>
         {%- endblock -%}
     </body>
 </html>

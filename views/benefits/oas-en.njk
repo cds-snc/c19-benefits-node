@@ -7,13 +7,11 @@
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("
-      $300 one-time, tax-free payment if you are eligible for the Old Age Security (OAS) pension
-      <br/><br/>
-      OR $500 one-time, tax-free payment if you receive the Guaranteed Income Supplement (GIS)
-      <br/><br/>
-      OR $500 one-time, tax-free payment if you receive the Allowance or the Allowance for the Survivor
-      ") }}
+  {{ benefitLi("<uL>
+      <li class='mb-4'><strong>$300 one-time, tax-free payment if you are eligible for the Old Age Security (OAS) pension</strong></li>
+      <li class='mb-4'><strong>OR $500 one-time, tax-free payment if you receive the Guaranteed Income Supplement (GIS)</strong></li>
+      <li class='mb-4'><strong>OR $500 one-time, tax-free payment if you receive the Allowance or the Allowance for the Survivor</strong><li>
+    </ul>") }}
   {{ benefitLi("<strong>Starting July 6, 2020</strong>") }}
 {% endblock %}
 

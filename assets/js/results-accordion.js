@@ -19,14 +19,14 @@ if (container) {
         container.classList.add('hidden')
         container.setAttribute('aria-hidden', true)
         expando.setAttribute('aria-expanded', false)
-        expando.querySelector('div.closed').classList.remove('hidden')
-        expando.querySelector('div.open').classList.add('hidden')
+        expando.querySelector('span.closed').classList.remove('hidden')
+        expando.querySelector('span.open').classList.add('hidden')
       } else {
         container.classList.remove('hidden')
         container.setAttribute('aria-hidden', false)
         expando.setAttribute('aria-expanded', true)
-        expando.querySelector('div.closed').classList.add('hidden')
-        expando.querySelector('div.open').classList.remove('hidden')
+        expando.querySelector('span.closed').classList.add('hidden')
+        expando.querySelector('span.open').classList.remove('hidden')
       }
     });
   }

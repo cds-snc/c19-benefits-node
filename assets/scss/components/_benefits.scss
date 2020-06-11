@@ -35,8 +35,11 @@
       
       > li {
         @apply py-2;
-        > div > p {
+        > div {
           @apply relative m-0 pl-10;
+          > ul { 
+            @apply pl-0 m-0; 
+          }
           > img {
             @apply w-6 h-6 mt-1 -ml-10 absolute fill-current;
           }
