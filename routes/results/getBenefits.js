@@ -152,7 +152,15 @@ const getBenefits = (data) => {
   results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))
   results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
   results.push(match(data, { ccb: ['yes', 'unsure'] }, 'ccb_payment'))
+
   results.push(match(data, { oas: ['oas', 'allowance', 'survivor'] }, 'oas'))
+
+  // DTC Benefits
+  results.push(match(data, { oas: 'oas', dtc: 'yourself'}, 'dtc_oas'))
+  results.push(match(data, { oas: 'no', dtc: 'yourself'}, 'dtc'))
+  results.push(match(data, { oas: ['allowance', 'survivor'], dtc: 'yourself'}, 'dtc_allowance'))
+  results.push(match(data, { dtc: 'child' }, 'dtc_child'))
+
   results.push(match(data, { rrif: 'yes' }, 'rrif'))
 
   results.push(
@@ -175,10 +183,11 @@ const getProvincialBenefits = (data) => {
 const getAllBenefits = () => {
   const benefitList = [];
 
-  // Get a list of all the benefit cards (except provincial)
+  // Get a list of all the benefit cards
+  // Ignore provincial benefits and the dtc variants
   const files = glob.sync("**/*.njk", {
     cwd: path.join(__dirname, '../../views/benefits'),
-    ignore: 'province-*',
+    ignore: ['province-*','dtc_*.njk'],
   })
 
   // Grab the benefit name portion of the filename
