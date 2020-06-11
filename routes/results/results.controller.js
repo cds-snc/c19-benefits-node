@@ -31,7 +31,12 @@ module.exports = (app, route) => {
       const benefitsFullList = _.pull(getAllBenefits(), 'gst_credit');
 
       const benefits = getBenefits(data);
-      const unavailableBenefits = benefitsFullList.filter((benefit) => !benefits.includes(benefit))
+      let unavailableBenefits = benefitsFullList.filter((benefit) => !benefits.includes(benefit))
+
+      // We need to remove DTC if the user matches one of the variants
+      if (benefits.find((ele) => ele.match(/^dtc_*/)) !== undefined){
+        unavailableBenefits = unavailableBenefits.filter((ele) => ele !== 'dtc')
+      }
 
       const provincial = getProvincialBenefits(data);
 
