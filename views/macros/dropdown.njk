@@ -1,5 +1,4 @@
 {%- macro dropdown(key, values, selectedValue, question, errors, attributes) -%}
-    <script type="text/javascript" src="{{ asset('/js/accessible-autocomplete.min.js') }}"></script>
     <div class="{{ 'has-error' if errors and errors[key] }} outline-none">
       <label for="{{ key }}-select" id="{{ name }}__label">
           {% if attributes.required %}
