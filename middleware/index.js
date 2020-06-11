@@ -4,6 +4,8 @@ const session = require('./session')
 const logger = require('./logger')
 const errorHandler = require('./errorHandler')
 const csrfToken = require('./csrfToken')
+const assetPath = require('./assetPath')
+const assetVersion = require('./assetVersion')
 
 module.exports = {
   ...domainRedirector,
@@ -12,4 +14,6 @@ module.exports = {
   ...logger,
   ...errorHandler,
   ...csrfToken,
+  ...assetPath,
+  ...assetVersion,
 }

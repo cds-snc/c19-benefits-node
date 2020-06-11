@@ -61,6 +61,9 @@ describe('Error Pages', () => {
       it('Reduced Income', () => {
         testError('question-reduced-income', lang)
       })
+      it('DTC', () => {
+        testError('question-dtc', lang)
+      })
     })
   })
 })

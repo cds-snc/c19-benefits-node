@@ -34,6 +34,8 @@ const {
   domainRedirector,
   errorHandler,
   csrfToken,
+  assetPath,
+  assetVersion,
 } = require('./middleware')
 
 // check to see if we have a custom configRoutes function
@@ -101,21 +103,10 @@ app.locals.TAG_VERSION = process.env.TAG_VERSION || null
 app.locals.LAST_UPDATED = process.env.LAST_UPDATED || null
 app.locals.hasData = hasData
 
-/**
- * Create an asset path helper for templates
- * If a CDN_PREFIX is set in env, the helper 
- * will return the path with the CDN prefix,
- * otherwise it just returns the path with 
- * current protocol and host prefix
- */
-app.use((req, res, next) => {
-  app.locals.asset = (path) => {
-    const assetPrefix = process.env.CDN_PREFIX || '//' + req.get('host');
+// add static asset management
+app.use(assetPath(app))
+app.use(assetVersion(app))
 
-    return req.protocol + ':' + assetPrefix + path;
-  }
-  next()
-})
 
 app.use((req, res, next) => {
   app.locals.pageUrl = req.protocol + '://' + req.get('host') + req.originalUrl

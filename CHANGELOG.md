@@ -1,7 +1,30 @@
 # Changelog
 All notable changes to this product will be documented in this file.
+## 2020-06-10
+
+### Added
+* The Disability Tax Credit
+
+## 2020-06-04
+
+### Added 
+* Tracking when users click on the button to view the not-relevant benefits.
+* Added Date for sending payments to seniors
+
+## 2020-06-03
+
+### Changed:
+* Updated static asset version number to match app version number
+
+## 2020-06-02
+
+### Added:
+* Added error messages informing a user not to submit empty feedback forms
 
 ## 2020-06-01
+
+### Fixed:
+* Added French text for Non-Matching Results Header on Results Page
 
 ### Changed: 
 * Modified content on start page

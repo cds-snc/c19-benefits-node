@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+    /* eslint-disable no-undef */
 describe('Found Bugs', () => {
   describe('Issue #378 - Bug showing CERB twice when going back and forth', () => {
     it('Check some-income lost-a-job to no-income', () => {
@@ -13,6 +13,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#student_debtno')
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
+      cy.answerRB('#dtcno')
       cy.get('[data-cy=cerb-benefit]')
 
       cy.visit('/en/lost-job')
@@ -23,6 +24,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#student_debtno')
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
+      cy.answerRB('#dtcno')
       cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
       cy.get('[data-cy=cerb-benefit]')
     })
@@ -38,6 +40,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#student_debtno')
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
+      cy.answerRB('#dtcno')
       cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
       cy.get('[data-cy=rrif-benefit]')
 
@@ -48,6 +51,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#student_debtno')
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
+      cy.answerRB('#dtcno')
       cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
       cy.get('[data-cy=cerb-benefit]')
     })
@@ -63,6 +67,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#student_debtno')
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
+      cy.answerRB('#dtcno')
       cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
       cy.get('[data-cy=rrif-benefit]')
 
@@ -74,6 +79,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#student_debtno')
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
+      cy.answerRB('#dtcno')
       cy.get('[data-cy=eligible-benefit-list]').should('not.exist')
     })
   })

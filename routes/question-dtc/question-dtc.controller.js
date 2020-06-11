@@ -1,4 +1,5 @@
 const { routeUtils } = require('./../../utils')
+const { Schema } = require('./schema.js')
 
 module.exports = (app, route) => {
   const name = route.name
@@ -6,7 +7,8 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       res.render(name, routeUtils.getViewData(req, {
-        title: res.__('feedback-thanks.title'),
+        title: res.__('dtc.title'),
       }))
     })
+    .post(route.applySchema(Schema), route.doRedirect())
 }
