@@ -7,9 +7,13 @@
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("Automatic payment in April if you already receive the GST credit") }}
-  {{ benefitLi("On average:<br>$400 for single people<br>$600 for couples") }}
-  {{ benefitLi("Amount depends on your 2018 income taxes") }}
+  {{ benefitLi("<strong>Automatic payment in April if you already receive the GST credit</strong>") }}
+  {{ benefitLi("<strong>On average:</strong>
+                <ul>
+                  <li><strong>$400 for single people</strong></li>
+                  <li><strong>$600 for couples</strong></li>
+                </ul>") }}
+  {{ benefitLi("<strong>Amount depends on your 2018 income taxes</strong>") }}
 {% endblock %}
 
 {% block body %}
