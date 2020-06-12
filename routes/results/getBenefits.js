@@ -35,7 +35,7 @@ function match(input, pattern, result) {
   return undefined
 }
 
-const getBenefits = (data) => {
+const getBenefits = (data, featureFlags) => {
   var results = []
 
   results.push(
@@ -155,11 +155,21 @@ const getBenefits = (data) => {
 
   results.push(match(data, { oas: ['oas', 'allowance', 'survivor'] }, 'oas'))
 
-  // DTC Benefits
-  results.push(match(data, { oas: 'oas', dtc: 'yourself'}, 'dtc_oas'))
-  results.push(match(data, { oas: 'no', dtc: 'yourself'}, 'dtc'))
-  results.push(match(data, { oas: ['allowance', 'survivor'], dtc: 'yourself'}, 'dtc_allowance'))
-  results.push(match(data, { dtc: 'child' }, 'dtc_child'))
+  if (featureFlags.enableDtc){
+
+    // DTC Benefits
+    results.push(match(data, { oas: 'oas', dtc: 'yourself' }, 'dtc_oas'))
+    results.push(match(data, { oas: 'no', dtc: 'yourself' }, 'dtc'))
+    results.push(
+      match(
+        data,
+        { oas: ['allowance', 'survivor'], dtc: 'yourself' },
+        'dtc_allowance',
+      ),
+    )
+    results.push(match(data, { dtc: 'child' }, 'dtc_child'))
+
+  }
 
   results.push(match(data, { rrif: 'yes' }, 'rrif'))
 
@@ -180,28 +190,35 @@ const getProvincialBenefits = (data) => {
   return data.province ? 'province-' + data.province : false
 }
 
-const getAllBenefits = () => {
-  const benefitList = [];
+const getAllBenefits = (featureFlags) => {
+  const benefitList = []
+
+  let ignore
+  if (featureFlags.enableDtc) {
+    ignore = ['province-*', 'dtc_*.njk']
+  } else {
+    ignore = ['province-*', 'dtc*.njk']
+  }
 
   // Get a list of all the benefit cards
   // Ignore provincial benefits and the dtc variants
-  const files = glob.sync("**/*.njk", {
+  const files = glob.sync('**/*.njk', {
     cwd: path.join(__dirname, '../../views/benefits'),
-    ignore: ['province-*','dtc_*.njk'],
+    ignore,
   })
 
   // Grab the benefit name portion of the filename
   files.forEach((file) => {
-    const fileParts = file.split('-');
-    benefitList.push(fileParts[0]);
+    const fileParts = file.split('-')
+    benefitList.push(fileParts[0])
   })
 
   // We just the unique items in the list
   const benefitsFullList = benefitList.filter(function (item, pos) {
-    return benefitList.indexOf(item) === pos;
+    return benefitList.indexOf(item) === pos
   })
 
-  return benefitsFullList;
+  return benefitsFullList
 }
 
 module.exports = {

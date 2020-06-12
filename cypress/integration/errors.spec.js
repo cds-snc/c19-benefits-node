@@ -1,9 +1,9 @@
-
-const route = (name, lang) => require('../../utils/route.helpers').simpleRoute(name, lang, true);
+const route = (name, lang) =>
+  require('../../utils/route.helpers').simpleRoute(name, lang, true)
 /* eslint-disable no-undef */
 function testError(name, lang, numberOfExpectedErrors) {
   const numErrors = numberOfExpectedErrors || 1
-  const path = route(name, lang);
+  const path = route(name, lang)
 
   cy.visit(path)
   cy.get('[data-cy=next]').click()
@@ -14,6 +14,10 @@ function testError(name, lang, numberOfExpectedErrors) {
 describe('Error Pages', () => {
   ['en', 'fr'].forEach((lang) => {
     describe('Language: ' + lang, () => {
+      beforeEach(() => {
+        process.env.COOKIE_SECRET = 'error_pages'
+      })
+
       it('Province', () => {
         testError('question-province', lang)
       })

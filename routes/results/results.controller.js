@@ -28,9 +28,9 @@ module.exports = (app, route) => {
       const data = getData(req, res);
 
       // get All Benefits (except provinces and GST)
-      const benefitsFullList = _.pull(getAllBenefits(), 'gst_credit');
+      const benefitsFullList = _.pull(getAllBenefits(req.locals.featureFlags), 'gst_credit');
 
-      const benefits = getBenefits(data);
+      const benefits = getBenefits(data, req.locals.featureFlags);
       let unavailableBenefits = benefitsFullList.filter((benefit) => !benefits.includes(benefit))
 
       // We need to remove DTC if the user matches one of the variants

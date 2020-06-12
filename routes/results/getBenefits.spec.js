@@ -1,4 +1,5 @@
-const { getBenefits, getProvincialBenefits } = require('./getBenefits')
+const  getBenefits  = (data) => require('./getBenefits').getBenefits(data, {enableDtc: true})
+const { getProvincialBenefits } = require('./getBenefits')
 
 describe('Test the getBenefits calculator', () => {
 

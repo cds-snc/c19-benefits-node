@@ -5,6 +5,7 @@ All notable changes to this product will be documented in this file.
 
 ### Added
 * The Disability Tax Credit
+* Feature flag for DTC
 ### Bugfix: 
 * Fixing HTML Validation Errors
 
