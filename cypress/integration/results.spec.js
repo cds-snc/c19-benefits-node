@@ -7,6 +7,7 @@ describe('Result Page Only tests', () => {
 
       beforeEach(() => {
         process.env.FF_ENABLE_DTC = true
+        process.env.COOKIE_SECRET = 'result'
       })
 
       it('should display an error when navigating directly to results page', () => {
@@ -30,6 +31,7 @@ describe('Paths and Benefits', () => {
 
       beforeEach(() => {
         process.env.FF_ENABLE_DTC = true
+        process.env.COOKIE_SECRET = 'paths'
         cy.visit('/' + lang)
         cy.reportA11y()
         cy.get('[data-cy=start]').click()
