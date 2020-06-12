@@ -19,13 +19,18 @@ module.exports = (app, route) => {
       privacy_concerns: +problems.includes('privacy_concerns'),
       dont_know: +problems.includes('dont_know'),
       other_issue: +problems.includes('other_issue'),
-      details: req.body.details || 'n/a',
       session: req.locals.session.id || 'n/a',
       version: process.env.GITHUB_SHA || 'n/a',
       url: req.headers.referer || req.headers.referrer || 'n/a',
       path: url.pathname,
       date: date.toISOString(),
       language: res.locals.getLocale(),
+    }
+
+    if (req.locals.featureFlags.enableFreetext) {
+      feedback.details =  req.body.details || 'n/a'
+    } else {
+      feedback.details =  'disabled'
     }
 
     console.log(JSON.stringify({ feedback: feedback }))
