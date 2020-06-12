@@ -104,6 +104,7 @@ app.locals.TAG_VERSION = process.env.TAG_VERSION || null
 app.locals.LAST_UPDATED = process.env.LAST_UPDATED || null
 app.locals.hasData = hasData
 
+
 // add static asset management
 app.use(assetPath(app))
 app.use(assetVersion(app))
@@ -125,7 +126,7 @@ app.use(languageLinkHelper(app))
 // middleware to redirect french paths to the french domain and english paths to the english domain
 app.use(domainRedirector)
 app.use(logger)
-app.use(featureFlags)
+app.use(featureFlags(app))
 app.routes = configRoutes(app, routes, locales)
 
 // view engine setup

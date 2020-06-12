@@ -48,11 +48,13 @@
           </div>
         </fieldset>
 
-        <div class="mt-6">
-          <label for="feedback-details" class="font-normal mb-2 text-2xl">{{ __('feedback.tell_us_more') }}</label>
-          <span id="feedback-details-hint">{{ __('feedback.personal_warning') | safe }}</span>
-          <textarea name="details" class="h-40" id="feedback-details" aria-describedby="feedback-details-hint"></textarea>
-        </div>
+        {% if featureFlags.enableFreeText === "true" %}
+          <div class="mt-6">
+            <label for="feedback-details" class="font-normal mb-2 text-2xl">{{ __('feedback.tell_us_more') }}</label>
+            <span id="feedback-details-hint">{{ __('feedback.personal_warning') | safe }}</span>
+            <textarea name="details" class="h-40" id="feedback-details" aria-describedby="feedback-details-hint"></textarea>
+          </div>
+        {% endif %}
 
         <button class="mt-8 py-3 px-4 border shadow bg-blue-800 w-auto" type="submit">{{ __('feedback.submit') }}</button>
 
