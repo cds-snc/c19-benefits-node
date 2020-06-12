@@ -1,11 +1,17 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-06-12
+
+### Added
+* Feature Flag for Freetext on Feedback
+
 ## 2020-06-10
 
 ### Added
 * The Disability Tax Credit
 * Feature flag for DTC
+
 ### Bugfix: 
 * Fixing HTML Validation Errors
 
