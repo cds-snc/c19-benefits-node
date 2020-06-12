@@ -39,6 +39,7 @@ jobs:
     - name: Run Cypress end-to-end
       uses: cypress-io/github-action@v1
       env:
+        FF_ENABLE_DTC: true
         NODE_ENV: test
         A11Y_TRACKER_KEY: ${{ secrets.A11Y_TRACKER_KEY }}
         CI: true

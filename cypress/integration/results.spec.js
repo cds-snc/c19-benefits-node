@@ -4,6 +4,11 @@ const route = (name, lang) => require('../../utils/route.helpers').simpleRoute(n
 describe('Result Page Only tests', () => {
   ['en', 'fr'].forEach((lang) => {
     describe('Language: ' + lang, () => {
+
+      beforeEach(() => {
+        process.env.COOKIE_SECRET = 'result'
+      })
+
       it('should display an error when navigating directly to results page', () => {
         cy.visit(route('results', lang))
         cy.get('[data-cy=missed-questions]')
@@ -29,6 +34,7 @@ describe('Paths and Benefits', () => {
     describe('Language: ' + lang, () => {
 
       beforeEach(() => {
+        process.env.COOKIE_SECRET = 'paths'
         cy.visit('/' + lang)
         cy.reportA11y()
         cy.get('[data-cy=start]').click()
