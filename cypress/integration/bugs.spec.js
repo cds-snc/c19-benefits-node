@@ -2,7 +2,6 @@
 describe('Found Bugs', () => {
   describe('Issue #378 - Bug showing CERB twice when going back and forth', () => {
     beforeEach(() => {
-      process.env.FF_ENABLE_DTC = true
       process.env.COOKIE_SECRET = 'found_bugs'
     })
     it('Check some-income lost-a-job to no-income', () => {

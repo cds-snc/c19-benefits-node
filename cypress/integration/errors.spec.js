@@ -15,7 +15,6 @@ describe('Error Pages', () => {
   ['en', 'fr'].forEach((lang) => {
     describe('Language: ' + lang, () => {
       beforeEach(() => {
-        process.env.FF_ENABLE_DTC = true
         process.env.COOKIE_SECRET = 'error_pages'
       })
 

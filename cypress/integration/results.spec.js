@@ -6,7 +6,6 @@ describe('Result Page Only tests', () => {
     describe('Language: ' + lang, () => {
 
       beforeEach(() => {
-        process.env.FF_ENABLE_DTC = true
         process.env.COOKIE_SECRET = 'result'
       })
 
@@ -30,7 +29,6 @@ describe('Paths and Benefits', () => {
     describe('Language: ' + lang, () => {
 
       beforeEach(() => {
-        process.env.FF_ENABLE_DTC = true
         process.env.COOKIE_SECRET = 'paths'
         cy.visit('/' + lang)
         cy.reportA11y()
