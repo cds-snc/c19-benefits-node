@@ -36,6 +36,7 @@ const {
   csrfToken,
   assetPath,
   assetVersion,
+  featureFlags,
 } = require('./middleware')
 
 // check to see if we have a custom configRoutes function
@@ -124,7 +125,7 @@ app.use(languageLinkHelper(app))
 // middleware to redirect french paths to the french domain and english paths to the english domain
 app.use(domainRedirector)
 app.use(logger)
-
+app.use(featureFlags)
 app.routes = configRoutes(app, routes, locales)
 
 // view engine setup

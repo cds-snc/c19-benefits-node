@@ -10,5 +10,16 @@ module.exports = (app, route) => {
         title: res.__("oas.title"),
       }))
     })
-    .post(route.applySchema(Schema), route.doRedirect())
+    .post(route.applySchema(Schema), (req, res) => {
+
+      let path
+      if (req.locals.featureFlags.enableDtc){
+        path = res.locals.routePath('question-dtc')
+      } else {
+        path = res.locals.routePath('prepare')
+      }
+
+
+      return res.redirect(path)
+    })
 }
