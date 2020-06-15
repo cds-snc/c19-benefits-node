@@ -7,7 +7,7 @@ module.exports = (app, route) => {
   route
     .draw(app)
     .get((req, res) => {
-      if (req.session.formdata === null || req.session.formdata === undefined) {
+      if (req.session.formdata === null || req.session.formdata === undefined || req.session.formdata.province === undefined) {
         req.session.province = ''
       } else {
         req.session.province = req.session.formdata.province

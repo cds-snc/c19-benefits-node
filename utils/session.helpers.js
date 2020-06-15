@@ -8,6 +8,13 @@ const saveSessionData = (req) => {
   const body = Object.assign({}, req.body)
   delete body.redirect
   delete body._csrf
+  if (req.session.history === undefined) {
+    req.session.history = []
+  }
+  if (req.url !== undefined)
+  {
+    req.session.history.push(req.url)
+  }
 
   req.session.formdata = { ...req.session.formdata, ...body }
 }

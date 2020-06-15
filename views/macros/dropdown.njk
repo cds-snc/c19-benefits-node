@@ -30,7 +30,7 @@
             <option name="{{ itemId }}"
                 value="{{ item.value }}"
                 {% if selectedValue === item.value %}
-                  selected
+                  selected="selected"
                 {% endif %}
                 >{% if attributes.safe %}{{- item.text | safe -}}{% else %}{{- item.text -}}{% endif %}</option>
           {%- endfor -%}

@@ -3,6 +3,20 @@ const { simpleRoute } = require('../../utils/route.helpers')
 module.exports = (app, table) => {
   // clear session
 
+  app.get('/back', (req, res) => {
+    if (
+      req.session === undefined ||
+      req.session.history === undefined ||
+      req.session.history.length === 0
+    ) {
+      throw new Error('No History Available') // TODO Fix this later
+    }
+
+    const url = req.session.history.pop()
+
+    return res.redirect(url)
+  })
+
   app.get('/test-500', (req, res) => {
     throw new Error('something bad')
   })
