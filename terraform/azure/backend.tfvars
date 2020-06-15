@@ -1,4 +1,4 @@
-resource_group_name  = "CV19Benefits-remote-state-RG"
-storage_account_name = "cv19benefitstfstorage"
-container_name       = "cv19benefits-remote-state-container"
-key                  = "terraform.tfstate"
+container_name = "esdcbenefits-remote-state-container"
+key = "terraform.tfstate"
+resource_group_name = "EsDCBenefits-remote-state-RG"
+storage_account_name = "esdcbenefitstfstorage"
