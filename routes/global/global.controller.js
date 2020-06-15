@@ -14,6 +14,10 @@ module.exports = (app, table) => {
 
     const url = req.session.history.pop()
 
+    if (req.session.history.length === 0){
+     // res.locals.hideBackButton = true
+    }
+
     return res.redirect(url)
   })
 

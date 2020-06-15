@@ -1,5 +1,6 @@
 const { validationResult, checkSchema } = require('express-validator')
 const { getSessionData, saveSessionData } = require('./session.helpers')
+const { setHistory } = require('./history.helpers')
 
 /*
   original format is an array of error objects: https://express-validator.github.io/docs/validation-result-api.html
@@ -62,6 +63,7 @@ const checkErrors = template => {
 
     const errors = validationResult(req)
 
+
     saveSessionData(req)
 
     // flash error messages and redirect back on error
@@ -69,6 +71,8 @@ const checkErrors = template => {
       req.session.flashmessage = errorArray2ErrorObject(errors)
       return res.redirect('back')
     }
+
+    setHistory(req, res)
 
     return next()
   }

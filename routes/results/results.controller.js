@@ -51,7 +51,7 @@ module.exports = (app, route) => {
         unavailableBenefits: unavailableBenefits,
         provincial: provincial,
         no_results: benefits.length === 0,
-        hideBackButton: true,
+        // hideBackButton: true,
         title: title,
         data: data,
       }))
