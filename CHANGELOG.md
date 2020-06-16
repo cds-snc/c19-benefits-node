@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-06-16
+
+### Removed
+* Google Analytics
+
 ## 2020-06-10
 
 ### Added
