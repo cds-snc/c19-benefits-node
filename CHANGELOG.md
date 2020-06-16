@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-06-16
+
+### Changed
+* Modifed Your province or territory page to use a auto-complete dropdown isntead of radio buttons
+* Modified Back button implementation to use a history stored in the session to enable navigation with no javascript
+
 ## 2020-06-12
 
 ### Added
