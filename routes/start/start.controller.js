@@ -8,7 +8,7 @@ module.exports = (app, route) => {
     const domain = getDomain(req)
 
     // firefox keeps the session even after closing, so clear it here just in case
-    if (req.session.history !== undefined || req.session.history.length > 0) {
+    if (req.session.history !== undefined && req.session.history.length > 0) {
       req.session.history = []
     }
 
