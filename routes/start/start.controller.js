@@ -7,6 +7,10 @@ module.exports = (app, route) => {
   app.get('/', (req, res) => {
     const domain = getDomain(req)
 
+    if (req.session.history !== undefined || req.session.history.length > 0) {
+      req.session.history = []
+    }
+
     // if on the French domain, redirect to the /fr start page
     // istanbul ignore next
     if (domain.includes(process.env.DOMAIN_FR)) {
