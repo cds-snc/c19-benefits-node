@@ -6,6 +6,9 @@ All notable changes to this product will be documented in this file.
 ### Removed
 * Google Analytics
 
+### Updated
+* CERB duration is now 24 weeks, up from 16
+
 ## 2020-06-12
 
 ### Added
