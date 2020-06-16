@@ -4,9 +4,6 @@ const scriptSrc = [
   "'self'",
   'cdnjs.cloudflare.com',
   '*.herokuapp.com',
-  'www.googletagmanager.com/',
-  'https://www.google-analytics.com',
-  'https://ssl.google-analytics.com',
   'assets.adobedtm.com',
   "'unsafe-inline'",
   'cv19-benefits-cdn.azureedge.net',
@@ -31,7 +28,6 @@ module.exports = {
   baseUri: ["'none'"],
   connectSrc: [
     "'self'",
-    'https://www.google-analytics.com',
     '*.demdex.net',
     'cm.everesttech.net',
     '*.omtrdc.net',
@@ -41,7 +37,6 @@ module.exports = {
   imgSrc: [
     "'self'",
     'data:',
-    'https://www.google-analytics.com',
     '*.demdex.net',
     'cm.everesttech.net',
     'assets.adobedtm.com',
