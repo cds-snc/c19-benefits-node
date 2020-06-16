@@ -13,6 +13,14 @@ const session = (req, res, next) => {
     req.session.history === undefined ||
     req.session.history.length === 0){
     res.locals.hideBackButton = true
+  } else {
+    if(req.session.history[req.session.history.length - 1] === req.url){
+      req.session.history.pop()
+      if( req.session.history.length === 0){
+        res.locals.hideBackButton = true
+      }
+    }
+
   }
 
   next()
