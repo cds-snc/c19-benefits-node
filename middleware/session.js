@@ -8,7 +8,10 @@ const session = (req, res, next) => {
   req.locals = { session: req.session }
 
   // remove the back button if the session has no history
-  if (req.session.history.length === 0){
+  if (
+    req.session === undefined ||
+    req.session.history === undefined ||
+    req.session.history.length === 0){
     res.locals.hideBackButton = true
   }
 
