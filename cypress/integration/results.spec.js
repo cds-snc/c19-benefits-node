@@ -90,7 +90,6 @@ describe('Paths and Benefits', () => {
       })
 
       it('RRIF', () => {
-        // cy.answerQuestion('#provinceon')
         cy.answerInput('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-some-income')
         cy.answerRB('#some_incomeretired')
