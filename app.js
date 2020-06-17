@@ -132,17 +132,6 @@ app.use(featureFlags(app))
 
 app.routes = configRoutes(app, routes, locales)
 
-app.use((req,res,next) => {
-  if (req.session === undefined || req.session.history === undefined || req.session.history.length === 0) {
-    res.locals.hideBackButton = true
-  } else {
-    res.locals.hideBackButton = false
-    req.session.history = req.session.history.filter(i => i === req.url)
-  }
-
-  next()
-})
-
 // view engine setup
 const nunjucks = require('nunjucks')
 

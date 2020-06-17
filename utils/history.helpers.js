@@ -6,7 +6,6 @@ const setHistory = (req, res) => {
   if (req.url !== undefined)
   {
     req.session.history.push(req.url)
-    // res.locals.hideBackButton = false
   }
 
 }
