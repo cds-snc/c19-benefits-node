@@ -7,6 +7,7 @@ const csrfToken = require('./csrfToken')
 const assetPath = require('./assetPath')
 const assetVersion = require('./assetVersion')
 const featureFlags = require('./featureFlags')
+const headerConfig = require('./headerConfig')
 
 module.exports = {
   ...domainRedirector,
@@ -18,4 +19,5 @@ module.exports = {
   ...assetPath,
   ...assetVersion,
   ...featureFlags,
+  ...headerConfig,
 }

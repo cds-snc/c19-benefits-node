@@ -37,6 +37,7 @@ const {
   assetPath,
   assetVersion,
   featureFlags,
+  headerConfig,
 } = require('./middleware')
 
 // check to see if we have a custom configRoutes function
@@ -52,7 +53,8 @@ const app = express()
 // see: https://docs.microsoft.com/en-us/azure/app-service/containers/configure-language-nodejs#detect-https-session
 app.set('trust proxy', 1)
 
-// general app configuration.
+app.use(headerConfig)
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser(process.env.app_session_secret))
@@ -127,6 +129,7 @@ app.use(languageLinkHelper(app))
 app.use(domainRedirector)
 app.use(logger)
 app.use(featureFlags(app))
+
 app.routes = configRoutes(app, routes, locales)
 
 // view engine setup
