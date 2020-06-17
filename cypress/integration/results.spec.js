@@ -141,7 +141,6 @@ describe('Paths and Benefits', () => {
       })
 
       it('dtc-alone', () => {
-        // cy.answerQuestion('#provinceon')
         cy.answerInput('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
@@ -170,7 +169,6 @@ describe('Paths and Benefits', () => {
       })
 
       it('dtc-allowance', () => {
-        // cy.answerQuestion('#provinceon')
         cy.answerInput('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
@@ -198,7 +196,6 @@ describe('Paths and Benefits', () => {
         cy.get('#dtc_allowance')
       })
       it('dtc-oas', () => {
-        // cy.answerQuestion('#provinceon')
         cy.answerInput('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
