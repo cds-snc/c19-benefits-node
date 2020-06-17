@@ -9,6 +9,7 @@ All notable changes to this product will be documented in this file.
 ### Changed
 * Modifed Your province or territory page to use a auto-complete dropdown isntead of radio buttons
 * Modified Back button implementation to use a history stored in the session to enable navigation with no javascript
+* CERB duration is now 24 weeks, up from 16
 
 ## 2020-06-12
 
