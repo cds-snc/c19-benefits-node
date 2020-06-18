@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "resource_group" {
-  name     = "${var.name}-resources-RG"
+  name     = "${var.name}ResourcesRg"
   location = var.location
 }
 

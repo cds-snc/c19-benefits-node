@@ -1,6 +1,6 @@
 
 resource "azurerm_app_service_plan" "app_service_plan" {
-  name                = "${var.name}-asp"
+  name                = "${var.name}Asp"
   location            = azurerm_resource_group.resource_group.location
   resource_group_name = azurerm_resource_group.resource_group.name
   kind                = "Linux"
@@ -12,11 +12,11 @@ resource "azurerm_app_service_plan" "app_service_plan" {
   }
 
   tags = {
-    "project-code" = "esdc-covid-19-cds"
+    "project-code" = "esdc-covid-19-dts"
   }
 }
 resource "azurerm_app_service_plan" "asp_non_prod" {
-  name                = "${var.name}-non-prod"
+  name                = "${var.name}NonProd"
   location            = azurerm_resource_group.resource_group.location
   resource_group_name = azurerm_resource_group.resource_group.name
   kind                = "Linux"
@@ -28,12 +28,12 @@ resource "azurerm_app_service_plan" "asp_non_prod" {
   }
 
   tags = {
-    "project-code" = "esdc-covid-19-cds"
+    "project-code" = "esdc-covid-19-dts"
   }
 }
 
 resource "azurerm_app_service_plan" "devtest" {
-  name                = "${var.name}-devtest"
+  name                = "${var.name}DevTest"
   location            = azurerm_resource_group.resource_group.location
   resource_group_name = azurerm_resource_group.resource_group.name
   kind                = "Linux"
@@ -45,7 +45,7 @@ resource "azurerm_app_service_plan" "devtest" {
   }
 
   tags = {
-    "project-code" = "esdc-covid-19-cds"
+    "project-code" = "esdc-covid-19-dts"
   }
 }
 

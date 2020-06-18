@@ -1,5 +1,5 @@
 resource "azurerm_app_service" "app_service" {
-  name                = "${var.name}-appservice"
+  name                = "${var.name}AppService"
   location            = azurerm_resource_group.resource_group.location
   resource_group_name = azurerm_resource_group.resource_group.name
   app_service_plan_id = azurerm_app_service_plan.app_service_plan.id
@@ -18,8 +18,6 @@ resource "azurerm_app_service" "app_service" {
     "ADOBE_ENV"                       = "production"
     "APPINSIGHTS_INSTRUMENTATIONKEY"  = azurerm_application_insights.covid-benefit.instrumentation_key
     "APP_SERVICE"                     = "true"
-    "AIRTABLE_API_KEY"                = "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault.key_vault.vault_uri}secrets/${azurerm_key_vault_secret.airtable_api_key.name}/${azurerm_key_vault_secret.airtable_api_key.version})"
-    "AIRTABLE_BASE_ID"                = "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault.key_vault.vault_uri}secrets/${azurerm_key_vault_secret.airtable_base_id.name}/${azurerm_key_vault_secret.airtable_base_id.version})"
     "CDN_PREFIX"                      = "//cv19-benefits-cdn.azureedge.net"
     "COOKIE_SECRET"                   = "lhnhtvsnaavmlxjrqct"
     "DOCKER_REGISTRY_SERVER_URL"      = "https://${azurerm_container_registry.container_registry.login_server}"
