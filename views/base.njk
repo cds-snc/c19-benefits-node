@@ -2,6 +2,7 @@
 {%- from 'input-text.njk' import textInput as textInput with context -%}
 {%- from 'input-textarea.njk' import textArea as textArea with context -%}
 {%- from 'radios.njk' import radioButtons as radioButtons with context -%}
+{%- from 'dropdown.njk' import dropdown as dropdown with context -%}
 {%- from 'checkboxes.njk' import checkBoxes as checkBoxes with context -%}
 {%- from 'buttons.njk' import formButtons as formButtons with context -%}
 {%- from 'input-file.njk' import fileInput as fileInput with context -%}
@@ -25,13 +26,8 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CNoto+Sans:400,700&amp;display=fallback" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('/dist/css/styles.css') }}?{{ assetVersion() }}">
         {% include "_includes/meta.njk" %}
-        {% include "_includes/ga.njk" %}
     </head>
     <body>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe aria-hidden="true" title="GTM" src="https://www.googletagmanager.com/ns.html?id=GTM-MTM7CPP"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
         <nav>
             <div id="skip-link-container"><a href="#content" id="skip-link">{{ __('Skip to main content') }}</a></div>
         </nav>
@@ -42,9 +38,14 @@
                 {% include "_includes/fip.njk" %}
             </header>
             <main id="content">
-                {% if not hideBackButton %}
-                    {% include "_includes/back-link.njk" %}
-                {% endif %}
+                <div class="-mt-6">
+                    {% if not hideBackButton %}
+                        {% include "_includes/back-link.njk" %}
+                    {% endif %}
+                    {% if showStartOver %}
+                        <a class="py-3 button-link transparent" href="/clear"><img src="{{ asset('/img/times-circle.svg') }}" class="h-6 w-6" alt="" /><span>{{ __('start_over') }}</span></a>
+                    {% endif %}
+                </div>
                 {% if errors %}
                     {% include "_includes/errorList.njk" %}
                 {% endif %}

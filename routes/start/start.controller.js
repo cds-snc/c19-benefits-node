@@ -7,6 +7,11 @@ module.exports = (app, route) => {
   app.get('/', (req, res) => {
     const domain = getDomain(req)
 
+    // firefox keeps the session even after closing, so clear it here just in case
+    if (req.session.history !== undefined && req.session.history.length > 0) {
+      req.session.history = []
+    }
+
     // if on the French domain, redirect to the /fr start page
     // istanbul ignore next
     if (domain.includes(process.env.DOMAIN_FR)) {
@@ -22,7 +27,6 @@ module.exports = (app, route) => {
   route.draw(app).get(async (req, res) => {
     req.session.formdata = null
     res.render(name, routeUtils.getViewData(req, {
-      hideBackButton: true,
       title: res.__('start.title'),
     }))
   })

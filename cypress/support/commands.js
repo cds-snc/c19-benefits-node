@@ -26,8 +26,14 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-Cypress.Commands.add("answerQuestion", (val) => {
+Cypress.Commands.add("answerRB", (val) => {
   cy.reportA11y()
   cy.get(val).click()
+  cy.get('[data-cy=next]').click()
+})
+
+Cypress.Commands.add("answerInput", (id, val) => {
+  cy.reportA11y()
+  cy.get(id).type(val)
   cy.get('[data-cy=next]').click()
 })

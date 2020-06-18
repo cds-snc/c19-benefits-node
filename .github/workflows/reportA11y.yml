@@ -29,6 +29,7 @@ jobs:
           NODE_ENV: test
           A11Y_TRACKER_KEY: ${{ secrets.A11Y_TRACKER_KEY }}
           CI: true
+          FF_ENABLE_DTC: true
         with:
           install: false
           start: npm run test:server:start

@@ -136,7 +136,7 @@ form {
     border: 2px solid $color-black;
     padding: $space-xxs;
 
-    &:focus {
+    &:focus:not(.autocomplete__option){
       @include focus();
       border-color: $color-black;
     }

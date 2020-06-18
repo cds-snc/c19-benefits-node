@@ -1,11 +1,32 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-06-17
+
+### Removed
+* A duplicate back button has been removed from the results page
+
+## 2020-06-16
+
+### Removed
+* Google Analytics
+
+### Changed
+* Modifed Your province or territory page to use a auto-complete dropdown isntead of radio buttons
+* Modified Back button implementation to use a history stored in the session to enable navigation with no javascript
+* CERB duration is now 24 weeks, up from 16
+
+## 2020-06-12
+
+### Added
+* Feature Flag for Freetext on Feedback
+
 ## 2020-06-10
 
 ### Added
 * The Disability Tax Credit
 * Feature flag for DTC
+
 ### Bugfix: 
 * Fixing HTML Validation Errors
 
