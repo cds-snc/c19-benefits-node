@@ -7,7 +7,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "resource_group" {
-  name     = "${var.name}-remote-state-RG"
+  name     = "${var.name}RemoteStateRg"
   location = var.location
 }
 
@@ -23,7 +23,7 @@ resource "azurerm_storage_account" "remote_state_sa" {
 }
 
 resource "azurerm_storage_container" "terraform_remote_state_container" {
-  name                  = "${lower(var.name)}-remote-state-container"
+  name                  = "${lower(var.name)}remotestatecontainer"
   storage_account_name  = azurerm_storage_account.remote_state_sa.name
   container_access_type = "private"
   #lifecycle {
