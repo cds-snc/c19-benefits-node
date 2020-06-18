@@ -8,6 +8,7 @@ const assetPath = require('./assetPath')
 const assetVersion = require('./assetVersion')
 const featureFlags = require('./featureFlags')
 const headerConfig = require('./headerConfig')
+const startOver = require('./startOver')
 
 module.exports = {
   ...domainRedirector,
@@ -20,4 +21,5 @@ module.exports = {
   ...assetVersion,
   ...featureFlags,
   ...headerConfig,
+  ...startOver,
 }

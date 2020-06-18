@@ -38,6 +38,7 @@ const {
   assetVersion,
   featureFlags,
   headerConfig,
+  startOver,
 } = require('./middleware')
 
 // check to see if we have a custom configRoutes function
@@ -111,6 +112,7 @@ app.locals.hasData = hasData
 app.use(assetPath(app))
 app.use(assetVersion(app))
 
+app.use(startOver)
 
 app.use((req, res, next) => {
   app.locals.pageUrl = req.protocol + '://' + req.get('host') + req.originalUrl

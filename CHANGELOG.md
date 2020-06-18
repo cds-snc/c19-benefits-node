@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-06-17
+
+### Removed
+* A duplicate back button has been removed from the results page
+
 ## 2020-06-16
 
 ### Removed
