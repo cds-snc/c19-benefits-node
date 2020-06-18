@@ -18,13 +18,11 @@ resource "azurerm_app_service" "app_service" {
     "ADOBE_ENV"                       = "production"
     "APPINSIGHTS_INSTRUMENTATIONKEY"  = azurerm_application_insights.covid-benefit.instrumentation_key
     "APP_SERVICE"                     = "true"
-    "CDN_PREFIX"                      = "//cv19-benefits-cdn.azureedge.net"
     "COOKIE_SECRET"                   = "lhnhtvsnaavmlxjrqct"
     "DOCKER_REGISTRY_SERVER_URL"      = "https://${azurerm_container_registry.container_registry.login_server}"
     "DOCKER_REGISTRY_SERVER_USERNAME" = azurerm_container_registry.container_registry.admin_username
     #"DOCKER_REGISTRY_SERVER_PASSWORD" = azurerm_container_registry.container_registry.admin_password
     "DOCKER_REGISTRY_SERVER_PASSWORD" = "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault.key_vault.vault_uri}secrets/${azurerm_key_vault_secret.docker_password.name}/${azurerm_key_vault_secret.docker_password.version})"
-    "FF_ENABLE_DTC"                   = "false"
     "SLOT_NAME"                       = "default"
 
   }
@@ -62,7 +60,6 @@ resource "azurerm_app_service_slot" "staging" {
     "DOCKER_REGISTRY_SERVER_USERNAME" = azurerm_container_registry.container_registry.admin_username
     #"DOCKER_REGISTRY_SERVER_PASSWORD" = azurerm_container_registry.container_registry.admin_password
     "DOCKER_REGISTRY_SERVER_PASSWORD" = "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault.key_vault.vault_uri}secrets/${azurerm_key_vault_secret.docker_password.name}/${azurerm_key_vault_secret.docker_password.version})"
-    "FF_ENABLE_DTC"                   = "false"
     "SLOT_NAME"                       = "staging"
   }
 
@@ -100,7 +97,6 @@ resource "azurerm_app_service_slot" "dev" {
     "DOCKER_REGISTRY_SERVER_USERNAME" = azurerm_container_registry.container_registry.admin_username
     #"DOCKER_REGISTRY_SERVER_PASSWORD" = azurerm_container_registry.container_registry.admin_password
     "DOCKER_REGISTRY_SERVER_PASSWORD" = "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault.key_vault.vault_uri}secrets/${azurerm_key_vault_secret.docker_password.name}/${azurerm_key_vault_secret.docker_password.version})"
-    "FF_ENABLE_DTC"                   = "false"
     "SLOT_NAME"                       = "dev"
   }
 
