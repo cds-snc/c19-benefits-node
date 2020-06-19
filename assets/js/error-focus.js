@@ -1,7 +1,7 @@
 window.onload = function(){
-  const elems = document.querySelectorAll('.error-list a')
+  const errorList = document.querySelector('.error-list')
 
-  if (elems !== undefined && elems.length > 0) {
-    elems[0].focus()
+  if (errorList !== null) {
+    errorList.focus()
   }
 }
