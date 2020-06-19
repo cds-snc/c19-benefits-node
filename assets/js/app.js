@@ -9,3 +9,4 @@ window.$ = jQuery
 window.jQuery = jQuery
 
 require('./results-accordion')
+require('./error-focus')
