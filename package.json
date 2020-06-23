@@ -23,9 +23,6 @@
     "test:server:start": "webpack --config webpack.dev.js && cross-env NODE_ENV=test node ./bin/www",
     "test:watch": "node node_modules/jest/bin/jest.js --watch",
     "cypress:run:test": "NODE_ENV=test cypress run",
-    "aws": "cd cdk && cdk synth && node deploy",
-    "aws-bootstrap": "node cdk/bootstrap.js",
-    "aws-destroy": "node cdk/destroy.js",
     "comb": "jsoncomb --normalise \"./locales/*.json\"",
     "cypress:open": "node ./node_modules/.bin/cypress open",
     "postinstall": "patch-package",
@@ -75,11 +72,6 @@
     "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
-    "@aws-cdk/aws-docdb": "1.32.0",
-    "@aws-cdk/aws-ec2": "1.32.0",
-    "@aws-cdk/aws-ecs": "1.32.0",
-    "@aws-cdk/aws-ecs-patterns": "1.32.0",
-    "@aws-cdk/core": "1.32.0",
     "@cdssnc/a11y-tracker-client": "^1.1.2",
     "acorn": "^7.2.0",
     "cheerio": "^1.0.0-rc.3",
