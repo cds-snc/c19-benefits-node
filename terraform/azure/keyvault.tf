@@ -70,17 +70,3 @@ resource "azurerm_key_vault_secret" "docker_password" {
   key_vault_id = azurerm_key_vault.key_vault.id
   depends_on   = [azurerm_key_vault_access_policy.tf_identity]
 }
-
-resource "azurerm_key_vault_secret" "airtable_api_key" {
-  name         = "AirtableApiKey"
-  value        = var.airtable_api_key
-  key_vault_id = azurerm_key_vault.key_vault.id
-  depends_on   = [azurerm_key_vault_access_policy.tf_identity]
-}
-
-resource "azurerm_key_vault_secret" "airtable_base_id" {
-  name         = "AirtableBaseId"
-  value        = var.airtable_base_id
-  key_vault_id = azurerm_key_vault.key_vault.id
-  depends_on   = [azurerm_key_vault_access_policy.tf_identity]
-}

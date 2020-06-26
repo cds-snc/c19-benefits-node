@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-06-23
+
+### Changed
+* Feedback form now saves data to Adobe Analytics
+
 ## 2020-06-17
 
 ### Removed
