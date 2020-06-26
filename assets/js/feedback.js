@@ -54,3 +54,9 @@ if (form) {
   // intercept the form submit
   form.addEventListener('submit', submitFeedback)
 }
+
+var feedbackContainer = document.getElementsByClassName('feedback-container')[0];
+
+if (feedbackContainer) {
+  feedbackContainer.className = feedbackContainer.className.replace(/\bno-js\b/g, "");
+}

@@ -44,7 +44,6 @@ module.exports = (app, route) => {
     console.log(JSON.stringify({ feedback: feedback }))
 
     sendNotification(feedback)
-    saveToAirtable(feedback)
 
     return res.redirect(res.locals.routePath('feedback-thanks'))
   })
@@ -77,28 +76,4 @@ const sendNotification = (feedback) => {
     )
     .then((response) => console.log('Sent by email'))
     .catch((err) => console.error(err))
-}
-
-const saveToAirtable = (feedback) => {
-  if (!(process.env.AIRTABLE_API_KEY && process.env.AIRTABLE_BASE_ID)) {
-    return
-  }
-  const base = require('airtable').base(process.env.AIRTABLE_BASE_ID)
-
-  base('Feedback').create(
-    [
-      {
-        fields: feedback,
-      },
-    ],
-    function (err, records) {
-      if (err) {
-        console.error(err)
-        return
-      }
-      records.forEach(function (record) {
-        console.log('Saved to Airtable: ' + record.getId())
-      })
-    },
-  )
 }

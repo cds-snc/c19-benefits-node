@@ -267,3 +267,9 @@ form {
     margin-bottom: $space-xxs;
   }
 }
+
+.feedback-container {
+  &.no-js {
+    display: none;
+  }
+}
