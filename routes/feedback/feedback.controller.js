@@ -12,8 +12,6 @@ module.exports = (app, route) => {
     }
     req.session.history.push(url.pathname)
 
-    console.log(`problem length: ${problems.length}`)
-    console.log(`req body: ${req.body.details}`)
     if (problems.length === 0 && (req.body.details === undefined || req.body.details === '')) {
       console.log('redirecting to feedback-error')
       return res.redirect(res.locals.routePath('feedback-error'))
