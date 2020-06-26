@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-06-26
+
+### Added
+* Instructions on how to return to the application from the feedback submission (error and thanks) pages. These pages are only available when Javascript is disabled
+* The back button on the feedback submission pages now returns you to the page where you submitted the feedback
+
 ## 2020-06-17
 
 ### Removed
