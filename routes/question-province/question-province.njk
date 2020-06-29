@@ -35,5 +35,6 @@
 {% endblock %}
 
 {% block scripts %}
+    {{ super() }}
     <script type="text/javascript" src="{{ asset('/dist/js/province.js') }}"></script>
 {% endblock %}

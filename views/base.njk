@@ -67,12 +67,6 @@
         {% endif %}
 
         {%- block scripts -%}
-            {%- if jsFiles -%}
-                {%- for val in jsFiles -%}
-                    <script  src={{ asset(val) }}></script>
-                {%- endfor -%}
-            {%- endif -%}
-
             <script  src="{{ asset('/dist/js/app.js') }}?{{ assetVersion() }}"></script>
         {%- endblock -%}
     </body>
