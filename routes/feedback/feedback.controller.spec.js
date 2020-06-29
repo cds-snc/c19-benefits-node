@@ -30,10 +30,14 @@ test('Redirect to thanks with just problems', async () => {
 })
 
 test('Redirect to feedback error', async () => {
-  const response = await request(app).post(feedbackRoute.path.en).send({
-    problems: undefined,
-    details: '',
-  })
+  const response = await request(app)
+    .post(feedbackRoute.path.en)
+    .set('referer', 'http://foo.bar')
+    .send({
+      problems: undefined,
+      details: '',
+    })
+  
   expect(response.statusCode).toBe(302)
   expect(response.headers.location).toBe(feedbackError.path.en)
 })

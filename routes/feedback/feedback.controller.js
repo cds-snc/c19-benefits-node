@@ -5,12 +5,18 @@ module.exports = (app, route) => {
 
     const problems = req.body.problems || []
 
-    if (problems.length === 0 && req.body.details === '') {
+    const url = new URL(req.headers.referer)
+
+    if (req.session.history === undefined){
+      req.session.history = []
+    }
+    req.session.history.push(url.pathname)
+
+    if (problems.length === 0 && (req.body.details === undefined || req.body.details === '')) {
       console.log('redirecting to feedback-error')
       return res.redirect(res.locals.routePath('feedback-error'))
     }
 
-    const url = new URL(req.headers.referer)
     const feedback = {
       incorrect_info: +problems.includes('incorrect_info'),
       confusing_info: +problems.includes('confusing_info'),
