@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-06-29
+
+### Bugfix
+* Fixed a problem where pages would fail to load multiple javascript files
+
 ## 2020-06-26
 
 ### Added
