@@ -4,8 +4,6 @@ ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   SNYK-JS-LODASH-567746:
-    - airtable > lodash:
-        patched: '2020-05-01T03:09:36.436Z'
     - express-validator > lodash:
         patched: '2020-05-01T03:09:36.436Z'
     - tailwindcss > lodash:
