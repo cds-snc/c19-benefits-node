@@ -34,11 +34,12 @@ printf "Running git fetch\n"
 git fetch
 
 printf "\nDevelopment Environment\n"
-checkSiteSha https://cv19benefits-appservice-dev.azurewebsites.net/en/start against master
-validateSite https://cv19benefits-appservice-dev.azurewebsites.net/en/start againstBranch master
+checkSiteSha https://espbdtscb19appservice-dev.azurewebsites.net/en/start against master
+validateSite https://espbdtscb19appservice-dev.azurewebsites.net/en/start againstBranch master
 printf "\nStaging Deployment\n"
-validateSite https://cv19benefits-appservice-staging.azurewebsites.net/en/start againstBranch staging
+validateSite https://espbdtscb19appservice-staging.azurewebsites.net/en/start againstBranch staging
 
 printf "\nProduction Deployment\n"
 validateSite https://covid-benefits.alpha.canada.ca/en/start againstBranch staging
 validateSite https://covid-prestations.alpha.canada.ca/fr/debut againstBranch staging
+

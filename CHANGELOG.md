@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-07-06
+
+### Changed
+* Pull Requests now get released to AppService Dev for Design review
+
 ## 2020-06-29
 
 ### Bugfix
