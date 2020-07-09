@@ -1,4 +1,8 @@
-on: pull_request
+  
+on:
+  push:
+    branches:
+      - master
 jobs:
   deploy_build_dev:
     name: Build and push dev container
