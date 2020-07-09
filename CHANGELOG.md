@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-07-09
+
+### Bugfix
+* The triangle in the province dropdown is now clickable and will open the dropdown
+
 ## 2020-07-06
 
 ### Changed

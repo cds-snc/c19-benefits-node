@@ -14,6 +14,7 @@
 
 .autocomplete__hint {
   @apply absolute text-gray-600 mt-0;
+  z-index: -1;
 }
 
 .autocomplete__input--default {
@@ -25,8 +26,9 @@
   padding: 5px 34px 5px 5px;
 }
 
-.autocomplete__dropdown-arrow-down{
-  @apply inline-block absolute -z-1;
+.autocomplete__dropdown-arrow-down {
+  @apply inline-block absolute;
+  z-index: -1;
   right: 8px;
   width: 24px;
   height: 24px;
@@ -46,7 +48,7 @@
 }
 
 .autocomplete__menu--overlay {
-  @apply absolute left-0 z-100;
+  @apply absolute left-0;
   top: 100%;
 }
 
