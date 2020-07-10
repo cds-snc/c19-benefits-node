@@ -71,7 +71,7 @@
     "tailwindcss": "^1.4.6",
     "uuid": "^7.0.3",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
+    "webpack-cli": "^3.3.12",
     "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
