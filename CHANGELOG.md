@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-07-15
+
+### Bugfix
+* Added alt text to the triangle image on the province/territory dropdown
+
 ## 2020-07-09
 
 ### Bugfix
