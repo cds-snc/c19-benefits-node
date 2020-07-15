@@ -35,7 +35,7 @@ jobs:
       - name: Push container to Azure Container Registry
         run: docker push $AZURE_CONTAINER_REGISTRY_SERVER/cv-19-benefit:dev-${{ github.sha }}
 
-      - uses: azure/webapps-container-deploy@v2
+      - uses: azure/webapps-deploy@v2
         with:
           app-name: 'EsPbDtsCb19AppService'
           slot-name: 'dev'
