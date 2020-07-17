@@ -3,12 +3,22 @@ const { getProvincialBenefits } = require('./getBenefits')
 
 describe('Test the getBenefits calculator', () => {
 
-  test('It checks ei regular + cerb path', () => {
+  test('It checks ei regular + cerb path + lost job', () => {
     const result = getBenefits({
       lost_job: 'lost-all-income',
-      no_income: 'lost-job-employer-closed',
+      no_income: 'lost-job',
     })
 
+    expect(result).toContain('cerb')
+  })
+
+
+  test('It checks ei regular + cerb path + employer closed', () => {
+    const result = getBenefits({
+      lost_job: 'lost-all-income',
+      no_income: 'employer-closed',
+    })
+    
     expect(result).toContain('cerb')
   })
 

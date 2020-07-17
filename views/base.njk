@@ -39,11 +39,8 @@
             </header>
             <main id="content">
                 <div class="-mt-6">
-                    {% if not hideBackButton %}
-                        {% include "_includes/back-link.njk" %}
-                    {% endif %}
                     {% if showStartOver %}
-                        <a class="py-3 button-link transparent" href="/clear"><img src="{{ asset('/img/times-circle.svg') }}" class="h-6 w-6" alt="" /><span>{{ __('start_over') }}</span></a>
+                        <a data-gc-analytics-customclick="ESDC|EDSC:Covid19 Benefits:Start Over button click" class="py-3 px-4 button-link transparent" href="/clear"><img src="{{ asset('/img/times-circle.svg') }}" class="h-6 w-6" alt="" /><span>{{ __('start_over') }}</span></a>
                     {% endif %}
                 </div>
                 {% if errors %}

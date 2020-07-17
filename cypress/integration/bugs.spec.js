@@ -21,7 +21,7 @@ describe('Found Bugs', () => {
 
       cy.visit('/en/lost-job')
       cy.answerRB('#lost_joblost-all-income')
-      cy.answerRB('#no_incomelost-job-employer-closed')
+      cy.answerRB('#no_incomelost-job')
       cy.answerRB('#mortgage_paymentsno')
       cy.answerRB('#ccbno')
       cy.answerRB('#student_debtno')

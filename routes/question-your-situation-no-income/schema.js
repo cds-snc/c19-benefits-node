@@ -5,7 +5,7 @@ const Schema = {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
       options: [[
-        'lost-job-employer-closed','self-employed-closed',
+        'lost-job','employer-closed','self-employed-closed',
         'unpaid-leave-to-care',
         'sick-or-quarantined', 'parental-recently-cant-return',
         'student_2019_20',

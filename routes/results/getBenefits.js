@@ -43,7 +43,7 @@ const getBenefits = (data, featureFlags) => {
       data,
       {
         lost_job: 'lost-all-income',
-        no_income: 'lost-job-employer-closed',
+        no_income: ['lost-job', 'employer-closed'],
       },
       'cerb',
     ),

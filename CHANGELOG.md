@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-07-16
+
+### Changed
+* Split "You lost your job or employer closed" into two options on lost income page
+* Changed positions of the start over button and back button
+* Back button text is now "Previous"
+
+### Added
+* Added some text on the start page to indicate the questions are for individuals, not households
+
 ## 2020-07-15
 
 ### Bugfix
