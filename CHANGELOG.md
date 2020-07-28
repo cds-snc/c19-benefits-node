@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-07-28
+
+### Changed
+* Changed T&C and privacy links in the footer to new location
+
 ## 2020-07-16
 
 ### Changed
