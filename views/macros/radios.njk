@@ -16,6 +16,15 @@
                     {% endif %}
                 </span>
             {% endif %}
+            {% if attributes.bullets %}
+                <div id="{{ key }}-list">
+                    <ul class="" >
+                        {% for item in attributes.bullets %}
+                            <li style="" >{{ item | safe}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
             <div class="multiple-choice multiple-choice--radios" id="{{ key }}">
                 {% for item in values %}
                 {% set itemId %}{{ key }}{{ item.value }}{%endset%}

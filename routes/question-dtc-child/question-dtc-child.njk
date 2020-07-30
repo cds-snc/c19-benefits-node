@@ -1,0 +1,28 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+    <h1>{{ __('dtc.title') }}</h1>
+    <div>
+        {% call form() %}
+            <input type="hidden"
+                  name="_csrf"
+                  value="{{ csrfToken }}">
+
+            {{ radioButtons('dtc_child',
+                [
+                    { value: 'yes', text:__('dtc-child.yes') },
+                    { value: 'no', text:__('dtc-child.no') }
+                ],
+                data.dtc_child,
+                __('form.dtc-child'),
+                errors,
+                {
+                    required: true
+                }
+            )}}
+            {{ formButtons() }}
+        {% endcall %}
+    </div>
+
+{% endblock %}

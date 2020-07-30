@@ -1,0 +1,22 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'dtc_apply' %}
+
+{% block header %}
+  {{__("dtc.title")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>Les personnes avec un handicap sans un certificat valide pour le crédit d'impôt pour personnes handicapées peuvent toujours être admissibles au paiement unique.</strong>") }}
+  {{ benefitLi("<strong>Si vous pensez êtes admissible au crédit d’impôt pour personnes handicapées, mais n’avez jamais fait la demande, ou votre certificat a expiré en 2019, vous devez le faire avant le 25 septembre 2020. Vous ne devez pas attendre de produire votre déclaration de revenus 2020 pour déposer une demande.</strong>") }}
+  {{ benefitLi("<strong>Si vous êtes admissible pour le crédit, vous recevrez le paiement unique.</strong>") }}
+  {{ benefitLi("<strong>Nous anticipons émettre les paiements à compter de cet automne. Vous n’avez pas à faire quoi que ce soit pour le recevoir.</strong>") }}
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "dtc_apply",
+    "https://www.canada.ca/fr/services/prestations/covid-19-prestations-urgence/paiement-unique-personnes-handicapees.html",
+    "En savoir plus à propos du crédit d'impôt pour personnes handicapées"
+  )}}
+{% endblock %}

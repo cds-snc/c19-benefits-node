@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-07-29
+
+### Added
+* Added Disability Tax Credit pages
+
 ## 2020-07-28
 
 ### Changed

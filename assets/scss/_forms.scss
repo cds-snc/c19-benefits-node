@@ -114,6 +114,10 @@ form {
     color: $color-grey-dark;
   }
 
+  .form-bullet {
+    padding: 0;
+  }
+
   .validation-message {
     font-weight: 400;
     color: $color-red;

@@ -1,8 +1,7 @@
 
-
 {% extends "benefit-template.njk" %}
 
-{% set sectionId = 'dtc_child' %}
+{% set sectionId = 'dtc_individual' %}
 
 {% block header %}
   {{__("dtc.title")}}
@@ -16,15 +15,14 @@
 {% block body %}
   <strong>Bon à savoir :</strong>
   <ul>
-    <li>Vous êtes admissible pour ce paiement si vous détenez un certificat valide pour le crédit d'impôt pour personnes handicapées pour votre enfant.</li>
+    <li>Vous êtes admissible si vous détenez un certificat valide pour le crédit d'impôt pour personnes handicapées ou si vous recevez des prestations d’invalidités ou des prestations d’invalidités offertes par Anciens Combattants Canada.</li>
     <li>Nous anticipons émettre les paiements à compter de cet automne. Vous n’avez pas à faire quoi que ce soit pour le recevoir.</li>
-    <li>Si vous partagez la garde de votre enfant, le paiement sera divisé en deux. Chaque parent recevra 300 $.</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
-    "dtc_child",
+    "dtc",
     "https://www.canada.ca/fr/services/prestations/covid-19-prestations-urgence/paiement-unique-personnes-handicapees.html",
     "En savoir plus à propos du crédit d'impôt pour personnes handicapées"
   )}}

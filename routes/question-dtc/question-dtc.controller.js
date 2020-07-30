@@ -10,5 +10,17 @@ module.exports = (app, route) => {
         title: res.__('dtc.title'),
       }))
     })
-    .post(route.applySchema(Schema), route.doRedirect())
+    .post(route.applySchema(Schema), (req, res) => {
+
+      let path
+      if (req.body.dtc === "yourself") {
+        path = res.locals.routePath('question-dtc-individual')        
+      } else if (req.body.dtc === "child") {
+        path = res.locals.routePath('question-dtc-child')
+      } else {
+        path = res.locals.routePath('prepare')
+      }
+
+      return res.redirect(path)
+    })
 }

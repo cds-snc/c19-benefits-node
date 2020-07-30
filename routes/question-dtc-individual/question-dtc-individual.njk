@@ -1,0 +1,29 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+    <h1>{{ __('dtc.title') }}</h1>
+    <div>
+        {% call form() %}
+            <input type="hidden"
+                  name="_csrf"
+                  value="{{ csrfToken }}">
+
+            {{ radioButtons('dtc_individual',
+                [
+                    { value: 'yes', text:__('dtc-individual.yes') },
+                    { value: 'no', text:__('dtc-individual.no') }
+                ],
+                data.dtc_individual,
+                __('form.dtc-individual'),
+                errors,
+                {
+                    required: true,
+                    bullets: [__('dtc.bullet1'), __('dtc.bullet2'), __('dtc.bullet3')]
+                }
+            )}}
+            {{ formButtons() }}
+        {% endcall %}
+    </div>
+
+{% endblock %}

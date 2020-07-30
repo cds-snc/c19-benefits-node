@@ -5,29 +5,46 @@
 {% set sectionId = 'dtc_oas' %}
 
 {% block header %}
-  {{__("dtc_oas.header")}}
+  {{__("dtc.title")}}
 {% endblock %}
 
 {% block featured_list_items %}
   {{ benefitLi("<ul>
-    <li class='mb-2'><strong>$300 one-time, tax-free payment</strong> if you receive <strong>Old Age Security.</strong></li>
-    <li><strong>OR $100 one-time, tax-free payment</strong> if you receive the <strong>Guaranteed Income Supplement.</strong></li>
+    <li class='mb-2'><strong>$300 one-time, tax-free payment if you received the one-time payment for the Old Age Security (OAS) pension</strong></li>
+    <li><strong>OR</strong></li>
+    <li><strong>$100 one-time tax-free payment if you received the $500 one-time seniors payment for both the OAS pension and the Guaranteed Income Supplement (GIS).</strong></li>
   </ul>") }}
-  {{ benefitLi("Automatic payment starting August 10, 2020.") }}
+  {{ benefitLi("<strong>We expect to issue the payments beginning this fall. You don’t need to do anything to receive it.</strong>") }}
 {% endblock %}
 
 {% block body %}
   <strong>Good to know:</strong>
   <ul>
-    <li>This payment can help if you hold a valid certificate for the Disability Tax Credit.</li>
-    <li>Payments will be sent automatically, as soon as possible. You don’t need to do anything to receive it.</li>
+    <li>You are eligible for this payment if you are a beneficiary as of July 1, 2020 of:
+      <ul>
+        <li>Canada Pension Plan Disability</li>
+        <li>Quebec Pension Plan Disability, or</li>
+        <li>1 of the disability supports provided by Veterans Affairs Canada Disability Pension:
+          <ul>
+            <li>Disability Pension</li>
+            <li>Disability Award</li>
+            <li>Pain and Suffering Compensation</li>
+            <li>Critical Injury Benefit</li>
+            <li>Rehabilitation Services and Vocational Assistance Program</li>
+            <li>Income Replacement Benefit, and/or</li>
+            <li>Canadian Forces Income Support</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>We expect to issue the payments beginning this fall. You don’t need to do anything to receive it.</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "dtc_oas",
-    "https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/disability-tax-credit.html",
+    "https://www.canada.ca/en/services/benefits/covid19-emergency-benefits/one-time-payment-persons-disabilities.html",
     "Learn more about the Disability Tax Credit"
   )}}
 {% endblock %}

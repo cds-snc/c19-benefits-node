@@ -1,8 +1,7 @@
 
-
 {% extends "benefit-template.njk" %}
 
-{% set sectionId = 'dtc_child' %}
+{% set sectionId = 'dtc_individual' %}
 
 {% block header %}
   {{__("dtc.title")}}
@@ -16,16 +15,15 @@
 {% block body %}
   <strong>Good to know:</strong>
   <ul>
-    <li>You are eligible for this payment if you hold a valid certificate for the Disability Tax Credit for your child.</li>
+    <li>You are eligible for this payment if you hold a valid certificate for the Disability Tax Credit or are receiving pension disability benefits or disability benefits through Veteran Affairs Canada.</li>
     <li>We expect to issue the payments beginning this fall. You don’t need to do anything to receive it.</li>
-    <li>If you share custody for your child, this payment will be split $300 to each parent.</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
-    "dtc_child",
+    "dtc_individual",
     "https://www.canada.ca/en/services/benefits/covid19-emergency-benefits/one-time-payment-persons-disabilities.html",
-    "Learn more about the Disability Tax Credit"
+    "Learn more about the Disability Tax Credit "
   )}}
 {% endblock %}
