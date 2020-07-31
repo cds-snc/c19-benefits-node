@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-07-31
+
+### Changed
+* Updated text on DTC result card for individuals
+
 ## 2020-07-29
 
 ### Added
