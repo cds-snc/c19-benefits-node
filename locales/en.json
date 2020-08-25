@@ -24,6 +24,7 @@
   "ccb.hint": "Check your bank account to find out if you’ve been receiving the Canada Child Benefit. <a href='https://www.canada.ca/en/revenue-agency/services/child-family-benefits/benefit-payment-dates.html' target='_blank'>Dates of payments are available.</a> ",
   "ccb.title": "Canada Child Benefit",
   "ccb_payment.header": "Extra payment from Canada Child Benefit",
+  "crb.header": "Apply for the Canadian Recovery Benefit (CRB)",
   "cerb.header": "Apply for the Canada Emergency Response Benefit (CERB)",
   "cesb.header": "Help for students through the Canada Emergency Student Benefit (CESB)",
   "cssg.header": "Money for school if you volunteer for national service during the pandemic",

@@ -1,0 +1,30 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'crb' %}
+
+{% block header %}
+  {{__("crb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>$400 french</strong>") }}
+  {{ benefitLi("<strong>Up to 26 weeks</strong> french.") }}
+  {{ benefitLi("<strong>french September 27, 2020</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>FR:</strong>
+  <ul>
+    <li>FR</li>
+    <li>FR</li>
+    <li>FR $38,000.</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "crb",
+      "https://www.canada.ca",
+      "Le button francais"
+  )}}
+{% endblock %}
