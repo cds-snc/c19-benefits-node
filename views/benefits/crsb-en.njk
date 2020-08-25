@@ -1,0 +1,30 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'crsb' %}
+
+{% block header %}
+  {{__("crsb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>$500 per week</strong>") }}
+  {{ benefitLi("<strong>Up to 2 weeks at a time</strong> if you meet the eligibility criteria and are not eligible for EI Sickness.") }}
+  {{ benefitLi("<strong>Benefit available September 27, 2020</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>Next steps:</strong>
+  <ul>
+    <li>For workers who cannot work because they are sick or must self-isolate as a result of COVID-19.</li>
+    <li>The application will ask you to declare that you meet the eligibility criteria, so read the details carefully.</li>
+    <li>You’ll need to pay income tax on these payments in the future.</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "crsb",
+      "https://www.canada.ca",
+      "Find out where to apply"
+  )}}
+{% endblock %}

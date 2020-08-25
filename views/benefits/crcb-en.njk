@@ -1,0 +1,30 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'crcb' %}
+
+{% block header %}
+  {{__("crcb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>$500 per week</strong>") }}
+  {{ benefitLi("<strong>Up to 26 per household</strong> if you meet the eligibility criteria and are not eligible for EI Caregiving.") }}
+  {{ benefitLi("<strong>Benefit available September 27, 2020</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>Next steps:</strong>
+  <ul>
+    <li>For workers who cannot work to care for children or dependents due to COVID-19 related closures of schools, daycares, or other care facilities.</li>
+    <li>The application will ask you to declare that you meet the eligibility criteria, so read the details carefully.</li>
+    <li>You’ll need to pay income tax on these payments in the future.</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "crcb",
+      "https://www.canada.ca",
+      "Find out where to apply"
+  )}}
+{% endblock %}

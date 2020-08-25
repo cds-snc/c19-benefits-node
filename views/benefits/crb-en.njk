@@ -1,0 +1,30 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'crb' %}
+
+{% block header %}
+  {{__("crb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>$400 per week</strong>") }}
+  {{ benefitLi("<strong>Up to 26 weeks</strong> if you keep meeting the eligibility criteria and are not eligible for EI.") }}
+  {{ benefitLi("<strong>Benefit available September 27, 2020</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>Next steps:</strong>
+  <ul>
+    <li>The application will ask you to declare that you meet the eligibility criteria, so read the details carefully.</li>
+    <li>You’ll need to pay income tax on these payments in the future.</li>
+    <li>Claimants may need to repay some or all of the benefit if their annual net income, excluding the CRB, is over $38,000.</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "crb",
+      "https://www.canada.ca",
+      "Find out where to apply"
+  )}}
+{% endblock %}

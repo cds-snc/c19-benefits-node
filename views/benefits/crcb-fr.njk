@@ -1,0 +1,30 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'crcb' %}
+
+{% block header %}
+  {{__("crcb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>$500 FR</strong>") }}
+  {{ benefitLi("<strong>Up to 26 per household</strong> FR") }}
+  {{ benefitLi("<strong>FR</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>FR:</strong>
+  <ul>
+    <li>FR</li>
+    <li>FR</li>
+    <li>FR</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "crcb",
+      "https://www.canada.ca",
+      "Find out where to apply"
+  )}}
+{% endblock %}

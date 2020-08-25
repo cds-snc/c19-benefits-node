@@ -1,0 +1,30 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'crsb' %}
+
+{% block header %}
+  {{__("crsb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>$500 FR</strong>") }}
+  {{ benefitLi("<strong>Up to 2 weeks at a time</strong>FR") }}
+  {{ benefitLi("<strong>FR</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>FR</strong>
+  <ul>
+    <li>FR</li>
+    <li>FR</li>
+    <li>FR</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "crsb",
+      "https://www.canada.ca",
+      "Find out where to apply"
+  )}}
+{% endblock %}
