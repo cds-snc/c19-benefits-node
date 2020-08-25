@@ -3,6 +3,13 @@ All notable changes to this product will be documented in this file.
 
 ## 2020-08-21
 
+### Added
+* Added Canada Recovery Benefit
+* Added Canada Recovery Sickness Benefit
+* Added Canada Recovery Caregiving Benefit
+
+## 2020-08-21
+
 ### Changed
 * Changed CERB duration from 24 weeks to 28 weeks
 
