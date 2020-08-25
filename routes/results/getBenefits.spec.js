@@ -3,22 +3,276 @@ const { getProvincialBenefits } = require('./getBenefits')
 
 describe('Test the getBenefits calculator', () => {
 
-  test('It checks ei regular + cerb path + lost job', () => {
+  test('It checks ei regular + cerb path + lost job + no cerb recieved', () => {
     const result = getBenefits({
       lost_job: 'lost-all-income',
       no_income: 'lost-job',
+      cerb: "not-receiving-cerb",
     })
 
     expect(result).toContain('cerb')
   })
 
+  test("It checks ei regular + cerb exhausted + options that should lead to crb", () => {
+    const noIncomeOptions = [
+      "lost-job",
+      "employer-closed",
+      "self-employed-closed",
+      "sick-or-quarantined",
+      "student_2019_20",
+      "ei-recently-claim-ended",
+    ]
+
+    const someIncomeOptions = [
+      "hours-reduced",
+      "employed-lost-a-job",
+      "selfemployed-some-income",
+      "retired",
+    ]
+
+    const cases = ["no_income", "some_income"]
+
+    cases.forEach((incomeCase) => {
+      let dataBody = {}
+
+      if(incomeCase === "no_income"){
+        dataBody = {
+          lost_job: "lost-all-income",
+          cerb: "receiving-cerb",
+          cerb_exhausted: "cerb-exhausted-yes",
+        }
+        noIncomeOptions.forEach((value) => {
+          dataBody[incomeCase] = value
+          const result = getBenefits(dataBody)
+          expect(result).toContain("crb")
+          expect(result).not.toContain("cerb")
+        })
+      }
+      else{
+        dataBody = {
+          lost_job: "lost-some-income",
+          cerb: "receiving-cerb",
+          cerb_exhausted: "cerb-exhausted-yes",
+        }
+        someIncomeOptions.forEach((value) => {
+          dataBody[incomeCase] = value
+
+          const result = getBenefits(dataBody)
+          expect(result).toContain("crb")
+          expect(result).not.toContain("cerb")
+        })
+      }
+    })
+  })
+
+  test("It checks ei regular + cerb exhausted + options that should lead to crcb", () => {
+    const noIncomeOptions = [
+      'child-or-dependent-school-closed',
+      'unpaid-leave-to-care',
+    ]
+
+    const someIncomeOptions = [
+      'child-or-dependent-school-closed',
+    ]
+
+    const cases = ["no_income", "some_income"]
+
+    cases.forEach((incomeCase) => {
+      let dataBody = {}
+
+      if(incomeCase === "no_income"){
+        dataBody = {
+          lost_job: "lost-all-income",
+          cerb: "receiving-cerb",
+          cerb_exhausted: "cerb-exhausted-yes",
+        }
+        noIncomeOptions.forEach((value) => {
+          dataBody[incomeCase] = value
+
+          const result = getBenefits(dataBody)
+          expect(result).toContain("crcb")
+          expect(result).not.toContain("cerb")
+        })
+      }
+      else{
+        dataBody = {
+          lost_job: "lost-some-income",
+          cerb: "receiving-cerb",
+          cerb_exhausted: "cerb-exhausted-yes",
+        }
+        someIncomeOptions.forEach((value) => {
+          dataBody[incomeCase] = value
+
+          const result = getBenefits(dataBody)
+          expect(result).toContain("crcb")
+          expect(result).not.toContain("cerb")
+        })
+      }
+    })
+  })
+
+  test("It checks ei regular + cerb almost exhausted+ options that should lead to crb", () => {
+    const noIncomeOptions = [
+      "lost-job",
+      "employer-closed",
+      "self-employed-closed",
+      "parental-recently-cant-return",
+      "student_2019_20",
+      "ei-recently-claim-ended",
+    ]
+
+    const someIncomeOptions = [
+      "hours-reduced",
+      "employed-lost-a-job",
+      "selfemployed-some-income",
+      "retired",
+    ]
+
+    const cases = ["no_income", "some_income"]
+
+    cases.forEach((incomeCase) => {
+      let dataBody = {}
+
+      if(incomeCase === "no_income"){
+        dataBody = {
+          lost_job: "lost-all-income",
+          cerb: "receiving-cerb",
+          cerb_exhausted: "cerb-exhausted-almost",
+        }
+        noIncomeOptions.forEach((value) => {
+          dataBody[incomeCase] = value
+
+          const result = getBenefits(dataBody)
+          expect(result).toContain("crb")
+          expect(result).not.toContain("cerb")
+        })
+      }
+      else{
+        dataBody = {
+          lost_job: "lost-some-income",
+          cerb: "receiving-cerb",
+          cerb_exhausted: "cerb-exhausted-almost",
+        }
+        someIncomeOptions.forEach((value) => {
+          dataBody[incomeCase] = value
+
+          const result = getBenefits(dataBody)
+          expect(result).toContain("crb")
+          expect(result).not.toContain("cerb")
+        })
+      }
+    })
+  })
+
+  test("It checks ei regular + cerb almost exhausted+ options that should lead to crcb", () => {
+    const noIncomeOptions = [
+      'child-or-dependent-school-closed',
+      'unpaid-leave-to-care',
+    ]
+
+    const someIncomeOptions = [
+      'child-or-dependent-school-closed',
+    ]
+
+    const cases = ["no_income", "some_income"]
+
+    cases.forEach((incomeCase) => {
+      let dataBody = {}
+
+      if(incomeCase === "no_income"){
+        dataBody = {
+          lost_job: "lost-all-income",
+          cerb: "receiving-cerb",
+          cerb_exhausted: "cerb-exhausted-almost",
+        }
+        noIncomeOptions.forEach((value) => {
+          dataBody[incomeCase] = value
+          console.log(dataBody)
+          const result = getBenefits(dataBody)
+          expect(result).toContain("crcb")
+          expect(result).not.toContain("cerb")
+        })
+      }
+      else{
+        dataBody = {
+          lost_job: "lost-some-income",
+          cerb: "receiving-cerb",
+          cerb_exhausted: "cerb-exhausted-almost",
+        }
+        someIncomeOptions.forEach((value) => {
+          dataBody[incomeCase] = value
+          console.log(dataBody)
+          const result = getBenefits(dataBody)
+          expect(result).toContain("crcb")
+          expect(result).not.toContain("cerb")
+        })
+      }
+    })
+  })
+
+  test("It checks ei regular + cerb almost exhausted+ options that should lead to crsb", () => {
+    const noIncomeOptions = [
+      'sick-or-quarantined',
+    ]
+
+    const someIncomeOptions = [
+      'quarantine',
+    ]
+
+    const cases = ["no_income", "some_income"]
+
+    cases.forEach((incomeCase) => {
+      let dataBody = {}
+
+      if(incomeCase === "no_income"){
+        dataBody = {
+          lost_job: "lost-all-income",
+          cerb: "receiving-cerb",
+          cerb_exhausted: "cerb-exhausted-almost",
+        }
+        noIncomeOptions.forEach((value) => {
+          dataBody[incomeCase] = value
+
+          const result = getBenefits(dataBody)
+          expect(result).toContain("crsb")
+          expect(result).not.toContain("cerb")
+        })
+      }
+      else{
+        dataBody = {
+          lost_job: "lost-some-income",
+          cerb: "receiving-cerb",
+          cerb_exhausted: "cerb-exhausted-almost",
+        }
+        someIncomeOptions.forEach((value) => {
+          dataBody[incomeCase] = value
+
+          const result = getBenefits(dataBody)
+          expect(result).toContain("crsb")
+          expect(result).not.toContain("cerb")
+        })
+      }
+    })
+  })
+
+  test("It checks ei regular + cerb not exhausted + any option that should lead to cerb", () =>{
+    const result = getBenefits({
+      lost_job: "lost-all-income",
+      no_income: "employer-closed",
+      cerb: "receiving-cerb",
+      cerb_exhausted: "cerb-exhausted-no",
+    })
+
+    expect(result).toContain("cerb")
+  })
 
   test('It checks ei regular + cerb path + employer closed', () => {
     const result = getBenefits({
       lost_job: 'lost-all-income',
       no_income: 'employer-closed',
+      cerb: "not-receiving-cerb",
     })
-    
+
     expect(result).toContain('cerb')
   })
 
@@ -29,6 +283,7 @@ describe('Test the getBenefits calculator', () => {
       const result = getBenefits({
         lost_job: 'lost-some-income',
         some_income: income,
+        cerb: "not-receiving-cerb",
         reduced_income: '1000_or_less',
       })
 
@@ -42,6 +297,7 @@ describe('Test the getBenefits calculator', () => {
     const result = getBenefits({
       lost_job: 'lost-all-income',
       no_income: 'sick-or-quarantined',
+      cerb: "not-receiving-cerb",
     })
 
     expect(result).toContain('cerb')
@@ -59,6 +315,7 @@ describe('Test the getBenefits calculator', () => {
       const result = getBenefits({
         lost_job: 'lost-all-income',
         no_income: income,
+        cerb: "not-receiving-cerb",
       })
 
       expect(result).toContain('cerb')
@@ -70,6 +327,7 @@ describe('Test the getBenefits calculator', () => {
     const result = getBenefits({
       lost_job: 'lost-some-income',
       some_income: 'selfemployed-some-income',
+      cerb: "not-receiving-cerb",
       reduced_income: '1000_or_less',
     })
 
@@ -81,6 +339,7 @@ describe('Test the getBenefits calculator', () => {
     const result = getBenefits({
       lost_job: 'lost-some-income',
       some_income: 'quarantine',
+      cerb: "not-receiving-cerb",
     })
 
     expect(result).toContain('cerb')
