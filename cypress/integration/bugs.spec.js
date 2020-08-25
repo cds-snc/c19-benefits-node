@@ -7,7 +7,7 @@ describe('Found Bugs', () => {
     it('Check some-income lost-a-job to no-income', () => {
       cy.visit('/')
       cy.get('[data-cy=start]').click()
-      cy.answerInput('#province-select',"Ontario")
+      cy.answerSelect('#province-select',"on")
       cy.answerRB('#lost_joblost-some-income')
       cy.answerRB('#some_incomeemployed-lost-a-job')
       cy.answerRB('#reduced_income1000_or_less')
