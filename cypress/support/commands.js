@@ -37,3 +37,9 @@ Cypress.Commands.add("answerInput", (id, val) => {
   cy.get(id).type(val)
   cy.get('[data-cy=next]').click()
 })
+
+Cypress.Commands.add("answerSelect", (id, val) =>{
+  cy.reportA11y()
+  cy.get(id).select(val)
+  cy.get('[data-cy=next]').click()
+})
