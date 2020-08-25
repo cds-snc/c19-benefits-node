@@ -11,6 +11,7 @@ const Schema = {
           'employed-lost-a-job',
           'retired',
           'quarantine',
+          'child-or-dependent-school-closed',
           'none-of-the-above',
         ],
       ],

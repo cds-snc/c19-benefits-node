@@ -4,7 +4,8 @@ All notable changes to this product will be documented in this file.
 ## 2020-08-25
 
 ### Changed
-* Removed auto-complete from province dropdown 
+* Removed auto-complete from province dropdown
+* Added “Your child or dependent’s school, daycare or care facility is closed due to COVID-19.” option to Your Situation - No Income and Your Situation - Some Income questions. 
 
 ### Added
 * Added the CERB and CERB exhausted questions

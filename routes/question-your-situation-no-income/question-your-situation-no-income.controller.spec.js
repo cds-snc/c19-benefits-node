@@ -23,6 +23,7 @@ describe('Test redirects for no-income ', () => {
         'lost-job',
         'employer-closed',
         'self-employed-closed',
+        'child-or-dependent-school-closed',
         'unpaid-leave-to-care',
         'sick-or-quarantined',
         'parental-recently-cant-return',

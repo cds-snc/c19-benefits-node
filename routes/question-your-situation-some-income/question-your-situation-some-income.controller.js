@@ -25,6 +25,7 @@ const postSomeIncome = (req, res) => {
       'hours-reduced',
       'selfemployed-some-income',
       'employed-lost-a-job',
+      'child-or-dependent-school-closed',
     ].includes(req.body.some_income)
   ) {
     pruneSessionData(req, ['gross-income', 'rrif'])
