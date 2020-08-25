@@ -26,6 +26,7 @@ describe('Test redirects for some-income ', () => {
       values: [
         'hours-reduced',
         'selfemployed-some-income',
+        'child-or-dependent-school-closed',
         'employed-lost-a-job',
       ],
     },
