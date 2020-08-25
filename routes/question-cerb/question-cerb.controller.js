@@ -1,4 +1,4 @@
-const { routeUtils } = require('./../../utils')
+const { routeUtils, pruneSessionData } = require('./../../utils')
 const { Schema } = require('./schema.js')
 
 module.exports = (app, route) => {
@@ -15,6 +15,7 @@ module.exports = (app, route) => {
         return res.redirect(res.locals.routePath('question-cerb-exhausted'))
       }
 
+      pruneSessionData(req, ['cerb-exhausted'])
       return res.redirect(res.locals.routePath('question-mortgage-payments'))
     })
 }

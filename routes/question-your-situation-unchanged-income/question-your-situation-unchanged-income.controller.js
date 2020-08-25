@@ -17,12 +17,12 @@ module.exports = (app, route) => {
 
 const postUnchangedIncome = (req, res) => {
 
-  pruneSessionData(req, ['some_income', 'no_income', 'gross_income', 'income-earned'])
+  pruneSessionData(req, ['some_income', 'no_income', 'gross_income', 'income-earned', 'cerb', 'cerb-exhausted'])
 
   if (['wfh', 'paid-leave', 'student_2019_20', 'high_school_grad','none-of-the-above'].includes(req.body.unchanged_income)) {
     // prune rrif since we won't go down that path
     pruneSessionData(req, ['rrif'])
-    return res.redirect(res.locals.routePath('question-cerb'))
+    return res.redirect(res.locals.routePath('question-mortgage-payments'))
   }
 
   if (req.body.unchanged_income === 'retired') {

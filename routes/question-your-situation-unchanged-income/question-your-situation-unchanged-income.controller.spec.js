@@ -18,7 +18,7 @@ describe('Test redirects for unchanged-income ', () => {
 
   const redirects = [
     {
-      dest: 'question-cerb',
+      dest: 'question-mortgage-payments',
       values: [
         'wfh',
         'paid-leave',
