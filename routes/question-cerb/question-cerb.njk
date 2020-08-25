@@ -1,0 +1,24 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+    <h1>{{__('cerb.title')}}</h1>
+    <div>
+        {% call form() %}
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+
+            {{ radioButtons('cerb',
+                [
+                    { value: 'receiving-cerb', text:__('cerb.1')},
+                    { value: 'not-receiving-cerb', text:__('cerb.2')}
+                ],
+                data.cerb,
+                __('form.cerb'),
+                errors,
+                { required: true })
+            }}
+            {{ formButtons() }}
+        {% endcall %}
+    </div>
+
+{% endblock %}

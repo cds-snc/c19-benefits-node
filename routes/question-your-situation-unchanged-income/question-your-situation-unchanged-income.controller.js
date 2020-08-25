@@ -22,7 +22,7 @@ const postUnchangedIncome = (req, res) => {
   if (['wfh', 'paid-leave', 'student_2019_20', 'high_school_grad','none-of-the-above'].includes(req.body.unchanged_income)) {
     // prune rrif since we won't go down that path
     pruneSessionData(req, ['rrif'])
-    return res.redirect(res.locals.routePath('question-mortgage-payments'))
+    return res.redirect(res.locals.routePath('question-cerb'))
   }
 
   if (req.body.unchanged_income === 'retired') {

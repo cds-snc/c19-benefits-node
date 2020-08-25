@@ -6,6 +6,8 @@ All notable changes to this product will be documented in this file.
 ### Changed
 * Removed auto-complete from province dropdown 
 
+### Added
+* Added the CERB and CERB exhausted questions
 
 ## 2020-08-21
 

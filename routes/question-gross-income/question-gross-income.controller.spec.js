@@ -13,9 +13,9 @@ test('Can send post request gross-income route ', async () => {
   expect(response.statusCode).toBe(302)
 })
 
-test('Redirects to mortgage-payments route path 1', async () => {
+test('Redirects to cerb route path 1', async () => {
   const route = app.routes.get('question-gross-income')
-  const dest = app.routes.get('question-mortgage-payments')
+  const dest = app.routes.get('question-cerb')
 
   await request(app)
     .post(route.path.en)
@@ -28,9 +28,9 @@ test('Redirects to mortgage-payments route path 1', async () => {
     })
 })
 
-test('Redirects to mortgage-payments route path 2', async () => {
+test('Redirects to cerb route path 2', async () => {
   const route = app.routes.get('question-gross-income')
-  const dest = app.routes.get('question-mortgage-payments')
+  const dest = app.routes.get('question-cerb')
 
   await request(app)
     .post(route.path.en)

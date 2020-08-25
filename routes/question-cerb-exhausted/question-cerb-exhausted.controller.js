@@ -7,14 +7,10 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       res.render(name, routeUtils.getViewData(req, {
-        title: res.__('gross_income.title'),
+        title: res.__('cerb.title'),
       }))
     })
     .post(route.applySchema(Schema), (req, res) => {
-      if (req.session.formdata.some_income && req.session.formdata.some_income === 'retired') {
-        return res.redirect(res.locals.routePath('question-rrif'))
-      }
-
-      return res.redirect(res.locals.routePath('question-cerb'))
+      return res.redirect(res.locals.routePath('question-mortgage-payments'))
     })
 }

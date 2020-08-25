@@ -1,0 +1,25 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+    <h1>{{__('cerb.title')}}</h1>
+    <div>
+        {% call form() %}
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+
+            {{ radioButtons('cerb_exhausted',
+                [
+                    { value: 'cerb-exhausted-yes', text:__('cerb_exhausted.1')},
+                    { value: 'cerb-exhausted-almost', text:__('cerb_exhausted.2')},
+                    { value: 'cerb-exhausted-no', text:__('cerb_exhausted.3')}
+                ],
+                data.cerb_exhausted,
+                __('form.cerb_exhausted'),
+                errors,
+                { required: true })
+            }}
+            {{ formButtons() }}
+        {% endcall %}
+    </div>
+
+{% endblock %}

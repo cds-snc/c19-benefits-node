@@ -10,6 +10,7 @@ const routes = [
   { name: 'question-your-situation-unchanged-income', path: { en: '/your-situation/unchanged-income', fr: '/votre-situation/revenu-intact' } },
 
   // everyone ends up here (not sure of order?)
+  { name: 'question-cerb', path: { en: '/cerb', fr: '/pcu' } },
   { name: 'question-mortgage-payments', path: { en: '/mortgage-payments', fr: '/paiement-hypothecaire' } },
   { name: 'question-ccb', path: { en: '/CCB', fr: '/ARC' } },
   { name: 'question-student-debt', path: { en: '/student-debt', fr: '/dette-des-etudiants' } },
@@ -19,6 +20,9 @@ const routes = [
 
   { name: 'prepare', path: { en: '/prepare', fr: '/preparer' } },
   { name: 'results', path: { en: '/results', fr: '/resultats' } },
+
+  // qualified for cerb exhaust
+  { name: 'question-cerb-exhausted', path: { en: '/cerb-exhausted', fr: '/pcu-epuiser' } },
 
   // retirees only
   { name: 'question-rrif', path: { en: '/RRIF', fr: '/FERR' } },
