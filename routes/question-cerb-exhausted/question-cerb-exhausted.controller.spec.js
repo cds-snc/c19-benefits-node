@@ -18,7 +18,7 @@ test('Redirects to mortgage-payments ', async () => {
   const dest = app.routes.get('question-mortgage-payments')
 
   await request(app).post(route.path.en).send({
-      cerb_exhausted: 'cerb-exhausted-yes',
+      cerb_exhausted: 'cerb-exhausted-almost',
   })
   .expect(302)
   .then(response => {
