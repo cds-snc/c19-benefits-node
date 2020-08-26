@@ -90,5 +90,27 @@ describe('Found Bugs', () => {
       cy.answerRB('#dtcno')
       cy.get('[data-cy=eligible-benefit-list]').should('not.exist')
     })
+
+    it("Check cerb almost exhausted to unchanged income", () => {
+      cy.visit('/')
+      cy.get('[data-cy=start]').click()
+      cy.answerSelect('#province-select',"on")
+      cy.answerRB('#lost_joblost-all-income')
+      cy.answerRB('#no_incomeself-employed-closed')
+      cy.answerRB('#cerbreceiving-cerb')
+      cy.answerRB('#cerb_exhaustedcerb-exhausted-almost')
+
+      cy.visit("/en/lost-job")
+      cy.answerRB("#lost_joblost-no-income")
+      cy.answerRB("#unchanged_incomenone-of-the-above")
+      cy.answerRB('#mortgage_paymentsno')
+      cy.answerRB('#ccbno')
+      cy.answerRB('#student_debtno')
+      cy.answerRB('#plans_for_schoolno')
+      cy.answerRB('#oasno')
+      cy.answerRB('#dtcno')
+      cy.get('[data-cy=eligible-benefit-list]').should('not.exist')
+
+    })
   })
 })
