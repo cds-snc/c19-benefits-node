@@ -48,6 +48,18 @@ const getBenefits = (data, featureFlags) => {
       'cerb',
     ),
   )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: ['lost-job', 'employer-closed'],
+      },
+      'transition_to_ei',
+    ),
+  )
+
   results.push(
     match(
       data,
@@ -57,6 +69,18 @@ const getBenefits = (data, featureFlags) => {
         reduced_income: '1000_or_less',
       },
       'cerb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: ['hours-reduced', 'employed-lost-a-job'],
+        reduced_income: '1000_or_less',
+      },
+      'transition_to_ei',
     ),
   )
 
@@ -75,10 +99,32 @@ const getBenefits = (data, featureFlags) => {
     match(
       data,
       {
+        lost_job: 'lost-all-income',
+        no_income: 'sick-or-quarantined',
+      },
+      'transition_to_ei',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
         lost_job: 'lost-some-income',
         some_income: 'quarantine',
       },
       'cerb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'quarantine',
+      },
+      'transition_to_ei',
     ),
   )
 
@@ -102,11 +148,39 @@ const getBenefits = (data, featureFlags) => {
     match(
       data,
       {
+        lost_job: 'lost-all-income',
+        no_income: [
+          'self-employed-closed',
+          'unpaid-leave-to-care',
+          'parental-recently-cant-return',
+          'ei-recently-claim-ended',
+        ],
+      },
+      'transition_to_ei',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
         lost_job: 'lost-some-income',
         some_income: 'selfemployed-some-income',
         reduced_income: '1000_or_less',
       },
       'cerb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'selfemployed-some-income',
+        reduced_income: '1000_or_less',
+      },
+      'transition_to_ei',
     ),
   )
 
@@ -133,6 +207,7 @@ const getBenefits = (data, featureFlags) => {
   )
 
   results.push(match(data, { gross_income: 'over_5k' }, 'cerb'))
+  results.push(match(data, { gross_income: 'over_5k' }, 'transition_to_ei'))
 
   results.push(
     match(
@@ -151,7 +226,6 @@ const getBenefits = (data, featureFlags) => {
 
   results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))
   results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
-  results.push(match(data, { ccb: ['yes', 'unsure'] }, 'ccb_payment'))
 
   results.push(match(data, { oas: ['oas', 'allowance', 'survivor'] }, 'oas'))
 
@@ -161,7 +235,7 @@ const getBenefits = (data, featureFlags) => {
     results.push(match(data, { oas: ['oas', 'allowance', 'survivor'], dtc: 'yourself', dtc_individual: 'yes' }, 'dtc_oas'))
     results.push(match(data, { dtc: 'yourself', dtc_individual: 'no' }, 'dtc_apply'))
     results.push(match(data, { oas: 'no', dtc: 'yourself', dtc_individual: 'yes' }, 'dtc_individual'))
-    
+
     results.push(match(data, { dtc: 'child', dtc_child: 'yes' }, 'dtc_child'))
     results.push(match(data, { dtc: 'child', dtc_child: 'no' }, 'dtc_apply'))
   }
