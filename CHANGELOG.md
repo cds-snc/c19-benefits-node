@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-09-28
+
+### Changed
+* Added CERB information
+* Added new Transition to EI result
+* Removed CCB
+
 ## 2020-08-21
 
 ### Changed

@@ -7,26 +7,24 @@
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("<strong>Some point about the transition to ei</strong>") }}
-  {{ benefitLi("<strong>Another point</strong>") }}
+  {{ benefitLi("<strong>our les personnes qui ont cessé de travailler ou qui ont perdu leur emploi sans en être responsables</strong>") }}
+  {{ benefitLi("<strong>Il y a des changements temporaires au régime d'assurance-emploi pour vous aider à obtenir des prestations de l'assurance-emploi</strong>") }}
+  {{ benefitLi("<strong>Le taux de prestations minimum est de 500 $ par semaine dans la plupart des cas</strong>") }}
 {% endblock %}
 
 {% block body %}
-  <strong>The benefit can help if you:</strong>
+  <strong>Prochaines étapes :</strong>
   <ul>
-    <li>Content</li>
-  </ul>
-
-  <strong>Good to know:</strong>
-  <ul>
-    <li>Content</li>
+    <li>Si vous avez reçu la PCU par l’intermédiaire de Service Canada, ne présentez pas de demande de prestation à l'assurance-emploi. Nous communiquerons avec vous pour vous fournir plus de renseignements.</li>
+    <li>Si vous avez reçu la PCU par l’intermédiaire de l’Agence du revenu du Canada ou si vous n’avez jamais reçu la PCU, vous devrez présenter une demande d’assurance-emploi.</li>
+    <li>Si vous avez reçu la PCU et ne savez plus par l’intermédiaire de quel ministère vous avez fait votre demande, <a href="https://www.canada.ca/fr/services/prestations/ae/pcusc-application.html#communiquer">communiquez avec nous</a>.</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
       "transition_to_ei",
-      "https://www.canada.ca",
-      "transition to ei link"
+      "https://www.canada.ca/fr/services/prestations/ae.html",
+      "En savoir plus à propos des prestations d’assurance-emploi"
   )}}
 {% endblock %}

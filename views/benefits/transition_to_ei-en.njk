@@ -7,26 +7,24 @@
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("<strong>Some point about the transition to ei</strong>") }}
-  {{ benefitLi("<strong>Another point</strong>") }}
+  {{ benefitLi("<strong>For people who have stopped working or who have lost their job through no fault of their own</strong>") }}
+  {{ benefitLi("<strong>There are some temporary changes to the EI program to help you access EI benefits</strong>") }}
+  {{ benefitLi("<strong>The minimum benefit rate is $500 per week in most cases</strong>") }}
 {% endblock %}
 
 {% block body %}
-  <strong>The benefit can help if you:</strong>
+  <strong>Next steps:</strong>
   <ul>
-    <li>Content</li>
-  </ul>
-
-  <strong>Good to know:</strong>
-  <ul>
-    <li>Content</li>
+    <li>If you received the CERB through Service Canada, do not apply for EI. We will contact you provide more information.</li>
+    <li>If you received the CERB through the Canada Revenue Agency or if you never received the CERB, you will have to apply for EI.</li>
+    <li>If you received the CERB and are not sure which department you applied through, <a href="https://www.canada.ca/en/services/benefits/ei/cerb-application.html#contact">contact us</a>.</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
       "transition_to_ei",
-      "https://www.canada.ca",
-      "transition to ei link"
+      "https://www.canada.ca/en/services/benefits/ei.html",
+      "Find more information about EI benefits"
   )}}
 {% endblock %}
