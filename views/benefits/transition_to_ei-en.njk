@@ -1,0 +1,32 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'transition_to_ei' %}
+
+{% block header %}
+  {{__("transition_to_ei.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>Some point about the transition to ei</strong>") }}
+  {{ benefitLi("<strong>Another point</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>The benefit can help if you:</strong>
+  <ul>
+    <li>Content</li>
+  </ul>
+
+  <strong>Good to know:</strong>
+  <ul>
+    <li>Content</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "transition_to_ei",
+      "https://www.canada.ca",
+      "transition to ei link"
+  )}}
+{% endblock %}

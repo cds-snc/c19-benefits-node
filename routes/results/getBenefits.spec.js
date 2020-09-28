@@ -10,6 +10,7 @@ describe('Test the getBenefits calculator', () => {
     })
 
     expect(result).toContain('cerb')
+    expect(result).toContain('transition_to_ei')
   })
 
 
@@ -18,8 +19,9 @@ describe('Test the getBenefits calculator', () => {
       lost_job: 'lost-all-income',
       no_income: 'employer-closed',
     })
-    
+
     expect(result).toContain('cerb')
+    expect(result).toContain('transition_to_ei')
   })
 
   test('It checks ei regular + cerb some-income path', () => {
@@ -33,6 +35,7 @@ describe('Test the getBenefits calculator', () => {
       })
 
       expect(result).toContain('cerb')
+      expect(result).toContain('transition_to_ei')
     })
 
   })
@@ -45,6 +48,7 @@ describe('Test the getBenefits calculator', () => {
     })
 
     expect(result).toContain('cerb')
+    expect(result).toContain('transition_to_ei')
   })
 
   test('It checks cerb-only path 1', () => {
@@ -62,6 +66,7 @@ describe('Test the getBenefits calculator', () => {
       })
 
       expect(result).toContain('cerb')
+      expect(result).toContain('transition_to_ei')
     })
   })
 
@@ -74,6 +79,7 @@ describe('Test the getBenefits calculator', () => {
     })
 
     expect(result).toContain('cerb')
+    expect(result).toContain('transition_to_ei')
 
   })
 
@@ -93,6 +99,7 @@ describe('Test the getBenefits calculator', () => {
     })
 
     expect(result).toContain('cerb')
+    expect(result).toContain('transition_to_ei')
   })
 
   test('It checks the ei-workshare add-on', () => {
@@ -121,18 +128,6 @@ describe('Test the getBenefits calculator', () => {
     })
 
     expect(result).toContain('rent_help')
-  })
-
-  test('It checks the ccb addon', () => {
-    const options = ['yes', 'unsure']
-
-    options.forEach(ccb => {
-      const result = getBenefits({
-        ccb: ccb,
-      })
-
-      expect(result).toContain('ccb_payment')
-    })
   })
 
   test('It checks the rrif addon', () => {
