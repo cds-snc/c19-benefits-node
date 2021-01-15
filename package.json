@@ -53,7 +53,7 @@
     "date-fns": "^2.14.0",
     "details-polyfill": "^1.1.0",
     "dotenv": "^8.2.0",
-    "dynamoose": "^1.11.1",
+    "dynamoose": "^2.0.0",
     "express": "~4.17.1",
     "express-session": "^1.17.1",
     "express-validator": "^6.5.0",
