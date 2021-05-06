@@ -1,3 +1,6 @@
+This repo is archived. Please use https://github.com/DTS-STN/c19-benefits-node instead.
+
+
 [La version française suit.](#---------------------------------------------------------------------)
 # Find financial help during COVID-19
 
